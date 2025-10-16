@@ -2,78 +2,100 @@
 <!-- @pageCreated 2025.10.11 -->
 <!-- @pageUpdated 2025.10.14 -->
 <!-- @pageNote 하단 버튼 클래스명 변경 -->
-<!-- @layout layouts/sub.html -->
-<section data-layout="sublayout" data-page="notice">
-	<div class="container">
-		<h1 class="page-title">공지사항</h1>
+<!doctype html>
+<html lang="ko">
 
-		<div class="notice-detail">
-			<div class="notice-detail__header">
-				<div class="notice-detail__category">공지사항</div>
-				<h1 class="notice-detail__title">K-OCEAN 정보 시스템 개편 안내</h1>
-				<div class="notice-detail__meta">
-					<div class="notice-detail__info">
-						<span class="notice-detail__date">2025.01.15</span>
-						<span class="notice-detail__views">조회수 1,234</span>
+<head>
+	{{> Head }}
+</head>
+
+<body>
+	<div id="krds-skip-link">
+		<a href="#breadcrumb">본문 바로가기</a>
+	</div>
+
+  {{> Header }}
+  <main id="app" class="l-sub">
+    {{> Breadcrumb items=breadcrumb subBanner="notice"}}
+    <div id="contents">
+      <div class="container">
+				<h1 class="page-title">공지사항</h1>
+
+				<div class="notice-detail">
+					<div class="notice-detail__header">
+						<div class="notice-detail__category">공지사항</div>
+						<h1 class="notice-detail__title">K-OCEAN 정보 시스템 개편 안내</h1>
+						<div class="notice-detail__meta">
+							<div class="notice-detail__info">
+								<span class="notice-detail__date">2025.01.15</span>
+								<span class="notice-detail__views">조회수 1,234</span>
+							</div>
+						</div>
+					</div>
+					<div class="notice-detail__content">
+						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+						<br>
+
+						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+						<br>
+
+						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+					</div>
+
+					<div class="notice-detail__attachments">
+						<h3 class="notice-detail__attachments-title">첨부파일</h3>
+						<ul class="notice-detail__attachments-list">
+							<li>
+								<a href="#" class="attachment-item">
+									<i class="icon-file"></i>
+									<span class="attachment-name">시스템_개편안내서.pdf</span>
+									<span class="attachment-size">(2.5MB)</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="attachment-item">
+									<i class="icon-file"></i>
+									<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+									<span class="attachment-size">(1.2MB)</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="notice-detail__navigation">
+						<div class="notice-detail__nav-item notice-detail__nav-prev">
+							<a href="#" class="nav-link">
+								<span class="nav-label">이전글</span>
+								<span class="nav-title">현황 통계 업데이트 안내</span>
+							</a>
+						</div>
+						<div class="notice-detail__nav-item notice-detail__nav-next">
+							<a href="#" class="nav-link">
+								<span class="nav-label">다음글</span>
+								<span class="nav-title">정책 변경사항</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="section-actions">
+					<div class="l">
+						<a href="#" class="krds-btn tertiary">목록으로 가기</a>
 					</div>
 				</div>
 			</div>
-			<div class="notice-detail__content">
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-				<br>
-
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-				<br>
-
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-			</div>
-
-			<div class="notice-detail__attachments">
-				<h3 class="notice-detail__attachments-title">첨부파일</h3>
-				<ul class="notice-detail__attachments-list">
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon-file"></i>
-							<span class="attachment-name">시스템_개편안내서.pdf</span>
-							<span class="attachment-size">(2.5MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon-file"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="notice-detail__navigation">
-				<div class="notice-detail__nav-item notice-detail__nav-prev">
-					<a href="#" class="nav-link">
-						<span class="nav-label">이전글</span>
-						<span class="nav-title">현황 통계 업데이트 안내</span>
-					</a>
-				</div>
-				<div class="notice-detail__nav-item notice-detail__nav-next">
-					<a href="#" class="nav-link">
-						<span class="nav-label">다음글</span>
-						<span class="nav-title">정책 변경사항</span>
-					</a>
-				</div>
-			</div>
 		</div>
-		<div class="section-actions">
-			<div class="l">
-				<a href="#" class="krds-btn tertiary">목록으로 가기</a>
-			</div>
-		</div>
+	</main>
 
-	</div>
-</section>
-<script>
-	portal.initMobileTable();
-</script>
+	{{> Footer }}
+
+	<script type="module" src="/js/main.js"></script>
+	<script type="module" src="/js/page/portal.js"></script>
+	<script>
+		portal.initMobileTable();
+	</script>
+</body>
+
+</html>

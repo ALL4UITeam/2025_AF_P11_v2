@@ -1,8 +1,25 @@
-<!-- @pageTitle 메인 -->
-<!-- @pageCreated 2025.10.11 -->
-<!-- @pageUpdated 2025.10.11 -->
-<!-- @pageNote 준비중 -->
-<!-- @layout layouts/main.html -->
-<section class="home">
+<!doctype html>
+<html lang="ko">
+<head>
+  {{> Head }}
+</head>
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
   
-</section>
+  {{> Header }}
+  <main id="app" class="l-sub">
+    <div id="contents">
+      <div class="container">
+        
+      </div>
+    </div>
+  </main>
+
+  {{> Footer }}
+  
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/page/portal.js"></script>
+</body>
+</html>

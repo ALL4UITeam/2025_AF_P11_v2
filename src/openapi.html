@@ -2,50 +2,72 @@
 <!-- @pageCreated 2025.10.15 -->
 <!-- @pageUpdated 2025.10.15 -->
 <!-- @pageNote  -->
-<!-- @layout layouts/sub.html -->
-<section data-layout="sublayout" data-page="openapi">
+<!doctype html>
+<html lang="ko">
 
-  <h1 class="page-title">Open-API</h1>
+<head>
+  {{> Head }}
+</head>
 
-  <div class="openapi-container">
-
-    <div class="tab-nav-container">
-      <button type="button" class="toggle" title="현재 탭 위치">
-        <span class="toggle-text">개발자가이드</span>
-        <i class="svg-icon ico-angle"></i>
-      </button>
-      <nav class="tab-nav" role="tablist">
-        <button type="button" class="tab-nav-item" role="tab" aria-selected="false" aria-controls="guide-container">개발자
-          가이드</button>
-        <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
-          aria-controls="terms-container">이용약관/API키 발급</button>
-        <button type="button" class="tab-nav-item active" role="tab" aria-selected="true"
-          aria-controls="status-container">API키
-          발급현황</button>
-        <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
-          aria-controls="reference-container">OPEN API 레퍼런스</button>
-      </nav>
-    </div>
-
-    <div class="read-container" id="guide-container">
-      {{> openapi-guide }}
-    </div>
-    <!-- // 개발자 가이드 -->
-
-    <div class="read-container" id="terms-container">
-      {{> openapi-terms }}
-    </div>
-    <!-- // 이용약관/API키 발급 -->
-    <div class="read-container" id="status-container">
-      {{> openapi-status }}
-    </div>
-    <!-- // API키 발급현황 -->
-    <div class="read-container" id="reference-container">
-      {{> openapi-reference }}
-    </div>
-    <!-- // OPEN API 레퍼런스 -->
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
   </div>
 
+  {{> Header }}
+  <main id="app" class="l-sub">
+    {{> Breadcrumb items=breadcrumb subBanner="openapi-banner"}}
+    <div id="contents">
+      <div class="container">
+        <h1 class="page-title">Open-API</h1>
+
+        <div class="openapi-container">
+
+          <div class="tab-nav-container">
+            <button type="button" class="toggle" title="현재 탭 위치">
+              <span class="toggle-text">개발자가이드</span>
+              <i class="svg-icon ico-angle"></i>
+            </button>
+            <nav class="tab-nav" role="tablist">
+              <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
+                aria-controls="guide-container">개발자
+                가이드</button>
+              <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
+                aria-controls="terms-container">이용약관/API키 발급</button>
+              <button type="button" class="tab-nav-item active" role="tab" aria-selected="true"
+                aria-controls="status-container">API키
+                발급현황</button>
+              <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
+                aria-controls="reference-container">OPEN API 레퍼런스</button>
+            </nav>
+          </div>
+
+          <div class="read-container" id="guide-container">
+            {{> openapi-guide }}
+          </div>
+          <!-- // 개발자 가이드 -->
+
+          <div class="read-container" id="terms-container">
+            {{> openapi-terms }}
+          </div>
+          <!-- // 이용약관/API키 발급 -->
+          <div class="read-container" id="status-container">
+            {{> openapi-status }}
+          </div>
+          <!-- // API키 발급현황 -->
+          <div class="read-container" id="reference-container">
+            {{> openapi-reference }}
+          </div>
+          <!-- // OPEN API 레퍼런스 -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {{> Footer }}
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/page/portal.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // 탭 기능
@@ -64,7 +86,7 @@
             const tabToggle = this.closest('.tab-nav-container').querySelector('.toggle');
             if (tabToggle) {
               tabToggle.classList.remove('active');
-              
+
               tabToggle.querySelector('.toggle-text').textContent = this.textContent;
             }
 
@@ -100,7 +122,7 @@
         }
       }
 
-      
+
 
 
       function initExampleTabs() {
@@ -141,7 +163,7 @@
 
       function initTabToggle() {
         const tabContainers = document.querySelectorAll('.tab-nav-container ');
-        
+
         tabContainers.forEach(container => {
           const toggle = container.querySelector('.toggle');
           if (!toggle) return;
@@ -151,7 +173,7 @@
           });
         });
 
-        
+
       }
 
       // 초기화 실행
@@ -161,4 +183,6 @@
       portal.initMobileTable();
     });
   </script>
-</section>
+</body>
+
+</html>

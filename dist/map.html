@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>K-OCEAN</title>
+  <link rel="stylesheet" href="./lib/ol/ol.css">
+  <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+  <script src="./lib/ol/ol.js"></script>
+  <script src="./lib/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/js/map.js"></script>
+  
+  <link rel="stylesheet" href="./assets/css/map.css">
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+  <div class="wrap">
+    <nav id="map-nav">
+      <header class="map-nav-header">
+        <h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+        <div class="map-nav-h-utils">
+          <a href="#" class="mobile-en">EN</a>
+          <button class="map-nav-header-btn">
+            열림
+          </button>
+        </div>
+      </header>
+      <div class="map-gnb">
+        <ul>
+          <li>
+            <a href="#">해양지도 서비스</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">해양지도 서비스</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">플랫폼 소개</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+                <li><a href="#">K-OCEAN 로드맵</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">서비스활용</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">데이터 다운로드</a></li>
+                <li><a href="#">Open-API</a></li>
+                <li><a href="#">통계서비스</a></li>
+                <li><a href="#">Cook-Book</a></li>
+                <li><a href="#">공간정보 법령 및 규정</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">커뮤니티</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주하는 질문</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main">
+      <div class="aside">
+        <h1 class="map-logo"><a href="#">K-OCEAN</a></h1>
+          <ul class="menu-list">
+            <li class="menu-item-1 current" title="선택 됨"><button data-panel="ocean-info"><i></i><span>해양정보</span></button></li>
+            <li class="menu-item-4"><button data-panel="info-analysis"><i></i><span>정보검색</span></button></li>
+            <li class="menu-item-2"><button data-panel="analysis"><i></i><span>분석</span></button></li>
+            <li class="menu-item-3"><button data-panel="disaster-safety"><i></i><span>재난안전</span></button></li>
+            <li class="menu-item-5"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
+            <li class="menu-item-6"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
+          </ul>
+      
+        <aside class="aside-utils">
+          <div><a href="#" class="en" target="_balnk">EN</a></div>
+          <div>
+            <button type="button" title="전체 메뉴 열림" id="btnMenuOpen">
+              <i></i>
+            </button>
+          </div>
+        </aside>
+      </div>      <!-- // aside -->
+
+      <div class="layer-panel">
+        <div class="layer-panel-wrapper">
+          <div class="layer-panel-vi">
+            <!-- 제목추가 -->
+            <h2 class="layer-panel-title">해양정보</h2>
+            <button type="button" class="layer-mobile-control">
+              <i></i>
+            </button>
+          </div>
+          <!-- 해양정보 -->
+          <div class="marine-info-section show" data-panel-menu="ocean-info">
+            <div class="search-section">
+              <div class="search-bar">
+                <select class="category-select">
+                  <option>갯벌 체험</option>
+                </select>
+                <span class="line"></span>
+                <input type="text" placeholder="검색어를 입력하세요" class="search-input">
+                <button class="search-btn">
+                  <span class="visually-hidden">검색</span>
+                </button>
+              </div>
+            </div>
+            <div class="category-tabs">
+              <button class="tab"><i class="icon icon-all"></i>전체</button>
+              <button class="tab "><i class="icon icon-layer-1"></i>지형/지명</button>
+              <button class="tab"><i class="icon icon-layer-2"></i>항해지원</button>
+              <button class="tab"><i class="icon icon-layer-3"></i>기반시설</button>
+              <button class="tab none-tab"><i class="icon icon-layer-4"></i>항만/경계</button>
+              <button class="tab none-tab"><i class="icon icon-layer-5"></i>안전</button>
+              <button class="tab none-tab"><i class="icon icon-layer-6"></i>고해도</button>
+              <button class="tab none-tab"><i class="icon icon-layer-7"></i>해양정보</button>
+              <button class="tab none-tab"><i class="icon icon-layer-8"></i>해도구역</button>
+              <button class="tab none-tab"><i class="icon icon-layer-9"></i>관리보호구역</button>
+              <button class="more-btn category-tabs-toggle">
+                <span class="visually-hidden">더보기</span>
+              </button>
+            </div>
+            <div class="item-count">총 <b>2,918</b>건</div>
+            <div class="layer-list">
+              <div class="layer-item-list">
+                <div class="layer-item">
+                  <button class="layer-btn-lv1" data-layer-toggle="level-2">
+                    <span class="layer-name">지형/지명</span>
+                    <i class="icon icon-layer-1"></i>
+                  </button>
+                  <div class="layer-item-tree level-2">
+                    <div class="layer-btn-ui layer-tree-toggle">
+                      <button class="layer-btn-ui-more" data-layer-toggle="level-3"></button>
+                      <i class="icon icon-legend-1"></i>
+                      <span class="layer-name">지형/지명</span>
+                      <div class="layer-utils">
+                        <button class="layer-utils-btn layer-utils-btn-download"><span
+                            class="visually-hidden">다운로드</span></button>
+                        <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                        <button class="layer-utils-btn layer-utils-btn-sub"><span class="visually-hidden">하위
+                            레이어</span></button>
+                      </div>
+                      <span class="line"></span>
+                      <div class="switch-btn">
+                        <label class="switch-toggle">
+                          <input type="checkbox">
+                          <i></i>
+                        </label>
+                      </div>
+                    </div>
+                    <!-- // layer-btn-ui -->
+                    <div class="layer-item-tree no-children level-3">
+                      <div class="layer-btn-ui layer-tree-toggle">
+                        <i class="icon icon-legend-1"></i>
+                        <span class="layer-name">지형/지명</span>
+                        <div class="layer-utils">
+                          <button class="layer-utils-btn layer-utils-btn-download"><span
+                              class="visually-hidden">다운로드</span></button>
+                          <button class="layer-utils-btn layer-utils-btn-meta"><span
+                              class="visually-hidden">메타</span></button>
+                          <button class="layer-utils-btn layer-utils-btn-sub"><span class="visually-hidden">하위
+                              레이어</span></button>
+                        </div>
+                        <span class="line"></span>
+                        <div class="switch-btn">
+                          <label class="switch-toggle">
+                            <input type="checkbox">
+                            <i></i>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer-item-tree level-3">
+                      <div class="layer-btn-ui layer-tree-toggle">
+                        <button class="layer-btn-ui-more" data-layer-toggle="level-4"></button>
+                        <i class="icon icon-legend-1"></i>
+                        <span class="layer-name">지형/지명</span>
+                        <div class="layer-utils">
+                          <button class="layer-utils-btn layer-utils-btn-download"><span
+                              class="visually-hidden">다운로드</span></button>
+                          <button class="layer-utils-btn layer-utils-btn-meta"><span
+                              class="visually-hidden">메타</span></button>
+                          <button class="layer-utils-btn layer-utils-btn-sub"><span class="visually-hidden">하위
+                              레이어</span></button>
+                        </div>
+                        <span class="line"></span>
+                        <div class="switch-btn">
+                          <label class="switch-toggle">
+                            <input type="checkbox">
+                            <i></i>
+                          </label>
+                        </div>
+                      </div>
+      
+                      <div class="layer-item-tree no-children level-4">
+                        <div class="layer-btn-ui layer-tree-toggle">
+                          <i class="icon icon-legend-3"></i>
+                          <span class="layer-name">지형/지명</span>
+                          <div class="layer-utils">
+                            <button class="layer-utils-btn layer-utils-btn-download"><span
+                                class="visually-hidden">다운로드</span></button>
+                            <button class="layer-utils-btn layer-utils-btn-meta"><span
+                                class="visually-hidden">메타</span></button>
+                            <button class="layer-utils-btn layer-utils-btn-sub"><span class="visually-hidden">하위
+                                레이어</span></button>
+                          </div>
+                          <span class="line"></span>
+                          <div class="switch-btn">
+                            <label class="switch-toggle">
+                              <input type="checkbox">
+                              <i></i>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // level-2 -->
+                </div>
+                <!-- // layer-item -->
+      
+                <div class="layer-item">
+                  <button class="layer-btn-lv1" data-layer-toggle="level-2">
+                    <span class="layer-name">지형/지명</span>
+                    <i class="icon icon-layer-1"></i>
+                  </button>
+                  <div class="layer-item-tree level-2">
+                    <div class="layer-btn-ui layer-tree-toggle">
+                      <i class="icon icon-legend-2"></i>
+                      <span class="layer-name">지형/지명</span>
+                      <div class="layer-utils">
+                        <button class="layer-utils-btn layer-utils-btn-download"><span
+                            class="visually-hidden">다운로드</span></button>
+                        <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                        <button class="layer-utils-btn layer-utils-btn-sub"><span class="visually-hidden">하위
+                            레이어</span></button>
+                      </div>
+                      <span class="line"></span>
+                      <div class="switch-btn">
+                        <label class="switch-toggle">
+                          <input type="checkbox">
+                          <i></i>
+                        </label>
+                      </div>
+                    </div>
+                    <!-- // layer-btn-ui -->
+      
+                  </div>
+                  <!-- // level-2 -->
+                </div>
+                <!-- // layer-item -->
+              </div>
+            </div>
+          </div>
+          <!-- // 해양정보 -->
+      
+          <!-- 해양정보 검색 결과 -->
+          <div class="marine-info-result" style="display: none;">
+            <div class="category-tabs-slider">
+              <button class="tab current" title="선택 됨">전체<em class="count">2,918</em></button>
+              <button class="tab ">레이어명<em class="count">2,918</em></button>
+              <button class="tab">항<em class="count">2,918</em></button>
+              <button class="tab">해양지역<em class="count">2,918</em></button>
+              <button class="tab">항만<em class="count">2,918</em></button>
+            </div>
+      
+            <div class="marine-layer-result">
+              <div class="marine-layer-group">
+                <button class="collapse-toggle" aria-expanded="false" aria-controls="layer-panel-1">
+                  <i></i>
+                  <span>레이어명</span>
+                  <em class="count">2,918</em>
+                </button>
+                <div class="layer-item-panel" id="layer-panel-1">
+                  <div class="layer-btn-ui">
+                    <span class="layer-name">지형/지명</span>
+                    <div class="layer-utils">
+                      <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                    </div>
+                    <span class="line"></span>
+                    <div class="switch-btn">
+                      <label class="switch-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="layer-btn-ui">
+                    <span class="layer-name">지형/지명</span>
+                    <div class="layer-utils">
+                      <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                    </div>
+                    <span class="line"></span>
+                    <div class="switch-btn">
+                      <label class="switch-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="marine-layer-group">
+                <button class="collapse-toggle" aria-expanded="false" aria-controls="layer-panel-2">
+                  <i></i>
+                  <span>레이어명</span>
+                  <em class="count">2,918</em>
+                </button>
+                <div class="layer-item-panel" id="layer-panel-2">
+                  <div class="layer-btn-ui">
+                    <span class="layer-name">지형/지명</span>
+                    <div class="layer-utils">
+                      <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                    </div>
+                    <span class="line"></span>
+                    <div class="switch-btn">
+                      <label class="switch-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="layer-btn-ui">
+                    <span class="layer-name">지형/지명</span>
+                    <div class="layer-utils">
+                      <button class="layer-utils-btn layer-utils-btn-meta"><span class="visually-hidden">메타</span></button>
+                    </div>
+                    <span class="line"></span>
+                    <div class="switch-btn">
+                      <label class="switch-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+      
+            </div>
+      
+          </div>
+          <!-- // 해양정보 검색 결과 -->
+      
+          <!-- 정보검색 -->
+          <div class="search-card-section" data-panel-menu="info-analysis">
+            <div class="search-card-list">
+              <a href="#" class="search-card first-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">공간 검색</h3>
+                  <p class="search-card-desc">위험물, 인명사고, 선박사고, 어장정보를 공간별로 검색할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='25'%20height='26'%20viewBox='0%200%2025%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M11.7333%202.35849L12.707%202.40377C18.1733%202.88679%2022.4667%207.42264%2022.4667%2012.9245C22.4667%2018.7509%2017.652%2023.4906%2011.7333%2023.4906C5.81467%2023.4906%201%2018.7509%201%2012.9245C1%2010.6377%201.74367%208.52453%203.001%206.78868M19.308%2020.3811L24%2025M21.447%2017.1358C21.447%2017.1358%2015.8197%2022.6906%208.96567%2018.0868C5.77633%2015.9434%204.08967%2014.6755%202.01967%2016.1472M17.767%2011.2566C17.767%2011.2566%2015.237%2016.9925%209.08833%2015.7472C5.15533%2014.9547%203.622%2014.0113%202.01967%2016.1547M17.767%2011.4075C17.767%2011.4075%2019.7987%2017.5585%2013.995%2019.9132M8.636%201C11.5953%201%2014.0027%203.36981%2014.0027%206.28302C14.0027%209.19623%208.636%2013.0755%208.636%2013.0755C8.636%2013.0755%203.26933%209.19623%203.26933%206.28302C3.26933%203.36981%205.67667%201%208.636%201ZM10.1693%206.13208C10.1693%206.96571%209.48284%207.64151%208.636%207.64151C7.78916%207.64151%207.10267%206.96571%207.10267%206.13208C7.10267%205.29844%207.78916%204.62264%208.636%204.62264C9.48284%204.62264%2010.1693%205.29844%2010.1693%206.13208Z'%20stroke='%233D9FB8'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card second-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">해양과학조사자료 검색</h3>
+                  <p class="search-card-desc">해역별 해양과학조사자료를 검색할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%2010.6H24.992V23.4C24.992%2024.28%2024.2722%2025%2023.3925%2025H2.59947C1.71976%2025%201%2024.28%201%2023.4V10.6ZM1%2010.6L4.5908%201.984C4.83872%201.384%205.42253%201%206.07031%201H19.9297C20.5775%201%2021.1613%201.392%2021.4092%201.984L25%2010.6M7.47784%207.4V4.2H18.6741V7.4M5.87837%2010.6V7.4H20.2736V10.6M10.5968%2014.832H15.3952'%20stroke='%230B78CB'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card third-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">해저사퇴분포도 검색</h3>
+                  <p class="search-card-desc">유관기관 및 핵심가치 기반으로 해양공간계획을 종합적으로 분석합니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.3058%203.4113L15.6612%205.76986M13.8116%208.01539H15.178M22.9994%208.01539H20.8855M18.0318%2012.9812V10.8637M18.0318%203.05714V5.17457M13.3511%2012.6345L15.7141%2010.276M21.8367%2011.8358L20.2287%2010.2308M22.5464%203.36609L20.1834%205.72465M23.6486%2017.4647C23.6486%2018.2936%2022.9692%2018.9717%2022.1387%2018.9717H2.50991C1.67946%2018.9717%201%2018.2936%201%2017.4647V3.9011C1%203.07221%201.67946%202.39403%202.50991%202.39403H10.1727M10.8144%2018.9717L9.3045%2024.2465M13.8342%2018.9717L15.3441%2024.2465M5.52973%2025H19.1189M20.8327%208.01539C20.8327%209.5752%2019.5643%2010.8411%2018.0016%2010.8411C16.4388%2010.8411%2015.1705%209.5752%2015.1705%208.01539C15.1705%206.45557%2016.4388%205.18964%2018.0016%205.18964C19.5643%205.18964%2020.8327%206.45557%2020.8327%208.01539ZM13.4039%207.02072C13.955%207.5708%2013.955%208.46751%2013.4039%209.01758C12.8528%209.56766%2011.9544%209.56766%2011.4033%209.01758C10.8522%208.46751%2010.8522%207.5708%2011.4033%207.02072C11.9544%206.47064%2012.8528%206.47064%2013.4039%207.02072ZM12.3092%2012.1749C13.0868%2012.1749%2013.721%2012.8079%2013.721%2013.584C13.721%2014.3601%2013.0868%2014.9931%2012.3092%2014.9931C11.5316%2014.9931%2010.8975%2014.3601%2010.8975%2013.584C10.8975%2012.8079%2011.5316%2012.1749%2012.3092%2012.1749ZM21.3762%2012.8757C21.3762%2012.0995%2022.0104%2011.4666%2022.788%2011.4666C23.5656%2011.4666%2024.1997%2012.0995%2024.1997%2012.8757C24.1997%2013.6518%2023.5656%2014.2848%2022.788%2014.2848C22.0104%2014.2848%2021.3762%2013.6518%2021.3762%2012.8757ZM25%202.40911C25%203.18733%2024.3679%203.81821%2023.5882%203.81821C22.8085%203.81821%2022.1765%203.18733%2022.1765%202.40911C22.1765%201.63088%2022.8085%201%2023.5882%201C24.3679%201%2025%201.63088%2025%202.40911Z'%20stroke='%23256EF4'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card fourth-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">해저지형 검색</h3>
+                  <p class="search-card-desc">사고 위험 지점과 위험 예방 시설 분포를 확인할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='25'%20height='26'%20viewBox='0%200%2025%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.76037%2023.154C2.76037%2023.154%209.15296%2027.8323%2015.2466%2022.2938C18.0826%2019.7132%2021.7312%2020.4526%2024%2021.6071M8.84636%2024.7235L9.06864%2021.2374C9.18362%2019.4491%208.71605%2017.6683%207.72727%2016.1592L6.95311%2014.9745C6.42423%2014.1596%206.34758%2013.1409%206.74616%2012.2581L7.85758%209.83594C8.3558%208.74937%208.15651%207.4817%207.35169%206.59886L4.47733%203.42969C3.58819%202.44876%201.98621%202.60722%201.3117%203.74661C0.882457%204.47099%200.897787%205.37647%201.35002%206.08576L3.4119%209.35302C3.76449%209.91894%203.77215%2010.6282%203.42723%2011.2017L2.21616%2013.2013C1.86357%2013.7898%201.86357%2014.5142%202.21616%2015.0952L4.33169%2018.5738C4.71494%2019.2001%204.85291%2019.9395%204.71494%2020.6564L4.21672%2023.3954M9.09164%2020.9507C9.62052%2020.1357%2010.1801%2019.683%209.77382%2018.8001L8.6624%2016.378C8.16418%2015.2914%208.36347%2014.0238%209.16829%2013.1409L11%2011.2017C11.8891%2010.2208%2012.4517%2010.415%2014%2011C15%2012.5%2014.5913%2013.5522%2014.139%2014.2614L13.1081%2015.8951C12.7555%2016.461%2012.7478%2017.1703%2013.0928%2017.7438L14.3038%2018.9888M14.3038%2018.9888C14.6564%2019.5773%2014.6564%2020.3017%2014.3038%2020.8827L12.081%2024.0745M14.3038%2018.9888C18.144%2016.0083%2021.7312%2017.1326%2024%2018.287M22.3214%208.54563L24%2010.1981M18.8721%201C16.542%201%2014.6564%202.85623%2014.6564%205.1501C14.6564%207.44397%2016.542%209.3002%2018.8721%209.3002C21.2023%209.3002%2023.0879%207.44397%2023.0879%205.1501C23.0879%202.85623%2021.2023%201%2018.8721%201Z'%20stroke='%230B50D0'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- // 정보검색 -->
+      
+          <!-- 정보검색 공간 검색 -->
+          <div class="spatial-search-section" style="display: none;">
+            <div class="panel-section-header">
+              <div class="l">
+                <button class="back-btn">
+                  <span class="visually-hidden">뒤로가기</span>
+                </button>
+                <h2 class="panel-section-title">공간 검색</h2>
+              </div>
+              <button class="detail-search-toggle">상세검색</button>
+            </div>
+      
+            <div class="panel-section-content">
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">01</span>조사해역을 선택하세요.</span>
+                  <span class="text-info">* 복수 선택 가능</span>
+                </h3>
+                <div class="checkbox-group">
+                  <label class="action-toggle">
+                    <input type="checkbox" checked>
+                    <i></i><span>위험물</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <span>인명사고</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox">
+                    <i></i>
+                    <span>선박사고</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox">
+                    <i></i>
+                    <span>어장정보</span>
+                  </label>
+                </div>
+              </div>
+      
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">02</span>검색영역을 선택하세요.</span>
+                </h3>
+                <div class="shape-buttons">
+                  <button class="shape-btn action-toggle active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                      <circle cx="8.66602" cy="8" r="8" fill="#CDD1D5" />
+                    </svg>
+                    <span class="visually-hidden">원형</span>
+                  </button>
+                  <button class="shape-btn action-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                      <rect x="0.332031" y="0" width="16" height="16" rx="2" fill="#CDD1D5" />
+                    </svg>
+                    <span class="visually-hidden">사각형</span>
+                  </button>
+                  <button class="shape-btn action-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                      <path d="M10.332 0L20.332 10L10.332 20L0.332031 10L10.332 0Z" fill="#CDD1D5" />
+                    </svg>
+                    <span class="visually-hidden">다각형</span>
+                  </button>
+                </div>
+              </div>
+      
+              <div class="btn-actions">
+                <button class="btn-outline btn">초기화</button>
+                <button class="btn-primary btn">검색</button>
+              </div>
+      
+              <div class="spatial-search-result">
+                <div class="division"></div>
+      
+                <div class="total-count" aria-live="polite">
+                  검색결과 총 <b class="point">2,918</b>건
+                </div>
+      
+                <ul class="spatial-result-list">
+                  <li>
+                    <button class="spatial-result-item active">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+      
+            </div>
+            
+            <div class="panel-detail-search">
+              <div class="detail-search-content">
+                <header>
+                  <strong>상세검색</strong>  
+                  <button class="close-btn" title="닫기"><i aria-hidden="true"></i></button>
+                </header>
+                <section>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">01</span>조사해역을 선택하세요.</span>
+                      <span class="text-info">* 복수 선택 가능</span>
+                    </h3>
+                    <div class="checkbox-group">
+                      <label class="action-toggle">
+                        <input type="checkbox" checked="">
+                        <i></i><span>위험물</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox" checked="">
+                        <i></i>
+                        <span>인명사고</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                        <span>선박사고</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                        <span>어장정보</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">02</span>검색영역을 선택하세요.</span>
+                    </h3>
+                    <div class="shape-buttons">
+                      <button class="shape-btn action-toggle active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <circle cx="8.66602" cy="8" r="8" fill="#CDD1D5"></circle>
+                        </svg>
+                        <span class="visually-hidden">원형</span>
+                      </button>
+                      <button class="shape-btn action-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <rect x="0.332031" y="0" width="16" height="16" rx="2" fill="#CDD1D5"></rect>
+                        </svg>
+                        <span class="visually-hidden">사각형</span>
+                      </button>
+                      <button class="shape-btn action-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                          <path d="M10.332 0L20.332 10L10.332 20L0.332031 10L10.332 0Z" fill="#CDD1D5"></path>
+                        </svg>
+                        <span class="visually-hidden">다각형</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">03</span>명칭을 검색하세요.</span>
+                      <span class="text-info">* 선택사항</span>
+                    </h3>
+                    <form class="input-group-search">
+                      <select name="" id="" title="기관명 선택" >
+                        <option value="">기관명</option>
+                      </select>
+                      <span class="line"></span>
+                      <input type="text" placeholder="검색어를 입력하세요" title="검색어 입력">
+                    </form>
+                  </div>
+                  <div class="btn-actions">
+                    <button class="btn-outline btn">초기화</button>
+                    <button class="btn-primary btn">검색</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <!-- // 정보검색  공간 검색 -->
+      
+          <!-- 분석 -->
+          <div class="search-card-section" data-panel-menu="analysis">
+            <div class="search-card-list">
+              <a href="#" class="search-card first-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">밀도분석</h3>
+                  <p class="search-card-desc">사고 위험 지점과 위험 예방 시설 분포를 확인할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M22.808%209H24.6M1.4%209H12.352M19.888%2017H24.6M1.4%2017H15.008M9.248%2024.496V1.752M17.496%205.424V1.752M17.496%2024.496V18.64M17.56%205.8C20.648%205.8%2023.16%208.312%2023.16%2011.4C23.16%2015.008%2017.56%2018.6%2017.56%2018.6C17.56%2018.6%2011.96%2015.272%2011.96%2011.4C11.96%208.312%2014.472%205.8%2017.56%205.8ZM19.16%2011.24C19.16%2012.1237%2018.4437%2012.84%2017.56%2012.84C16.6763%2012.84%2015.96%2012.1237%2015.96%2011.24C15.96%2010.3563%2016.6763%209.64%2017.56%209.64C18.4437%209.64%2019.16%2010.3563%2019.16%2011.24ZM1.8%201H25V24.2C25%2024.64%2024.64%2025%2024.2%2025H1.8C1.36%2025%201%2024.64%201%2024.2V1.8C1%201.36%201.36%201%201.8%201Z'%20stroke='%233D9FB8'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card second-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">해양사고 모의확인</h3>
+                  <p class="search-card-desc">데이터 기반으로 사고 원인을 분석하고 대응 훈련을 할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M16.1713%2024.3168C15.5983%2024.424%2015.0019%2024.4775%2014.3979%2024.4775C8.96902%2024.4775%204.55469%2020.1162%204.55469%2014.7526C4.55469%209.38904%208.96902%205.02776%2014.3979%205.02776C19.8267%205.02776%2024.241%209.38904%2024.241%2014.7526M16.4811%2021.2486L19.8422%2024.4775L25%2018.9532M6.52953%209.41964L8.45014%208.59329C10.6108%207.66748%2013.0503%207.86641%2015.1413%208.92995C16.2875%209.51146%2018.0997%209.86342%2020.9574%209.41199M4.78703%2016.7726C4.78703%2016.7726%2011.2459%2021.5164%2017.4027%2015.9003C20.2682%2013.2836%2021.7628%2011.7686%2024.0552%2012.9393M7.19555%201.52344L8.0242%202.93894M2.65731%206.00713L4.09003%206.81818M1%2012.1282H2.64956'%20stroke='%230B78CB'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card third-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">해양공간계획</h3>
+                  <p class="search-card-desc">유관기관 및 핵심가치 기반으로 해양공간계획을 종합적으로 분석합니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.55659%2019.3816V1H15.2634V5.11588M10.4983%2016.1848V5.51548H23.2052V10.7902M10.4666%2012.0689H7.32164V18.5824M17.1694%2020.7562C15.0172%2020.4446%2012.4917%2020.7562%209.68829%2022.2827C5.54269%2024.5604%203.33488%2025.9271%201%2023.8412M24.7538%2025C24.7538%2025%2022.8875%2022.6983%2019.7187%2021.4436M13.4289%2014.954C12.039%2015.2737%2010.7922%2015.9371%209.85506%2017.016C6.01125%2021.4356%202.92985%2020.7243%201%2018.8302M25%2019.8132C24.5314%2019.03%2023.9199%2018.3107%2023.2131%2017.6873M18.9881%208.99201C22.0536%208.99201%2024.5473%2011.5015%2024.5473%2014.5864C24.5473%2017.6713%2018.9881%2021.7792%2018.9881%2021.7792C18.9881%2021.7792%2013.4289%2017.6713%2013.4289%2014.5864C13.4289%2011.5015%2015.9226%208.99201%2018.9881%208.99201ZM20.5764%2014.4266C20.5764%2015.3093%2019.8653%2016.025%2018.9881%2016.025C18.1109%2016.025%2017.3997%2015.3093%2017.3997%2014.4266C17.3997%2013.5438%2018.1109%2012.8282%2018.9881%2012.8282C19.8653%2012.8282%2020.5764%2013.5438%2020.5764%2014.4266Z'%20stroke='%23256EF4'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+            </div>
+          </div>
+          <!-- // 분석 -->
+      
+          <!-- 밀도 분석 -->
+          <div class="density-section" style="display: none;">
+            <div class="panel-section-header">
+              <div class="l">
+                <button class="back-btn">
+                  <span class="visually-hidden">뒤로가기</span>
+                </button>
+                <h2 class="panel-section-title">밀도분석</h2>
+              </div>
+            </div>
+      
+            <div class="panel-section-content">
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">01</span>사고/위험 지점을 선택하세요.</span>
+                </h3>
+                <div class="checkbox-group">
+                  <button class="action-toggle active"><span>선박사고</span></button>
+                  <button class="action-toggle"><span>비선박사고</span></button>
+                  <button class="action-toggle"><span>침선</span></button>
+                  <button class="action-toggle"><span>노출암</span></button>
+                </div>
+              </div>
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">02</span>위험 예방 시설을 선택하세요.</span>
+                </h3>
+                <div class="checkbox-group">
+                  <button class="action-toggle"><span>해양경비안전서</span></button>
+                  <button class="action-toggle"><span>소방서</span></button>
+                  <button class="action-toggle"><span>병원</span></button>
+                  <button class="action-toggle"><span>경찰서</span></button>
+                  <button class="action-toggle"><span>보건소</span></button>
+                </div>
+              </div>
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">03</span>격자 크기를 선택하세요.</span>
+                </h3>
+                <div class="checkbox-group">
+                  <button class="action-toggle"><span>10 X 10</span></button>
+                  <button class="action-toggle"><span>20 X 20</span></button>
+                  <button class="action-toggle"><span>30 X 30</span></button>
+                  <button class="action-toggle"><span>40 X 40</span></button>
+                </div>
+              </div>
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">04</span>지점 선택</span>
+                </h3>
+                <div class="area-select-card">
+                  <div class="area-select-info">
+                    <i class="info-icon"></i>
+                    <span class="info-text">밀도분석 지점 직접 선택하기</span>
+                  </div>
+                  <button type="button" class="area-select-btn">지도에서 영역 선택</button>
+                </div>
+              </div>
+              <div class="btn-actions">
+                <button class="btn-secondary btn">초기화</button>
+                <button class="btn-primary btn">검색</button>
+              </div>
+      
+              <div class="density-result">
+                <div class="division"></div>
+                <div class="density-result-title">검색결과 확인</div>
+                <div class="density-result-list">
+                  <button class="density-result-item danger-point"><i></i><span>사고/위험지점</span></button>
+                  <button class="density-result-item safety-facility"><i></i><span>위험예방시설</span></button>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+          <!-- // 밀도 분석 -->
+      
+          <!-- 재난안전 -->
+          <div class="disaster-section" data-panel-menu="disaster-safety">
+            <div class="panel-section-header">
+              <div class="l">
+                <button class="back-btn">
+                  <span class="visually-hidden">뒤로가기</span>
+                </button>
+                <h2 class="panel-section-title">안전지수</h2>
+              </div>
+            </div>
+      
+            <div class="panel-section-content">
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">01</span>해양 공간의 이용 유형을 선택하세요.</span>
+                </h3>
+                <div class="gap-8">
+                  <button class="alert-btn modal-open-btn" data-modal="alert-modal">
+                    <span>해수욕장 안전지수</span>
+                    <i></i>
+                  </button>
+                </div>
+                <div class="checkbox-group">
+                  <button class="action-toggle active"><span>해수욕장</span></button>
+                  <button class="action-toggle"><span>연안해역</span></button>
+                  <button class="action-toggle"><span>진입수로(항)</span></button>
+                  <button class="action-toggle"><span>갯벌체체험장</span></button>
+                </div>
+              </div>
+      
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">02</span>해역을 선택하세요.</span>
+                </h3>
+                <div class="collapse-group">
+                  <div class="collapse-item">
+                    <button class="collapse-toggle" aria-expanded="false" aria-controls="layer-panel-4">
+                      <i></i>
+                      <span>레이어명</span>
+                      <em class="count">2,918</em>
+                    </button>
+                    <div class="layer-item-panel" id="layer-panel-4">
+                      <button class="layer-btn-ui" type="button" data-toggle="item">
+                        <span class="layer-name">관성솔밭 해수욕장</span>
+                      </button>
+                      <button class="layer-btn-ui" type="button" data-toggle="item">
+                        <span class="layer-name">관성솔밭 해수욕장</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse-item">
+                    <button class="collapse-toggle">
+                      <span>레이어명</span>
+                      <em class="count">0</em>
+                    </button>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+          <!-- // 재난안전 -->
+      
+          <!-- 항행통보 -->
+          <div class="search-card-section" data-panel-menu="navigation-notice">
+            <div class="search-card-list lt">
+              <a href="#" class="search-card first-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">항로표지 구분</h3>
+                  <p class="search-card-desc">항로표지의 세부 정보를 확인할 수 있습니다</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.264%2015.264L7.712%2018.288L10.736%2010.736M15.264%2015.264L18.288%207.712L10.736%2010.736M15.264%2015.264L10.736%2010.736M25%2013C25%2019.6274%2019.6274%2025%2013%2025C6.37258%2025%201%2019.6274%201%2013C1%206.37258%206.37258%201%2013%201C19.6274%201%2025%206.37258%2025%2013Z'%20stroke='%233D9FB8'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card second-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">침선 장애물 구분</h3>
+                  <p class="search-card-desc">해양 활동 시 위험이 될 수 있는 침선 현황을 열람할 수 있습니다</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='24'%20viewBox='0%200%2026%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3.22982%2021.6565C3.22982%2021.6565%207.6783%2024.7649%2014.3102%2021.5255C18.0173%2019.7197%2023.9282%2021.0361%2024.9961%2021.6565M6.87567%2022.5731L21.9896%208.8642L23.1936%2012.3035C25.3498%2014.7572%2025.3294%2018.4102%2023.2752%2020.8363M16.4392%2012.6274L15.2421%2010.801L7.27698%2018.3895M11.9975%2022.2699L23.1324%2012.2346M2.79449%202.09589L7.36541%208.17497M7.44023%2018.4033L9.16113%2020.2297M20.8673%2018.1276C20.568%2017.7898%2020.5952%2017.266%2020.9353%2016.9627C21.2754%2016.6595%2021.7856%2016.6939%2022.0849%2017.0317C22.3841%2017.3694%2022.3569%2017.8932%2022.0168%2018.1965C21.6767%2018.4998%2021.1666%2018.4653%2020.8673%2018.1276ZM5.07315%201C3.05977%201%201.31166%202.50943%201.03278%204.58404C0.733498%206.84474%202.29795%208.92624%204.52899%209.23639C4.71265%209.26396%204.8963%209.27085%205.07995%209.27085C7.09333%209.27085%208.84144%207.76142%209.12032%205.68682C9.4196%203.42612%207.85515%201.34462%205.62411%201.03446C5.44046%201.00689%205.2568%201%205.07315%201Z'%20stroke='%230B78CB'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+      
+              <a href="#" class="search-card third-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">어장 장애물 구분</h3>
+                  <p class="search-card-desc">어장 내 위치한 각종 장애물 정보를 확인할 수 있습니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='26'%20viewBox='0%200%2026%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14.3398%2020.5664C15.1992%2020.6263%2016.17%2021.0793%2016.6914%2021.5557L16.835%2021.6865H16.8516L16.7334%2021.7734C16.2304%2022.143%2015.2161%2022.5282%2014.3203%2022.5488C13.8774%2022.559%2013.5202%2022.4786%2013.2754%2022.3193C13.064%2022.1818%2012.8944%2021.9578%2012.8369%2021.5586C12.922%2021.1331%2013.1095%2020.8976%2013.3262%2020.7607C13.5711%2020.6061%2013.9165%2020.537%2014.3398%2020.5664ZM18.0781%2021.4326C18.1802%2021.4412%2018.2333%2021.468%2018.2598%2021.4893C18.2754%2021.5019%2018.3017%2021.5283%2018.3232%2021.5908C18.3068%2021.6823%2018.2778%2021.7277%2018.2559%2021.751C18.2255%2021.7832%2018.1697%2021.8185%2018.0674%2021.8398C17.8462%2021.886%2017.5199%2021.8382%2017.2207%2021.7139L17.1533%2021.6855L17.2588%2021.6348C17.5462%2021.4928%2017.8584%2021.4143%2018.0781%2021.4326ZM6.20898%2019.5693C7.06859%2019.6291%208.04009%2020.0821%208.56152%2020.5586L8.70508%2020.6895H8.71973L8.60254%2020.7754C8.0996%2021.1449%207.08624%2021.5311%206.19043%2021.5518C5.74734%2021.5619%205.39041%2021.4806%205.14551%2021.3213C4.93437%2021.1839%204.76372%2020.9609%204.70605%2020.5625C4.79097%2020.1362%204.9794%2019.9007%205.19629%2019.7637C5.44119%2019.6091%205.78574%2019.5399%206.20898%2019.5693ZM9.94824%2020.4355C10.0506%2020.4442%2010.1035%2020.4709%2010.1299%2020.4922C10.1456%2020.5048%2010.1718%2020.531%2010.1934%2020.5938C10.1769%2020.6851%2010.1469%2020.7296%2010.125%2020.7529C10.0947%2020.7852%2010.0398%2020.8214%209.9375%2020.8428C9.71633%2020.889%209.39005%2020.8412%209.09082%2020.7168L9.02344%2020.6885L9.12793%2020.6377C9.41557%2020.4956%209.72841%2020.4171%209.94824%2020.4355Z'%20fill='%23256EF4'%20stroke='%23256EF4'/%3e%3cpath%20d='M18.7606%208.83511C22.4468%209.64894%2024.9362%2011.2207%2024.9362%2013.0239C24.9362%2015.6649%2019.5745%2017.8112%2012.9681%2017.8112C6.3617%2017.8112%201%2015.6729%201%2013.0239C1%2011.2207%203.48138%209.65691%207.1516%208.83511M1%2013.1277V20.2128C1%2022.8537%206.3617%2025%2012.9681%2025C19.5745%2025%2024.9362%2022.8537%2024.9362%2020.2128V13.1277M24.9362%2018.4415C24.9362%2017.3484%2024.0186%2016.3351%2022.4707%2015.5293C20.2846%2014.3883%2016.8378%2013.6543%2012.9681%2013.6543C9.0984%2013.6543%205.71543%2014.3803%203.52926%2015.4973C1.94947%2016.3112%201%2017.3324%201%2018.4415M10.1516%202.26862L15.5213%209.30585M12.8324%201C10.4707%201%208.42021%202.74734%208.09309%205.14894C7.74202%207.76596%209.57713%2010.1755%2012.1941%2010.5346C12.4096%2010.5665%2012.625%2010.5745%2012.8404%2010.5745C15.2021%2010.5745%2017.2527%208.82713%2017.5798%206.42553C17.9309%203.80851%2016.0957%201.39894%2013.4787%201.03989C13.2633%201.00798%2013.0479%201%2012.8324%201Z'%20stroke='%23256EF4'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+              <a href="#" class="search-card third-search-card">
+                <div class="search-card-content">
+                  <h3 class="search-card-title">어초 장애물 구분</h3>
+                  <p class="search-card-desc">해양 자원 보호 및 어업 활동을 위한 어초 현황을 제공합니다.</p>
+                </div>
+                <div class="search-card-icon">
+                  <img src="data:image/svg+xml,%3csvg%20width='26'%20height='27'%20viewBox='0%200%2026%2027'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M23.2226%2024.1357C23.2226%2024.1357%2016.768%2028.8604%2010.6153%2023.2669C7.75171%2020.6608%204.06781%2021.4076%201.77698%2022.5735M17.0776%2025.7207L16.8531%2022.2001C16.737%2020.394%2017.2091%2018.5956%2018.2075%2017.0715L18.9892%2015.8751C19.5232%2015.0521%2019.6006%2014.0233%2019.1981%2013.1318L18.0759%2010.6856C17.5729%209.58824%2017.7741%208.30801%2018.5867%207.41642L21.489%204.21583C22.3867%203.22517%2024.0042%203.3852%2024.6853%204.53589C25.1187%205.26745%2025.1032%206.1819%2024.6466%206.89823L22.5647%2010.1979C22.2087%2010.7694%2022.201%2011.4857%2022.5492%2012.0649L23.772%2014.0843C24.1281%2014.6787%2024.1281%2015.4103%2023.772%2015.997L21.636%2019.5101C21.249%2020.1426%2021.1097%2020.8894%2021.249%2021.6133L21.7521%2024.3795M16.8299%2021.9105C16.2959%2021.0875%2015.7309%2020.6303%2016.1411%2019.7387L17.2633%2017.2925C17.7664%2016.1952%2017.5651%2014.9149%2016.7525%2014.0233L13.8503%2010.8228C12.9525%209.8321%2011.335%209.99213%2010.6539%2011.1428C10.2205%2011.8744%2010.236%2012.7888%2010.6926%2013.5052L12.7745%2016.8048C13.1305%2017.3763%2013.1383%2018.0927%2012.79%2018.6718L11.5672%2019.9292M11.5672%2019.9292C11.2112%2020.5236%2011.2112%2021.2551%2011.5672%2021.8419L13.8116%2025.0654M11.5672%2019.9292C7.6898%2016.9191%204.06781%2018.0546%201.77698%2019.2205M3.04622%202.21165L8.24703%208.93288M5.63889%201C3.34806%201%201.35906%202.66888%201.04175%204.96263C0.701218%207.46214%202.48125%209.76351%205.01974%2010.1064C5.2287%2010.1369%205.43766%2010.1445%205.64663%2010.1445C7.93746%2010.1445%209.92645%208.47566%2010.2438%206.1819C10.5843%203.6824%208.80426%201.38102%206.26577%201.0381C6.05681%201.00762%205.84785%201%205.63889%201Z'%20stroke='%230B50D0'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="">
+                </div>
+              </a>
+            </div>
+            <div class="traffic-buttons">
+              <button>
+                <i class="icon-traffic-btn1"></i>
+                <span class="text">전체 수정 목록</span>
+              </button>
+              <span class="line"></span>
+              <button>
+                <i class="icon-traffic-btn2"></i>
+                <span class="text">등록</span>
+              </button>
+            </div>
+          </div>
+          <!-- // 항행통보 -->
+        </div>
+      </div>
+      
+      
+      <!-- <div class="detail-search-field">
+        
+      </div> -->      <!-- // layer-panel -->
+
+      <div class="detail-panel">
+        <div class="detail-panel-wrapper">
+          <div class="detail-panel-header">
+            <button class="detail-panel-back">
+              <span class="visually-hidden">뒤로가기</span>
+            </button>
+            <div class="detail-panel-header-title">
+              <h3 class="title">해양지명</h3>
+              <div class="utils">
+                <button class="util-btn util-btn-meta">메타정보 보기 <i></i></buttonㅁ>
+                  <button class="util-btn util-btn-download">메타정보 다운로드 <i></i></buttonㅁ>
+              </div>
+            </div>
+            <button class="detail-panel-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </div>
+      
+          <!-- 기본형  -->
+          <div class="detail-panel-content" style="display: none;">
+            <div class="total-count">총 <b>2,918</b>건</div>
+            <div class="depth-layer-list">
+              <div class="depth-layer-item">
+                <button type="button" class="depth-layer-btn">
+                  <span>지형/지명</span>
+                  <i class="icon-layer"></i>
+                </button>
+              </div>
+              <div class="depth-layer-item">
+                <button type="button" class="depth-layer-btn">
+                  <span>지형/지명</span>
+                  <i class="icon-layer"></i>
+                </button>
+              </div>
+            </div>
+            <div class="layer-info">
+              <div class="link-info">
+                <a href="#">
+                  <i class="icon_mark"></i>
+                  <span>갯벌활동(해루질) 안전 길라잡이</span>
+                  <i class="arrow"></i>
+                </a>
+              </div>
+      
+              <div class="detail-content">
+                <section class="detail-content-section">
+                  <h4 class="detail-content-title">일반 개요</h4>
+                  <div class="detail-content-item">
+                    <dl class="detail-content-abb">
+                      <dt>해당자료의 자료명</dt>
+                      <dd>간출물골</dd>
+                    </dl>
+                    <dl class="detail-content-abb">
+                      <dt>요약</dt>
+                      <dd>썰물 혹은 흐름 동안에 조간대 지역에서 물의 자연적인 배수로로, 전자해도기반 간출물골 해양객체 선형정보</dd>
+                    </dl>
+                  </div>
+                </section>
+                <div class="division"></div>
+                <section class="detail-content-section">
+                  <h4 class="detail-content-title">상세정보</h4>
+                  <div class="detail-content-item">
+                    <ul class="detail-content-list">
+                      <li class="list-item">
+                        <strong class="subject">목적</strong>
+                        <div class="desc">해양안전사고 예방에 활용</div>
+                      </li>
+                      <li class="list-item">
+                        <strong class="subject">주제분류1</strong>
+                        <div class="desc">안전</div>
+                      </li>
+                      <li class="list-item">
+                        <strong class="subject">자료 생산주기</strong>
+                        <div class="desc">
+                          <div><a href="#" target="_blank" title="새창 열림" class="link-btn"><span>개방해 바로가기</span></a></div>
+                        </div>
+                      </li>
+                      <li class="list-item">
+                        <strong class="subject">위치좌표</strong>
+                        <div class="desc">
+                          <div><a href="#" target="_blank" title="새창 열림" class="link-coordinate"><span>67-49-52.45S
+                                173-39-47.41E</span></a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <!-- //detail-content -->
+            </div>
+          </div>
+          <!-- // 기본형 끝 -->
+      
+          <!-- 접기형  -->
+          <div class="detail-panel-content" style="display: none;">
+            <div class="layer-info">
+              <div class="link-info">
+                <a href="#">
+                  <i class="icon_mark"></i>
+                  <span>갯벌활동(해루질) 안전 길라잡이</span>
+                  <i class="arrow"></i>
+                </a>
+              </div>
+      
+              <div class="detail-content">
+                <section class="detail-content-section">
+                  <h4 class="detail-content-title">일반 개요</h4>
+                  <div class="detail-content-item">
+                    <dl class="detail-content-abb">
+                      <dt>해당자료의 자료명</dt>
+                      <dd>간출물골</dd>
+                    </dl>
+                    <dl class="detail-content-abb">
+                      <dt>요약</dt>
+                      <dd>썰물 혹은 흐름 동안에 조간대 지역에서 물의 자연적인 배수로로, 전자해도기반 간출물골 해양객체 선형정보</dd>
+                    </dl>
+                  </div>
+                </section>
+                <section class="detail-content-section detail-content-hidden" data-section="detail">
+                  <h4 class="detail-content-title">상세정보</h4>
+                  <div class="detail-content-item">
+                    <ul class="detail-content-list">
+                      <li class="list-item">
+                        <strong class="subject">목적</strong>
+                        <div class="desc">해양안전사고 예방에 활용</div>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+      
+                <div class="view-summarize">
+                  <button type="button" class="view-more-btn">
+                    <span>상세정보 더보기</span>
+                    <i class="icon-arrow"></i>
+                  </button>
+                </div>
+                <div class="division"></div>
+              </div>
+              <!-- //detail-content -->
+            </div>
+          </div>
+          <!-- // 접기형 끝 -->
+      
+          <!-- 항로 분석 -->
+          <div class="detail-panel-content" style="display: none;">
+            <!-- 안내 정보 박스 -->
+            <div class="info-notice-box">
+              <p class="notice-text">기준 월과 시간대를 선택하면 AIS 통항 밀도와 상세정보를 확인할 수 있습니다.</p>
+              <div class="data-period-box">
+                <i class="data-icon"></i>
+                <div class="period-info">
+                  <div class="period-text">자료년도 23년1 ~ 23년 12월</div>
+                  <div class="time-period">주간(06 ~ 18시) 야간(18~06시)</div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- 필터 섹션 -->
+            <div class="filter-section mt-8 mb-8">
+              <div class="filter-row mb-8">
+                <select class="form-select" title="월 선택">
+                  <option>9월</option>
+                </select>
+              </div>
+              <div class="filter-row mb-16">
+                <select class="form-select" title="시간대 선택">
+                  <option>전체(주간, 야간)</option>
+                </select>
+              </div>
+              <div class="filter-slider mb-16">
+                <div class="filter-label">투명도</div>
+                <div class="transparency-slider">
+                  <div class="slider-handle"></div>
+                </div>
+              </div>
+              <div class="filter-row">
+                <input type="checkbox" class="filter-checkbox">
+                <label class="filter-label">체크박스</label>
+              </div>
+            </div>
+      
+            <div class="division"></div>
+      
+            <!-- 다운로드 버튼 섹션 -->
+            <div class="download-section mt-8">
+              <button class="download-btn">
+                <i class="download-icon"></i>
+                <span>AIS 항로 분석 다운로드</span>
+              </button>
+              <button class="download-btn">
+                <i class="download-icon"></i>
+                <span>주요통항로 라인 다운로드</span>
+              </button>
+            </div>
+      
+            <!-- 선박 운항 분포 요약 -->
+            <div class="summary-box">
+              <div class="summary-header">
+                <h4 class="summary-title">선박 운항 분포</h4>
+                <span class="summary-unit">단위:척</span>
+              </div>
+              <div class="summary-list">
+                <div class="summary-item">
+                  <span class="summary-label">전체(주간, 야간)</span>
+                  <span class="summary-line"></span>
+                  <span class="summary-value">1,877,596</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">주간</span>
+                  <span class="summary-line"></span>
+                  <span class="summary-value">1,248,272</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">야간</span>
+                  <span class="summary-line"></span>
+                  <span class="summary-value">629,324</span>
+                </div>
+              </div>
+              <div class="summary-footer">
+                <div class="summary-date">기준년월 : 202309</div>
+                <div class="summary-provider">제공 : 해양수산부 해양안전종합정보시스템 (GICOMS)</div>
+              </div>
+            </div>
+          </div>
+          <!-- // 항로 분석 끝 -->
+      
+          <!-- 고해도 시계열 -->
+          <div class="detail-panel-content" style="display: none;">
+            <!-- 헤더 -->
+            <div class="timeseries-header">
+              <h4 class="timeseries-title">고해도 시계열</h4>
+              <div class="timeseries-actions">
+                <button class="action-btn disabled">
+                  <i class="action-icon stop"></i>
+                </button>
+                <button class="action-btn">
+                  <i class="action-icon play"></i>
+                </button>
+              </div>
+            </div>
+      
+            <!-- 전체 보기 토글 -->
+            <div class="global-toggle">
+              <span class="toggle-label">전체 보기</span>
+              <div class="switch-btn">
+                <label class="switch-toggle">
+                  <input type="checkbox">
+                  <i></i>
+                </label>
+              </div>
+            </div>
+      
+            <div class="timeseries-list">
+              <div class="timeseries-item">
+                <div class="item-label">
+                  <strong><em class="accent">a</em>거문도항(199703)</strong>
+                  <div class="switch-btn">
+                    <label class="switch-toggle">
+                      <input type="checkbox">
+                      <i></i>
+                    </label>
+                  </div>
+                </div>
+                <div class="item-controls">
+                  <span class="transparency-label">투명도</span>
+                  <input type="range" min="0" max="100" value="0" class="custom-range">
+                </div>
+              </div>
+      
+              <div class="timeseries-item">
+                <div class="item-label">
+                  <strong><em>b</em>거문도항(199703)</strong>
+                  <div class="switch-btn">
+                    <label class="switch-toggle">
+                      <input type="checkbox">
+                      <i></i>
+                    </label>
+                  </div>
+                </div>
+                <div class="item-controls">
+                  <span class="transparency-label">투명도</span>
+                  <input type="range" min="0" max="100" value="40" class="custom-range" disabled>
+                </div>
+              </div>
+      
+            </div>
+      
+            <!-- 가덕도 부근 메타정보 -->
+            <div class="meta-info-section">
+              <div class="meta-info-cards">
+                <div class="meta-card">
+                  <div class="meta-card-title">
+                    <span class="meta-card-number">a</span>
+                    <span class="meta-card-name">거문adasdsadsaaadsas도항(199703)</span>
+                  </div>
+                  <div class="meta-card-details">
+                    <span class="meta-detail">축척 : 1:25000</span>
+                    <span class="meta-detail">해도번호 : No.258</span>
+                  </div>
+                </div>
+                <div class="meta-card">
+                  <div class="meta-card-title">
+                    <span class="meta-card-number">b</span>
+                    <span class="meta-card-name">거문adasdsadsaaadsas도항(199703)</span>
+                  </div>
+                  <div class="meta-card-details">
+                    <span class="meta-detail">축척 : 1:25000</span>
+                    <span class="meta-detail">해도번호 : No.258</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+          <!-- //고해도 시계열 -->
+      
+          <div class="detail-panel-content" style="display: none;">
+            <div class="grid-colmn-g-8">
+              <div>
+                <button class="alert-btn">
+                  <span>어장정보 주의사항</span>
+                  <i></i>
+                </button>
+              </div>
+              <select name="" id="" class="form-select" title="">
+                <option value="">2023년</option>
+              </select>
+              <select name="" id="" class="form-select" title="">
+                <option value="">전체 해양구역</option>
+              </select>
+              <select name="" id="" class="form-select" title="">
+                <option value="">어업유형 전체</option>
+              </select>
+              <select name="" id="" class="form-select" title="">
+                <option value="">어업방법 전체</option>
+              </select>
+              <select name="" id="" class="form-select" title="">
+                <option value="">양식종류 전체</option>
+              </select>
+              <input type="text" class="form-input" placeholder="면허번호를 입력해주세요" title="면허번호 입력">
+            </div>
+            <div class="btn-actions block mt-16">
+              <button class="btn-gray btn round max">초기화</button>
+              <button class="btn-primary btn round max">검색</button>
+            </div>
+          </div>
+      
+          <!-- 공간검색결과 -->
+          <div class="detail-panel-content" style="display: none;">
+            <div class="chart-grid">
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+              <div class="division"></div>
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+              <div class="division"></div>
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+      
+            </div>
+          </div>
+          <!-- // 공간검색결과 -->
+        </div>
+      </div>
+      <!-- // detail-panel -->
+
+      <div class="fav-layers">
+        <div class="fav-layers-list">
+          <button type="button" class="fav-layer-btn"><span>어장</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>양식장(점)</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>공동어업구역</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>양식장(면)</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>양식장(면)</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>양식장(면)</span><i></i></button>
+          <button type="button" class="fav-layer-btn"><span>양식장(면)</span><i></i></button>
+          <button type="button" title="목록 더보기" class="btn-more">
+            <i aria-hidden="true" class="icon icon-more"></i>
+          </button>
+        </div>
+      </div>      <!-- // fav-layers -->
+
+      <div class="weather-card">
+          <div class="weather-info">
+              <div class="weather-icon"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1624_1275)'%3e%3cpath%20d='M32.3541%2016C27.8913%2014.4002%2027.5638%2012.8763%2031.0829%209.77196C26.3781%2010.1038%2025.5203%208.85564%2027.6159%204.68629C23.4005%206.75902%2022.1385%205.91059%2022.474%201.25729C19.3353%204.73788%2017.7945%204.4136%2016.177%200C14.5596%204.41398%2013.0188%204.73788%209.88009%201.25729C10.2156%205.91059%208.95363%206.75902%204.73815%204.68629C6.83381%208.85564%205.97599%2010.1038%201.2712%209.77196C4.7903%2012.8763%204.46243%2014.4002%200%2016C4.46282%2017.5998%204.7903%2019.1237%201.2712%2022.228C5.97599%2021.8962%206.83381%2023.1444%204.73815%2027.3137C8.95363%2025.241%2010.216%2026.0894%209.88009%2030.7427C13.0188%2027.2621%2014.5596%2027.5864%2016.177%2032C17.7945%2027.586%2019.3353%2027.2621%2022.474%2030.7427C22.1385%2026.0894%2023.4005%2025.241%2027.6159%2027.3137C25.5203%2023.1444%2026.3781%2021.8962%2031.0829%2022.228C27.5638%2019.1237%2027.8917%2017.5998%2032.3541%2016Z'%20fill='url(%23paint0_linear_1624_1275)'/%3e%3cpath%20d='M16.1778%2026.8871C22.2573%2026.8871%2027.1857%2022.0127%2027.1857%2015.9997C27.1857%209.98676%2022.2573%205.1123%2016.1778%205.1123C10.0983%205.1123%205.16992%209.98676%205.16992%2015.9997C5.16992%2022.0127%2010.0983%2026.8871%2016.1778%2026.8871Z'%20fill='url(%23paint1_linear_1624_1275)'/%3e%3cpath%20opacity='0.3'%20d='M16.1778%205.41572C22.0782%205.41572%2026.8789%2010.1638%2026.8789%2015.9997C26.8789%2021.8356%2022.0782%2026.5837%2016.1778%2026.5837C10.2773%2026.5837%205.4767%2021.8356%205.4767%2015.9997C5.4767%2010.1638%2010.2773%205.41572%2016.1778%205.41572ZM16.1778%205.1123C10.0983%205.1123%205.16992%209.98672%205.16992%2015.9997C5.16992%2022.0127%2010.0983%2026.8871%2016.1778%2026.8871C22.2573%2026.8871%2027.1857%2022.0127%2027.1857%2015.9997C27.1857%209.98672%2022.2573%205.1123%2016.1778%205.1123Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1624_1275'%20x1='16.177'%20y1='0'%20x2='16.177'%20y2='32.0865'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FFF33B'/%3e%3cstop%20offset='0.05'%20stop-color='%23FCEC3F'/%3e%3cstop%20offset='0.27'%20stop-color='%23F4D250'/%3e%3cstop%20offset='0.51'%20stop-color='%23EEBF5C'/%3e%3cstop%20offset='0.75'%20stop-color='%23EBB363'/%3e%3cstop%20offset='1'%20stop-color='%23EAB066'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1624_1275'%20x1='16.1778'%20y1='4.24377'%20x2='16.1778'%20y2='27.376'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FFF33B'/%3e%3cstop%20offset='0.04'%20stop-color='%23FEE62D'/%3e%3cstop%20offset='0.12'%20stop-color='%23FDD51B'/%3e%3cstop%20offset='0.2'%20stop-color='%23FDCA0F'/%3e%3cstop%20offset='0.28'%20stop-color='%23FDC70C'/%3e%3cstop%20offset='0.67'%20stop-color='%23F3903F'/%3e%3cstop%20offset='0.89'%20stop-color='%23ED683C'/%3e%3cstop%20offset='1'%20stop-color='%23E93E3A'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1624_1275'%3e%3crect%20width='32'%20height='32'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt=""></div>
+              <div class="temperature">31°</div>
+          </div>
+          <div class="air-quality">
+              <div class="air-quality-item green">
+                  <span class="quality-label">미세</span>
+              </div>
+              <div class="air-quality-item blue">
+                  <span class="quality-label">초미세</span>
+              </div>
+          </div>
+      </div>      <!-- // weather-card -->
+
+      <div class="control-panel">
+          <div class="tool-buttons">
+      
+            <div class="group-btn">
+              <button class="tool-btn map-type-btn1">
+                <span class="tool-icon"></span>
+                <span class="tool-text">일반지도</span>
+              </button>
+              <button class="tool-btn map-type-btn2">
+                <span class="tool-icon"></span>
+                <span class="tool-text">영상지도</span>
+              </button>
+            </div>
+            <button class="tool-btn layer-btn" data-option="optionLayerList">
+              <span class="tool-icon"></span>
+              <span class="tool-text">레이어목록</span>
+            </button>
+            <button class="tool-btn layer-btn2" data-option="optionUserLayer">
+              <span class="tool-icon"></span>
+              <span class="tool-text">사용자레이어</span>
+            </button>
+            <div class="measure-btn-group">
+              <button class="tool-btn measure-btn" id="measureToggleBtn">
+                <span class="tool-icon"></span>
+                <span class="tool-text">측정</span>
+              </button>
+              <div class="measure-tools" id="measureTools" style="display: none;">
+                <button class="tool-btn measure-tool-btn" data-tool="line">
+                  <span class="tool-icon"></span>
+                  <span class="tool-text">선측정</span>
+                </button>
+                <button class="tool-btn measure-tool-btn" data-tool="area">
+                  <span class="tool-icon"></span>
+                  <span class="tool-text">면측정</span>
+                </button>
+                <button class="tool-btn measure-tool-btn" data-tool="reset">
+                  <span class="tool-icon"></span>
+                  <span class="tool-text">초기화</span>
+                </button>
+              </div>
+            </div>
+            <button class="tool-btn legend-btn" data-option="legendPanel">
+              <span class="tool-icon"></span>
+              <span class="tool-text">범례</span>
+            </button>
+          </div>
+          <div class="zoom-control">
+            <button class="zoom-btn zoom-in" title="확대">
+              <i class="icon"></i>
+            </button>
+            <div class="zoom-range">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="131" viewBox="0 0 16 131" fill="none">
+                <path
+                  d="M2.5 81H13.5M2.5 41H13.5M2.5 121H13.5M2.5 11H13.5M2.5 91H13.5M2.5 51H13.5M2.5 21H13.5M2.5 101H13.5M2.5 61H13.5M2.5 31H13.5M2.5 111H13.5M2.5 71H13.5"
+                  stroke="#E4E4E4" />
+                <line x1="8" y1="1" x2="7.99999" y2="131" stroke="#C6C6C6" />
+                <line x1="0.5" y1="0.5" x2="15.5" y2="0.5" stroke="#C6C6C6" />
+                <line x1="0.5" y1="130.5" x2="15.5" y2="130.5" stroke="#C6C6C6" />
+              </svg>
+              <div class="zoom-range-value"></div>
+            </div>
+            <button class="zoom-btn zoom-out" title="축소">
+              <i class="icon"></i>
+            </button>
+            <span class="zoom-level-value">LV7</span>
+          </div>
+        </div>      <!-- // control-panel -->
+
+      <div class="coordinate-info">
+          <div class="coordinate-item">
+            <span class="coordinate-label">위도 :</span>
+            <span class="coordinate-value">125°54`9.13"E</span>
+          </div>
+          <div class="coordinate-item">
+            <span class="coordinate-label">경도 :</span>
+            <span class="coordinate-value">125°54`9.13"E</span>
+          </div>
+        </div>      <!-- // coordinate-info -->
+
+      <div class="map-area">
+        <div id="map"></div>
+      </div>
+      <!-- // map-area -->
+
+      <!-- 레이어 목록 -->
+      <div class="option-panel" id="optionLayerList">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">레이어 목록</h4>
+            <button type="button" class="option-panel-close">
+              <i><span class="visually-hidden">닫기</span></i>
+            </button>
+          </div>
+          <div class="option-panel-content">
+            <div class="layer-list">
+              <div class="layer-item">
+                <div class="layer-btn-ui">
+                  <i class="icon icon-legend-1"></i>
+                  <span class="layer-name">지형/지명</span>
+                  <span class="line"></span>
+                  <div class="switch-btn">
+                    <label class="switch-toggle">
+                      <input type="checkbox">
+                      <i></i>
+                    </label>
+                  </div>
+                </div>
+                <button class="layer-btn-del" title="삭제">
+                  <span class="visually-hidden">삭제</span>
+                </button>
+              </div>
+              <div class="layer-item">
+                <div class="layer-btn-ui">
+                  <i class="icon icon-legend-1"></i>
+                  <span class="layer-name">지형/지명</span>
+                  <span class="line"></span>
+                  <div class="switch-btn">
+                    <label class="switch-toggle">
+                      <input type="checkbox">
+                      <i></i>
+                    </label>
+                  </div>
+                </div>
+                <button class="layer-btn-del" title="삭제">
+                  <span class="visually-hidden">삭제</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // optionLayerList -->`
+      
+      <!-- 사용자 레이어 -->
+      <div class="option-panel" id="optionUserLayer">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">사용자 레이어</h4>
+            <button type="button" class="option-panel-close">
+              <i><span class="visually-hidden">닫기</span></i>
+            </button>
+          </div>
+          <div class="option-panel-content">
+            <div class="option-content-hgroup">
+              <strong class="hgroup-title">레이어 생성 방법</strong>
+            </div>
+            <div class="layer-create-method">
+              <button type="button" class="layer-create-btn layer-method-upload active">
+                <i></i>
+                <span class="text">레이어 업로드</span>
+              </button>
+              <button type="button" class="layer-create-btn layer-method-create">
+                <i></i>
+                <span class="text">레이어 생성</span>
+              </button>
+              <button type="button" class="layer-create-btn layer-method-label">
+                <i></i>
+                <span class="text">라벨 생성</span>
+              </button>
+            </div>
+      
+            <div class="option-divider"></div>
+            <div class="option-content-hgroup">
+              <strong class="hgroup-title">사용자 레이어 목록</strong>
+              <div class="hgroup-utils">
+                <button class="btn-utility"><i class="icon-location-edit"></i>위치편집</button>
+                <button class="btn-utility"><i class="icon-download"></i>다운로드</button>
+              </div>
+            </div>
+      
+            <div class="uesr-layer-list">
+              <div class="nolayer">
+                <i></i>
+                <p>생성된 레이어가 없습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // optionUserLayer -->
+      
+      <!-- 레이어 업로드 -->
+      <div class="option-panel" id="optionUploadLayer">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">
+              <button type="button" class="option-panel-back">
+                <i><span class="visually-hidden">뒤로가기</span></i>
+              </button>
+              레이어 업로드
+            </h4>
+          </div>
+          <div class="option-panel-content">
+            <div class="flow-content">
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">01</span><strong>파일 형식 선택</strong></div>
+                <div class="form-label-group display-grid-column-3 mb-8">
+                  <div class="form-check"><label><input type="radio"><span>SHP</span></label></div>
+                  <div class="form-check"><label><input type="radio"><span>GPKG</span></label></div>
+                  <div class="form-check"><label><input type="radio"><span>TXT</span></label></div>
+                </div>
+      
+                <div class="mb-8">
+                  <select name="" id="" class="form-select">
+                    <option value="">EPSG:4326</option>
+                  </select>
+                </div>
+                <div class="mb-8">
+                  <select name="" id="" class="form-select">
+                    <option value="">다중점</option>
+                  </select>
+                </div>
+      
+                <div class="text-alert">
+                  <ul class="list-check">
+                    <li><span class="text">.csv파일 형식만 가능합니다.(최대1개)</span></li>
+                    <li><span class="text">최대 파일용량 50MB</span></li>
+                    <li><span class="text">좌표계는 EPSG:5179,EPSG:4326,
+                        EPSG:3857,EPSG:5186만 지원합니다.
+                        본인확인 필요</span></li>
+                  </ul>
+                </div>
+      
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">02</span><strong>파일 업로드</strong></div>
+                <div class="file-upload">
+                  <input type="file" id="fileUpload" class="file-upload-input">
+                  <p class="upload-text">이곳에 파일을 드래그하세요</p>
+                  <label for="fileUpload" class="upload-btn">
+                    파일선택
+                  </label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="fab-fix">
+              <button type="button" class="btn btn-outline">이전</button>
+              <button type="button" class="btn btn-primary">레이어 등록</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // optionUploadLayer -->
+      
+      <!-- 레이어 생성 -->
+      <div class="option-panel" id="optionCreateLayer">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">
+              <button type="button" class="option-panel-back">
+                <i><span class="visually-hidden">뒤로가기</span></i>
+              </button>
+              레이어 생성
+            </h4>
+      
+          </div>
+          <div class="option-panel-content">
+            <div class="flow-content">
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">01</span><strong>레이어 유형 선택</strong></div>
+                <div class="mb-8">
+                  <select name="" id="" class="form-select">
+                    <option value="">점</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">02</span><strong>레이어 스타일 선택</strong>
+                  <div class="flow-item-utils">
+                    <button class="btn-utility">
+                      <i class="icon-random"></i>
+                      랜덤색상 지정
+                    </button>
+                    <button class="btn-utility p-none" title="추가">
+                      <i class="icon-add"></i>
+                      <span class="visually-hidden">추가</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">03</span><strong>위치 선택</strong>
+                  <div class="flow-item-utils">
+                    <button class="btn-utility">
+                      <i class="icon-transform"></i>
+                      10진수(DD)
+                    </button>
+                    <button class="btn-utility p-none" title="추가">
+                      <i class="icon-add"></i>
+                      <span class="visually-hidden">추가</span>
+                    </button>
+                  </div>
+                </div>
+      
+                <div class="input-column" id="layer-location-input">
+                  <div class="input-group">
+                    <input type="text" class="form-input" placeholder="33-44-55.8N,106-09-50.8E">
+                    <button class="btn-utility p-none" title="삭제">
+                      <i class="icon-minus"></i>
+                    </button>
+                  </div>
+                </div>
+      
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">04</span><strong>속성정보 입력</strong>
+                  <div class="flow-item-utils">
+                    <button class="btn-utility p-none" title="추가">
+                      <i class="icon-add"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="input-column" id="layer-property-input">
+                  <div class="input-group"><input type="text" class="form-input" placeholder="속성정보를 입력하세요">
+                    <button class="btn-utility p-none" title="삭제">
+                      <i class="icon-minus"></i>
+                    </button>
+                  </div>
+                  <div class="input-group"><input type="text" class="form-input" placeholder="속성정보를 입력하세요">
+                    <button class="btn-utility p-none" title="삭제">
+                      <i class="icon-minus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">04</span><strong>레이어 명칭</strong></div>
+                <div><input type="text" class="form-input" placeholder="레이어 명칭을 입력하세요"></div>
+              </div>
+            </div>
+      
+            <div class="fab-fix">
+              <button type="button" class="btn btn-outline">이전</button>
+              <button type="button" class="btn btn-primary">레이어 등록</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // optionCreateLayer -->
+      
+      <!-- 라벨 생성 -->
+      <div class="option-panel" id="labelCreateLayer">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">
+              <button type="button" class="option-panel-back">
+                <i><span class="visually-hidden">뒤로가기</span></i>
+              </button>
+              라벨 생성
+            </h4>
+          </div>
+          <div class="option-panel-content">
+            <div class="flow-content">
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">01</span><strong>위치 선택</strong></div>
+      
+                <div class="area-select-card">
+                  <div class="area-select-info">
+                    <i class="info-icon"></i>
+                    <span class="info-text">영역 직접 선택하기</span>
+                  </div>
+                  <button type="button" class="area-select-btn">지도에서 영역 선택</button>
+                </div>
+                
+              </div>
+              <div class="flow-item">
+                <div class="flow-item-title"><span class="number">02</span><strong>라벨 명칭 입력</strong></div>
+                <div><input type="text" class="form-input" placeholder="라벨 명칭을 입력하세요"></div>
+              </div>
+            </div>
+      
+            <div class="fab-fix">
+              <button type="button" class="btn btn-outline">이전</button>
+              <button type="button" class="btn btn-primary">레이어 등록</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // optionCreateLayer -->
+      
+      
+      
+      <!-- 지도 범례 -->
+      <div class="option-panel" id="legendPanel">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">지도 범례</h4>
+            <button type="button" class="option-panel-zoom in p-none">
+              <i aria-hidden="true"></i>
+            </button>
+            <button type="button" class="option-panel-close">
+              <i><span class="visually-hidden">닫기</span></i>
+            </button>
+          </div>
+      
+          <div class="option-panel-content">
+            <div class="zoomed-out-legend"><img src="./assets/images/legend.png" alt=""></div>
+            <div class="zoomed-in-legend"><img src="./assets/images/legend-big.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <!-- // legendPanel -->
+      
+      <!-- 지도 범례 -->
+      <div class="wd-modal legend-extend">
+        <div class="wd-modal-wrapper">
+          <div class="wd-modal-header">
+            <h4 class="wd-modal-title">지도 범례</h4>
+            <button type="button" class="wd-modal-close">
+              <i><span class="visually-hidden">닫기</span></i>
+            </button>
+          </div>
+          <div class="wd-modal-content">
+            <div class="legend-gradient-bars">
+              <div class="gradient-item">
+                <div class="gradient-label">사고/위험</div>
+                <div class="gradient-bar danger-gradient">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="gradient-max">MAX:244</div>
+              </div>
+              <div class="gradient-item">
+                <div class="gradient-label">예방시설</div>
+                <div class="gradient-bar safety-gradient">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="gradient-max">MAX:3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // legend-extend --> 
+      <!-- 라벨 생성 툴 -->
+      <div class="label-create-element" style="left:30%;top:20%;">
+        <div>
+          <div class="label-create-pointer"></div>
+          <div class="label-create-text">라벨 생성을 원하는 위치를 선택 하세요.</div>
+        </div>
+      </div>
+
+      <!-- 거리재기 -->
+      <div class="distance-measure-element" style="left:40%;top:20%;">
+        <div>
+          <button class="distance-measure-close" title="닫힘">
+            <span class="visually-hidden">닫힘</span>
+          </button>
+          <div class="distance-measure-text"><b class="distance-measure-value">38.44</b> km</div>
+        </div>
+      </div>
+
+      <!-- 지도 클릭 정보 팝업 -->
+      <div class="map-info-popup" style="left:40%;top:30%;display: block">
+        <div>
+          <div class="map-info-pointer"></div>
+          <div class="map-info-content">
+            <div class="map-info-item">
+              <span class="map-info-label">해양지명</span>
+              <span class="map-info-line"></span>
+              <span class="map-info-value">217</span>
+            </div>
+            <div class="map-info-item">
+              <span class="map-info-label">도서지명</span>
+              <span class="map-info-line"></span>
+              <span class="map-info-value">120</span>
+            </div>
+            <div class="map-info-item">
+              <span class="map-info-label">어장</span>
+              <span class="map-info-line"></span>
+              <span class="map-info-value">60</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // map-info-popup -->
+
+      <!-- 테스트용 모달 버튼 -->
+      <!-- <button class="test-modal-btn" data-modal="example-modal">
+        모달 테스트
+      </button> -->
+
+      <div class="map-modal" id="alert-modal" style="left:420px;top: 180px;">
+        <div class="modal-container">
+          <header class="modal-header">
+            <h2 class="modal-title">해수욕장 안전지수</h2>
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content">
+            <p>해수욕장 이용객의 안전도를
+              지수로 표현한 것입니다.
+              지형적 위험성과 사고 발생 요인을 반영하여 산출된 값이며, 0~99점 사이에서 숫자가 클수록 위험함을 나타냅니다.</p>
+          </div>
+          <div class="map-modal-footer">
+            <div>
+              <button class="btn btn-outline">이전</button>
+            </div>
+            <div>
+              <button class="btn btn-secondary">수정</button>
+              <button class="btn btn-primary">등록</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./assets/js/portal.js"></script>
+</body>
+</html>

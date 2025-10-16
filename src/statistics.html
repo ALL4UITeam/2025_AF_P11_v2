@@ -1,11 +1,33 @@
- <!-- @pageTitle 통계 -->
+<!-- @pageTitle 통계 -->
 <!-- @pageCreated 2025.10.14 -->
 <!-- @pageUpdated 2025.10.14 -->
 <!-- @pageNote 내용 미확정 -->
-<!-- @layout layouts/sub.html -->
-<section data-layout="sublayout" data-page="cookbook">
-  
-  <h1 class="page-title">통계</h1>
-  
-</section>
+<!doctype html>
+<html lang="ko">
 
+<head>
+  {{> Head }}
+</head>
+
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+
+  {{> Header }}
+  <main id="app" class="l-sub">
+    {{> Breadcrumb items=breadcrumb subBanner="statistics-banner"}}
+    <div id="contents">
+      <div class="container">
+        <h1 class="page-title">통계</h1>
+      </div>
+    </div>
+  </main>
+
+  {{> Footer }}
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/page/portal.js"></script>
+</body>
+
+</html>

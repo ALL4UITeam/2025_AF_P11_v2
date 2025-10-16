@@ -3,24 +3,26 @@
     padding-bottom: 120px;
   }
 }
-body {
-  &:has([data-page="object"]) {
-    .sub-banner {
-      background-image: url("@/assets/images/portal/vi05.png");
-    }
-  }
-  &:has([data-page="data-download"]) {
-    .sub-banner {
-      background-image: url("@/assets/images/portal/vi03.png");
-    }
-  }
-}
 .sub-banner {
   height: 200px;
-  background: url("@/assets/images/portal/vi01.png") no-repeat center center /
-    cover;
+  background: url("@/assets/images/portal/vi01.png") no-repeat center center /cover;
   overflow: hidden;
   position: relative;
+  &.object {
+    background-image: url("@/assets/images/portal/vi05.png");
+  }
+  &.data-download {
+    background-image: url("@/assets/images/portal/vi03.png");
+  }
+  &.cookbook {
+    background-image: url("@/assets/images/portal/vi02.png");
+  }
+  &.cookbook{
+    background-image: url("@/assets/images/portal/vi04.png");
+  }
+  &.notice{
+    background-image: url("@/assets/images/portal/vi01.png");
+  }
   .container {
     position: relative;
     z-index: 1;

@@ -1,0 +1,303 @@
+<!-- @pageTitle 쿡북 상세 -->
+<!-- @pageCreated 2025.10.15 -->
+<!-- @pageUpdated 2025.10.15 -->
+<!-- @pageNote 상세 테이블 반응형 -->
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K-Ocean</title>
+  <link rel="stylesheet" href="./resources/css/component/output.css">
+  <link rel="stylesheet" href="./resources/css/common/common.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./resources/js/component/ui-script.js"></script>
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
+  <script src="./assets/js/portal.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+
+  <!-- masthead -->
+  <div id="krds-masthead">
+    <div class="toggle-wrap">
+      <div class="toggle-head">
+        <div class="inner">
+          <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //masthead -->
+  
+  <header id="header" class="header">
+    <div class="header-container">
+      <div class="header-l">
+        <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
+      </div>
+      <div class="header-r">
+        <nav id="nav">
+          <ul class="gnb-list" id="gnb">
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <div class="gnb-dropmenu gnb-dropmenu-1">
+                <div class="gnb-dropmenu-info">
+                  <h3>해양지도 서비스</h3>
+                  <p>해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">해양정보</div>
+                      <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">플랫폼 소개</a>
+              <div class="gnb-dropmenu gnb-dropmenu-2">
+                <div class="gnb-dropmenu-info">
+                  <h3>플랫폼 소개</h3>
+                  <p>K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">K-OCEAN 플랫폼 소개</div>
+                      <div class="desc">K-OCEAN 플랫폼의 목적과 유용한 활용 정보를 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">K-OCEAN 로드맵</div>
+                      <div class="desc">K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">서비스 활용</a>
+              <div class="gnb-dropmenu gnb-dropmenu-3">
+                <div class="gnb-dropmenu-info">
+                  <h3>서비스 활용</h3>
+                  <p>해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">데이터 다운로드</div>
+                      <div class="desc">해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">Open-API</div>
+                      <div class="desc">기본 지도, 영상 지도 등 해양 데이터 기반의 지도를 활용할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">통계서비스</div>
+                      <div class="desc">사용자들이 주용 이용하는 레이어에 대한 통계 자료와 상세 정보를 제공합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">Cook-Book</div>
+                      <div class="desc">K-OCEAN 플랫폼의 다양한 기능들을 소개하고, 활용할 수 있는 방안을 제시합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">공간정보 법령 및 규정</div>
+                      <div class="desc">전자해도 기반의 공간정보에 대한 법령 및 규정을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">커뮤니티</a>
+              <div class="gnb-dropmenu gnb-dropmenu-4">
+                <div class="gnb-dropmenu-info">
+                  <h3>커뮤니티</h3>
+                  <p>K-Ocena 플랫폼을 쉽고 편리하게 이용할 수 있도록 다양한 정보를 제공합니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">공지사항</div>
+                      <div class="desc">주요행사, 업데이트 정보 등 공지사항을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">자주하는 질문</div>
+                      <div class="desc">자주 묻는 질문에 대한 질의/답변을 한곳에서 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" class="btn-allmenu" id="btnAllMenu">전체메뉴</button>
+      </div>
+    </div>
+  </header>
+  
+  
+  <nav id="mobile-nav">
+    <ul class="gnb">
+      <li class="gnb-lv1">
+        <a href="#">해양지도 서비스</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">해양정보</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">플랫폼 소개</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
+          </ul>
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">서비스 활용</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">커뮤니티</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">공지사항</a></li>
+          </ul>
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">자주하는 질문</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>  <main id="app" class="l-sub">
+    <div class="sub-banner cookbook">
+      <div class="container">
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <div>
+            <ol class="breadcrumb">
+              <li class="home"><a href="#" class="txt">홈</a></li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div id="contents">
+      <div class="container">
+        <h1 class="page-title">Cook-Book</h1>
+
+        <div class="read-container">
+          <section class="read-gallery-section">
+            <div class="read-gallery-header">
+              <div class="read-header-tags"><span class="cookbook-tags">수록 데이터</span></div>
+              <h2>2016 해양공간정보 이미지</h2>
+            </div>
+            <div class="read-gallery-body">
+              <div class="read-gallery-summary">
+                <p class="summary-text">제1회 해양정보 생활디자인 공모전을 통해 출품된 해양정보 관련 생활디자인을 활용할 수 있도록 제공합니다.</p>
+                <div class="summary-box">
+                  <p class="summary-box-text">해양정보 생활디자인 공모전 관련 자료</p>
+                  <p class="summary-box-text">해양정보 생활디자인 공모전 응모작, 수상작, 고해도 이미지</p>
+                </div>
+                <div class="summary-image"><img
+                    src="http://www.khoa.go.kr/oceanmap/common/preViewerCBImg.do?filePath=cookbook/10a64a99-cc04-401b-a9e6-03cada8b6fbf_cookbook.png"
+                    alt=""></div>
+              </div>
+            </div>
+          </section>
+          <!-- //read-section -->
+          <div class="section-actions">
+            <div class="l">
+              <a href="#" class="krds-btn tertiary">목록으로 가기</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- //read-container -->
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="krds-footer">
+    <div class="foot-quick">
+      <div class="inner">
+        <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
+        <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="f-logo">
+        <span class="sr-only">국립해양조사원</span>
+      </div>
+      <div class="f-cnt">
+        <div class="f-info">
+          <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
+          <ul class="info-cs">
+            <li>
+              <span><strong class="strong">대표전화</strong>051-400-4400</span>
+              <span><strong class="strong">팩스번호</strong>051-400-4191</span>
+              <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="f-btm">
+        <div class="f-btm-text">
+          <div class="f-menu">
+            <a href="#" class="point">개인정보처리방침</a>
+            <a href="#">저작권 정책</a>
+          </div>
+          <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- //footer -->
+  
+
+  <script>
+    portal.initMobileTable();
+  </script>
+</body>
+
+</html>
