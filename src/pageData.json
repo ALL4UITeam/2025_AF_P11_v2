@@ -1,0 +1,88 @@
+{
+    "index.html": {
+      "title": "홈",
+      "banner": { "title": "", "subtitle": "" },
+      "breadcrumb": []
+    },
+    "about.html": {
+      "title": "K-OCEAN 플랫폼 소개",
+      "banner": { "title": "회사 소개 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "플랫폼 소개" },
+        { "label": "K-OCEAN 플랫폼 소개" }
+      ]
+    },
+    "loadmap.html": {
+      "title": "K-OCEAN 로드맵",
+      "banner": { "title": "회사 소개 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "플랫폼 소개" },
+        { "label": "K-OCEAN 로드맵" }
+      ]
+    },
+    "laws.html": {
+      "title": "공간정보 법령 및 규정",
+      "banner": { "title": "회사 소개 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "플랫폼 소개" },
+        { "label": "공간정보 법령 및 규정" }
+      ]
+    },
+    "data.html": {
+      "title": "데이터 다운로드",
+      "banner": { "title": "데이터 다운로드 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "서비스 활용" },
+        { "label": "데이터 다운로드" }
+      ]
+    },
+    "use.html": {
+      "title": "서비스 활용",
+      "banner": { "title": "서비스 활용 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "서비스 활용" },
+        { "label": "서비스 활용" }
+      ]
+    },
+    "report.html": {
+      "title": "통계 보고서",
+      "banner": { "title": "통계 보고서 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "서비스 활용" },
+        { "label": "통계 보고서" }
+      ]
+    },
+    "open-api.html": {
+      "title": "Open-API",
+      "banner": { "title": "Open-API 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "서비스 활용" },
+        { "label": "Open-API" }
+      ]
+    },  
+    "guide.html": {
+      "title": "이용 안내",
+      "banner": { "title": "이용 안내 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "서비스 활용" },
+        { "label": "이용 안내내" }
+      ]
+    },
+    "notice.html": {
+      "title": "공지사항",
+      "banner": { "title": "공지사항 배너", "subtitle": "공지사항입니다." },
+      "breadcrumb": [
+        { "href": "/", "label": "커뮤니티" },
+        { "label": "공지사항" }
+      ]
+    },
+    "faq.html": {
+      "title": "FAQ",
+      "banner": { "title": "FAQ 배너", "subtitle": "우리는..." },
+      "breadcrumb": [
+        { "href": "/", "label": "커뮤니티" },
+        { "label": "FAQ" }
+      ]
+    }
+  }
+  

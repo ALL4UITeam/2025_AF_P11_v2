@@ -1,0 +1,70 @@
+<!-- @pageTitle faq -->
+<!-- @pageCreated 2025.10.11 -->
+<!-- @pageUpdated 2025.10.11 -->
+<!-- @pageNote 비고 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="notice">
+    <div class="container">
+        <h1 class="page-title">FAQ</h1>
+        <div class="faq-section">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span class="faq-text">마음대로 들어가도 되나요?</span>
+                        <i class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <div class="faq-answer-text">
+                                무인도는 사유지이거나 국가 소유지일 수 있어서 마음대로 들어갈 수 없습니다. 반드시 소유자나 관리기관의 허가를 받아야 하며, 일부 무인도는 출입이 제한되어 있습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span class="faq-text">우리나라에는 지도가 몇 개 있나요?</span>
+                        <i class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <div class="faq-answer-text">
+                                반드시 성공합니다
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // FAQ 아코디언 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = this.querySelector('.faq-icon');
+            
+                const activeItems = document.querySelectorAll('.faq-item.active');
+                activeItems.forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-question').classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                faqItem.classList.toggle('active');
+                this.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+    });
+</script>

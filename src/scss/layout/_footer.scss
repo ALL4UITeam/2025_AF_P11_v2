@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+
+#krds-footer .f-logo{
+    width: 200px;
+    height: 48px;
+    font-size: 0;
+    background-image: url('@/assets/images/common/high-lv-logo.png');
+}
+
+#krds-footer .f-cnt .f-info .info-cs li{
+    display: flex;
+    gap:0 12px;
+    strong{
+        padding-right: 8px;
+    }
+}
+
+#krds-footer .f-btm .f-btm-text .f-menu{
+    gap:0 12px;
+}
+.f-menu{
+    .point{
+        color: #052B57;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #krds-footer .f-btm .f-btm-text .f-copy{
+        font-size: 12px;
+    }    
+}

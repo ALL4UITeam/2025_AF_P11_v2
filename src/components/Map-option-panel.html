@@ -1,0 +1,350 @@
+<!-- 레이어 목록 -->
+<div class="option-panel" id="optionLayerList">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">레이어 목록</h4>
+      <button type="button" class="option-panel-close">
+        <i><span class="visually-hidden">닫기</span></i>
+      </button>
+    </div>
+    <div class="option-panel-content">
+      <div class="layer-list">
+        <div class="layer-item">
+          <div class="layer-btn-ui">
+            <i class="icon icon-legend-1"></i>
+            <span class="layer-name">지형/지명</span>
+            <span class="line"></span>
+            <div class="switch-btn">
+              <label class="switch-toggle">
+                <input type="checkbox">
+                <i></i>
+              </label>
+            </div>
+          </div>
+          <button class="layer-btn-del" title="삭제">
+            <span class="visually-hidden">삭제</span>
+          </button>
+        </div>
+        <div class="layer-item">
+          <div class="layer-btn-ui">
+            <i class="icon icon-legend-1"></i>
+            <span class="layer-name">지형/지명</span>
+            <span class="line"></span>
+            <div class="switch-btn">
+              <label class="switch-toggle">
+                <input type="checkbox">
+                <i></i>
+              </label>
+            </div>
+          </div>
+          <button class="layer-btn-del" title="삭제">
+            <span class="visually-hidden">삭제</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // optionLayerList -->`
+
+<!-- 사용자 레이어 -->
+<div class="option-panel" id="optionUserLayer">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">사용자 레이어</h4>
+      <button type="button" class="option-panel-close">
+        <i><span class="visually-hidden">닫기</span></i>
+      </button>
+    </div>
+    <div class="option-panel-content">
+      <div class="option-content-hgroup">
+        <strong class="hgroup-title">레이어 생성 방법</strong>
+      </div>
+      <div class="layer-create-method">
+        <button type="button" class="layer-create-btn layer-method-upload active">
+          <i></i>
+          <span class="text">레이어 업로드</span>
+        </button>
+        <button type="button" class="layer-create-btn layer-method-create">
+          <i></i>
+          <span class="text">레이어 생성</span>
+        </button>
+        <button type="button" class="layer-create-btn layer-method-label">
+          <i></i>
+          <span class="text">라벨 생성</span>
+        </button>
+      </div>
+
+      <div class="option-divider"></div>
+      <div class="option-content-hgroup">
+        <strong class="hgroup-title">사용자 레이어 목록</strong>
+        <div class="hgroup-utils">
+          <button class="btn-utility"><i class="icon-location-edit"></i>위치편집</button>
+          <button class="btn-utility"><i class="icon-download"></i>다운로드</button>
+        </div>
+      </div>
+
+      <div class="uesr-layer-list">
+        <div class="nolayer">
+          <i></i>
+          <p>생성된 레이어가 없습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // optionUserLayer -->
+
+<!-- 레이어 업로드 -->
+<div class="option-panel" id="optionUploadLayer">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">
+        <button type="button" class="option-panel-back">
+          <i><span class="visually-hidden">뒤로가기</span></i>
+        </button>
+        레이어 업로드
+      </h4>
+    </div>
+    <div class="option-panel-content">
+      <div class="flow-content">
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">01</span><strong>파일 형식 선택</strong></div>
+          <div class="form-label-group display-grid-column-3 mb-8">
+            <div class="form-check"><label><input type="radio"><span>SHP</span></label></div>
+            <div class="form-check"><label><input type="radio"><span>GPKG</span></label></div>
+            <div class="form-check"><label><input type="radio"><span>TXT</span></label></div>
+          </div>
+
+          <div class="mb-8">
+            <select name="" id="" class="form-select">
+              <option value="">EPSG:4326</option>
+            </select>
+          </div>
+          <div class="mb-8">
+            <select name="" id="" class="form-select">
+              <option value="">다중점</option>
+            </select>
+          </div>
+
+          <div class="text-alert">
+            <ul class="list-check">
+              <li><span class="text">.csv파일 형식만 가능합니다.(최대1개)</span></li>
+              <li><span class="text">최대 파일용량 50MB</span></li>
+              <li><span class="text">좌표계는 EPSG:5179,EPSG:4326,
+                  EPSG:3857,EPSG:5186만 지원합니다.
+                  본인확인 필요</span></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">02</span><strong>파일 업로드</strong></div>
+          <div class="file-upload">
+            <input type="file" id="fileUpload" class="file-upload-input">
+            <p class="upload-text">이곳에 파일을 드래그하세요</p>
+            <label for="fileUpload" class="upload-btn">
+              파일선택
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="fab-fix">
+        <button type="button" class="btn btn-outline">이전</button>
+        <button type="button" class="btn btn-primary">레이어 등록</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // optionUploadLayer -->
+
+<!-- 레이어 생성 -->
+<div class="option-panel" id="optionCreateLayer">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">
+        <button type="button" class="option-panel-back">
+          <i><span class="visually-hidden">뒤로가기</span></i>
+        </button>
+        레이어 생성
+      </h4>
+
+    </div>
+    <div class="option-panel-content">
+      <div class="flow-content">
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">01</span><strong>레이어 유형 선택</strong></div>
+          <div class="mb-8">
+            <select name="" id="" class="form-select">
+              <option value="">점</option>
+            </select>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">02</span><strong>레이어 스타일 선택</strong>
+            <div class="flow-item-utils">
+              <button class="btn-utility">
+                <i class="icon-random"></i>
+                랜덤색상 지정
+              </button>
+              <button class="btn-utility p-none" title="추가">
+                <i class="icon-add"></i>
+                <span class="visually-hidden">추가</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">03</span><strong>위치 선택</strong>
+            <div class="flow-item-utils">
+              <button class="btn-utility">
+                <i class="icon-transform"></i>
+                10진수(DD)
+              </button>
+              <button class="btn-utility p-none" title="추가">
+                <i class="icon-add"></i>
+                <span class="visually-hidden">추가</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="input-column" id="layer-location-input">
+            <div class="input-group">
+              <input type="text" class="form-input" placeholder="33-44-55.8N,106-09-50.8E">
+              <button class="btn-utility p-none" title="삭제">
+                <i class="icon-minus"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">04</span><strong>속성정보 입력</strong>
+            <div class="flow-item-utils">
+              <button class="btn-utility p-none" title="추가">
+                <i class="icon-add"></i>
+              </button>
+            </div>
+          </div>
+          <div class="input-column" id="layer-property-input">
+            <div class="input-group"><input type="text" class="form-input" placeholder="속성정보를 입력하세요">
+              <button class="btn-utility p-none" title="삭제">
+                <i class="icon-minus"></i>
+              </button>
+            </div>
+            <div class="input-group"><input type="text" class="form-input" placeholder="속성정보를 입력하세요">
+              <button class="btn-utility p-none" title="삭제">
+                <i class="icon-minus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">04</span><strong>레이어 명칭</strong></div>
+          <div><input type="text" class="form-input" placeholder="레이어 명칭을 입력하세요"></div>
+        </div>
+      </div>
+
+      <div class="fab-fix">
+        <button type="button" class="btn btn-outline">이전</button>
+        <button type="button" class="btn btn-primary">레이어 등록</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // optionCreateLayer -->
+
+<!-- 라벨 생성 -->
+<div class="option-panel" id="labelCreateLayer">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">
+        <button type="button" class="option-panel-back">
+          <i><span class="visually-hidden">뒤로가기</span></i>
+        </button>
+        라벨 생성
+      </h4>
+    </div>
+    <div class="option-panel-content">
+      <div class="flow-content">
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">01</span><strong>위치 선택</strong></div>
+
+          <div class="area-select-card">
+            <div class="area-select-info">
+              <i class="info-icon"></i>
+              <span class="info-text">영역 직접 선택하기</span>
+            </div>
+            <button type="button" class="area-select-btn">지도에서 영역 선택</button>
+          </div>
+          
+        </div>
+        <div class="flow-item">
+          <div class="flow-item-title"><span class="number">02</span><strong>라벨 명칭 입력</strong></div>
+          <div><input type="text" class="form-input" placeholder="라벨 명칭을 입력하세요"></div>
+        </div>
+      </div>
+
+      <div class="fab-fix">
+        <button type="button" class="btn btn-outline">이전</button>
+        <button type="button" class="btn btn-primary">레이어 등록</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // optionCreateLayer -->
+
+
+
+<!-- 지도 범례 -->
+<div class="option-panel" id="legendPanel">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">지도 범례</h4>
+      <button type="button" class="option-panel-zoom in p-none">
+        <i aria-hidden="true"></i>
+      </button>
+      <button type="button" class="option-panel-close">
+        <i><span class="visually-hidden">닫기</span></i>
+      </button>
+    </div>
+
+    <div class="option-panel-content">
+      <div class="zoomed-out-legend"><img src="assets/images/map/legend.png" alt=""></div>
+      <div class="zoomed-in-legend"><img src="assets/images/map/legend-big.png" alt=""></div>
+    </div>
+  </div>
+</div>
+<!-- // legendPanel -->
+
+<!-- 지도 범례 -->
+<div class="wd-modal legend-extend">
+  <div class="wd-modal-wrapper">
+    <div class="wd-modal-header">
+      <h4 class="wd-modal-title">지도 범례</h4>
+      <button type="button" class="wd-modal-close">
+        <i><span class="visually-hidden">닫기</span></i>
+      </button>
+    </div>
+    <div class="wd-modal-content">
+      <div class="legend-gradient-bars">
+        <div class="gradient-item">
+          <div class="gradient-label">사고/위험</div>
+          <div class="gradient-bar danger-gradient">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="gradient-max">MAX:244</div>
+        </div>
+        <div class="gradient-item">
+          <div class="gradient-label">예방시설</div>
+          <div class="gradient-bar safety-gradient">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="gradient-max">MAX:3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // legend-extend -->

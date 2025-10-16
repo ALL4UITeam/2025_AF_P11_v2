@@ -1,0 +1,136 @@
+<!-- @pageTitle 객체사전 > 마스터 > 수정 -->
+<!-- @pageCreated 2025.10.16 -->
+<!-- @pageUpdated 2025.10.16 -->
+<!-- @pageNote 추가/삭제 기능 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+  <h1 class="page-title">객체사전</h1>
+
+  <div class="read-container">
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>속성성 상세정보</h2>
+      </div>
+      <div class="read-section-body">
+        <div class="table__list-not-mobile2">
+          <table class="not-mobile">
+            <caption>속성 상세정보</caption>
+            <colgroup>
+              <col style="width: 20rem;">
+              <col style="width: auto;">
+              <col style="width: 20rem;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>유형</th>
+                <td colspan="3">
+                  <select name="type" id="type" title="유형 선택" class="krds-form-select medium">
+                    <option value="">전체</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>속성명(한글)</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="속성명(한글) 입력">
+                </td>
+                <th>속성명(영문)</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="속성명(영문) 입력">
+                </td>
+              </tr>
+              <tr>
+                <th>약어</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="약어 입력">
+                </td>
+                <th>코드</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="코드 입력">
+                </td>
+              </tr>
+              <tr>
+                <th>한글정의</th>
+                <td colspan="3">
+                  <input type="text" class="krds-input medium" title="한글정의 입력">
+                </td>
+              </tr>
+              <tr>
+                <th>영문정의</th>
+                <td colspan="3">
+                  <input type="text" class="krds-input medium" title="영문정의 입력">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- //read-section -->
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>속성 값 정보</h2>
+        <button type="button" class="krds-btn small secondary open-modal" data-target="object-property-modal">수정</button>
+      </div>
+      <div class="read-section-body">
+        <div class="table__list-not-mobile">
+          <table>
+            <caption>속성 목록</caption>
+            <colgroup>
+              <col style="width: 8rem;">
+              <col style="width: 12rem;">
+              <col style="width: 12rem;">
+              <col style="width: auto;">
+              <col style="width: auto;">
+              <col style="width: 5rem;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>코드</th>
+                <th>속성명(한글)</th>
+                <th>속성명(영문)</th>
+                <th>한글정의</th>
+                <th>영문정의</th>
+                <th><button type="button" class="btn-icon" title="추가"><i class="svg-icon ico-plus"></i></button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>급류</td>
+                <td>overfalls</td>
+                <td class="text-left">부서지는 작은 파도로 강한 조류가 어울리나 다른 해저</td>
+                <td class="text-left">Short, breaking waves occurring when a strong current passes …</td>
+                <td>
+                  <button type="button" class="btn-icon" title="삭제">
+                    <i class="minus">-</i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>격조</td>
+                <td>tide rips</td>
+                <td class="text-left">연에 생기는 작은 파도로 반대되는 조류가 만났을 때, 혹은…</td>
+                <td class="text-left">Small waves formed on the surface of water by the meeting …</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <div class="section-actions side">
+      <div class="l">
+        <a href="#" class="krds-btn tertiary">삭제 하기</a>
+      </div>
+      <div class="r">
+        <a href="#" class="krds-btn secondary">취소 하기</a>
+        <a href="#" class="krds-btn primary">저장 하기</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- //read-container -->
+</section>

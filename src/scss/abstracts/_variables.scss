@@ -1,0 +1,36 @@
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+$lg-desktop: 1240px;
+
+$aside-width: 8rem;
+$layer-panel-width: 37rem;
+$detail-panel-width: 30rem;
+$right-gap: 1.2rem;
+$zIndex-1: 1;
+$zIndex-2: 2;
+$zIndex-3: 3;
+$mobile-bottom-gap: 6rem;
+$mobile-header-h: 5rem;
+$z-index-modal: 1000;
+
+// 태그 색상 변수
+$tag-colors: (
+  'txt': (#EBF5FF, #256EF4),
+  'xls': (#EEF7EE, #008000),
+  'csv': (#F7FFEA, #476912),
+  'xml': (#F8F8ED, #7A7A00),
+  'json': (#F4EFFA, #471293),
+  'pdf': (#FEF1F1, #CD0404),
+  'ppt': (#FFF4F0, #FF4500),
+  'jpg': (#FDF2FD, #B214B2),
+  'shp': (#F0FBFF, #1F9AC6),
+  'img': (#FFF5FC, #D05AA8),
+  'mp4': (#FFF0F8, #CC1076),
+  'data': (#F5EEF7, #560066),
+  'dxf': (#FFF1F0, #D75F51),
+  'tfw': (#F1F1F9, #232EA3),
+  'tif': (#F0F3FF, #163ECA),
+  'xyz': (#E7FDFD, #078C8C),
+  'kml': (#EDF8F8, #0B9B9B)
+);

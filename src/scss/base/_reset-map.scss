@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/resources/fonts/PretendardGOV-Regular.subset.woff2') format('woff2'),
+       url('/resources/fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/resources/fonts/PretendardGOV-Medium.subset.woff2') format('woff2'),
+       url('/resources/fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/resources/fonts/PretendardGOV-Bold.subset.woff2') format('woff2'),
+       url('/resources/fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  font-size: 10px;
+  //scroll-behavior: smooth;
+}
+/* 전체 스크롤바 영역 */
+::-webkit-scrollbar {
+  width: 5px;  /* 세로 스크롤바 너비 */
+  height: 5px; /* 가로 스크롤바 높이 */
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* 스크롤바 핸들 (움직이는 부분) */
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 5px;
+}
+
+/* 마우스 호버 시 스크롤바 핸들 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: 'Pretendard Gov', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.34;
+  color: #1E2124;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+main {
+  display: block;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  color: inherit;
+  background: none;
+  border: none;
+}
+button,
+select { /* 1 */
+  text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button{
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+em{
+  font-style: normal;
+}
+
+[hidden] {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+

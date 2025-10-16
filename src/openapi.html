@@ -1,0 +1,164 @@
+<!-- @pageTitle OPEN API -->
+<!-- @pageCreated 2025.10.15 -->
+<!-- @pageUpdated 2025.10.15 -->
+<!-- @pageNote  -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="openapi">
+
+  <h1 class="page-title">Open-API</h1>
+
+  <div class="openapi-container">
+
+    <div class="tab-nav-container">
+      <button type="button" class="toggle" title="현재 탭 위치">
+        <span class="toggle-text">개발자가이드</span>
+        <i class="svg-icon ico-angle"></i>
+      </button>
+      <nav class="tab-nav" role="tablist">
+        <button type="button" class="tab-nav-item" role="tab" aria-selected="false" aria-controls="guide-container">개발자
+          가이드</button>
+        <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
+          aria-controls="terms-container">이용약관/API키 발급</button>
+        <button type="button" class="tab-nav-item active" role="tab" aria-selected="true"
+          aria-controls="status-container">API키
+          발급현황</button>
+        <button type="button" class="tab-nav-item" role="tab" aria-selected="false"
+          aria-controls="reference-container">OPEN API 레퍼런스</button>
+      </nav>
+    </div>
+
+    <div class="read-container" id="guide-container">
+      {{> openapi-guide }}
+    </div>
+    <!-- // 개발자 가이드 -->
+
+    <div class="read-container" id="terms-container">
+      {{> openapi-terms }}
+    </div>
+    <!-- // 이용약관/API키 발급 -->
+    <div class="read-container" id="status-container">
+      {{> openapi-status }}
+    </div>
+    <!-- // API키 발급현황 -->
+    <div class="read-container" id="reference-container">
+      {{> openapi-reference }}
+    </div>
+    <!-- // OPEN API 레퍼런스 -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 탭 기능
+      const tabs = document.querySelectorAll('.tab-nav-item');
+      const containers = document.querySelectorAll('.read-container');
+
+      // 예제 탭 기능
+      const exampleTabs = document.querySelectorAll('.tab-nav2-item');
+      const examplePanels = document.querySelectorAll('.example-content .example-panel');
+
+      // 메인 탭 초기화
+      function initMainTabs() {
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function () {
+            const target = this.getAttribute('aria-controls');
+            const tabToggle = this.closest('.tab-nav-container').querySelector('.toggle');
+            if (tabToggle) {
+              tabToggle.classList.remove('active');
+              
+              tabToggle.querySelector('.toggle-text').textContent = this.textContent;
+            }
+
+            // 모든 탭에서 active 클래스 제거
+            tabs.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+              t.removeAttribute('title');
+            });
+
+            // 클릭된 탭에 active 클래스 추가
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            this.setAttribute('title', '선택 됨');
+
+
+            // 모든 컨테이너 숨기기
+            containers.forEach(container => {
+              container.style.display = 'none';
+            });
+
+            // 대상 컨테이너 표시
+            const targetContainer = document.querySelector(`#${target}`);
+            if (targetContainer) {
+              targetContainer.style.display = 'flex';
+            }
+          });
+        });
+
+        // 첫 번째 탭 활성화
+        if (tabs.length > 0) {
+          tabs[0].click();
+        }
+      }
+
+      
+
+
+      function initExampleTabs() {
+        exampleTabs.forEach(tab => {
+          tab.addEventListener('click', function () {
+            const target = this.getAttribute('aria-controls');
+
+            // 모든 탭에서 active 제거
+            exampleTabs.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+              t.removeAttribute('title');
+            });
+
+            // 모든 패널에서 active 제거
+            examplePanels.forEach(panel => {
+              panel.classList.remove('active');
+            });
+
+            // 대상 패널 활성화
+            const targetPanel = document.querySelector(`#${target}`);
+            if (targetPanel) {
+              targetPanel.classList.add('active');
+            }
+
+            // 클릭된 탭 활성화
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            this.setAttribute('title', '선택 됨');
+          });
+        });
+
+        // 첫 번째 탭 활성화
+        if (exampleTabs.length > 0) {
+          exampleTabs[0].click();
+        }
+      }
+
+      function initTabToggle() {
+        const tabContainers = document.querySelectorAll('.tab-nav-container ');
+        
+        tabContainers.forEach(container => {
+          const toggle = container.querySelector('.toggle');
+          if (!toggle) return;
+
+          toggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+          });
+        });
+
+        
+      }
+
+      // 초기화 실행
+      initMainTabs();
+      initTabToggle();
+      initExampleTabs();
+      portal.initMobileTable();
+    });
+  </script>
+</section>

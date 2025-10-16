@@ -1,0 +1,88 @@
+<!-- @pageTitle 쿡북 목록 -->
+<!-- @pageCreated 2025.10.15 -->
+<!-- @pageUpdated 2025.10.15 -->
+<!-- @pageNote 항목 갯수 미표시..? -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="cookbook">
+  
+  <h1 class="page-title">Cook-Book</h1>
+  <div class="search-form">
+    <form>
+      <fieldset>
+        <legend class="visually-hidden">검색 조건</legend>
+        <div class="search-row">
+          <select class="krds-form-select" title="검색 조건">
+            <option value="">전체</option>
+            <option value="">제목</option>
+            <option value="">내용</option>
+          </select>
+          <input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+          <button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="cookbook-download">
+    <button type="button" class="krds-btn tertiary"><i class="icon-download" aria-hidden="true"></i>백서</button>
+    <button type="button" class="krds-btn tertiary"><i class="icon-download" aria-hidden="true"></i>백서 부록</button>
+    <button type="button" class="krds-btn tertiary"><i class="icon-download" aria-hidden="true"></i>E-Book</button>
+  </div>
+
+  <div class="search-list-top">
+    <ul class="sch-info" aria-live="polite">
+      <li>검색 결과 <span class="point">24</span>개</li>
+    </ul>
+    <ul class="sch-sort">
+      <li>
+        <strong class="sort-label"><label for="sort">정렬기준</label></strong>
+        <div class="w-sort-btn">
+          <button type="button" class="active">관련도순</button>
+          <button type="button">최신순</button>
+        </div>
+        <div class="m-sort-btn">
+          <select class="krds-form-select-sort" id="sort">
+            <option>관련도순</option>
+            <option>최신순</option>
+            <option>인기순</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="board-list">
+    <ul id="gallery">
+      <li class="gallery-item">
+        <a href="cookbook-read.html" class="gallery-link">
+          <div class="gallery-image">
+            <img src="http://www.khoa.go.kr/oceanmap/common/preViewerCBImg.do?filePath=cookbook/fbe61723-38b6-4450-9586-4577c084f13a_cookbook.png" alt="샘플 이미지 2">
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-tags"><span class="cookbook-tags">수록 데이터</span></div>
+            <h3 class="gallery-title">연안 DEM 데이터셋</h3>
+            <p class="gallery-description">한국 연안 지역의 디지털 고도 모델 데이터</p>
+          </div>
+        </a>
+      </li>
+      
+      <li class="gallery-item">
+          <a href="cookbook-read.html" class="gallery-link">
+          <div class="gallery-image">
+            <img src="http://www.khoa.go.kr/oceanmap/common/preViewerCBImg.do?filePath=cookbook/fbe61723-38b6-4450-9586-4577c084f13a_cookbook.png" alt="샘플 이미지 2">
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-tags"><span class="cookbook-tags">수록 데이터</span></div>
+            <h3 class="gallery-title">Landsat 8 위성영상</h3>
+            <p class="gallery-description">고해상도 위성영상 데이터 제공</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="board-list__footer">
+      {{> Pagination}}
+    </div>
+    <!-- //board-list__footer -->
+  </div>
+</section>
+

@@ -1,0 +1,588 @@
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>소개</h2>
+  </div>
+  <div class="read-section-body">
+    <ul class="disc-list">
+      <li>국립해양조사원 개방海에서는 海아름 해양배경지도와 다양한 해양공간 정보를 제공합니다.</li>
+      <li>발급받은 오픈API 인증키와 함께 개방海 오픈API 서비스 URL로 요청 시 WMS / WFS 서비스를 이용 할 수 있습니다.</li>
+      <li>개방海 오픈API 서비스는 오픈 소스 기반의 OpenLayers( <b class="color-bold">v1</b> : 2.7~2.13, <b class="color-bold">v2</b> :
+        3.x 이상) 사용을 지원합니다.</li>
+    </ul>
+  </div>
+</section>
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>요청URL</h2>
+  </div>
+  <div class="read-section-body">
+    <div class="flex-d-col gap-y-24 mobile:gap-y-16">
+      <div>
+        <h4 class="read-body-subtitle">요청주소</h4>
+        <ul class="disc-list sm">
+          <li>v1) http://www.khoa.go.kr/oceanmap/<b class="color-bold">&lt;베이스맵 타입&gt;</b>/<b
+              class="color-bold">otmsVectormapApi.do</b>?ServiceKey=<b class="color-bold">&lt;인증키&gt;</b> <br></li>
+          <li>v2) http://www.khoa.go.kr/oceanmap/<b class="color-bold">&lt;베이스맵 타입&gt;</b>/<b
+              class="color-bold">otmsVectormapApi.do</b>?ServiceKey=<b class="color-bold">&lt;인증키&gt;</b>&amp;<b
+              class="color-bold">version=2</b></li>
+          <li>v3) https://www.khoa.go.kr/oceanmap/<b class="color-bold">&lt;베이스맵 타입&gt;</b>/<b
+              class="color-bold">otmsSSLVectormapApi.do</b>?ServiceKey=<b class="color-bold">&lt;인증키&gt;</b> (* https
+            요청 시)</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="read-body-subtitle">사용예</h4>
+        <ul class="disc-list sm">
+          <li>&lt;script src="http://www.khoa.go.kr/oceanmap/BASEMAP_ENC57/<b
+              class="color-bold">otmsVectormapApi.do</b>?ServiceKey=<b class="color-bold">&lt;인증키&gt;</b>&amp;<b
+              class="color-bold">version=2</b>"&gt;&lt;/script&gt;<br></li>
+          <li>&lt;script src="https://www.khoa.go.kr/oceanmap/BASEMAP_ENC57/<b
+              class="color-bold">otmsSSLVectormapApi.do</b>?ServiceKey=<b class="color-bold">&lt;인증키&gt;</b>&amp;<b
+              class="color-bold">version=2</b>"&gt;&lt;/script&gt; (* https 요청 시)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="download-summry">
+          <p class="download-summry-text">※실시간 타일방식의 지도 호출방식은 BBOX,XYZ방식으로 나누어져 있으므로 사용에 유의하시길 바랍니다. (상세한내용은 [海아름
+            베이스맵 사용예제] 해아름 사용예제 다운로드참고)</p>
+          <button type="button" title="다운로드" class="download-btn krds-btn tertiary medium">
+            <span class="download-btn-title">海아름 베이스맵 사용예제 [pdf, 52KB]</span>
+            <span class="download-btn-text">다운로드 <i class="svg-icon icon-download"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">베이스맵 타입</h3>
+    <div class="map-info-list">
+      <div class="map-card">
+        <div class="map-image">
+          <img src="http://www.khoa.go.kr/oceanmap/images/gis/basemap_sample/BASEMAP_RLTM.png" alt="기본맵 국문">
+        </div>
+        <div class="map-info">
+          <h5 class="map-title">기본맵 국문</h5>
+          <div class="map-details">
+            <div class="map-id">
+              BASEMAP_RLTM (UTM-K)
+            </div>
+            <div class="map-provider">
+              공공기관 / 민간
+            </div>
+            <div class="map-description">
+              실시간으로 데이터를 렌더링 하여 해양공간 베이스맵의 심볼을 일반 사용자 표현한 베이스맵
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-image">
+          <img src="http://www.khoa.go.kr/oceanmap/images/gis/basemap_sample/BASEMAP_TOPO.png" alt="영상맵">
+        </div>
+        <div class="map-info">
+          <h5 class="map-title">영상맵</h5>
+          <div class="map-details">
+            <div class="map-id">
+              BASEMAP_RLTMTOPO (UTM-K)
+            </div>
+            <div class="map-provider">
+              공공기관 / 민간
+            </div>
+            <div class="map-description">
+              정사영상과 해저지형기복도를 사용하여 표현한 베이스맵
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-section-body">
+    <h3 class="read-body-title">WMS 방식</h3>
+    <div class="flex-d-col gap-y-24 mobile:gap-y-16">
+      <div>
+        <h4 class="read-body-subtitle">요청주소</h4>
+        <ul class="disc-list sm">
+          <li>v1) http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsWmsApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b><br></li>
+          <li>v2) http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsWmsApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b>&amp;<b
+              class="color-bold">version=2</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="read-body-subtitle">좌표계</h4>
+        <ul class="disc-list">
+          <li>좌표계 : UTM-K, EPSG:5179
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="read-body-subtitle">스타일명</h4>
+        <ul class="disc-list">
+          <li>스타일명은 Open-API제공 목록을 참조해 주십시오.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-section-body">
+    <h3 class="read-body-title">WFS 방식</h3>
+    <div class="flex-d-col gap-y-24 mobile:gap-y-16">
+      <div>
+        <h4 class="read-body-subtitle">요청주소</h4>
+        <ul class="disc-list sm">
+          <li>v1,v2 동일) http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsWfsApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b>&amp;FILTER=<b
+              class="color-bold">&lt;필터조건&gt;</b>&amp;minlon=<b class="color-bold">&lt;좌하단최소경도&gt;</b>&amp;minlat=<b
+              class="color-bold">&lt;좌하단최소위도&gt;</b>&amp;maxlon=<b class="color-bold">&lt;우상단최대경도&gt;</b>&amp;maxlat=<b
+              class="color-bold">&lt;우상단최대위도&gt;</b>[&amp;srsName=<b class="color-bold">EPSG:5179</b>]
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="read-body-subtitle">srsName 기본값</h4>
+        <ul class="disc-list sm">
+          <li>EPSG:5179</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">데이터) XML / JSON 방식</h3>
+    <div class="flex-d-col gap-y-24 mobile:gap-y-16">
+      <div>
+        <h4 class="read-body-subtitle">요청주소</h4>
+        <ul class="disc-list sm">
+          <li>
+            http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsInfoApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b>&amp;numOfRows=<b
+              class="color-bold">&lt;페이지결과수&gt;</b>&amp;resultType=<b class="color-bold">&lt;파일형태&gt;</b>&amp;pageNo=<b
+              class="color-bold">&lt;페이지번호&gt;</b>&amp;SIDOCD=<b class="color-bold">&lt;시도코드&gt;</b>&amp;SIGUNGUCD=<b
+              class="color-bold">&lt;시군구코드&gt;</b>
+              <br><b class="color-bold">※데이터별 요청 파라미터는 하단 [OpenAPI제공 목록]파일 다운로드 후 확인</b>
+              <br><b class="color-bold">※numOfRows, pageNo, resultType,SIDOCD,SIGUNGUCD 는 선택사항으로 필수 입력사항은 아닙니다. </b> [기본값:
+            numOfRows(10), pageNo:(1),resultType:(xml),SIDOCD:(전국)]
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <h4 class="read-body-subtitle">사용예</h4>
+        <ul class="disc-list sm">
+          <li>XML형식) http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsInfoApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b>&amp;numOfRows=<b
+              class="color-bold">&lt;페이지결과수&gt;</b>&amp;SIDOCD=<b class="color-bold">&lt;시도코드&gt;</b>&amp;resultType=<b
+              class="color-bold">xml</b></li>
+          <li>JSON형식) http://www.khoa.go.kr/oceanmap/<b class="color-bold">otmsInfoApi.do</b>?ServiceKey=<b
+              class="color-bold">&lt;인증키&gt;</b>&amp;Layer=<b class="color-bold">&lt;레이어명&gt;</b>&amp;numOfRows=<b
+              class="color-bold">&lt;페이지결과수&gt;</b>&amp;SIDOCD=<b class="color-bold">&lt;시도코드&gt;</b>&amp;resultType=<b
+              class="color-bold">json</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>서비스 대상</h2>
+  </div>
+  <div class="read-section-body">
+    <div class="flex-d-col gap-y-32 mobile:gap-y-16">
+      <div>
+        <button type="button" title="다운로드" class="download-btn krds-btn tertiary medium">
+          <span class="download-btn-title">Open-API 활용가이드 다운로드</span>
+          <span class="download-btn-text">다운로드 <i class="svg-icon icon-download"></i></span>
+        </button>
+      </div>
+
+      <div class="table__list">
+        <table>
+          <caption>서비스 대상 목록</caption>
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:20%">
+            <col style="width:auto">
+            <col style="width:15%">
+            <col style="width:15%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th scope="col">번호</th>
+              <th scope="col">구분</th>
+              <th scope="col">명칭</th>
+              <th scope="col">레이어명</th>
+              <th scope="col">제공방식</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="krds-form-check">
+                  <input type="radio" name="rtdo" id="rdto_1">
+                  <label for="rdto_1">
+                    <span class="visually-hidden">선택</span>
+                  </label>
+                </div>
+              </td>
+              <td class="number">1</td>
+              <td>기반시설</td>
+              <td>가공선로</td>
+              <td>VLCBLOHD_L</td>
+              <td>VLCBLOHD_L</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="read-section-body">
+
+    <nav class="tab-nav2" role="tablist">
+      <button class="tab-nav2-item active" role="tab" aria-selected="true" aria-controls="request-parameter-1">가공선로 WMS
+        조회 </button>
+      <button class="tab-nav2-item" role="tab" aria-selected="false" aria-controls="request-parameter-2">가공선로 WFS
+        조회</button>
+    </nav>
+    <div class="example-content">
+      <div class="example-panel active" role="tabpanel" aria-labelledby="request-parameter-1" id="request-parameter-1">
+        <h4 class="read-body-subtitle">요청변수(Request Parameter)</h4>
+        <div class="table__list sm">
+          <table>
+            <caption>요청변수(Request Parameter)</caption>
+            <colgroup>
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:auto">
+              <col style="width:10%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">항목명(영문)</th>
+                <th scope="col">항목명(국문)</th>
+                <th scope="col">항목 자료형 (길이)</th>
+                <th scope="col">필수여부</th>
+                <th scope="col">샘플데이터</th>
+                <th scope="col">설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="number">1</td>
+                <td>ServiceKey</td>
+                <td>인증키</td>
+                <td>varchar(100)</td>
+                <td>필수</td>
+                <td>YVhsxXlv5MxLgjjf07y81pVhqh8f3sUS3Py3uPBMA0w=</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">2</td>
+                <td>Layer</td>
+                <td>레이어</td>
+                <td>varchar(50)</td>
+                <td>필수</td>
+                <td>VI_CBLOHD_L</td>
+                <td>가공선로</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="example-panel" role="tabpanel" aria-labelledby="request-parameter-2" id="request-parameter-2">
+        <h4 class="read-body-subtitle">요청변수(Request Parameter)</h4>
+        <div class="table__list sm">
+          <table>
+            <caption>요청변수</caption>
+            <colgroup>
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:auto">
+              <col style="width:10%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>항목명(영문)</th>
+                <th>항목명(국문)</th>
+                <th>항목 자료형 (길이)</th>
+                <th>필수여부</th>
+                <th>샘플데이터</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="number">1</td>
+                <td>ServiceKey</td>
+                <td>인증키</td>
+                <td>varchar(100)</td>
+                <td>Y</td>
+                <td>YVhsxXlv5MxLgjjf07y81pVhqh8f3sUS3Py3uPBMA0w=</td>
+                <td>발급받은 서비스키</td>
+              </tr>
+              <tr>
+                <td class="number">2</td>
+                <td>Layer</td>
+                <td>레이어</td>
+                <td>varchar(50)</td>
+                <td>Y</td>
+                <td>VI_CBLOHD_L</td>
+                <td>가공선로</td>
+              </tr>
+              <tr>
+                <td class="number">3</td>
+                <td>FILTER</td>
+                <td>검색필터</td>
+                <td>varchar(200)</td>
+                <td>N</td>
+                <td>
+                  <propertyisequalto>
+                    <propertyname>GID</propertyname>
+                    <literal>1</literal>
+                  </propertyisequalto>
+                </td>
+                <td>연산자:활용가이드 참조, Name:응답변수 참조</td>
+              </tr>
+              <tr>
+                <td class="number">4</td>
+                <td>minlon</td>
+                <td>좌측하단 최소경도</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>117^10^36</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td class="number">5</td>
+                <td>minlat</td>
+                <td>좌측하단 최소위도</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>33^04^55</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td class="number">6</td>
+                <td>maxlon</td>
+                <td>우측상단 최대경도</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>137^36^24</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td class="number">7</td>
+                <td>maxlat</td>
+                <td>우측상단 최대위도</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>38^47^59</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td class="number">8</td>
+                <td>srsName</td>
+                <td>응답좌표계</td>
+                <td>varchar(1)</td>
+                <td>N</td>
+                <td>EPSG:5179</td>
+                <td>기본값 EPSG:5179</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 class="read-body-subtitle">출력결과(Response Element)</h4>
+        <div class="table__list sm">
+          <table>
+            <caption>출력결과</caption>
+            <colgroup>
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:10%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:auto">
+              <col style="width:10%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>항목명(영문)</th>
+                <th>항목명(국문)</th>
+                <th>항목 자료형 (길이)</th>
+                <th>필수여부</th>
+                <th>샘플데이터</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="number">1</td>
+                <td>objnum</td>
+                <td>객체일련번호</td>
+                <td>varchar(10)</td>
+                <td>N</td>
+                <td>600259</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">2</td>
+                <td>pbinst</td>
+                <td>기관코드</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>1192136</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">3</td>
+                <td>indcde_2</td>
+                <td>사업구역코드</td>
+                <td>varchar(50)</td>
+                <td>N</td>
+                <td>ENW007</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">4</td>
+                <td>indcde_3</td>
+                <td>사업구역코드</td>
+                <td>varchar(50)</td>
+                <td>N</td>
+                <td>CLW005</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">5</td>
+                <td>mnymd</td>
+                <td>제작년월일</td>
+                <td>varchar(8)</td>
+                <td>N</td>
+                <td>20231208</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">6</td>
+                <td>clfcde</td>
+                <td>분류코드</td>
+                <td>varchar(6)</td>
+                <td>N</td>
+                <td>COD006</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">7</td>
+                <td>enclev</td>
+                <td>해도레벨</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>6</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">8</td>
+                <td>enc_no</td>
+                <td>전자해도번호</td>
+                <td>varchar(250)</td>
+                <td>N</td>
+                <td>KR64647A</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">9</td>
+                <td>gubun</td>
+                <td>객체특성코드</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>GBN041</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">10</td>
+                <td>catcbl</td>
+                <td>케이블의종류</td>
+                <td>varchar(20)</td>
+                <td>N</td>
+                <td>CTL001</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">11</td>
+                <td>icefac</td>
+                <td>케이블수직간격</td>
+                <td>numeric(4,1)</td>
+                <td>N</td>
+                <td>0</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">12</td>
+                <td>verclr</td>
+                <td>통행가능높이</td>
+                <td>numeric(4,1)</td>
+                <td>N</td>
+                <td>12</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">13</td>
+                <td>vercsa</td>
+                <td>통행안전높이</td>
+                <td>numeric(4,1)</td>
+                <td>N</td>
+                <td>0</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">14</td>
+                <td>scamin</td>
+                <td>최소축척</td>
+                <td>numeric(8)</td>
+                <td>N</td>
+                <td>21999</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="number">15</td>
+                <td>ag_geom</td>
+                <td>공간정보</td>
+                <td>geometry</td>
+                <td>N</td>
+                <td>GEOMETRY</td>
+                <td>공간정보</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>오류메세지</h2>
+  </div>
+  <div class="read-section-body">
+    <ul class="disc-list">
+      <li>인증키가 없는 경우 : invalid ServiceKey.</li>
+      <li>인증키의 사용 기한이 만료된 경우 : Use the ServiceKey is expired.</li>
+      <li>API 호출의 하루 조회 허용 횟수가 초과한 경우 : The number of requested of today is 허용 횟수 exceeded.</li>
+      <li>레이어에 대한 사용 권한이 없는 경우 : Do not have authentification on this layer.</li>
+      <li>인증키의 사용 권한이 없는 경우 : Do not have authentification on this ServiceKey.</li>
+    </ul>
+  </div>
+</section>

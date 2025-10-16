@@ -1,0 +1,272 @@
+<!-- @pageTitle 생산물관리 -->
+<!-- @pageCreated 2025.10.16 -->
+<!-- @pageUpdated 2025.10.16 -->
+<!-- @pageNote jstree 사용 jstree파일 확장자 어떻게할지 -->
+<!-- @layout layouts/sub.html -->
+
+<!-- jsTree CDN -->
+<link rel="stylesheet" href="/lib/jstree/themes/default/style.min.css" />
+<script src="/lib/jquery/jquery-3.7.1.min.js"></script>
+<script src="/lib/jstree/jstree.min.js"></script>
+<section data-layout="sublayout" data-page="object">
+	<div class="container">
+		<h1 class="page-title">객체사전</h1>
+		<!-- tab -->
+
+		<!-- tab list -->
+		<nav class="tab-nav" role="tablist">
+      <button type="button" class="tab-nav-item" aria-selected="false">생산물 관리</button>
+      <button type="button" class="tab-nav-item active" aria-selected="true">생산물 파일</button>
+    </nav>
+		<!-- //tab list -->
+
+		<div class="products-container">
+      <div class="products-tree-area">
+        <div id="jstree-container"></div>
+      </div>
+      <div class="products-content-area">
+        <div class="file-browser-container">
+          <div class="path-display">
+            /ROOT/업무용/MBM/2024/25K/3529134
+          </div>
+          
+          <div class="search-area">
+            <input type="text" placeholder="파일명을 입력하세요">
+            <button type="button" class="btn-search open-modal" data-target="search-file">파일검색</button>
+          </div>
+          
+          <div class="action-buttons">
+            <button type="button" class="btn-action">↑</button>
+            <button type="button" class="btn-action">폴더 생성</button>
+            <button type="button" class="btn-action open-modal" data-target="rename-folder">폴더명 변경</button>
+            <button type="button" class="btn-action open-modal" data-target="delete-folder">폴더 삭제</button>
+            <button type="button" class="btn-action open-modal" data-target="download-all">파일전체 다운로드</button>
+            <button type="button" class="btn-action open-modal" data-target="upload-file">파일 업로드</button>
+          </div>
+          
+          <div class="file-list">
+            <div class="list-item">
+              <div class="icon folder"></div>
+              <div class="name">3529131</div>
+            </div>
+            <div class="list-item">
+              <div class="icon icon-gpkg"></div>
+              <div class="name">P_MBM_2024_3529134.gpkg</div>
+              <div class="item-actions">
+                <button type="button" class="btn-item-action">다운로드</button>
+                <button type="button" class="btn-item-action">삭제</button>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="icon icon-xlsx"></div>
+              <div class="name">P_MBM_2024_3529134_meta.xlsx</div>
+              <div class="item-actions">
+                <button type="button" class="btn-item-action">다운로드</button>
+                <button type="button" class="btn-item-action">삭제</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+</section>
+
+<!-- 파일 검색 결과 모달 -->
+<div class="krds-modal fade in" role="dialog" id="search-file">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>파일 검색 결과</h2>
+      </div>
+      <div class="modal-conts">
+				<div class="conts-area">
+          <div class="modal-path">/ROOT/업무용/MBM/2024/25K</div>
+          <div class="modal-file-list">
+            <div class="modal-list-item">
+              <div class="icon icon-gpkg"></div>
+              <div class="name">P_MBM_2024_3529134.gpkg</div>
+              <button type="button" class="btn-download">다운로드</button>
+            </div>
+            <div class="modal-list-item">
+              <div class="icon icon-xlsx"></div>
+              <div class="name">P_MBM_2024_3529134_meta.xlsx</div>
+              <button type="button" class="btn-download">다운로드</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium tertiary close-modal">닫기</button>
+      </div>
+			<button type="button" class="krds-btn medium icon btn-close close-modal">
+				<span class="sr-only">닫기</span>
+				<i class="svg-icon ico-popup-close"></i>
+			</button>
+    </div>
+  </div>
+</div>
+
+<!-- 폴더명 변경 모달 -->
+<div class="krds-modal fade in" id="rename-folder" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>폴더명 변경</h2>
+      </div>
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="modal-path">/ROOT/업무용/MBM/2024/25K</div>
+          <form class="modal-form">
+            <label for="rename-folder-input">새 폴더명</label>
+            <input type="text" id="rename-folder-input" class="modal-input" title="폴더명 입력" placeholder="폴더명을 입력하세요">
+          </form>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary btn-save">저장</button>
+        <button type="button" class="krds-btn medium tertiary close-modal">닫기</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 폴더 삭제 모달 -->
+<div class="krds-modal fade in" id="delete-folder" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>폴더 삭제</h2>
+      </div>
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="modal-path">/ROOT/업무용/MBM/2024/3528381</div>
+          <div class="modal-message">
+            선택 하신 폴더 하위의 모든 폴더 및 파일이 삭제 됩니다. 삭제 된 파일은 복구 할 수 없습니다. 삭제 하시겠습니까?
+          </div>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium danger btn-delete">삭제</button>
+        <button type="button" class="krds-btn medium tertiary close-modal">닫기</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 파일 업로드 모달 -->
+<div class="krds-modal fade in" id="upload-file" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>파일 업로드</h2>
+      </div>
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="modal-path-row">
+            <input type="file" id="file-upload" class="file-upload-input" title="파일업로드" placeholder="파일을 선택하세요">
+            <div class="modal-path">/ROOT/업무용/MBM/2024/25K</div>
+            <label for="file-upload" class="btn-file-upload">파일업로드</label>
+          </div>
+          <div class="modal-upload-area">
+            <div class="upload-placeholder">upload</div>
+            <div class="upload-files">
+              <div class="upload-file-item">
+                <div class="icon icon-gpkg"></div>
+                <div class="name">P_MBM_2024_3529134.gpkg</div>
+              </div>
+              <div class="upload-file-item">
+                <div class="icon icon-xlsx"></div>
+                <div class="name">P_MBM_2024_3529134_meta.xlsx</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary">저장</button>
+        <button type="button" class="krds-btn medium tertiary close-modal">취소</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+$(document).ready(function() {
+  // jsTree 초기화
+  $('#jstree-container').jstree({
+    'core': {
+      'data': [
+        {
+          'text': '생산물 분류',
+          'state': { 'opened': true },
+          'children': [
+            {
+              'text': '해양지리정보',
+              'children': [
+                { 'text': '전자해도(ENC)', 'id': 'enc' },
+                { 'text': '항행경보(Navigational Warning)', 'id': 'nav-warning' }
+              ]
+            },
+            {
+              'text': '공간데이터',
+              'children': [
+                { 'text': 'Shapefile', 'id': 'shapefile' },
+                { 'text': 'GeoJSON', 'id': 'geojson' }
+              ]
+            },
+            {
+              'text': '메타데이터',
+              'children': [
+                { 'text': 'ISO 19115', 'id': 'iso-19115' },
+                { 'text': 'Dublin Core', 'id': 'dublin-core' }
+              ]
+            }
+          ]
+        }
+      ],
+      'themes': {
+        'responsive': true
+      }
+    },
+    'plugins': ['wholerow']
+  });
+
+  // 노드 선택 이벤트
+  $('#jstree-container').on('select_node.jstree', function(e, data) {
+    var node = data.node;
+    console.log('Selected node:', node.text);
+  });
+
+  // 모달 열기/닫기 기능
+  $('.open-modal').on('click', function() {
+    var target = $(this).data('target');
+    $('#' + target).addClass('active');
+  });
+
+  $('.btn-close, .modal').on('click', function(e) {
+    if (e.target === this) {
+      $(this).closest('.modal').removeClass('active');
+    }
+  });
+
+  // 모달 내부 클릭 시 닫기 방지
+  $('.modal-content').on('click', function(e) {
+    e.stopPropagation();
+  });
+});
+</script>

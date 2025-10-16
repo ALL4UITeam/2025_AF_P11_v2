@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+
+$mobile-font-base-size: 1.2rem;
+$mobile-font-size: 1.1rem;
+$mobile-font-md-size: 1.4rem;
+$mobile-font-lg-size: 1.6rem;
+
+.krds-form-check input[type=radio] ~ label, .krds-form-check input[type=checkbox] ~ label{
+  @media (max-width: $desktop) {
+    align-items: center;
+    gap: .4rem;
+    font-size: 1.4rem;
+    &::before{
+      width: 1.6rem;
+      height: 1.6rem;
+      
+    }
+    &::after{
+      width: 1.2rem;
+      height: 1.2rem;
+      left: .2rem;
+      top: .5rem;
+    }
+  }
+  @media (max-width: $tablet) {
+    font-size: $mobile-font-base-size;
+  }
+}
+
+.krds-form-select,
+.krds-form-select.medium,
+.krds-btn.medium,
+.krds-select,
+.krds-input.medium{
+  @media (max-width: $tablet) {
+    font-size: $mobile-font-md-size;
+    height: 4rem;
+  }
+}

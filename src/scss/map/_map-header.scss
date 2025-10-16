@@ -1,0 +1,208 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+
+
+
+
+body{
+  overflow: hidden;
+}
+
+#map-nav{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 1001;
+  width: 28rem;
+  gap: 1.2rem;
+  border-radius: 0 3.2rem 0 0;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
+  &.active{
+    transform: translateX(0);
+    @media (max-width: 1000px) {
+      .map-nav-header-btn{
+        mask-image: none !important;
+        background: url('@/assets/images/map/megamenu-close.svg') no-repeat center center !important;
+      }
+      .map-gnb{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    //position: relative;
+  }
+  .map-nav-header{
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    display: flex;
+    padding: 2rem 3.2rem;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1000px) {
+      padding: 1.2rem 1.2rem;
+      height: $mobile-header-h;
+      background-color: #fff;
+    }
+    .map-nav-header-btn{
+      background: url('@/assets/images/map/megamenu-close.svg') no-repeat center center;
+  width: 2.4rem;
+  height: 2.4rem;
+      font-size: 0;
+      @media (max-width: 1000px) {
+        background: none;
+        mask-image: url('@/assets/images/map/menu-open.svg');
+        mask-size: contain;
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        background-color: #000;
+        width: 1.9rem;
+        height: 1.9rem;
+      }
+    }
+    .map-nav-logo{
+      a{
+        display: block;
+        width: 16.5rem;
+        height: 4rem;
+        font-size: 0;
+        background: url('@/assets/images/map/map-logo.svg') no-repeat center center;
+        @media (max-width: 1000px) {
+          width: 15rem;
+          height: 3.6rem;
+          background-size: cover;
+        }
+      }
+    }
+    .map-nav-h-utils{
+      @media (max-width: 1000px) {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+    }
+    .mobile-en{
+      display: none;
+      @media (max-width: 1000px) {
+        display: inline-block;
+        vertical-align: top;
+        border-bottom: 2px solid #000;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.map-gnb{
+  flex:1;
+  overflow-y: auto;
+  padding-left: 3.2rem;
+  @media (max-width: 1000px) {
+    position: fixed;
+    top: $mobile-header-h;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - #{$mobile-header-h});
+    background-color: #fff;
+    z-index: 1001;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-10);
+    padding-left: 2rem;
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  > ul{
+    padding-top: 2rem;
+    > li{
+      padding-bottom: 8px;
+      +li{
+        padding-top: 30px;
+        @media (max-width: 1000px) {
+          padding-top: 20px;
+        }
+      }
+      > a{
+        color: var(--p-60, var(--color-light-primary-60, #0B50D0));
+        font-family: "Pretendard GOV";
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 8px;
+        @media (max-width: 1000px) {
+          padding-bottom: 0;
+          font-size: 1.4rem;
+        }
+      }
+      .map-gnb-submenu{
+        ul{
+          li{
+            a{
+              display: flex;
+              padding: 0.4rem 0;
+              text-align: left;
+              gap: 1rem;
+              align-self: stretch;
+              color: var(--g90, #1E2124);
+              font-family: "Pretendard GOV";
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.aside-utils{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap:32px;
+  padding: 32px 0 40px;
+  border-top: 1px solid var(--p-80, #052561);
+  @media (max-width: 1000px) {
+    display: none;
+  }
+  > div{
+    text-align: center;
+  }
+  .en{
+    color: #FFF;
+    text-align: center;
+    font-family: "Pretendard GOV";
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 150%; /* 22.5px */
+    border-bottom: 3px solid #fff;
+  }
+  #btnMenuOpen{
+    i{
+      display: inline-block;
+      vertical-align: top;
+      width: 2rem;
+      height: 2rem;
+      background: url('@/assets/images/map/menu-open.svg') no-repeat center center;
+    }
+  }
+}

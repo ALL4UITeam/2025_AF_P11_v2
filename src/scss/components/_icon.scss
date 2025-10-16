@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.icon-eye{
+  @include icon-set("@/assets/images/portal/icon-eye.svg", 1.6rem, 1.6rem, #03163A);
+}
+.icon-download{
+  @include icon-set("@/assets/images/portal/icon-download.svg", 2rem, 2rem, #03163A);
+}
+.icon-search-plus {
+  @include icon-set("@/assets/images/portal/icon-search-plus.svg", 2rem, 2rem, #fff);
+  @media screen and (max-width: $tablet) {
+    width: 1.6rem;
+    height: 1.6rem;
+    mask-size: 100% 100%;
+  }
+}

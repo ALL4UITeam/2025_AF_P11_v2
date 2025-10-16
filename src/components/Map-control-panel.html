@@ -1,0 +1,67 @@
+<div class="control-panel">
+    <div class="tool-buttons">
+
+      <div class="group-btn">
+        <button class="tool-btn map-type-btn1">
+          <span class="tool-icon"></span>
+          <span class="tool-text">일반지도</span>
+        </button>
+        <button class="tool-btn map-type-btn2">
+          <span class="tool-icon"></span>
+          <span class="tool-text">영상지도</span>
+        </button>
+      </div>
+      <button class="tool-btn layer-btn" data-option="optionLayerList">
+        <span class="tool-icon"></span>
+        <span class="tool-text">레이어목록</span>
+      </button>
+      <button class="tool-btn layer-btn2" data-option="optionUserLayer">
+        <span class="tool-icon"></span>
+        <span class="tool-text">사용자레이어</span>
+      </button>
+      <div class="measure-btn-group">
+        <button class="tool-btn measure-btn" id="measureToggleBtn">
+          <span class="tool-icon"></span>
+          <span class="tool-text">측정</span>
+        </button>
+        <div class="measure-tools" id="measureTools" style="display: none;">
+          <button class="tool-btn measure-tool-btn" data-tool="line">
+            <span class="tool-icon"></span>
+            <span class="tool-text">선측정</span>
+          </button>
+          <button class="tool-btn measure-tool-btn" data-tool="area">
+            <span class="tool-icon"></span>
+            <span class="tool-text">면측정</span>
+          </button>
+          <button class="tool-btn measure-tool-btn" data-tool="reset">
+            <span class="tool-icon"></span>
+            <span class="tool-text">초기화</span>
+          </button>
+        </div>
+      </div>
+      <button class="tool-btn legend-btn" data-option="legendPanel">
+        <span class="tool-icon"></span>
+        <span class="tool-text">범례</span>
+      </button>
+    </div>
+    <div class="zoom-control">
+      <button class="zoom-btn zoom-in" title="확대">
+        <i class="icon"></i>
+      </button>
+      <div class="zoom-range">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="131" viewBox="0 0 16 131" fill="none">
+          <path
+            d="M2.5 81H13.5M2.5 41H13.5M2.5 121H13.5M2.5 11H13.5M2.5 91H13.5M2.5 51H13.5M2.5 21H13.5M2.5 101H13.5M2.5 61H13.5M2.5 31H13.5M2.5 111H13.5M2.5 71H13.5"
+            stroke="#E4E4E4" />
+          <line x1="8" y1="1" x2="7.99999" y2="131" stroke="#C6C6C6" />
+          <line x1="0.5" y1="0.5" x2="15.5" y2="0.5" stroke="#C6C6C6" />
+          <line x1="0.5" y1="130.5" x2="15.5" y2="130.5" stroke="#C6C6C6" />
+        </svg>
+        <div class="zoom-range-value"></div>
+      </div>
+      <button class="zoom-btn zoom-out" title="축소">
+        <i class="icon"></i>
+      </button>
+      <span class="zoom-level-value">LV7</span>
+    </div>
+  </div>

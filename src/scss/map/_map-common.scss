@@ -1,0 +1,546 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+
+// 버튼 공통 스타일을 위한 믹스인
+@mixin button-base {
+  display: inline-flex;
+  height: 4rem;
+  padding: 0 1.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1 0 0;
+  color: #03163a;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+// 버튼 상태별 스타일을 위한 믹스인
+@mixin button-states($bg-color, $text-color: #03163a) {
+  background: $bg-color;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    background: $bg-color;
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    background: $bg-color;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn {
+  @include button-base;
+  &-outline {
+    @include button-states(#fff);
+    border: 1px solid var(--g-60, #58616a);
+    &:hover,
+    &:focus,
+    &:disabled {
+      border-color: var(--g-60, #58616a);
+    }
+  }
+
+  &-primary {
+    @include button-states(#256ef4, #fff);
+  }
+  &-gray{
+    @include button-states(#8A949E, #fff);
+  }
+  &-secondary {
+    border-radius: 6px;
+    background: var(--p-10, #D8E5FD);
+    color: var(--p-60, var(--color-light-primary-60, #0B50D0));
+  }
+  &-outline{
+    background-color: #fff;
+
+  }
+  
+  &.round{
+    border-radius: 20px;
+    min-width: 92px;
+  }
+}
+.btn-actions{
+  text-align: center;
+  display: flex;
+  gap: 0.8rem;
+  &.block{
+    display: block;
+  }
+  .max{
+    width: 92px;
+  }
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  button {
+    flex-shrink: 0;
+  }
+}
+.input-group-search{
+  display: flex;
+  height: 40px;
+  padding: 0 4px 0 16px;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 6px;
+  border: 1px solid var(--g-60, #58616A);
+  background: #FFF;
+  select{
+    border: 0;
+    color: var(--g-90, #1E2124);
+    background: #fff url(/assets/images/map/arw.svg) no-repeat right center;
+    appearance: none;
+    width: 56px;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  .line{
+    flex-shrink: 0;
+    width: 1px;
+    height: 16px;
+    background: var(--g-20, #CDD1D5);
+  }
+  input{
+    display: block;
+    flex: 1;
+    height: 100%;
+    border: 0;
+    color: var(--g-40, #8A949E);
+  }
+}
+
+.form-label-group {
+  display: flex;
+}
+.form-check {
+  input {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  label {
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    gap: 0 0.6rem;
+    cursor: pointer;
+    position: relative;
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: top;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      border-radius: var(--radius-max, 1000px);
+      border: 1px solid var(--g-60, #58616a);
+      background: #fff;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      vertical-align: top;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: #256ef4;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    &:has(input:checked) {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  span {
+    color: var(--g90, #1e2124);
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+  }
+}
+
+// 폼 입력 요소 공통 스타일을 위한 믹스인
+@mixin form-input-base {
+  display: inline-block;
+  width: 100%;
+  color: var(--g-90, #1e2124);
+  font-size: 1.5rem;
+  border-radius: 0.6rem;
+  border: var(--border-width-static-regular, 1px) solid var(--g-60, #58616a);
+  background: var(--color-input-surface, #fff);
+  height: 4rem;
+  padding: 0 1.6rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary, #256ef4);
+  }
+}
+
+.form-input {
+  @include form-input-base;
+}
+
+.form-select {
+  @include form-input-base;
+  background: #fff url("@/assets/images/map/arrow-down.svg") no-repeat right
+    1rem center;
+  appearance: none;
+}
+
+.text-alert {
+  display: flex;
+  padding: 1.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.6rem;
+  align-self: stretch;
+  border-radius: 0.6rem;
+  border: var(--border-width-static-regular, 1px) solid #d6e0eb;
+  background: #eef2f7;
+}
+
+.list-check {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  align-self: stretch;
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    align-self: stretch;
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: top;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: url("@/assets/images/map/icon_check.svg") no-repeat center
+        center;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .text {
+      color: var(--g-60, #58616a);
+
+      font-size: 1.5rem;
+
+      line-height: 130%; /* 19.5px */
+
+      flex: 1;
+    }
+  }
+}
+
+// 파일 업로드 스타일
+.file-upload {
+  display: flex;
+  padding: 16px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  border-radius: 0.6rem;
+  border: 1px dashed var(--g-20, #cdd1d5);
+  background: var(--g-05, #f4f5f6);
+
+  .upload-text {
+    color: var(--g-60, #58616a);
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 150%; /* 19.5px */
+  }
+
+  .file-upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+  }
+
+  .upload-btn {
+    display: flex;
+    height: 32px;
+    padding: 0 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 0.4rem;
+    border: 1px solid var(--primary, #256ef4);
+    background: var(--p-05, #ecf2fe);
+    color: var(--p-60, var(--color-light-primary-60, #0b50d0));
+
+    font-size: 1.5rem;
+
+    line-height: 150%; /* 22.5px */
+    letter-spacing: var(--typo-label-small-letter-spacing, 0);
+  }
+}
+
+/* 지도 버튼 모음 */
+.btn-utility {
+  display: inline-flex;
+  vertical-align: top;
+  align-items: center;
+  justify-content: center;
+  color: var(--g-60, #58616a);
+
+  font-size: 13px;
+
+  line-height: 150%; /* 19.5px */
+  height: 2rem;
+  i {
+    @extend .icon;
+  }
+  .icon-add {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--g-60, #58616a);
+  }
+  .icon-minus {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.icon-random {
+  mask-image: url("@/assets/images/map/icon_random.svg");
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--g-60, #58616a);
+}
+
+.icon-transform {
+  mask-image: url("@/assets/images/map/icon_transform.svg");
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--g-60, #58616a);
+}
+
+.icon-add {
+  mask-image: url("@/assets/images/map/icon_add.svg");
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--g-60, #58616a);
+}
+
+.icon-minus {
+  mask-image: url("@/assets/images/map/icon_minus.svg");
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--g-60, #58616a);
+}
+
+.wd-modal {
+  z-index: $z-index-modal;
+  position: absolute;
+  right: 1.2rem;
+  bottom: 5.6rem;
+  border-radius: 20px;
+  border: 1px solid var(--g-20, #cdd1d5);
+  background: #fff;
+  display: none;
+  width: 30rem;
+  flex-direction: column;
+  &.active {
+    display: flex;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    right: 0;
+    bottom: 6rem;
+    border-radius: 20px 20px 0 0;
+
+  }
+  .wd-modal-header {
+    display: flex;
+    width: 30rem;
+    padding: 8px 16px 0 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #cdd1d5;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+  }
+  .wd-modal-title {
+    color: var(--g-90, #1e2124);
+    font-size: 17px;
+    line-height: 150%; /* 25.5px */
+  }
+  .wd-modal-content {
+    padding: 1.6rem;
+  }
+  .wd-modal-close {
+    display: flex;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    i {
+      @extend .icon;
+      @include icon-set("close-black", 1rem, 1rem, #1e2124);
+    }
+  }
+}
+
+.link-coordinate,
+.link-btn {
+  display: inline-flex;
+  padding-left: 2.4rem;
+  background: url("@/assets/images/map/link.svg") no-repeat left center;
+
+  span {
+    text-decoration: underline;
+    color: var(--primary, #256ef4);
+
+    font-size: 1.5rem;
+
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+}
+
+.link-coordinate {
+  background: url("@/assets/images/map/location.svg") no-repeat left 0;
+}
+
+.map-modal {
+  z-index: $z-index-modal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+
+  .modal-container {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 50rem;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .modal-header {
+    display: flex;
+    padding: 1.2rem 2rem;
+    align-items: center;
+    gap: 1rem;
+    align-self: stretch;
+    background: var(--primary, #256ef4);
+    border-radius: 1.2rem 1.2rem 0 0;
+
+    .modal-title {
+      flex: 1;
+      color: #fff;
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .map-modal-content {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0 0 1.2rem 1.2rem;
+    overflow-y: auto;
+  }
+
+  .modal-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: none;
+    border: none;
+    background: url("@/assets/images/map/icon_modal-close.svg") no-repeat center
+      center;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+  }
+}
+.map-modal-footer{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--g-20, #CDD1D5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 1.2rem;
+  .map-modal-footer-left{
+    display: flex;
+    gap: 1rem;
+  }
+  .map-modal-footer-right{
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .layer-panel-collapsed{
+    .layer-panel{
+      height: 4rem !important;
+    }
+  }
+}
+

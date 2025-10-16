@@ -1,0 +1,52 @@
+@use "variables" as *;
+@use "sass:list";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin icon-set($src, $width, $height, $color) {
+  width: $width;
+  height: $height;
+  mask-image: url(#{$src});
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  background-color: $color;
+}
+
+.icon {
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 태그 스타일 믹스인
+@mixin file-tag($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+// 태그 컨테이너 믹스인
+@mixin tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+// 태그 자동 생성 믹스인 (변수 사용)
+@mixin generate-tags {
+  @each $name, $colors in $tag-colors {
+    $bg-color: list.nth($colors, 1);
+    $text-color: list.nth($colors, 2);
+    
+    &-#{$name} {
+      @include file-tag($bg-color, $text-color);
+    }
+  }
+}

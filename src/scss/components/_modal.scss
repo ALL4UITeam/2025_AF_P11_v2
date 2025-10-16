@@ -1,0 +1,49 @@
+
+.modal{}
+
+.modal-section{
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.modal-section-body{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-section-header{
+  display: flex;
+  justify-content: space-between;
+  h3{
+    font-size: 1.7rem;
+  }
+}
+
+.modal-search{
+  background-color: #eef2f7;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  .search-row{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.6rem;
+  }
+  .form-group{
+    display: flex;
+    gap:1rem;
+    flex-direction: row;
+    align-items: center;
+    input,
+    select{
+      height: 4rem;
+      font-size: 1.4rem;
+    }
+  }
+  .form-keyword{
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+}

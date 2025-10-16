@@ -1,0 +1,20 @@
+<div class="sub-banner">
+  <div class="container">
+    <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+      <div>
+        <ol class="breadcrumb">
+          <li class="home"><a href="#" class="txt">홈</a></li>
+          {{#each items}}
+            <li>
+              {{#if this.href}}
+                <a href="{{this.href}}" class="txt">{{this.label}}</a>
+              {{else}}
+                <span aria-current="page" class="txt">{{this.label}}</span>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ol>
+      </div>
+    </nav>
+  </div>
+</div>

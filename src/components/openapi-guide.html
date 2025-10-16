@@ -1,0 +1,271 @@
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>개요</h2>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">목적</h3>
+    <ul class="disc-list">
+      <li>본 개발가이드는 현 시스템이 제공하고 있는 개방해 서비스 정보를 OPEN API 를 통해 손쉽게 사용할 수 있도록 하는데 목적이 있다.</li>
+    </ul>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">API 호출 절차</h3>
+    <ul class="disc-list">
+      <li>사용자가 인증키 발급 요청을 하면 인증키가 자동 발급되며, 사용자 별로 인증키 발급은 1개만 발급할 수 있다.</li>
+      <li>취득한 인증키를 이용하여 본 시스템에서 제공하는 해양정보 OPEN API 서비스 호출한다.</li>
+      <li>관리자는 필요한 경우, 경우에 띠라 API 사용을 제한하거나 인증키를 삭제할 수 있다.</li>
+    </ul>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">개발환경</h3>
+    <ul class="disc-list">
+      <li>OPEN API 는 누구나 쉽게 사용할 수 있도록 자바스크립트 형태로 제공하여 별도의 개발환경 제한을 두고 있지 않음</li>
+      <li>Explorer 8.0 이상, Crome, FireFox, Safari 지원</li>
+      <li>REST(Representation State Transfer) 방식으로 서비스 제공</li>
+    </ul>
+  </div>
+</section>
+
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>사용예제</h2>
+  </div>
+  <div class="read-section-body">
+    <h3 class="read-body-title">요청/응답메시지</h3>
+
+    <nav class="tab-nav2" role="tablist">
+      <button class="tab-nav2-item active" role="tab" aria-selected="true" aria-controls="example-panel-1">WFS
+        방식</button>
+      <button class="tab-nav2-item" role="tab" aria-selected="false" aria-controls="example-panel-2">XML/JSON
+        방식</button>
+    </nav>
+
+    <div class="example-content">
+      <div class="example-panel active" role="tabpanel" aria-labelledby="example-tab-1" id="example-panel-1">
+        <h4 class="read-body-subtitle">요청주소</h4>
+        <div class="alert alert-gray">
+          http://www.khoa.go.kr/oceanmap/otmsWfsApi.do?ServiceKey=인증키&Layer=레이어명&FILTER=조건&minlon=좌하단최소경도&minlat=좌하단최소위도&maxlon=우상단최대경도&maxlat=우상단최대위도&srsName=EPSG:4326
+        </div>
+
+        <h4 class="read-body-subtitle">요청변수(Request Parameter)</h4>
+        <div class="note-text">” <em>*</em> ”표시는 필수 입력 사항입니다</div>
+        <div class="table__list">
+          <table>
+            <caption>사용예제</caption>
+            <thead>
+              <tr>
+                <th>항목명(영문)</th>
+                <th>항목명(국문)</th>
+                <th>샘플데이터</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ServiceKey <i class="required">필수입력</i></td>
+                <td>인증키</td>
+                <td class="text-left">YVhsxXlv5MxLgjjf07y81pVhqh8f3sUS3Py3uPBMA0w=</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Layer <i class="required">필수입력</i></td>
+                <td>레이어</td>
+                <td class="text-left">TL_DIST_FSHFRM</td>
+                <td>어장정보</td>
+              </tr>
+              <tr>
+                <td>FILTER</td>
+                <td>검색필터</td>
+                <td class="text-left">&lt;PropertyIsEqualTo&gt;<br>
+                  &lt;PropertyName&gt;LEISURE_ID&lt;/PropertyName&gt;<br>
+                  &lt;Literal&gt;15001600&lt;/Literal&gt;<br>
+                  &lt;/PropertyIsEqualTo&gt;<br>
+                </td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>minlon</td>
+                <td>좌측하단 최소경도</td>
+                <td class="text-left">127^30^30</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td>minlat</td>
+                <td>좌측하단 최소위도</td>
+                <td class="text-left">36^30^30</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td>maxlon</td>
+                <td>우측상단 최대경도</td>
+                <td class="text-left">128^30^30</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td>maxlat</td>
+                <td>우측상단 최대위도</td>
+                <td class="text-left">37^30^30</td>
+                <td>도분초 ^구분자 사용</td>
+              </tr>
+              <tr>
+                <td>srsName</td>
+                <td>응답좌표계</td>
+                <td class="text-left">EPSG:4326</td>
+                <td>기본값 EPSG:5179</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="example-panel" role="tabpanel" aria-labelledby="example-tab-2" id="example-panel-2">
+        <h4 class="read-body-subtitle">데이터 형식 요청주소</h4>
+        <div class="alert alert-gray">
+          <p>
+            http://www.khoa.go.kr/oceanmap/otmsInfoApi.do?ServiceKey=&lt;인증키&gt;&amp;Layer=&lt;레이어명&gt;&amp;numOfRows=&lt;페이지결과수&gt;&amp;SIDOCD=&lt;시도코드&gt;&amp;resultType=xml
+          </p>
+          <p>
+            http://www.khoa.go.kr/oceanmap/otmsInfoApi.do?ServiceKey=&lt;인증키&gt;&amp;Layer=&lt;레이어명&gt;&amp;numOfRows=&lt;페이지결과수&gt;&amp;SIDOCD=&lt;시도코드&gt;&amp;resultType=json
+          </p>
+        </div>
+
+        <h4 class="read-body-subtitle">요청변수(Request Parameter)</h4>
+        <div class="note-text">” <em>*</em> ”표시는 필수 입력 사항입니다</div>
+        <div class="table__list">
+          <table>
+            <caption>사용예제</caption>
+            <thead>
+              <tr>
+                <th>항목명(영문)</th>
+                <th>항목명(국문)</th>
+                <th>샘플데이터</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ServiceKey*</td>
+                <td>인증키</td>
+                <td class="text-left">YVhsxXlv5MxLgjjf07y81pVhqh8f3sUS3Py3uPBMA0w=</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Layer*</td>
+                <td>레이어</td>
+                <td class="text-left">TL_DIST_FSHFRM</td>
+                <td>어장정보</td>
+              </tr>
+
+              <tr>
+                <td>numOfRows</td>
+                <td>페이지결과수</td>
+                <td class="text-left">10</td>
+                <td>10개 데이터 조회</td>
+              </tr>
+
+              <tr>
+                <td>SIDOCD</td>
+                <td>시도코드</td>
+                <td class="text-left">2800000000</td>
+                <td>인천 광역시</td>
+              </tr>
+              <tr>
+                <td>SIGUNGUCD</td>
+                <td>시군구코드</td>
+                <td class="text-left">2872000000</td>
+                <td>인천광역시 옹진군</td>
+              </tr>
+              <tr>
+                <td>resultType</td>
+                <td>데이터 형식</td>
+                <td class="text-left">xml</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="read-body-title">응답메시지</h3>
+    <div class="txtBox">
+      <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wfs:FeatureCollection xmlns="http://mapprime.all4land.com/"
+xmlns:wfs="http://www.opengis.net/wfs"
+xmlns:gml="http://www.opengis.net/gml"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd
+http://www.opengis.net/gml http://schemas.opengis.net/gml/3.1.1/feature.xsd"
+numberOfFeatures="1" timeStamp="2017-04-25T17:15:03+09:00"&gt;
+&lt;gml:boundedBy&gt;
+&lt;gml:Envelope srsName="EPSG:4326"&gt;
+    &lt;gml:lowerCorner&gt;129.160136 35.158268&lt;/gml:lowerCorner&gt;
+    &lt;gml:upperCorner&gt;129.160136 35.158268&lt;/gml:upperCorner&gt;
+&lt;/gml:Envelope&gt;
+&lt;/gml:boundedBy&gt;
+&lt;gml:featureMember&gt;
+&lt;TB_FACI_BEACH gml:id="TB_FACI_BEACH.188"&gt;
+    &lt;gml:boundedBy&gt;
+        &lt;gml:Envelope srsName="EPSG:4326"&gt;
+            &lt;gml:lowerCorner&gt;129.160136 35.158268&lt;/gml:lowerCorner&gt;
+            &lt;gml:upperCorner&gt;129.160136 35.158268&lt;/gml:upperCorner&gt;
+        &lt;/gml:Envelope&gt;
+    &lt;/gml:boundedBy&gt;
+    &lt;ID&gt;&lt;![CDATA[20150189]]&gt;&lt;/ID&gt;
+    &lt;LEISURE_ID&gt;&lt;![CDATA[15001600]]&gt;&lt;/LEISURE_ID&gt;
+    &lt;ATPT&gt;&lt;![CDATA[26000]]&gt;&lt;/ATPT&gt;
+    &lt;SIGUN&gt;&lt;![CDATA[26000]]&gt;&lt;/SIGUN&gt;
+    &lt;SE&gt;&lt;![CDATA[LSR016]]&gt;&lt;/SE&gt;
+    &lt;NM&gt;&lt;![CDATA[해운대해수욕장]]&gt;&lt;/NM&gt;
+    &lt;FACILITIES&gt;&lt;![CDATA[샤워실, 탈의실, 화장실, 급수대, 매점, 파라솔]]&gt;&lt;/FACILITIES&gt;
+    &lt;ADDR&gt;&lt;![CDATA[부산시 해운대구 중동2로 11]]&gt;&lt;/ADDR&gt;
+    &lt;PHOTO_NO&gt;&lt;![CDATA[BEACH_0032.JPG]]&gt;&lt;/PHOTO_NO&gt;
+    &lt;XCNTS&gt;&lt;![CDATA[129.159944]]&gt;&lt;/XCNTS&gt;
+    &lt;YDNTS&gt;&lt;![CDATA[35.158572]]&gt;&lt;/YDNTS&gt;
+    &lt;PPATH&gt;&lt;![CDATA[해양레저관광/해수욕장/]]&gt;&lt;/PPATH&gt;
+    &lt;ORIGIN&gt;&lt;![CDATA[레져관광정보도]]&gt;&lt;/ORIGIN&gt;
+    &lt;ORIYR&gt;&lt;![CDATA[2014]]&gt;&lt;/ORIYR&gt;
+    &lt;ORIORG&gt;&lt;![CDATA[국립해양조사원]]&gt;&lt;/ORIORG&gt;
+    &lt;AG_GEOM&gt;
+        &lt;gml:Point srsName="EPSG:4326"&gt;
+            &lt;gml:pos&gt;129.160136 35.158268&lt;/gml:pos&gt;
+        &lt;/gml:Point&gt;
+    &lt;/AG_GEOM&gt;
+&lt;/TB_FACI_BEACH&gt;
+&lt;/gml:featureMember&gt;
+&lt;/wfs:FeatureCollection&gt;</pre>
+    </div>
+  </div>
+</section>
+
+<section class="read-section">
+  <div class="read-section-header">
+    <h2>오류 이벤트 처리</h2>
+  </div>
+  <p class="note-text-lg">본 개발가이드는 현 시스템이 제공하고 있는 개방해 서비스 정보를 OPEN API 를 통해 손쉽게 사용할 수 있도록 하는데 목적이 있다.</p>
+  <div class="read-section-body">
+    <h3 class="read-body-title">오류상황별 결과 예제</h3>
+  </div>
+  <div class="read-section-body">
+    <h4 class="read-body-subtitle">인증키가 없는 경우</h4>
+    <div class="txtBox">
+      <pre>{”result”:”invalid ServiceKey.”}</pre>
+    </div>
+    <h4 class="read-body-subtitle">인증키의 사용 기한이 만료된 경우</h4>
+    <div class="txtBox">
+      <pre>{”result”:”Use the ServiceKey is expired.”}</pre>
+    </div>
+    <h4 class="read-body-subtitle">API 호출의 하루 조회 허용 횟수가 초과한 경우</h4>
+    <div class="txtBox">
+      <pre>{”result”:”The number of requested of today is 허용 횟수 exceeded.”}</pre>
+    </div>
+    <h4 class="read-body-subtitle">레이어에 대한 사용 권한이 없는 경우</h4>
+    <div class="txtBox">
+      <pre>{”result”:”Do not have authentification on this layer.”}</pre>
+    </div>
+    <h4 class="read-body-subtitle">인증키의 사용 권한이 없는 경우</h4>
+    <div class="txtBox">
+      <pre>{”result”:”Do not have authentification on this ServiceKey.”}</pre>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,393 @@
+.products-container{
+  display: flex;
+  gap: 24px;
+  padding-top: 2rem;
+  .products-tree-area {
+    border-radius: 5px;
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+  }
+}
+
+.file-browser-container {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  .path-display {
+    margin-bottom: 12px;
+    font-size: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+  }
+
+  .search-area {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: center;
+
+    input[type="text"] {
+      flex-grow: 1;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+      color: #333;
+      outline: none;
+      background-color: #fff;
+      
+      &:focus {
+        border-color: #999;
+      }
+    }
+
+    .btn-search {
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      white-space: nowrap;
+      
+      &:hover {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+
+    .btn-action {
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #e8e8e8;
+      }
+
+      &:active {
+        background-color: #ddd;
+      }
+
+      // 폴더명 변경 버튼 - 빨간 물결선 밑줄
+      &.btn-rename-folder {
+        text-decoration: underline wavy #f44336;
+      }
+    }
+  }
+
+  .file-list {
+    .list-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        
+        &.folder {
+          background-color: #fdd835; // 노란색 폴더
+        }
+        
+        &.icon-gpkg {
+          background-color: #9e9e9e; // 회색 일반 파일
+        }
+        
+        &.icon-xlsx {
+          background-color: #4caf50; // 초록색 엑셀
+        }
+      }
+
+      .name {
+        flex-grow: 1;
+        font-size: 14px;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item-actions {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+
+        .btn-item-action {
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          padding: 4px 8px;
+          font-size: 12px;
+          color: #333;
+          cursor: pointer;
+          white-space: nowrap;
+          
+          &:hover {
+            background-color: #e8e8e8;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 모달 스타일
+.krds-modal {
+  .modal-content {
+    .modal-path {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #666;
+      border-radius: 4px;
+    }
+
+    .modal-path-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+
+      .modal-path {
+        flex: 1;
+        margin-bottom: 0;
+      }
+
+      .btn-file-upload {
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: #e8e8e8;
+        }
+      }
+    }
+
+    .modal-form {
+      margin-bottom: 16px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .modal-input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+        }
+      }
+    }
+
+    .modal-message {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #856404;
+      line-height: 1.5;
+    }
+
+    .modal-file-list {
+      margin-bottom: 16px;
+
+      .modal-list-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 8px;
+          flex-shrink: 0;
+          border-radius: 2px;
+
+          &.icon-gpkg {
+            background-color: #9e9e9e;
+          }
+
+          &.icon-xlsx {
+            background-color: #4caf50;
+          }
+        }
+
+        .name {
+          flex: 1;
+          font-size: 14px;
+          color: #333;
+        }
+
+        .btn-download {
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 4px 8px;
+          font-size: 12px;
+          color: #333;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #e8e8e8;
+          }
+        }
+      }
+    }
+
+    .modal-upload-area {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+      text-align: center;
+      background-color: #fafafa;
+
+      .upload-placeholder {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 12px;
+      }
+
+      .upload-files {
+        .upload-file-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 0;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 2px;
+
+            &.icon-gpkg {
+              background-color: #9e9e9e;
+            }
+
+            &.icon-xlsx {
+              background-color: #4caf50;
+            }
+          }
+
+          .name {
+            font-size: 14px;
+            color: #333;
+          }
+        }
+      }
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+
+      button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+
+        &.btn-close {
+          background-color: #f5f5f5;
+          color: #333;
+
+          &:hover {
+            background-color: #e8e8e8;
+          }
+        }
+
+        &.btn-save {
+          background-color: #007bff;
+          color: #fff;
+          border-color: #007bff;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+
+        &.btn-delete {
+          background-color: #dc3545;
+          color: #fff;
+          border-color: #dc3545;
+
+          &:hover {
+            background-color: #c82333;
+          }
+        }
+
+        &.btn-cancel {
+          background-color: #6c757d;
+          color: #fff;
+          border-color: #6c757d;
+
+          &:hover {
+            background-color: #545b62;
+          }
+        }
+      }
+    }
+  }
+}
+
+.file-upload-input{
+  position: absolute;
+  left: -999em;
+}

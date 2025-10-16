@@ -1,0 +1,188 @@
+<!-- @pageTitle 객체사전_분류체계 -->
+<!-- @pageCreated 2025.10.11 -->
+<!-- @pageUpdated 2025.10.16 -->
+<!-- @pageNote 파일명 변경 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+	<div class="container">
+		<h1 class="page-title">객체사전</h1>
+		<!-- tab -->
+
+		<!-- tab list -->
+		<div class="tab line full">
+			<ul>
+				<li class="active"><a href="##" class="btn-tab" title="현재 페이지">분류체계</a></li>
+				<li><a href="##" class="btn-tab">객체 클래스</a></li>
+				<li><a href="##" class="btn-tab">마스터 속성</a></li>
+			</ul>
+		</div>
+		<!-- //tab list -->
+
+		<div class="object-container">
+			<!-- 검색 폼 -->
+			<div class="search-form">
+				<div class="search-row">
+					<select class="krds-form-select" title="검색 조건">
+						<option value="">전체</option>
+						<option value="">제목</option>
+						<option value="">내용</option>
+					</select>
+					<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+					<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
+				</div>
+			</div>
+
+			<!-- 메인 컨텐츠 영역 -->
+			<div class="content-wrapper">
+				<!-- 좌측 트리 구조 -->
+				<div class="tree-section">
+					<div class="tree-container" id="object-tree">
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle"></span>
+							<span class="tree-label">해양환경</span>
+							<button class="tree-add-btn">+</button>
+						</div>
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle expanded"></span>
+							<span class="tree-label">지형 및 해안선</span>
+							<button class="tree-add-btn">+</button>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">자연형상</span>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">인공구조물의 형상</span>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">육상물표</span>
+						</div>
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle"></span>
+							<span class="tree-label">수심 및 저질</span>
+							<button class="tree-add-btn">+</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- 우측 상세정보 -->
+				<div class="detail-section">
+					<div class="detail-header">
+						<span class="back-arrow">←</span>
+						<h3>상세정보</h3>
+					</div>
+					<div class="detail-content">
+						<table class="detail-table">
+							<tr>
+								<td>한글명</td>
+								<td class="detail-value">인공구조물의 형상</td>
+							</tr>
+							<tr>
+								<td>영문명</td>
+								<td class="detail-value">Cultural Features</td>
+							</tr>
+							<tr>
+								<td>최종 수정일자</td>
+								<td class="detail-value">2025-08-15</td>
+							</tr>
+						</table>
+					</div>
+					<div class="action-buttons">
+						<button type="button" class="krds-btn small">수정</button>
+						<button type="button" class="krds-btn small secondary">삭제</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// 트리 토글 기능
+		const treeToggles = document.querySelectorAll('.tree-toggle');
+		treeToggles.forEach(toggle => {
+			toggle.addEventListener('click', function () {
+				const item = this.closest('.tree-item');
+				const currentLevel = parseInt(item.getAttribute('data-level'));
+				const nextItems = Array.from(item.parentNode.children);
+				const currentIndex = nextItems.indexOf(item);
+				const children = [];
+
+				// 다음 아이템들 중에서 현재 아이템의 하위 항목들 찾기
+				for (let i = currentIndex + 1; i < nextItems.length; i++) {
+					const nextItem = nextItems[i];
+					const nextLevel = parseInt(nextItem.getAttribute('data-level'));
+
+					if (nextLevel <= currentLevel) {
+						break;
+					}
+					if (nextLevel === currentLevel + 1) {
+						children.push(nextItem);
+					}
+				}
+
+				if (this.classList.contains('expanded')) {
+					this.classList.remove('expanded');
+					this.textContent = '';
+					children.forEach(child => {
+						child.style.display = 'none';
+					});
+				} else {
+					this.classList.add('expanded');
+					this.textContent = '';
+					children.forEach(child => {
+						child.style.display = 'block';
+					});
+				}
+			});
+		});
+
+		// 트리 아이템 선택 기능
+		const treeItems = document.querySelectorAll('.tree-item');
+		treeItems.forEach(item => {
+			item.addEventListener('click', function () {
+				treeItems.forEach(i => i.classList.remove('selected'));
+				this.classList.add('selected');
+			});
+		});
+
+		// + 버튼 클릭 이벤트
+		const addButtons = document.querySelectorAll('.tree-add-btn');
+		addButtons.forEach(button => {
+			button.addEventListener('click', function (e) {
+				e.stopPropagation();
+				alert('추가 기능');
+			});
+		});
+
+		// 검색 기능
+		const searchBtn = document.querySelector('.search-btn');
+		const searchInput = document.querySelector('.search-input');
+
+		searchBtn.addEventListener('click', function () {
+			const searchTerm = searchInput.value.toLowerCase();
+			if (searchTerm) {
+				treeItems.forEach(item => {
+					const label = item.querySelector('.tree-label').textContent.toLowerCase();
+					if (label.includes(searchTerm)) {
+						item.style.display = 'block';
+						const parentItem = item.closest('.tree-item[data-level="0"]');
+						if (parentItem) {
+							const toggle = parentItem.querySelector('.tree-toggle');
+							toggle.classList.add('expanded');
+							toggle.textContent = '';
+						}
+					} else {
+						if (item.getAttribute('data-level') === '1') {
+							item.style.display = 'none';
+						}
+					}
+				});
+			} else {
+				treeItems.forEach(item => {
+					item.style.display = 'block';
+				});
+			}
+		});
+	});
+</script>

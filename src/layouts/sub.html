@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K-Ocean</title>
+  <link rel="stylesheet" href="./resources/css/component/output.css">
+  <link rel="stylesheet" href="./resources/css/common/common.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./resources/js/component/ui-script.js"></script>
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  
+  {{> Header }}
+  <main id="app" class="l-sub">
+    <div id="contents">
+      {{> Breadcrumb items=breadcrumb }}
+      <div class="container">
+        {{{body}}}
+      </div>
+    </div>
+  </main>
+
+  {{> Footer }}
+  
+  <script type="module" src="/js/main.js"></script>
+  
+</body>
+</html>
