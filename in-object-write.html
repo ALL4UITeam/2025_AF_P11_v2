@@ -2,448 +2,187 @@
 <!-- @pageCreated 2025.10.11 -->
 <!-- @pageUpdated 2025.10.16 -->
 <!-- @pageNote 파일명 변경 -->
-<!doctype html>
-<html lang="ko">
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+	<div class="container">
+		<h1 class="page-title">객체사전</h1>
+		<!-- tab -->
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>K-Ocean</title>
-	<link rel="stylesheet" href="./resources/css/component/output.css">
-	<link rel="stylesheet" href="./resources/css/common/common.css">
-	<link rel="stylesheet" href="./assets/css/index.css">
-	<script src="./resources/js/component/ui-script.js"></script>
-	<script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
-  <script src="./assets/js/portal.js"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
-</head>
-
-<body>
-	<div id="krds-skip-link">
-		<a href="#breadcrumb">본문 바로가기</a>
-	</div>
-
-	<!-- masthead -->
-	<div id="krds-masthead">
-	  <div class="toggle-wrap">
-	    <div class="toggle-head">
-	      <div class="inner">
-	        <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<!-- //masthead -->
-	
-	<header id="header" class="header">
-	  <div class="header-container">
-	    <div class="header-l">
-	      <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
-	    </div>
-	    <div class="header-r">
-	      <nav id="nav">
-	        <ul class="gnb-list" id="gnb">
-	          <li class="gnb-lv-1">
-	            <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
-	            <div class="gnb-dropmenu gnb-dropmenu-1">
-	              <div class="gnb-dropmenu-info">
-	                <h3>해양지도 서비스</h3>
-	                <p>해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</p>
-	              </div>
-	              <ul>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">해양정보</div>
-	                    <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	              </ul>
-	            </div>
-	          </li>
-	          <li class="gnb-lv-1">
-	            <a href="#" class="gnb-lv-1-item">플랫폼 소개</a>
-	            <div class="gnb-dropmenu gnb-dropmenu-2">
-	              <div class="gnb-dropmenu-info">
-	                <h3>플랫폼 소개</h3>
-	                <p>K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</p>
-	              </div>
-	              <ul>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">K-OCEAN 플랫폼 소개</div>
-	                    <div class="desc">K-OCEAN 플랫폼의 목적과 유용한 활용 정보를 확인할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">K-OCEAN 로드맵</div>
-	                    <div class="desc">K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	              </ul>
-	            </div>
-	          </li>
-	          <li class="gnb-lv-1">
-	            <a href="#" class="gnb-lv-1-item">서비스 활용</a>
-	            <div class="gnb-dropmenu gnb-dropmenu-3">
-	              <div class="gnb-dropmenu-info">
-	                <h3>서비스 활용</h3>
-	                <p>해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</p>
-	              </div>
-	              <ul>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">데이터 다운로드</div>
-	                    <div class="desc">해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">Open-API</div>
-	                    <div class="desc">기본 지도, 영상 지도 등 해양 데이터 기반의 지도를 활용할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">통계서비스</div>
-	                    <div class="desc">사용자들이 주용 이용하는 레이어에 대한 통계 자료와 상세 정보를 제공합니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">Cook-Book</div>
-	                    <div class="desc">K-OCEAN 플랫폼의 다양한 기능들을 소개하고, 활용할 수 있는 방안을 제시합니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">공간정보 법령 및 규정</div>
-	                    <div class="desc">전자해도 기반의 공간정보에 대한 법령 및 규정을 확인할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	              </ul>
-	            </div>
-	          </li>
-	          <li class="gnb-lv-1">
-	            <a href="#" class="gnb-lv-1-item">커뮤니티</a>
-	            <div class="gnb-dropmenu gnb-dropmenu-4">
-	              <div class="gnb-dropmenu-info">
-	                <h3>커뮤니티</h3>
-	                <p>K-Ocena 플랫폼을 쉽고 편리하게 이용할 수 있도록 다양한 정보를 제공합니다.</p>
-	              </div>
-	              <ul>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">공지사항</div>
-	                    <div class="desc">주요행사, 업데이트 정보 등 공지사항을 확인할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	                <li class="gnb-lv-2">
-	                  <a href="#" class="gnb-lv-2-item">
-	                    <div class="tit">자주하는 질문</div>
-	                    <div class="desc">자주 묻는 질문에 대한 질의/답변을 한곳에서 확인할 수 있습니다.</div>
-	                    <div class="icon-arrow"></div>
-	                  </a>
-	                </li>
-	              </ul>
-	            </div>
-	          </li>
-	        </ul>
-	      </nav>
-	      <button type="button" class="btn-allmenu" id="btnAllMenu">전체메뉴</button>
-	    </div>
-	  </div>
-	</header>
-	
-	
-	<nav id="mobile-nav">
-	  <ul class="gnb">
-	    <li class="gnb-lv1">
-	      <a href="#">해양지도 서비스</a>
-	      <div class="gnb-submenu">
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">해양정보</a></li>
-	        </ul>
-	      </div>
-	    </li>
-	    <li class="gnb-lv1">
-	      <a href="#">플랫폼 소개</a>
-	      <div class="gnb-submenu">
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
-	        </ul>
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
-	        </ul>
-	      </div>
-	    </li>
-	    <li class="gnb-lv1">
-	      <a href="#">서비스 활용</a>
-	      <div class="gnb-submenu">
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
-	        </ul>
-	      </div>
-	    </li>
-	    <li class="gnb-lv1">
-	      <a href="#">커뮤니티</a>
-	      <div class="gnb-submenu">
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">공지사항</a></li>
-	        </ul>
-	        <ul class="gnb-submenu-list">
-	          <li class="gnb-submenu-item"><a href="#">자주하는 질문</a></li>
-	        </ul>
-	      </div>
-	    </li>
-	  </ul>
-	</nav>	<main id="app" class="l-sub">
-		<div class="sub-banner object">
-		  <div class="container">
-		    <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
-		      <div>
-		        <ol class="breadcrumb">
-		          <li class="home"><a href="#" class="txt">홈</a></li>
-		        </ol>
-		      </div>
-		    </nav>
-		  </div>
+		<!-- tab list -->
+		<div class="tab line full">
+			<ul>
+				<li class="active"><a href="##" class="btn-tab" title="현재 페이지">분류체계</a></li>
+				<li><a href="##" class="btn-tab">객체 클래스</a></li>
+				<li><a href="##" class="btn-tab">마스터 속성</a></li>
+			</ul>
 		</div>
-		<div id="contents">
-			<div class="container">
-				<h1 class="page-title">객체사전</h1>
-				<!-- tab -->
+		<!-- //tab list -->
 
-				<!-- tab list -->
-				<div class="tab line full">
-					<ul>
-						<li class="active"><a href="##" class="btn-tab" title="현재 페이지">분류체계</a></li>
-						<li><a href="##" class="btn-tab">객체 클래스</a></li>
-						<li><a href="##" class="btn-tab">마스터 속성</a></li>
-					</ul>
+		<div class="object-container">
+			<!-- 검색 폼 -->
+			<div class="search-form">
+				<div class="search-row">
+					<select class="krds-form-select" title="검색 조건">
+						<option value="">전체</option>
+						<option value="">제목</option>
+						<option value="">내용</option>
+					</select>
+					<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+					<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
 				</div>
-				<!-- //tab list -->
+			</div>
 
-				<div class="object-container">
-					<!-- 검색 폼 -->
-					<div class="search-form">
-						<div class="search-row">
-							<select class="krds-form-select" title="검색 조건">
-								<option value="">전체</option>
-								<option value="">제목</option>
-								<option value="">내용</option>
-							</select>
-							<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
-							<button type="button" class="krds-btn medium"><i class="icon ico-search"
-									aria-hidden="true"></i>검색</button>
+			<!-- 메인 컨텐츠 영역 -->
+			<div class="content-wrapper">
+				<!-- 좌측 트리 구조 -->
+				<div class="tree-section">
+					<div class="tree-container" id="object-tree">
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle"></span>
+							<span class="tree-label">해양환경</span>
+							<button class="tree-add-btn">+</button>
+						</div>
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle expanded"></span>
+							<span class="tree-label">지형 및 해안선</span>
+							<button class="tree-add-btn">+</button>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">자연형상</span>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">인공구조물의 형상</span>
+						</div>
+						<div class="tree-item" data-level="1" style="display: block;">
+							<span class="tree-label">육상물표</span>
+						</div>
+						<div class="tree-item" data-level="0">
+							<span class="tree-toggle"></span>
+							<span class="tree-label">수심 및 저질</span>
+							<button class="tree-add-btn">+</button>
 						</div>
 					</div>
+				</div>
 
-					<!-- 메인 컨텐츠 영역 -->
-					<div class="content-wrapper">
-						<!-- 좌측 트리 구조 -->
-						<div class="tree-section">
-							<div class="tree-container" id="object-tree">
-								<div class="tree-item" data-level="0">
-									<span class="tree-toggle"></span>
-									<span class="tree-label">해양환경</span>
-									<button class="tree-add-btn">+</button>
-								</div>
-								<div class="tree-item" data-level="0">
-									<span class="tree-toggle expanded"></span>
-									<span class="tree-label">지형 및 해안선</span>
-									<button class="tree-add-btn">+</button>
-								</div>
-								<div class="tree-item" data-level="1" style="display: block;">
-									<span class="tree-label">자연형상</span>
-								</div>
-								<div class="tree-item" data-level="1" style="display: block;">
-									<span class="tree-label">인공구조물의 형상</span>
-								</div>
-								<div class="tree-item" data-level="1" style="display: block;">
-									<span class="tree-label">육상물표</span>
-								</div>
-								<div class="tree-item" data-level="0">
-									<span class="tree-toggle"></span>
-									<span class="tree-label">수심 및 저질</span>
-									<button class="tree-add-btn">+</button>
-								</div>
-							</div>
-						</div>
-
-						<!-- 우측 상세정보 -->
-						<div class="detail-section">
-							<div class="detail-header">
-								<span class="back-arrow">←</span>
-								<h3>상세정보</h3>
-							</div>
-							<div class="detail-content">
-								<table class="detail-table">
-									<tr>
-										<td>한글명</td>
-										<td class="detail-value">인공구조물의 형상</td>
-									</tr>
-									<tr>
-										<td>영문명</td>
-										<td class="detail-value">Cultural Features</td>
-									</tr>
-									<tr>
-										<td>최종 수정일자</td>
-										<td class="detail-value">2025-08-15</td>
-									</tr>
-								</table>
-							</div>
-							<div class="action-buttons">
-								<button type="button" class="krds-btn small">수정</button>
-								<button type="button" class="krds-btn small secondary">삭제</button>
-							</div>
-						</div>
+				<!-- 우측 상세정보 -->
+				<div class="detail-section">
+					<div class="detail-header">
+						<span class="back-arrow">←</span>
+						<h3>상세정보</h3>
+					</div>
+					<div class="detail-content">
+						<table class="detail-table">
+							<tr>
+								<td>한글명</td>
+								<td class="detail-value">인공구조물의 형상</td>
+							</tr>
+							<tr>
+								<td>영문명</td>
+								<td class="detail-value">Cultural Features</td>
+							</tr>
+							<tr>
+								<td>최종 수정일자</td>
+								<td class="detail-value">2025-08-15</td>
+							</tr>
+						</table>
+					</div>
+					<div class="action-buttons">
+						<button type="button" class="krds-btn small">수정</button>
+						<button type="button" class="krds-btn small secondary">삭제</button>
 					</div>
 				</div>
 			</div>
 		</div>
-	</main>
 
-	<!-- footer -->
-	<footer id="krds-footer">
-	  <div class="foot-quick">
-	    <div class="inner">
-	      <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
-	      <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
-	      <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
-	    </div>
-	  </div>
-	  <div class="inner">
-	    <div class="f-logo">
-	      <span class="sr-only">국립해양조사원</span>
-	    </div>
-	    <div class="f-cnt">
-	      <div class="f-info">
-	        <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
-	        <ul class="info-cs">
-	          <li>
-	            <span><strong class="strong">대표전화</strong>051-400-4400</span>
-	            <span><strong class="strong">팩스번호</strong>051-400-4191</span>
-	            <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
-	          </li>
-	        </ul>
-	      </div>
-	
-	    </div>
-	
-	    <div class="f-btm">
-	      <div class="f-btm-text">
-	        <div class="f-menu">
-	          <a href="#" class="point">개인정보처리방침</a>
-	          <a href="#">저작권 정책</a>
-	        </div>
-	        <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-	<!-- //footer -->
-	
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			// 트리 토글 기능
-			const treeToggles = document.querySelectorAll('.tree-toggle');
-			treeToggles.forEach(toggle => {
-				toggle.addEventListener('click', function () {
-					const item = this.closest('.tree-item');
-					const currentLevel = parseInt(item.getAttribute('data-level'));
-					const nextItems = Array.from(item.parentNode.children);
-					const currentIndex = nextItems.indexOf(item);
-					const children = [];
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// 트리 토글 기능
+		const treeToggles = document.querySelectorAll('.tree-toggle');
+		treeToggles.forEach(toggle => {
+			toggle.addEventListener('click', function () {
+				const item = this.closest('.tree-item');
+				const currentLevel = parseInt(item.getAttribute('data-level'));
+				const nextItems = Array.from(item.parentNode.children);
+				const currentIndex = nextItems.indexOf(item);
+				const children = [];
 
-					// 다음 아이템들 중에서 현재 아이템의 하위 항목들 찾기
-					for (let i = currentIndex + 1; i < nextItems.length; i++) {
-						const nextItem = nextItems[i];
-						const nextLevel = parseInt(nextItem.getAttribute('data-level'));
+				// 다음 아이템들 중에서 현재 아이템의 하위 항목들 찾기
+				for (let i = currentIndex + 1; i < nextItems.length; i++) {
+					const nextItem = nextItems[i];
+					const nextLevel = parseInt(nextItem.getAttribute('data-level'));
 
-						if (nextLevel <= currentLevel) {
-							break;
-						}
-						if (nextLevel === currentLevel + 1) {
-							children.push(nextItem);
-						}
+					if (nextLevel <= currentLevel) {
+						break;
 					}
-
-					if (this.classList.contains('expanded')) {
-						this.classList.remove('expanded');
-						this.textContent = '';
-						children.forEach(child => {
-							child.style.display = 'none';
-						});
-					} else {
-						this.classList.add('expanded');
-						this.textContent = '';
-						children.forEach(child => {
-							child.style.display = 'block';
-						});
+					if (nextLevel === currentLevel + 1) {
+						children.push(nextItem);
 					}
-				});
-			});
+				}
 
-			// 트리 아이템 선택 기능
-			const treeItems = document.querySelectorAll('.tree-item');
-			treeItems.forEach(item => {
-				item.addEventListener('click', function () {
-					treeItems.forEach(i => i.classList.remove('selected'));
-					this.classList.add('selected');
-				});
-			});
-
-			// + 버튼 클릭 이벤트
-			const addButtons = document.querySelectorAll('.tree-add-btn');
-			addButtons.forEach(button => {
-				button.addEventListener('click', function (e) {
-					e.stopPropagation();
-					alert('추가 기능');
-				});
-			});
-
-			// 검색 기능
-			const searchBtn = document.querySelector('.search-btn');
-			const searchInput = document.querySelector('.search-input');
-
-			searchBtn.addEventListener('click', function () {
-				const searchTerm = searchInput.value.toLowerCase();
-				if (searchTerm) {
-					treeItems.forEach(item => {
-						const label = item.querySelector('.tree-label').textContent.toLowerCase();
-						if (label.includes(searchTerm)) {
-							item.style.display = 'block';
-							const parentItem = item.closest('.tree-item[data-level="0"]');
-							if (parentItem) {
-								const toggle = parentItem.querySelector('.tree-toggle');
-								toggle.classList.add('expanded');
-								toggle.textContent = '';
-							}
-						} else {
-							if (item.getAttribute('data-level') === '1') {
-								item.style.display = 'none';
-							}
-						}
+				if (this.classList.contains('expanded')) {
+					this.classList.remove('expanded');
+					this.textContent = '';
+					children.forEach(child => {
+						child.style.display = 'none';
 					});
 				} else {
-					treeItems.forEach(item => {
-						item.style.display = 'block';
+					this.classList.add('expanded');
+					this.textContent = '';
+					children.forEach(child => {
+						child.style.display = 'block';
 					});
 				}
 			});
 		});
-	</script>
-</body>
 
-</html>
+		// 트리 아이템 선택 기능
+		const treeItems = document.querySelectorAll('.tree-item');
+		treeItems.forEach(item => {
+			item.addEventListener('click', function () {
+				treeItems.forEach(i => i.classList.remove('selected'));
+				this.classList.add('selected');
+			});
+		});
+
+		// + 버튼 클릭 이벤트
+		const addButtons = document.querySelectorAll('.tree-add-btn');
+		addButtons.forEach(button => {
+			button.addEventListener('click', function (e) {
+				e.stopPropagation();
+				alert('추가 기능');
+			});
+		});
+
+		// 검색 기능
+		const searchBtn = document.querySelector('.search-btn');
+		const searchInput = document.querySelector('.search-input');
+
+		searchBtn.addEventListener('click', function () {
+			const searchTerm = searchInput.value.toLowerCase();
+			if (searchTerm) {
+				treeItems.forEach(item => {
+					const label = item.querySelector('.tree-label').textContent.toLowerCase();
+					if (label.includes(searchTerm)) {
+						item.style.display = 'block';
+						const parentItem = item.closest('.tree-item[data-level="0"]');
+						if (parentItem) {
+							const toggle = parentItem.querySelector('.tree-toggle');
+							toggle.classList.add('expanded');
+							toggle.textContent = '';
+						}
+					} else {
+						if (item.getAttribute('data-level') === '1') {
+							item.style.display = 'none';
+						}
+					}
+				});
+			} else {
+				treeItems.forEach(item => {
+					item.style.display = 'block';
+				});
+			}
+		});
+	});
+</script>

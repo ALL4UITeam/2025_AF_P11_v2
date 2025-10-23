@@ -10,6 +10,13 @@ function initGroupButtons(selector = ".group-btn", callback) {
         buttons.forEach((btn) => btn.classList.remove("active"));
         if (!isActive) {
           this.classList.add("active");
+          if (this.classList.contains("map-type-btn1")) {
+            document.querySelector(".map-type-opacity").classList.add("show");
+          } else {
+            document.querySelector(".map-type-opacity").classList.remove("show");
+          }
+        } else {
+          document.querySelector(".map-type-opacity").classList.remove("show");
         }
       });
     });
@@ -414,6 +421,7 @@ function initZoomRangeValue() {
   const zoomRange = document.querySelector(".zoom-range");
   const zoomValue = document.querySelector(".zoom-range-value");
   const zoomLevelValue = document.querySelector(".zoom-level-value");
+  const gageBackground = document.querySelector(".gage-background");
   const minZoom = 1;
   const maxZoom = 14;
   let zoomLevel = 7;
@@ -421,6 +429,7 @@ function initZoomRangeValue() {
   const updateZoomUI = () => {
     const percent = (zoomLevel - minZoom) / (maxZoom - minZoom) * 100;
     zoomValue.style.bottom = `${percent.toFixed(0)}%`;
+    gageBackground.style.height = `calc(${percent.toFixed(0)}% - 0.1rem)`;
     zoomLevelValue.textContent = `LV${zoomLevel}`;
   };
   updateZoomUI();

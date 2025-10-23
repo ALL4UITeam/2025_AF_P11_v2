@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
   <title>K-OCEAN</title>
   <link rel="stylesheet" href="./lib/ol/ol.css">
   <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
@@ -13,7 +18,7 @@
   <link rel="stylesheet" href="./assets/css/map.css">
 </head>
 
-<body class="open-depth-1 open-depth-2">
+<body class="open-depth-1">
 
   <div class="wrap">
     <nav id="map-nav">
@@ -134,14 +139,14 @@
               <div class="layer-item-list">
                 <div class="layer-item">
                   <button class="layer-btn-lv1" data-layer-toggle="level-2">
-                    <span class="layer-name">지형/지명</span>
+                    <span class="layer-name">지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명</span>
                     <i class="icon icon-layer-1"></i>
                   </button>
                   <div class="layer-item-tree level-2">
                     <div class="layer-btn-ui layer-tree-toggle">
                       <button class="layer-btn-ui-more" data-layer-toggle="level-3"></button>
                       <i class="icon icon-legend-1"></i>
-                      <span class="layer-name">지형/지명</span>
+                      <span class="layer-name">지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명</span>
                       <div class="layer-utils">
                         <button class="layer-utils-btn layer-utils-btn-download"><span
                             class="visually-hidden">다운로드</span></button>
@@ -1356,6 +1361,8 @@
                 <line x1="0.5" y1="0.5" x2="15.5" y2="0.5" stroke="#C6C6C6" />
                 <line x1="0.5" y1="130.5" x2="15.5" y2="130.5" stroke="#C6C6C6" />
               </svg>
+              <!-- 2025.10.20 추가 -->
+              <div class="gage-background"></div>
               <div class="zoom-range-value"></div>
             </div>
             <button class="zoom-btn zoom-out" title="축소">
@@ -1381,6 +1388,17 @@
       </div>
       <!-- // map-area -->
 
+      <!-- 2025.10.20 추가 -->
+      <div class="map-type-opacity">
+        <strong class="label">약최저저조면(국문DL)</strong>
+        <div class="range-control">
+          <div class="range-slider">
+            <input type="range" min="0" max="100" value="100">
+          </div>
+          <span class="value"><em class="accent">100</em>%</span>
+        </div>
+      </div>
+      
       <!-- 레이어 목록 -->
       <div class="option-panel" id="optionLayerList">
         <div class="option-panel-wrapper">
@@ -1395,7 +1413,7 @@
               <div class="layer-item">
                 <div class="layer-btn-ui">
                   <i class="icon icon-legend-1"></i>
-                  <span class="layer-name">지형/지명</span>
+                  <span class="layer-name">지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명</span>
                   <span class="line"></span>
                   <div class="switch-btn">
                     <label class="switch-toggle">
@@ -1411,7 +1429,7 @@
               <div class="layer-item">
                 <div class="layer-btn-ui">
                   <i class="icon icon-legend-1"></i>
-                  <span class="layer-name">지형/지명</span>
+                  <span class="layer-name">지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명지형/지명</span>
                   <span class="line"></span>
                   <div class="switch-btn">
                     <label class="switch-toggle">
@@ -1428,7 +1446,7 @@
           </div>
         </div>
       </div>
-      <!-- // optionLayerList -->`
+      <!-- // optionLayerList -->
       
       <!-- 사용자 레이어 -->
       <div class="option-panel" id="optionUserLayer">
@@ -1730,7 +1748,15 @@
           </div>
         </div>
       </div>
-      <!-- // legend-extend --> 
+      <!-- // legend-extend -->
+      <!-- 25.10.22 오른쪽 키 안내 추가 -->
+      <div class="alert-user-element" style="left:50%;top:20%;">
+        <div>
+          <div class="alert-element-text">오른쪽 클릭 또는 왼쪽 더블클릭으로 마치세요.</div>
+        </div>
+      </div>
+
+    
       <!-- 라벨 생성 툴 -->
       <div class="label-create-element" style="left:30%;top:20%;">
         <div>
