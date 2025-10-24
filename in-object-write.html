@@ -236,12 +236,16 @@
 		<!-- tab -->
 
 		<!-- tab list -->
-		<div class="tab line full">
-			<ul>
-				<li class="active"><a href="##" class="btn-tab" title="현재 페이지">분류체계</a></li>
-				<li><a href="##" class="btn-tab">객체 클래스</a></li>
-				<li><a href="##" class="btn-tab">마스터 속성</a></li>
-			</ul>
+		<div class="tab-nav-container">
+			<button type="button" class="toggle" title="현재 탭 위치">
+				<span class="toggle-text">분류체계</span>
+				<i class="svg-icon ico-angle"></i>
+			</button>
+			<nav class="tab-nav">
+				<button type="button" class="tab-nav-item active" aria-current="page">분류체계</button>
+				<button type="button" class="tab-nav-item" aria-current="false">객체 클래스</button>
+				<button type="button" class="tab-nav-item" aria-current="false">마스터 속성</button>
+			</nav>
 		</div>
 		<!-- //tab list -->
 
