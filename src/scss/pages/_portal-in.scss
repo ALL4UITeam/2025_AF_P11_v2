@@ -107,23 +107,9 @@
       }
 
       .icon {
-        width: 20px;
-        height: 20px;
         margin-right: 8px;
         flex-shrink: 0;
         border-radius: 2px;
-        
-        &.folder {
-          background-color: #fdd835; // 노란색 폴더
-        }
-        
-        &.icon-gpkg {
-          background-color: #9e9e9e; // 회색 일반 파일
-        }
-        
-        &.icon-xlsx {
-          background-color: #4caf50; // 초록색 엑셀
-        }
       }
 
       .name {

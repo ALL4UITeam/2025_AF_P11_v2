@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
   <title>K-OCEAN</title>
   <link rel="stylesheet" href="./lib/ol/ol.css">
   <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
@@ -10,7 +15,7 @@
   <script src="./lib/swiper/swiper-bundle.min.js"></script>
 </head>
 
-<body class="open-depth-1 open-depth-2">
+<body class="open-depth-1">
 
   <div class="wrap">
     <nav id="map-nav">
@@ -94,7 +99,15 @@
       <!-- // map-area -->
 
       {{> Map-option-panel }}
- 
+
+      <!-- 25.10.22 오른쪽 키 안내 추가 -->
+      <div class="alert-user-element" style="left:50%;top:20%;">
+        <div>
+          <div class="alert-element-text">오른쪽 클릭 또는 왼쪽 더블클릭으로 마치세요.</div>
+        </div>
+      </div>
+
+    
       <!-- 라벨 생성 툴 -->
       <div class="label-create-element" style="left:30%;top:20%;">
         <div>

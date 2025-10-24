@@ -1,28 +1,25 @@
-<!-- @pageTitle 공지사항 상세 -->
-<!-- @pageCreated 2025.10.11 -->
-<!-- @pageUpdated 2025.10.14 -->
-<!-- @pageNote 하단 버튼 클래스명 변경 -->
 <!doctype html>
 <html lang="ko">
-
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>K-Ocean</title>
-	<link rel="stylesheet" href="./resources/css/component/output.css">
-	<link rel="stylesheet" href="./resources/css/common/common.css">
-	<link rel="stylesheet" href="./assets/css/index.css">
-	<script src="./resources/js/component/ui-script.js"></script>
-	<script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
-  <script src="./assets/js/portal.js"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
+  <title>K-Ocean</title>
+  <link rel="stylesheet" href="./resources/css/component/output.css">
+  <link rel="stylesheet" href="./resources/css/common/common.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./resources/js/component/ui-script.js"></script>
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
-	<div id="krds-skip-link">
-		<a href="#breadcrumb">본문 바로가기</a>
-	</div>
-
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  
   <!-- masthead -->
   <div id="krds-masthead">
     <div class="toggle-wrap">
@@ -38,13 +35,13 @@
   <header id="header" class="header">
     <div class="header-container">
       <div class="header-l">
-        <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
+        <h1 class="logo"><a href="./main.html" title="홈 바로가기">K-OCEAN</a></h1>
       </div>
       <div class="header-r">
         <nav id="nav">
           <ul class="gnb-list" id="gnb">
             <li class="gnb-lv-1">
-              <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <a href="./map.html" class="gnb-lv-1-item before-none">해양지도 서비스</a>
               <div class="gnb-dropmenu gnb-dropmenu-1">
                 <div class="gnb-dropmenu-info">
                   <h3>해양지도 서비스</h3>
@@ -52,7 +49,7 @@
                 </div>
                 <ul>
                   <li class="gnb-lv-2">
-                    <a href="#" class="gnb-lv-2-item">
+                    <a href="./map.html" class="gnb-lv-2-item">
                       <div class="tit">해양정보</div>
                       <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
                       <div class="icon-arrow"></div>
@@ -182,6 +179,7 @@
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
           </ul>
           <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
           </ul>
         </div>
@@ -191,6 +189,10 @@
         <div class="gnb-submenu">
           <ul class="gnb-submenu-list">
             <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+            <li class="gnb-submenu-item"><a href="#">Open-API</a></li>
+            <li class="gnb-submenu-item"><a href="#">통계서비스</a></li>
+            <li class="gnb-submenu-item"><a href="#">Cook-Book</a></li>
+            <li class="gnb-submenu-item"><a href="#">공간정보 법령 및 규정</a></li>
           </ul>
         </div>
       </li>
@@ -206,134 +208,174 @@
         </div>
       </li>
     </ul>
-  </nav>  <main id="app" class="l-sub">
-    <div class="sub-banner notice">
-      <div class="container">
-        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
-          <div>
-            <ol class="breadcrumb">
-              <li class="home"><a href="#" class="txt">홈</a></li>
-            </ol>
-          </div>
-        </nav>
-      </div>
-    </div>
+    <button type="button" class="close-sitemap-btn" title="메뉴 닫기">닫기</button>
+  </nav>
+  
+  <main id="app" class="l-sub">
     <div id="contents">
+      <div class="sub-banner">
+        <div class="container">
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+              </ol>
+            </div>
+          </nav>
+        </div>
+      </div>
       <div class="container">
-				<h1 class="page-title">공지사항</h1>
+        <!-- @pageTitle 공지사항 상세 -->
+<!-- @pageCreated 2025.10.11 -->
+<!-- @pageUpdated 2025.10.23 -->
+<!-- @pageNote 첨부파일 아이콘 변경 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="notice">
+	<div class="container">
+		<h1 class="page-title">공지사항</h1>
 
-				<div class="notice-detail">
-					<div class="notice-detail__header">
-						<div class="notice-detail__category">공지사항</div>
-						<h1 class="notice-detail__title">K-OCEAN 정보 시스템 개편 안내</h1>
-						<div class="notice-detail__meta">
-							<div class="notice-detail__info">
-								<span class="notice-detail__date">2025.01.15</span>
-								<span class="notice-detail__views">조회수 1,234</span>
-							</div>
-						</div>
-					</div>
-					<div class="notice-detail__content">
-						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-						<br>
-
-						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-						<br>
-
-						<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-							붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-					</div>
-
-					<div class="notice-detail__attachments">
-						<h3 class="notice-detail__attachments-title">첨부파일</h3>
-						<ul class="notice-detail__attachments-list">
-							<li>
-								<a href="#" class="attachment-item">
-									<i class="icon-file"></i>
-									<span class="attachment-name">시스템_개편안내서.pdf</span>
-									<span class="attachment-size">(2.5MB)</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="attachment-item">
-									<i class="icon-file"></i>
-									<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-									<span class="attachment-size">(1.2MB)</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="notice-detail__navigation">
-						<div class="notice-detail__nav-item notice-detail__nav-prev">
-							<a href="#" class="nav-link">
-								<span class="nav-label">이전글</span>
-								<span class="nav-title">현황 통계 업데이트 안내</span>
-							</a>
-						</div>
-						<div class="notice-detail__nav-item notice-detail__nav-next">
-							<a href="#" class="nav-link">
-								<span class="nav-label">다음글</span>
-								<span class="nav-title">정책 변경사항</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="section-actions">
-					<div class="l">
-						<a href="#" class="krds-btn tertiary">목록으로 가기</a>
+		<div class="notice-detail">
+			<div class="notice-detail__header">
+				<div class="notice-detail__category">공지사항</div>
+				<h1 class="notice-detail__title">K-OCEAN 정보 시스템 개편 안내</h1>
+				<div class="notice-detail__meta">
+					<div class="notice-detail__info">
+						<span class="notice-detail__date">2025.01.15</span>
+						<span class="notice-detail__views">조회수 1,234</span>
 					</div>
 				</div>
 			</div>
+			<div class="notice-detail__content">
+				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+				<br>
+
+				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+				<br>
+
+				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
+					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
+			</div>
+
+			<div class="notice-detail__attachments">
+				<h3 class="notice-detail__attachments-title">첨부파일</h3>
+				<ul class="notice-detail__attachments-list">
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-pdf"></i>
+							<span class="attachment-name">시스템_개편안내서.pdf</span>
+							<span class="attachment-size">(2.5MB)</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-jpg"></i>
+							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+							<span class="attachment-size">(1.2MB)</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-png"></i>
+							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+							<span class="attachment-size">(1.2MB)</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-gif"></i>
+							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+							<span class="attachment-size">(1.2MB)</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-docx"></i>
+							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+							<span class="attachment-size">(1.2MB)</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="attachment-item">
+							<i class="icon icon-csv"></i>
+							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
+							<span class="attachment-size">(1.2MB)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="notice-detail__navigation">
+				<div class="notice-detail__nav-item notice-detail__nav-prev">
+					<a href="#" class="nav-link">
+						<span class="nav-label"><i class="svg-icon ico-angle left"></i>이전글</span>
+						<span class="nav-title">현황 통계 업데이트 안내</span>
+					</a>
+				</div>
+				<div class="notice-detail__nav-item notice-detail__nav-next">
+					<a href="#" class="nav-link">
+						<span class="nav-label">다음글<i class="svg-icon ico-angle right"></i></span>
+						<span class="nav-title">정책 변경사항</span>
+					</a>
+				</div>
+			</div>
 		</div>
-	</main>
+		<div class="section-actions">
+			<div class="l">
+				<a href="#" class="krds-btn tertiary">목록으로 가기</a>
+			</div>
+		</div>
 
-	<!-- footer -->
-	<footer id="krds-footer">
-	  <div class="foot-quick">
-	    <div class="inner">
-	      <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
-	      <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
-	      <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
-	    </div>
-	  </div>
-	  <div class="inner">
-	    <div class="f-logo">
-	      <span class="sr-only">국립해양조사원</span>
-	    </div>
-	    <div class="f-cnt">
-	      <div class="f-info">
-	        <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
-	        <ul class="info-cs">
-	          <li>
-	            <span><strong class="strong">대표전화</strong>051-400-4400</span>
-	            <span><strong class="strong">팩스번호</strong>051-400-4191</span>
-	            <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
-	          </li>
-	        </ul>
-	      </div>
-	
-	    </div>
-	
-	    <div class="f-btm">
-	      <div class="f-btm-text">
-	        <div class="f-menu">
-	          <a href="#" class="point">개인정보처리방침</a>
-	          <a href="#">저작권 정책</a>
-	        </div>
-	        <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-	<!-- //footer -->
-	
-
-	<script>
-		portal.initMobileTable();
-	</script>
+	</div>
+</section>
+<script>
+	portal.initMobileTable();
+</script>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="krds-footer">
+    <div class="foot-quick">
+      <div class="inner">
+        <button type="button" class="link" title="해양수산부 및 소속기관 레이어">해양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
+        <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="f-logo">
+        <span class="sr-only">국립해양조사원</span>
+      </div>
+      <div class="f-cnt">
+        <div class="f-info">
+          <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
+          <ul class="info-cs">
+            <li>
+              <span><strong class="strong">대표전화</strong>051-400-4400</span>
+              <span><strong class="strong">팩스번호</strong>051-400-4191</span>
+              <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="f-btm">
+        <div class="f-btm-text">
+          <div class="f-menu">
+            <a href="#" class="point">개인정보처리방침</a>
+            <a href="#">저작권 정책</a>
+          </div>
+          <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- //footer -->
+  
+    <script src="./assets/js/portal.js"></script>
 </body>
-
 </html>

@@ -2,165 +2,146 @@
 <!-- @pageCreated 2025.10.11 -->
 <!-- @pageUpdated 2025.10.16-->
 <!-- @pageNote 파일명 변경 -->
-<!doctype html>
-<html lang="ko">
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+	<div class="container">
+		<h1 class="page-title">객체사전</h1>
+		<!-- tab -->
 
-<head>
-	{{> Head }}
-</head>
+		<!-- tab list -->
 
-<body>
-	<div id="krds-skip-link">
-		<a href="#breadcrumb">본문 바로가기</a>
-	</div>
+		<div class="tab-nav-container">
+			<button type="button" class="toggle" title="현재 탭 위치">
+				<span class="toggle-text">분류체계</span>
+				<i class="svg-icon ico-angle"></i>
+			</button>
+			<nav class="tab-nav">
+				<button type="button" class="tab-nav-item active" aria-current="page">분류체계</button>
+				<button type="button" class="tab-nav-item" aria-current="false">객체 클래스</button>
+				<button type="button" class="tab-nav-item" aria-current="false">마스터 속성</button>
+			</nav>
+		</div>
 
-	{{> Header }}
-	<main id="app" class="l-sub">
-		{{> Breadcrumb items=breadcrumb subBanner="object"}}
-		<div id="contents">
-			<div class="container">
-				<h1 class="page-title">객체사전</h1>
-				<!-- tab -->
+		<!-- //tab list -->
 
-				<!-- tab list -->
-				<div class="tab line full">
-					<ul>
-						<li><a href="##" class="btn-tab" title="현재 페이지">분류체계</a></li>
-						<li class="active"><a href="##" class="btn-tab">객체 클래스</a></li>
-						<li><a href="##" class="btn-tab">마스터 속성</a></li>
-					</ul>
-				</div>
-				<!-- //tab list -->
-
-				<div class="object-container">
-					<div class="search-top-box">
-						<div class="search-form">
-							<div class="search-row">
-								<div class="search-row-item">
-									<label for="large-category">대분류</label>
-									<select class="krds-form-select" title="검색 조건" id="large-category">
-										<option value="">전체</option>
-										<option value="">제목</option>
-										<option value="">내용</option>
-									</select>
-								</div>
-								<div class="search-row-item">
-									<label for="small-category">소분류</label>
-									<select class="krds-form-select" title="검색 조건" id="small-category">
-										<option value="">전체</option>
-										<option value="">제목</option>
-										<option value="">내용</option>
-									</select>
-								</div>
-							</div>
-							<div class="search-row">
-								<select class="krds-form-select" title="검색 조건">
-									<option value="">전체</option>
-									<option value="">제목</option>
-									<option value="">내용</option>
-								</select>
-								<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
-								<button type="button" class="krds-btn medium"><i class="icon ico-search"
-										aria-hidden="true"></i>검색</button>
-							</div>
+		<div class="object-container">
+			<div class="search-top-box">
+				<div class="search-form">
+					<div class="search-row">
+						<div class="search-row-item">
+							<label for="large-category">대분류</label>
+							<select class="krds-form-select" title="검색 조건" id="large-category">
+								<option value="">전체</option>
+								<option value="">제목</option>
+								<option value="">내용</option>
+							</select>
+						</div>
+						<div class="search-row-item">
+							<label for="small-category">소분류</label>
+							<select class="krds-form-select" title="검색 조건" id="small-category">
+								<option value="">전체</option>
+								<option value="">제목</option>
+								<option value="">내용</option>
+							</select>
 						</div>
 					</div>
-
-					<div class="search-list-top">
-						<ul class="sch-info" aria-live="polite">
-							<li>검색 결과 <span class="point">24</span>개</li>
-						</ul>
-						<ul class="sch-sort">
-							<li>
-								<strong class="sort-label"><label for="sort">정렬기준</label></strong>
-								<div class="w-sort-btn">
-									<button type="button" class="active">관련도순</button>
-									<button type="button">최신순</button>
-								</div>
-								<div class="m-sort-btn">
-									<select class="krds-form-select-sort" id="sort">
-										<option>관련도순</option>
-										<option>최신순</option>
-										<option>인기순</option>
-									</select>
-								</div>
-							</li>
-						</ul>
+					<div class="search-row">
+						<select class="krds-form-select" title="검색 조건">
+							<option value="">전체</option>
+							<option value="">제목</option>
+							<option value="">내용</option>
+						</select>
+						<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+						<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
 					</div>
-					<div class="board-list">
-
-						<div class="board-list__body table__list">
-							<table>
-								<colgroup>
-									<col style="width: 8%;">
-									<col style="width: 15%;">
-									<col style="width: 15%;">
-									<col style="width: 20%;">
-									<col style="width: 20%;">
-									<col style="width: 12%;">
-									<col style="width: 10%;">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">번호</th>
-										<th scope="col">대분류</th>
-										<th scope="col">소분류</th>
-										<th scope="col">객체명(한글)</th>
-										<th scope="col">객체명(영문)</th>
-										<th scope="col">약어</th>
-										<th scope="col">최종 수정일자</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="number">1</td>
-										<td>지형 및 해안선</td>
-										<td>조석 및 조류</td>
-										<td class="text-left"><a href="#" class="ellipsis">난류</a></td>
-										<td class="text-left"><a href="#" class="ellipsis">Water turbulence</a></td>
-										<td>WATTUR</td>
-										<td>2025-08-15</td>
-									</tr>
-									<tr>
-										<td class="number">2</td>
-										<td>지형 및 해안선</td>
-										<td>조석 및 조류</td>
-										<td class="text-left"><a href="#" class="ellipsis">조류패널</a></td>
-										<td class="text-left"><a href="#" class="ellipsis">Tidal stream panel data</a></td>
-										<td>TS_PAD</td>
-										<td>2025-08-15</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //board-list__body -->
-
-						<div class="board-list__footer">
-							{{> Pagination}}
-						</div>
-						<!-- //board-list__footer -->
-
-						<div class="section-actions end">
-							<div class="r">
-								<button type="button" class="krds-btn tertiary medium"><i class="icon ico-search"
-										aria-hidden="true"></i>등록</button>
-							</div>
-						</div>
-
-					</div>
-					<!-- //board-list -->
 				</div>
 			</div>
+
+			<div class="search-list-top">
+				<ul class="sch-info" aria-live="polite">
+					<li>검색 결과 <span class="point">24</span>개</li>
+				</ul>
+				<ul class="sch-sort">
+					<li>
+						<strong class="sort-label"><label for="sort">정렬기준</label></strong>
+						<div class="w-sort-btn">
+							<button type="button" class="active">관련도순</button>
+							<button type="button">최신순</button>
+						</div>
+						<div class="m-sort-btn">
+							<select class="krds-form-select-sort" id="sort">
+								<option>관련도순</option>
+								<option>최신순</option>
+								<option>인기순</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="board-list">
+
+				<div class="board-list__body table__list">
+					<table>
+						<colgroup>
+							<col style="width: 8%;">
+							<col style="width: 15%;">
+							<col style="width: 15%;">
+							<col style="width: 20%;">
+							<col style="width: 20%;">
+							<col style="width: 12%;">
+							<col style="width: 10%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">대분류</th>
+								<th scope="col">소분류</th>
+								<th scope="col">객체명(한글)</th>
+								<th scope="col">객체명(영문)</th>
+								<th scope="col">약어</th>
+								<th scope="col">최종 수정일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="number">1</td>
+								<td>지형 및 해안선</td>
+								<td>조석 및 조류</td>
+								<td class="text-left"><a href="#" class="ellipsis">난류</a></td>
+								<td class="text-left"><a href="#" class="ellipsis">Water turbulence</a></td>
+								<td>WATTUR</td>
+								<td>2025-08-15</td>
+							</tr>
+							<tr>
+								<td class="number">2</td>
+								<td>지형 및 해안선</td>
+								<td>조석 및 조류</td>
+								<td class="text-left"><a href="#" class="ellipsis">조류패널</a></td>
+								<td class="text-left"><a href="#" class="ellipsis">Tidal stream panel data</a></td>
+								<td>TS_PAD</td>
+								<td>2025-08-15</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //board-list__body -->
+
+				<div class="board-list__footer">
+					{{> Pagination}}
+				</div>
+				<!-- //board-list__footer -->
+				
+				<div class="section-actions end">
+					<div class="r">
+						<button type="button" class="krds-btn tertiary medium"><i class="icon ico-search" aria-hidden="true"></i>등록</button>
+					</div>
+				</div>
+
+			</div>
+			<!-- //board-list -->
 		</div>
-	</main>
 
-	{{> Footer }}
-
-	<script type="module" src="/js/main.js"></script>
-	<script type="module" src="/js/page/portal.js"></script>
-	<script>
-		portal.initMobileTable();
-	</script>
-</body>
-
-</html>
+</section>
+<script>
+	portal.initMobileTable();
+</script>

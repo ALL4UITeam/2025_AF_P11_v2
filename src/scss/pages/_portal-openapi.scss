@@ -2,6 +2,19 @@
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
 
+.page-title:has(.openapi-guide-link){
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.openapi-guide-link{
+  background: url("@/assets/images/portal/openapi-guide-link.png") no-repeat center center / contain;
+  width: 174px;
+  height: 32px;
+  display: block;
+}
+
 .openapi-container {
   .tab-nav {
     margin-bottom: 4.8rem;

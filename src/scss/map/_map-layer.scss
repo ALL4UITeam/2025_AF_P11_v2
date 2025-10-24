@@ -13,9 +13,11 @@
   width: $layer-panel-width;
   background: #fff;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 12px 0 12px 0 rgba(0, 0, 0, 0.2);
+  //border-radius: 20px;
   overflow: hidden;
+  @media (min-width: 1001px) {
+    box-shadow: 12px 0 12px 0 rgba(0, 0, 0, 0.2);
+  }
   @media (max-width: 1000px) {
     left: 0;
     bottom: $mobile-bottom-gap;
@@ -31,6 +33,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  @media (min-width: 1001px) {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
   @media screen and (max-width: 1000px) {
     width: 100%;
     height: inherit;
@@ -337,10 +344,12 @@
   .layer-name {
     flex: 1 0 0;
     color: var(--g-90, #1e2124);
-
     font-size: 1.7rem;
     text-align: left;
     line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 1000px) {
       font-size: 1.3rem;
     }
@@ -403,11 +412,13 @@
   .layer-name {
     flex: 1 0 0;
     color: var(--g-90, #1e2124);
-
     font-size: 1.5rem;
     line-height: 150%; /* 22.5px */
     text-align: left;
     line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (max-width: 1000px) {
       font-size: 1.3rem;
     }
@@ -763,7 +774,9 @@
     @media (max-width: 1000px) {
       background-size: 100% auto;
       padding: 15px;
-      height: auto;
+      height: 160px;
+      overflow: hidden;
+      border-radius: 20px;
     }
   }
   .first-search-card {
@@ -790,11 +803,18 @@
     line-height: 150%; /* 36px */
     background: url("@/assets/images/map/menu-arrow.svg") no-repeat 0 50%;
     padding-left: 34px;
+    @media (max-width: 1000px) {
+      font-size: 18px;
+      margin-bottom: .4rem;
+    }
   }
   .search-card-desc {
     color: var(--p-05, #ecf2fe);
     font-size: 1.7rem;
     line-height: 130%; /* 22.1px */
+    @media (max-width: 1000px) {
+      font-size: 1.3rem;
+    }
   }
   .search-card-icon {
     display: flex;
@@ -809,6 +829,8 @@
     @media (max-width: 1000px) {
       width: 4rem;
       height: 4rem;
+      margin-top: 2rem;
+      align-self: flex-start;
     }
   }
 }
@@ -1179,10 +1201,10 @@
       @extend .icon;
     }
     .icon-traffic-btn1 {
-      @include icon-set("icon_traffic-btn1", 2rem, 2rem, #1e2124);
+      @include icon-set("@/assets/images/map/icon_traffic-btn1.svg", 2rem, 2rem, #1e2124);
     }
     .icon-traffic-btn2 {
-      @include icon-set("icon_traffic-btn2", 2rem, 2rem, #1e2124);
+      @include icon-set("@/assets/images/map/icon_traffic-btn2.svg", 2rem, 2rem, #1e2124);
     }
     .text {
       color: var(--g-90, #1e2124);
@@ -1199,6 +1221,9 @@
 .disaster-section{
   &.show{
     display: block;
+  }
+  @media (max-width: 1000px) {
+    padding-bottom: 2rem;
   }
 }
 

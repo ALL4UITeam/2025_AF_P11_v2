@@ -1,0 +1,305 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+
+[data-page="statistics"]{
+  
+  .tab-nav-container{
+    margin-bottom: 0;
+  }
+}
+
+.search-statistics{
+  border-radius: 12px;
+  background: #EEF2F7;
+  margin: 4rem 0;
+  .wraps{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    @media screen and (max-width: 960px) {
+      gap: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 1.5rem;
+      flex-direction: column;
+    }
+    .form-area{
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      @media screen and (max-width: 960px) {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+      }
+      .form-item{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @media screen and (max-width: 960px) {
+          width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+          gap: 1rem;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        label{
+          font-size: 16px;
+          font-weight: 700;
+          background: url('@/assets/images/portal/dot.svg') no-repeat left center;
+          padding-left: 2rem;
+          flex-shrink: 0;
+          @media screen and (max-width: 768px) {
+            font-size: 1.4rem;
+            padding-left: 1.5rem;
+          }
+        }
+        .krds-form-select{
+          width: 240px;
+          @media screen and (max-width: 960px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .submit{
+      margin-left: auto;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+      .krds-btn{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.statistics-container{
+   display: grid;
+   grid-template-columns: repeat(2,minmax(0,1fr));
+   gap: 2.4rem;
+}
+
+.statistics-chart{  
+  padding: 4rem;
+  border-radius: 12px; 
+  border: 1px solid var(--secondary, #003964);
+  background: #FFF;
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.08);
+  .chart-area{
+    border-radius: 8px;
+    background: #F4F5F6;
+    height: 35rem;
+    position: relative;
+  }
+  .chart-utils-buttons{
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    display: flex;
+    gap: 10px;
+  }
+  .chart-note{
+    border-radius: var(--radius-medium3, 8px);
+    border: var(--border-width-static-regular, 1px) solid #D8D8D8;
+    background: #F8F8F8;
+    padding: 1.6rem;
+    margin: 1.6rem 0;
+    p{
+      word-break: break-all;
+      color: #1D1D1D;
+      font-size: 1.3rem;
+      position: relative;
+      padding-left: 10px;
+      &::before{
+        position: absolute;
+        left: 0;
+        top: 7px;
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: #1D1D1D;
+        border-radius: 50%;
+      }
+    }
+  }
+  .chart-legend{
+    .list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .chart-legend-item{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chart-legend-item-color{
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    .chart-legend-item-label{
+      color: #717171;
+      font-size: 1.3rem;
+    }
+    .chart-legend-source{
+      color: #000;
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.statistics-map{
+  border-radius: 12px;
+  border: 1px solid var(--primary, #256EF4);
+  background: var(--p-10, #D8E5FD);
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.08);
+    .chart-legend-item{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chart-legend-item-color{
+      width: 10px;
+      height: 10px;
+    }
+  background: #D8E5FD;
+}
+.statistics-detail{
+  grid-column: 1 / -1;
+  border-radius: 12px;
+  border: 1px solid var(--g-20, #CDD1D5);
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+.statistics-detail-header{
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--g-10, #E6E8EA);
+  width: 100%;
+  h2{
+    color: var(--g-90, #1E2124);
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+}
+
+.statistics-detail-body{
+  width: 100%;
+  
+}
+
+// 모바일 반응형
+@media (max-width: 768px) {
+  .statistics-container{
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .statistics-chart{
+    padding: 2rem;
+    .chart-area{
+      height: 30rem;
+    }
+    .chart-utils-buttons{
+      right: 16px;
+      bottom: 16px;
+      gap: 6px;
+    }
+    .chart-note{
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    .chart-legend{
+      .list{
+        gap: 12px;
+      }
+      .chart-legend-item-label,
+      .chart-legend-source{
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .statistics-detail{
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .statistics-detail-header{
+    padding-bottom: 1.6rem;
+    h2{
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics-container{
+    gap: 1.2rem;
+  }
+
+  .statistics-chart{
+    padding: 1.6rem;
+    .chart-area{
+      height: 25rem;
+    }
+    .chart-utils-buttons{
+      right: 12px;
+      bottom: 12px;
+      gap: 4px;
+      flex-direction: column;
+    }
+    .chart-note{
+      padding: 1rem;
+      margin: 1rem 0;
+      p{
+        font-size: 1.1rem;
+      }
+    }
+    .chart-legend{
+      .list{
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .chart-legend-item-color{
+        width: 1rem;
+        height: 1rem;
+      }
+      .chart-legend-item-label,
+      .chart-legend-source{
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .statistics-map{
+    .chart-legend-item-color{
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .statistics-detail{
+    padding: 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .statistics-detail-header{
+    padding-bottom: 1.2rem;
+    h2{
+      font-size: 1.8rem;
+    }
+  }
+}

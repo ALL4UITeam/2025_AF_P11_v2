@@ -1,33 +1,94 @@
 <!-- @pageTitle 통계 -->
-<!-- @pageCreated 2025.10.14 -->
-<!-- @pageUpdated 2025.10.14 -->
-<!-- @pageNote 내용 미확정 -->
-<!doctype html>
-<html lang="ko">
+<!-- @pageCreated 2025.10.22 -->
+<!-- @pageUpdated 2025.10.22 -->
+<!-- @pageNote 통계 진행. -->
+<!-- @layout layouts/sub.html -->
 
-<head>
-  {{> Head }}
-</head>
+<section data-layout="sublayout" data-page="statistics">
 
-<body>
-  <div id="krds-skip-link">
-    <a href="#breadcrumb">본문 바로가기</a>
+  <h1 class="page-title">통계</h1>
+
+  <div class="tab-nav-container">
+    <button type="button" class="toggle" title="현재 탭 위치">
+      <span class="toggle-text">해양 수산 통계</span>
+      <i class="svg-icon ico-angle"></i>
+    </button>
+    <nav class="tab-nav">
+      <button type="button" class="tab-nav-item active" aria-current="page">해양 수산 통계</button>
+      <button type="button" class="tab-nav-item" aria-current="false">레이어 사용현황</button>
+      <button type="button" class="tab-nav-item" aria-current="false">해양과학조사자료통계</button>
+    </nav>
   </div>
 
-  {{> Header }}
-  <main id="app" class="l-sub">
-    {{> Breadcrumb items=breadcrumb subBanner="statistics-banner"}}
-    <div id="contents">
-      <div class="container">
-        <h1 class="page-title">통계</h1>
+  <div class="search-statistics">
+    <div class="wraps">
+      <div class="form-area">
+        <div class="form-item">
+          <label for="classification">분류</label>
+          <select name="classification" id="classification" class="krds-form-select">
+            <option value="일반">일반통계</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label for="condition">조건</label>
+          <select name="condition" id="condition" class="krds-form-select">
+            <option value="인구밀도">인구밀도</option>
+          </select>
+        </div>
+      </div>
+      <div class="submit">
+        <button type="button" class="krds-btn medium">적용하기</button>
       </div>
     </div>
-  </main>
+  </div>
 
-  {{> Footer }}
+  <div class="statistics-container">
+    <div class="statistics-chart">
+      <div class="chart-area">
+        <div class="chart-utils-buttons">
+          <button class="krds-btn secondary small">시계열 보기</button>
+          <button class="krds-btn secondary small">상세 보기</button>
+        </div>
+      </div>
+      <div class="chart-note">
+        <p>자세한 정보는 국가통계포털 (https://kosis.kr/index/index.do) 에서 확인하시기 바랍니다.</p>
+      </div>
+      <div class="chart-legend">
+        <div class="list">
+          <div class="chart-legend-item">
+            <div class="chart-legend-item-color" style="background: #F00;"></div>
+            <div class="chart-legend-item-label">366 ~ 453</div>
+          </div>
+          <div class="chart-legend-item">
+            <div class="chart-legend-item-color" style="background: #FF5E00;"></div>
+            <div class="chart-legend-item-label">280 ~ 366</div>
+          </div>
+          <div class="chart-legend-item">
+            <div class="chart-legend-item-color" style="background: #FB0;"></div>
+            <div class="chart-legend-item-label">194 ~ 366</div>
+          </div>
+          <div class="chart-legend-item">
+            <div class="chart-legend-item-color" style="background: #FFE400;"></div>
+            <div class="chart-legend-item-label">107 ~ 194</div>
+          </div>
+          <div class="chart-legend-item">
+            <div class="chart-legend-item-color" style="background: #ABF200;"></div>
+            <div class="chart-legend-item-label">21 ~ 107</div>
+          </div>
+        </div>
+        <div class="chart-legend-source">출처 ： 해양환경정책과</div>
+      </div>
+    </div>
+    <div class="statistics-map">
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/page/portal.js"></script>
-</body>
-
-</html>
+    </div>
+    <div class="statistics-detail">
+      <div class="statistics-detail-header">
+        <h2>상세정보</h2>
+      </div>
+      <div class="statistics-detail-body">
+        상세내용
+      </div>
+    </div>
+  </div>
+</section>

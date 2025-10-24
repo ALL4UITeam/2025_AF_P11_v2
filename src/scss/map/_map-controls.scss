@@ -17,12 +17,21 @@
     flex-wrap: wrap;
     max-width: 40rem;
     gap: 0.8rem;
+    @media screen and (max-width: 1024px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
   .fav-layer-btn {
     display: none; // 기본적으로 전부 숨김
   }
-
-  // 처음 4개만 보이기
+  
   .fav-layer-btn:nth-child(-n+4) {
     display: inline-flex;
   }
@@ -50,6 +59,9 @@
     border: 1px solid var(--g-20, #cdd1d5);
     background:#fff url("@/assets/images/map/icon_more.svg") no-repeat center center;
     transition: 0s;
+    @media screen and (max-width: 1024px) {
+      display: none !important;
+    }
   }
   @media (max-width: 1000px) {
     left: 1.2rem;
@@ -274,22 +286,22 @@
     }
     .map-type-btn1 {
       .tool-icon {
-        @include icon-set("icon_map01", 2.4rem, 2.4rem, #6d7882);
+        @include icon-set("@/assets/images/map/icon_map01.svg", 2.4rem, 2.4rem, #6d7882);
       }
     }
     .map-type-btn2 {
       .tool-icon {
-        @include icon-set("icon_map02", 2.4rem, 2.4rem, #6d7882);
+        @include icon-set("@/assets/images/map/icon_map02.svg", 2.4rem, 2.4rem, #6d7882);
       }
     }
     .layer-btn {
       .tool-icon {
-        @include icon-set("icon_layer-btn", 2.4rem, 2.4rem, #6d7882);
+        @include icon-set("@/assets/images/map/icon_layer-btn.svg", 2.4rem, 2.4rem, #6d7882);
       }
     }
     .layer-btn2 {
       .tool-icon {
-        @include icon-set("icon_layer-btn2", 2.4rem, 2.4rem, #6d7882);
+        @include icon-set("@/assets/images/map/icon_layer-btn2.svg", 2.4rem, 2.4rem, #6d7882);
       }
     }
     .measure-btn-group {
@@ -300,7 +312,7 @@
       box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
       .measure-btn {
         .tool-icon {
-          @include icon-set("icon_measure", 2.4rem, 2.4rem, #6d7882);
+          @include icon-set("@/assets/images/map/icon_measure.svg", 2.4rem, 2.4rem, #6d7882);
         }
         
         &.active {
@@ -353,19 +365,19 @@
           &[data-tool="line"] {
             border-radius: 8px 0 0 8px;
             .tool-icon {
-              @include icon-set("icon_line_measure", 1.6rem, 1.6rem, #1E2124);
+              @include icon-set("@/assets/images/map/icon_line_measure.svg", 1.6rem, 1.6rem, #1E2124);
             }
           }
           
           &[data-tool="area"] {
             .tool-icon {
-              @include icon-set("icon_area_measure", 1.6rem, 1.6rem, #1E2124);
+              @include icon-set("@/assets/images/map/icon_area_measure.svg", 1.6rem, 1.6rem, #1E2124);
             }
           }
           
           &[data-tool="reset"] {
             .tool-icon {
-              @include icon-set("icon_reset_measure", 1.6rem, 1.6rem, #1E2124);
+              @include icon-set("@/assets/images/map/icon_reset_measure.svg", 1.6rem, 1.6rem, #1E2124);
             }
           }
         }
@@ -373,7 +385,7 @@
     }
     .legend-btn {
       .tool-icon {
-        @include icon-set("icon_legend", 2.4rem, 2.4rem, #6d7882);
+        @include icon-set("@/assets/images/map/icon_legend.svg", 2.4rem, 2.4rem, #6d7882);
       }
     }
     .group-btn {
@@ -423,6 +435,14 @@
       height: auto;
     }
     .zoom-range{
+      position: relative;
+      .gage-background{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background:rgba(0, 57, 100, 0.7);
+        z-index: 1;
+      }
       @media screen and (max-width: 1000px) {
         display: none;
       }
@@ -439,14 +459,14 @@
     }
     .zoom-in {
       .icon {
-        @include icon-set("icon_zoom-in", 100%, 100%, #000);
+        @include icon-set("@/assets/images/map/icon_zoom-in.svg", 100%, 100%, #000);
       }
     }
     .zoom-out {
       @media screen and (max-width: 1000px) {
       }
       .icon {
-        @include icon-set("icon_zoom-out", 100%, 100%, #000);
+        @include icon-set("@/assets/images/map/icon_zoom-out.svg", 100%, 100%, #000);
       }
     }
   }
@@ -459,7 +479,7 @@
     width: 100%;
     height: .2rem;
     background: var(--primary, #256EF4);
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
   }
   .zoom-level-value{
@@ -479,3 +499,4 @@
     }
   }
 }
+

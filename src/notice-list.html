@@ -2,127 +2,101 @@
 <!-- @pageCreated 2025.10.11 -->
 <!-- @pageUpdated 2025.10.14 -->
 <!-- @pageNote 테이블 클래스명 추가 -->
-<!doctype html>
-<html lang="ko">
+<!-- @layout layouts/sub.html -->
 
-<head>
-	{{> Head }}
-</head>
+<section data-layout="sublayout" data-page="notice">
+	<div class="container">
+		<h1 class="page-title">공지사항</h1>
 
-<body>
-	<div id="krds-skip-link">
-		<a href="#breadcrumb">본문 바로가기</a>
-	</div>
-
-  {{> Header }}
-  <main id="app" class="l-sub">
-    {{> Breadcrumb items=breadcrumb subBanner="notice"}}
-    <div id="contents">
-      <div class="container">
-				<h1 class="page-title">공지사항</h1>
-
-				<div class="search-form">
-					<div class="search-row">
-						<select class="krds-form-select" title="검색 조건">
-							<option value="">전체</option>
-							<option value="">제목</option>
-							<option value="">내용</option>
-						</select>
-						<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
-						<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
-					</div>
-				</div>
-
-				<div class="search-list-top">
-					<ul class="sch-info" aria-live="polite">
-						<li>검색 결과 <span class="point">24</span>개</li>
-					</ul>
-					<ul class="sch-sort">
-						<li>
-							<strong class="sort-label"><label for="sort">정렬기준</label></strong>
-							<div class="w-sort-btn">
-								<button type="button" class="active">관련도순</button>
-								<button type="button">최신순</button>
-							</div>
-							<div class="m-sort-btn">
-								<select class="krds-form-select-sort" id="sort">
-									<option>관련도순</option>
-									<option>최신순</option>
-									<option>인기순</option>
-								</select>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="board-list">
-
-					<div class="board-list__body table__list">
-						<table>
-							<colgroup>
-								<col style="width: auto;">
-								<col style="width: 15%;">
-								<col style="width: 15%;">
-								<col style="width: 15%;">
-							</colgroup>
-							<thead>
-								<tr>
-									<th scope="col">제목</th>
-									<th scope="col">파일</th>
-									<th scope="col">등록일</th>
-									<th scope="col">조회수</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내</a>
-									</td>
-									<td>
-										<span aria-label="첨부 파일 있음" class="board-list__file-icon">
-											<i class="ico-file" aria-hidden="true"></i>
-										</span>
-									</td>
-									<td>2025년 6월 21일</td>
-									<td>2483</td>
-								</tr>
-								<tr>
-									<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내2024년
-											해사안전 우수사업자
-											지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자
-											지정 운영
-											안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영
-											안내2024년
-											해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년
-											해사안전
-											우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내</a></td>
-									<td>
-										<!-- 파일 없을시나 항목 없을시 무조건 없다는 표시가 들어가야합니다. -->
-										<span aria-label="첨부 파일 없음" class="board-list__file-icon">-</span>
-									</td>
-									<td>2025년 6월 21일</td>
-									<td>2483</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!-- //board-list__body -->
-
-					<div class="board-list__footer">
-						{{> Pagination}}
-					</div>
-					<!-- //board-list__footer -->
-				</div>
-				<!-- //board-list -->
+		<div class="search-form">
+			<div class="search-row">
+				<select class="krds-form-select" title="검색 조건">
+					<option value="">전체</option>
+					<option value="">제목</option>
+					<option value="">내용</option>
+				</select>
+				<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+				<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
 			</div>
 		</div>
-	</main>
 
-	{{> Footer }}
+		<div class="search-list-top">
+			<ul class="sch-info" aria-live="polite">
+				<li>검색 결과 <span class="point">24</span>개</li>
+			</ul>
+			<ul class="sch-sort">
+				<li>
+					<strong class="sort-label"><label for="sort">정렬기준</label></strong>
+					<div class="w-sort-btn">
+						<button type="button" class="active">관련도순</button>
+						<button type="button">최신순</button>
+					</div>
+					<div class="m-sort-btn">
+						<select class="krds-form-select-sort" id="sort">
+							<option>관련도순</option>
+							<option>최신순</option>
+							<option>인기순</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="board-list">
 
-	<script type="module" src="/js/main.js"></script>
-	<script type="module" src="/js/page/portal.js"></script>
-	<script>
-		portal.initMobileTable();
-	</script>
-</body>
+			<div class="board-list__body table__list">
+				<table>
+					<colgroup>
+						<col style="width: auto;">
+						<col style="width: 15%;">
+						<col style="width: 15%;">
+						<col style="width: 15%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">제목</th>
+							<th scope="col">파일</th>
+							<th scope="col">등록일</th>
+							<th scope="col">조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내</a></td>
+							<td>
+								<span aria-label="첨부 파일 있음" class="board-list__file-icon">
+									<i class="ico-file" aria-hidden="true"></i>
+								</span>
+							</td>
+							<td>2025년 6월 21일</td>
+							<td>2483</td>
+						</tr>
+						<tr>
+							<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자
+									지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영
+									안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년
+									해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전
+									우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내</a></td>
+							<td>
+								<!-- 파일 없을시나 항목 없을시 무조건 없다는 표시가 들어가야합니다. -->
+								<span aria-label="첨부 파일 없음" class="board-list__file-icon">-</span>
+							</td>
+							<td>2025년 6월 21일</td>
+							<td>2483</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //board-list__body -->
 
-</html>
+			<div class="board-list__footer">
+				{{> Pagination}}
+			</div>
+			<!-- //board-list__footer -->
+		</div>
+		<!-- //board-list -->
+	</div>
+</section>
+
+<script>
+	portal.initMobileTable();
+</script>

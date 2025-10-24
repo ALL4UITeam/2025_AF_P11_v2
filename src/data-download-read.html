@@ -2,249 +2,230 @@
 <!-- @pageCreated 2025.10.14 -->
 <!-- @pageUpdated 2025.10.14 -->
 <!-- @pageNote 상세 테이블 반응형 -->
-<!doctype html>
-<html lang="ko">
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="data-download">
+  <h1 class="page-title">데이터 다운로드</h1>
 
-<head>
-  {{> Head }}
-</head>
+  <div class="read-container">
 
-<body>
-  <div id="krds-skip-link">
-    <a href="#breadcrumb">본문 바로가기</a>
-  </div>
-
-  {{> Header }}
-  <main id="app" class="l-sub">
-    {{> Breadcrumb items=breadcrumb subBanner="data-download"}}
-    <div id="contents">
-      <div class="container">
-        <h1 class="page-title">데이터 다운로드</h1>
-
-        <div class="read-container">
-          <section class="read-section">
-            <div class="read-section-header">
-              <h2>기본정보</h2>
-              <div class="read-header-stats">
-                <div class="stats-item">
-                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                  <span class="stats-number">1234</span>
-                </div>
-                <div class="stats-item">
-                  <i class="svg-icon icon-download" aria-hidden="true"></i>
-                  <span class="stats-number">56</span>
-                </div>
-              </div>
-            </div>
-            <div class="read-section-body">
-              <div class="responsive-table">
-                <table>
-                  <caption>기본정보 상세</caption>
-                  <colgroup>
-                    <col style="width: 21rem;">
-                    <col style="width: auto;">
-                    <col style="width: 21rem;">
-                    <col style="width: auto;">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th>자료관리기관</th>
-                      <td>국립해양조사원</td>
-                      <th>자료관리부서</th>
-                      <td>해도수로과</td>
-                    </tr>
-                    <tr>
-                      <th>주제 분류 코드</th>
-                      <td>해도구역</td>
-                      <th>용어사전</th>
-                      <td>국가주석기관 해도</td>
-                    </tr>
-                    <tr>
-                      <th>자료 생성주기</th>
-                      <td>-</td>
-                      <th>자료 최종 갱신일</th>
-                      <td>2019-12-04</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-          <!-- //read-section -->
-          <section class="read-section">
-            <div class="read-section-header">
-              <h2>데이터 목록</h2>
-            </div>
-            <div class="read-section-body">
-              <div class="table__list _sensitive">
-                <table>
-                  <caption>데이터 목록</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">번호</th>
-                      <th scope="col">자료</th>
-                      <th scope="col">형식</th>
-                      <th scope="col">용량(kb)</th>
-                      <th scope="col">갱신일자</th>
-                      <th scope="col">미리보기</th>
-                      <th scope="col">다운로드</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="number">1</td>
-                      <td class="subejct">1레벨(전자해도-충도).ZIP</td>
-                      <td>
-                        <div class="card-tags">
-                          <span class="tag card-tags-shp">shp</span>
-                          <span class="tag card-tags-json">json</span>
-                          <span class="tag card-tags-kml">kml</span>
-                        </div>
-                      </td>
-                      <td>5 kb</td>
-                      <td>2019-12-04</td>
-                      <td><button class="krds-btn secondary small"><i class="svg-icon icon-preview"></i>미리보기</button>
-                      </td>
-                      <td><button class="krds-btn tertiary small"><i class="svg-icon icon-download"></i>다운로드</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-          <!-- //read-section -->
-
-          <section class="read-section">
-            <div class="read-section-header">
-              <h2>상세 정보</h2>
-              <div class="read-header-stats">
-                <div class="stats-item">
-                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                  <span class="stats-number">1234</span>
-                </div>
-                <div class="stats-item">
-                  <i class="svg-icon icon-download" aria-hidden="true"></i>
-                  <span class="stats-number">56</span>
-                </div>
-              </div>
-            </div>
-            <div class="read-section-body">
-              <h3 class="read-body-title">데이터 목록</h3>
-              <div class="responsive-table">
-                <table>
-                  <caption>상세 정보</caption>
-                  <colgroup>
-                    <col style="width: 21rem;">
-                    <col style="width: auto;">
-                    <col style="width: 22rem;">
-                    <col style="width: auto">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th scope="row">자료 생성 목적</th>
-                      <td>
-                        해상교통관제시스템(VTS), 관제해역을 운항중인 선박의 위치 확인 및 신신고(이방운 구조)하는 구조시스템(SAR), 해경업무에 제공을 위한<br>
-                        "연안 개발사업의 요구가로 해도 정보"사용 제공
-                      </td>
-                      <th scope="row">자료주제어</th>
-                      <td>해도수로과</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료공간범주코드</th>
-                      <td>공간자료(피처형)</td>
-                      <th scope="row">자료기상종류상태</th>
-                      <td>지적생산</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료 포맷 코드</th>
-                      <td>벡터파일</td>
-                      <th scope="row">자료등록 세부목록</th>
-                      <td>지적생산</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료생산장치 설명</th>
-                      <td>전자상장</td>
-                      <th scope="row">원자료 명</th>
-                      <td>1레벨(전자해도-충도)</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료관리의 법적근거</th>
-                      <td>-</td>
-                      <th scope="row">자료생산 진행상태 코드</th>
-                      <td>정의 없음</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료 시험일자</th>
-                      <td>2019-12-04</td>
-                      <th scope="row">자료 품질지수</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료공시 예정일자</th>
-                      <td>-</td>
-                      <th scope="row">자료표준 가능기간</th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="read-section-body">
-              <h3 class="read-body-title">서비스 배포</h3>
-              <div class="responsive-table">
-                <table>
-                  <caption>상세 정보</caption>
-                  <colgroup>
-                    <col style="width: 21rem;">
-                    <col style="width: auto;">
-                    <col style="width: 22rem;">
-                    <col style="width: auto">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th scope="row">자동연계제공 여부</th>
-                      <td>제공</td>
-                      <th scope="row">자료주제어</th>
-                      <td>기타</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료서비스권한 코드</th>
-                      <td>외부공개 가능</td>
-                      <th scope="row">서비스제한 이유설명</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">자료 포맷 코드</th>
-                      <td>-</td>
-                      <th scope="row">자료등록 세부목록</th>
-                      <td>자료유형 세부목록</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-
-          <div class="section-actions">
-            <div class="l">
-              <a href="#" class="krds-btn tertiary">목록으로 가기</a>
-            </div>
-          </div>
-
-        </div>
-        <!-- //read-container -->
+    <div class="read-datatop">
+      <div class="read-datatop-header">
+        <h2>1레벨(전자해도-총도)</h2>
+        <button class="krds-btn primary medium">메타정보 다운로드</button>
       </div>
+      <div class="line"></div>
+      <div class="read-datatop-text">국제수로기구 (IHO)의 표준규격(S-57)에 따라 제작된 디지털해도 축척≤ 1,500,000,해당정보의 도곽정보를 제공</div>
     </div>
-  </main>
 
-  {{> Footer }}
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>기본정보</h2>
+        <div class="read-header-stats">
+          <div class="stats-item">
+            <i class="svg-icon icon-eye" aria-hidden="true"></i>
+            <span class="stats-number">1234</span>
+          </div>
+          <div class="stats-item">
+            <i class="svg-icon icon-download" aria-hidden="true"></i>
+            <span class="stats-number">56</span>
+          </div>
+        </div>
+      </div>
+      <div class="read-section-body">
+        <div class="responsive-table">
+          <table>
+            <caption>기본정보 상세</caption>
+            <colgroup>
+              <col style="width: 21rem;">
+              <col style="width: auto;">
+              <col style="width: 21rem;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>자료관리기관</th>
+                <td>국립해양조사원</td>
+                <th>자료관리부서</th>
+                <td>해도수로과</td>
+              </tr>
+              <tr>
+                <th>주제 분류 코드</th>
+                <td>해도구역</td>
+                <th>용어사전</th>
+                <td>국가주석기관 해도</td>
+              </tr>
+              <tr>
+                <th>자료 생성주기</th>
+                <td>-</td>
+                <th>자료 최종 갱신일</th>
+                <td>2019-12-04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- //read-section -->
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>데이터 목록</h2>
+      </div>
+      <div class="read-section-body">
+        <div class="table__list _sensitive">
+          <table>
+            <caption>데이터 목록</caption>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">자료</th>
+                <th scope="col">형식</th>
+                <th scope="col">용량(kb)</th>
+                <th scope="col">갱신일자</th>
+                <th scope="col">미리보기</th>
+                <th scope="col">다운로드</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="number">1</td>
+                <td class="subejct">1레벨(전자해도-충도).ZIP</td>
+                <td>
+                  <div class="card-tags">
+                    <span class="tag card-tags-shp">shp</span>
+                    <span class="tag card-tags-json">json</span>
+                    <span class="tag card-tags-kml">kml</span>
+                  </div>
+                </td>
+                <td>5 kb</td>
+                <td>2019-12-04</td>
+                <td><button class="krds-btn secondary small"><i class="svg-icon icon-preview"></i>미리보기</button></td>
+                <td><button class="krds-btn tertiary small"><i class="svg-icon icon-download"></i>다운로드</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- //read-section -->
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/page/portal.js"></script>
-  <script>
-    portal.initMobileTable();
-  </script>
-</body>
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>상세 정보</h2>
+        <div class="read-header-stats">
+          <div class="stats-item">
+            <i class="svg-icon icon-eye" aria-hidden="true"></i>
+            <span class="stats-number">1234</span>
+          </div>
+          <div class="stats-item">
+            <i class="svg-icon icon-download" aria-hidden="true"></i>
+            <span class="stats-number">56</span>
+          </div>
+        </div>
+      </div>
+      <div class="read-section-body">
+        <h3 class="read-body-title">데이터 목록</h3>
+        <div class="responsive-table">
+          <table>
+            <caption>상세 정보</caption>
+            <colgroup>
+              <col style="width: 21rem;">
+              <col style="width: auto;">
+              <col style="width: 22rem;">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">자료 생성 목적</th>
+                <td>
+                  해상교통관제시스템(VTS), 관제해역을 운항중인 선박의 위치 확인 및 신신고(이방운 구조)하는 구조시스템(SAR), 해경업무에 제공을 위한<br>
+                  "연안 개발사업의 요구가로 해도 정보"사용 제공
+                </td>
+                <th scope="row">자료주제어</th>
+                <td>해도수로과</td>
+              </tr>
+              <tr>
+                <th scope="row">자료공간범주코드</th>
+                <td>공간자료(피처형)</td>
+                <th scope="row">자료기상종류상태</th>
+                <td>지적생산</td>
+              </tr>
+              <tr>
+                <th scope="row">자료 포맷 코드</th>
+                <td>벡터파일</td>
+                <th scope="row">자료등록 세부목록</th>
+                <td>지적생산</td>
+              </tr>
+              <tr>
+                <th scope="row">자료생산장치 설명</th>
+                <td>전자상장</td>
+                <th scope="row">원자료 명</th>
+                <td>1레벨(전자해도-충도)</td>
+              </tr>
+              <tr>
+                <th scope="row">자료관리의 법적근거</th>
+                <td>-</td>
+                <th scope="row">자료생산 진행상태 코드</th>
+                <td>정의 없음</td>
+              </tr>
+              <tr>
+                <th scope="row">자료 시험일자</th>
+                <td>2019-12-04</td>
+                <th scope="row">자료 품질지수</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">자료공시 예정일자</th>
+                <td>-</td>
+                <th scope="row">자료표준 가능기간</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="read-section-body">
+        <h3 class="read-body-title">서비스 배포</h3>
+        <div class="responsive-table">
+          <table>
+            <caption>상세 정보</caption>
+            <colgroup>
+              <col style="width: 21rem;">
+              <col style="width: auto;">
+              <col style="width: 22rem;">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">자동연계제공 여부</th>
+                <td>제공</td>
+                <th scope="row">자료주제어</th>
+                <td>기타</td>
+              </tr>
+              <tr>
+                <th scope="row">자료서비스권한 코드</th>
+                <td>외부공개 가능</td>
+                <th scope="row">서비스제한 이유설명</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">자료 포맷 코드</th>
+                <td>-</td>
+                <th scope="row">자료등록 세부목록</th>
+                <td>자료유형 세부목록</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-</html>
+    <div class="section-actions">
+			<div class="l">
+				<a href="#" class="krds-btn tertiary">목록으로 가기</a>
+			</div>
+		</div>
+
+  </div>
+  <!-- //read-container -->
+</section>
+

@@ -2232,6 +2232,12 @@ em {
   padding-left: 2.4rem;
   background: url("data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4.42345%2017.0832C4.00248%2017.0832%203.64616%2016.9373%203.35449%2016.6457C3.06283%2016.354%202.91699%2015.9977%202.91699%2015.5767V4.42296C2.91699%204.00199%203.06283%203.64567%203.35449%203.354C3.64616%203.06234%204.00248%202.9165%204.42345%202.9165H9.6797V4.1665H4.42345C4.35928%204.1665%204.30053%204.19324%204.2472%204.24671C4.19373%204.30005%204.16699%204.3588%204.16699%204.42296V15.5767C4.16699%2015.6409%204.19373%2015.6996%204.2472%2015.753C4.30053%2015.8064%204.35928%2015.8332%204.42345%2015.8332H15.5772C15.6414%2015.8332%2015.7001%2015.8064%2015.7535%2015.753C15.8069%2015.6996%2015.8337%2015.6409%2015.8337%2015.5767V10.3205H17.0837V15.5767C17.0837%2015.9977%2016.9378%2016.354%2016.6462%2016.6457C16.3545%2016.9373%2015.9982%2017.0832%2015.5772%2017.0832H4.42345ZM8.0997%2012.7786L7.22158%2011.9005L14.9555%204.1665H11.667V2.9165H17.0837V8.33317H15.8337V5.04463L8.0997%2012.7786Z'%20fill='%23256EF4'/%3e%3c/svg%3e") no-repeat left center;
 }
+@media screen and (max-width: 768px) {
+  .link-coordinate,
+  .link-btn {
+    background-size: auto 100%;
+  }
+}
 .link-coordinate span,
 .link-btn span {
   text-decoration: underline;
@@ -2245,9 +2251,16 @@ em {
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+@media screen and (max-width: 768px) {
+  .link-coordinate span,
+  .link-btn span {
+    font-size: 1.4rem;
+  }
+}
 
 .link-coordinate {
   background: url("data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M9.375%2018.5V17.0577C7.63889%2016.8792%206.17736%2016.1965%204.99042%2015.0096C3.80347%2013.8226%203.12076%2012.3611%202.94229%2010.625H1.5V9.375H2.94229C3.12076%207.63889%203.80347%206.17736%204.99042%204.99042C6.17736%203.80347%207.63889%203.12076%209.375%202.94229V1.5H10.625V2.94229C12.3611%203.12076%2013.8226%203.80347%2015.0096%204.99042C16.1965%206.17736%2016.8792%207.63889%2017.0577%209.375H18.5V10.625H17.0577C16.8792%2012.3611%2016.1965%2013.8226%2015.0096%2015.0096C13.8226%2016.1965%2012.3611%2016.8792%2010.625%2017.0577V18.5H9.375ZM10%2015.8333C11.6111%2015.8333%2012.9861%2015.2639%2014.125%2014.125C15.2639%2012.9861%2015.8333%2011.6111%2015.8333%2010C15.8333%208.38889%2015.2639%207.01389%2014.125%205.875C12.9861%204.73611%2011.6111%204.16667%2010%204.16667C8.38889%204.16667%207.01389%204.73611%205.875%205.875C4.73611%207.01389%204.16667%208.38889%204.16667%2010C4.16667%2011.6111%204.73611%2012.9861%205.875%2014.125C7.01389%2015.2639%208.38889%2015.8333%2010%2015.8333ZM10%2012.9167C9.19792%2012.9167%208.51132%2012.631%207.94021%2012.0598C7.36896%2011.4887%207.08333%2010.8021%207.08333%2010C7.08333%209.19792%207.36896%208.51132%207.94021%207.94021C8.51132%207.36896%209.19792%207.08333%2010%207.08333C10.8021%207.08333%2011.4887%207.36896%2012.0598%207.94021C12.631%208.51132%2012.9167%209.19792%2012.9167%2010C12.9167%2010.8021%2012.631%2011.4887%2012.0598%2012.0598C11.4887%2012.631%2010.8021%2012.9167%2010%2012.9167Z'%20fill='%23256EF4'/%3e%3c/svg%3e") no-repeat left 0;
+  background-size: auto 100%;
 }
 
 .map-modal {
@@ -2753,6 +2766,12 @@ body {
 .open-depth-1 .layer-panel {
   display: flex;
 }
+@media (min-width: 1001px) {
+  .open-depth-1 .layer-panel {
+    background: linear-gradient(180deg, #256ef4 0%, #003964 100%);
+    border-radius: 0 20px 20px 0;
+  }
+}
 @media (max-width: 1000px) {
   .open-depth-1 .layer-panel {
     height: auto;
@@ -2790,6 +2809,9 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   body:not(:has(.menu-item-1.current)) .control-panel {
     top: 1.5rem;
   }
+  body:not(:has(.menu-item-1.current)) .map-type-opacity {
+    top: 1.5rem;
+  }
 }
 
 .layer-panel {
@@ -2801,9 +2823,12 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   width: 37rem;
   background: #fff;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 12px 0 12px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
+}
+@media (min-width: 1001px) {
+  .layer-panel {
+    box-shadow: 12px 0 12px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 @media (max-width: 1000px) {
   .layer-panel {
@@ -2821,6 +2846,13 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1001px) {
+  .layer-panel-wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 }
 @media screen and (max-width: 1000px) {
   .layer-panel-wrapper {
@@ -3188,6 +3220,9 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   font-size: 1.7rem;
   text-align: left;
   line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 1000px) {
   .layer-btn-lv1 .layer-name {
@@ -3261,6 +3296,9 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   line-height: 150%; /* 22.5px */
   text-align: left;
   line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 1000px) {
   .layer-btn-ui .layer-name {
@@ -3630,7 +3668,9 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   .search-card-list .search-card {
     background-size: 100% auto;
     padding: 15px;
-    height: auto;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 20px;
   }
 }
 .search-card-list .first-search-card {
@@ -3658,10 +3698,21 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   background: url("data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.6%2025L18.19%2023.5832L24.19%2017.5118H4V15.4882H24.19L18.1999%209.41677L19.6%208L28%2016.5L19.6%2025Z'%20fill='white'/%3e%3c/svg%3e") no-repeat 0 50%;
   padding-left: 34px;
 }
+@media (max-width: 1000px) {
+  .search-card-list .search-card-title {
+    font-size: 18px;
+    margin-bottom: 0.4rem;
+  }
+}
 .search-card-list .search-card-desc {
   color: var(--p-05, #ecf2fe);
   font-size: 1.7rem;
   line-height: 130%; /* 22.1px */
+}
+@media (max-width: 1000px) {
+  .search-card-list .search-card-desc {
+    font-size: 1.3rem;
+  }
 }
 .search-card-list .search-card-icon {
   display: flex;
@@ -3678,6 +3729,8 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   .search-card-list .search-card-icon {
     width: 4rem;
     height: 4rem;
+    margin-top: 2rem;
+    align-self: flex-start;
   }
 }
 
@@ -4036,7 +4089,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .traffic-buttons button .icon-traffic-btn1 {
   width: 2rem;
   height: 2rem;
-  mask-image: url(icon_traffic-btn1);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='21'%20height='20'%20viewBox='0%200%2021%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4.46956%2017.0837C4.11136%2017.0837%203.80456%2016.956%203.54914%2016.7006C3.29372%2016.4452%203.16602%2016.1384%203.16602%2015.7802V4.22057C3.16602%203.86238%203.29372%203.55557%203.54914%203.30016C3.80456%203.04474%204.11136%202.91703%204.46956%202.91703H12.1677L11.1206%203.96412H4.46956C4.40539%203.96412%204.34657%203.99078%204.2931%204.04411C4.23977%204.09759%204.2131%204.15641%204.2131%204.22057V15.7802C4.2131%2015.8443%204.23977%2015.9031%204.2931%2015.9566C4.34657%2016.0099%204.40539%2016.0366%204.46956%2016.0366H16.0291C16.0933%2016.0366%2016.1521%2016.0099%2016.2056%2015.9566C16.2589%2015.9031%2016.2856%2015.8443%2016.2856%2015.7802V9.0537L17.3327%208.00682V15.7802C17.3327%2016.1384%2017.205%2016.4452%2016.9496%2016.7006C16.6941%2016.956%2016.3873%2017.0837%2016.0291%2017.0837H4.46956ZM8.16602%2012.0837V9.22307L15.8706%201.51849C15.9757%201.41349%2016.0925%201.33793%2016.221%201.29182C16.3496%201.24571%2016.4809%201.22266%2016.6148%201.22266C16.7462%201.22266%2016.8762%201.2471%2017.005%201.29599C17.1337%201.34502%2017.2509%201.4212%2017.3566%201.52453L18.6766%202.8412C18.7823%202.94939%2018.8623%203.06925%2018.9166%203.20078C18.9711%203.33245%2018.9983%203.46578%2018.9983%203.60078C18.9983%203.73578%2018.9741%203.86849%2018.9258%203.99891C18.8775%204.12932%2018.7998%204.24842%2018.6927%204.3562L10.9864%2012.0837H8.16602ZM9.2131%2011.0366H10.5475L15.9529%205.6312L15.2841%204.96557L14.5816%204.28932L9.2131%209.64932V11.0366Z'%20fill='%231E2124'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -4045,7 +4098,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .traffic-buttons button .icon-traffic-btn2 {
   width: 2rem;
   height: 2rem;
-  mask-image: url(icon_traffic-btn2);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='21'%20height='20'%20viewBox='0%200%2021%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.99949%2016.6121V7.54819C6.99949%207.1868%207.12665%206.87993%207.38095%206.62757C7.63512%206.3752%207.94387%206.24902%208.3072%206.24902H17.3626C17.7197%206.24902%2018.0262%206.37701%2018.2822%206.63298C18.5382%206.88895%2018.6662%207.19548%2018.6662%207.55257V13.9894L14.7399%2017.9157H8.30304C7.94595%2017.9157%207.63943%2017.7877%207.38345%2017.5317C7.12748%2017.2758%206.99949%2016.9692%206.99949%2016.6121ZM2.85366%205.19673C2.78491%204.83743%202.85498%204.51368%203.06387%204.22548C3.27276%203.93743%203.55686%203.75902%203.91616%203.69027L12.8424%202.11173C13.2017%202.04298%2013.5255%202.11166%2013.8137%202.31777C14.1017%202.52375%2014.2801%202.80639%2014.3489%203.16569L14.603%204.62507H13.5476L13.3151%203.31423C13.3044%203.25548%2013.2724%203.20875%2013.2191%203.17402C13.1656%203.1393%2013.1069%203.12729%2013.0428%203.13798L4.1047%204.7159C4.03345%204.72659%203.97824%204.76222%203.93908%204.82277C3.89991%204.88333%203.88568%204.94923%203.89637%205.02048L5.37554%2013.4036V15.1261C5.14304%2015.0678%204.94186%2014.9503%204.77199%2014.7738C4.60213%2014.5974%204.49213%2014.3808%204.44199%2014.1238L2.85366%205.19673ZM8.04658%207.55257V16.6121C8.04658%2016.687%208.07061%2016.7485%208.11866%2016.7965C8.16672%2016.8446%208.22818%2016.8686%208.30304%2016.8686H14.1618L17.6191%2013.4113V7.55257C17.6191%207.47771%2017.5951%207.41625%2017.547%207.36819C17.4989%207.32013%2017.4375%207.29611%2017.3626%207.29611H8.30304C8.22818%207.29611%208.16672%207.32013%208.11866%207.36819C8.07061%207.41625%208.04658%207.47771%208.04658%207.55257ZM12.3093%2015.1059H13.3564V12.6059H15.8564V11.5588H13.3564V9.05882H12.3093V11.5588H9.80929V12.6059H12.3093V15.1059Z'%20fill='%231E2124'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -4062,6 +4115,11 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 
 .disaster-section.show {
   display: block;
+}
+@media (max-width: 1000px) {
+  .disaster-section {
+    padding-bottom: 2rem;
+  }
 }
 
 .alert-btn {
@@ -4144,6 +4202,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
     left: 0;
     right: 0;
     z-index: 100;
+    background-color: #003964;
   }
 }
 .detail-panel-header .detail-panel-back {
@@ -5085,6 +5144,18 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   max-width: 40rem;
   gap: 0.8rem;
 }
+@media screen and (max-width: 1024px) {
+  .fav-layers-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .fav-layers-list::-webkit-scrollbar {
+    display: none;
+  }
+}
 .fav-layers .fav-layer-btn {
   display: none;
 }
@@ -5111,6 +5182,11 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   border: 1px solid var(--g-20, #cdd1d5);
   background: #fff url("data:image/svg+xml,%3csvg%20width='12'%20height='4'%20viewBox='0%200%2012%204'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1.49563%203.5C1.08188%203.5%200.729167%203.35271%200.4375%203.05813C0.145833%202.76354%200%202.40938%200%201.99563C0%201.58188%200.147292%201.22917%200.441875%200.9375C0.736459%200.645833%201.09062%200.5%201.50437%200.5C1.91812%200.5%202.27083%200.647292%202.5625%200.941875C2.85417%201.23646%203%201.59062%203%202.00437C3%202.41812%202.85271%202.77083%202.55813%203.0625C2.26354%203.35417%201.90938%203.5%201.49563%203.5ZM5.99563%203.5C5.58188%203.5%205.22917%203.35271%204.9375%203.05813C4.64583%202.76354%204.5%202.40938%204.5%201.99563C4.5%201.58188%204.64729%201.22917%204.94187%200.9375C5.23646%200.645833%205.59062%200.5%206.00438%200.5C6.41813%200.5%206.77083%200.647292%207.0625%200.941875C7.35417%201.23646%207.5%201.59062%207.5%202.00437C7.5%202.41812%207.35271%202.77083%207.05812%203.0625C6.76354%203.35417%206.40938%203.5%205.99563%203.5ZM10.4956%203.5C10.0819%203.5%209.72917%203.35271%209.4375%203.05813C9.14583%202.76354%209%202.40938%209%201.99563C9%201.58188%209.14729%201.22917%209.44188%200.9375C9.73646%200.645833%2010.0906%200.5%2010.5044%200.5C10.9181%200.5%2011.2708%200.647292%2011.5625%200.941875C11.8542%201.23646%2012%201.59062%2012%202.00437C12%202.41812%2011.8527%202.77083%2011.5581%203.0625C11.2635%203.35417%2010.9094%203.5%2010.4956%203.5Z'%20fill='%23464C53'/%3e%3c/svg%3e") no-repeat center center;
   transition: 0s;
+}
+@media screen and (max-width: 1024px) {
+  .fav-layers .btn-more {
+    display: none !important;
+  }
 }
 @media (max-width: 1000px) {
   .fav-layers {
@@ -5354,7 +5430,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .map-type-btn1 .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_map01);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10%202C12.1167%202%2013.9796%202.74128%2015.5879%204.22461C17.1962%205.70794%2018%207.7002%2018%2010.2002C17.9999%2011.8668%2017.3376%2013.6794%2016.0127%2015.6377C14.6877%2017.596%2012.6833%2019.7167%2010%2022C7.31669%2019.7167%205.3123%2017.596%203.9873%2015.6377C2.66236%2013.6794%202.00005%2011.8668%202%2010.2002C2%207.7002%202.80379%205.70794%204.41211%204.22461C6.02044%202.74128%207.88333%202%2010%202ZM18.4746%202C18.6079%202%2018.7373%202.02522%2018.8623%202.0752C18.9872%202.12516%2019.0915%202.19991%2019.1748%202.2998C20.108%203.29969%2020.8121%204.48314%2021.2871%205.84961C21.7621%207.21628%2022%208.66686%2022%2010.2002C22%2012.2168%2021.3793%2014.2334%2020.1377%2016.25C18.896%2018.2667%2017.4663%2020.0835%2015.8496%2021.7002C15.7663%2021.8%2015.662%2021.8749%2015.5371%2021.9248C15.4123%2021.9747%2015.2835%2022%2015.1504%2022C14.9004%2022%2014.6833%2021.9123%2014.5%2021.7373C14.3167%2021.5623%2014.2246%2021.3496%2014.2246%2021.0996C14.2247%2020.9665%2014.2499%2020.8333%2014.2998%2020.7002C14.3498%2020.5669%2014.4254%2020.4496%2014.5254%2020.3496C15.9586%2018.8164%2017.2297%2017.1834%2018.3379%2015.4502C19.4462%2013.7169%2020%2011.9668%2020%2010.2002C20%208.88371%2019.8003%207.65859%2019.4004%206.52539C19.0004%205.39216%2018.4499%204.43368%2017.75%203.65039C17.6667%203.56706%2017.6042%203.46628%2017.5625%203.34961C17.5209%203.23304%2017.5%203.10781%2017.5%202.97461C17.5001%202.69145%2017.5921%202.45864%2017.7754%202.27539C17.9586%202.09214%2018.1915%202.00008%2018.4746%202ZM10%207C8.89543%207%208%207.89543%208%209C8%2010.1046%208.89543%2011%2010%2011C11.1046%2011%2012%2010.1046%2012%209C12%207.89543%2011.1046%207%2010%207Z'%20fill='white'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5363,7 +5439,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .map-type-btn2 .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_map02);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10%208H7V12H8.2002L8%2010H11.0283C11.2629%2010.4536%2011.5316%2010.9028%2011.8311%2011.3457C12.9608%2013.0164%2014.6101%2014.7408%2016.7031%2016.5225L18.5586%2017.1504C19.1077%2017.5495%2019.584%2018.0452%2019.9873%2018.6377C20.6623%2019.6294%2021%2020.75%2021%2022H19C19%2020.9%2018.6085%2019.9581%2017.8252%2019.1748C17.0419%2018.3915%2016.1%2018%2015%2018H11C9.9%2018%208.95814%2018.3915%208.1748%2019.1748C7.39147%2019.9581%207%2020.9%207%2022H5C5%2020.75%205.34206%2019.6294%206.02539%2018.6377C6.70871%2017.6461%207.5915%2016.9246%208.6748%2016.4746L8.4248%2014H5V8H2V6H10V8Z'%20fill='%236D7882'/%3e%3cpath%20d='M18%200C19.5832%200%2020.9792%200.553895%2022.1875%201.66211C23.3958%202.77044%2024%204.26706%2024%206.15039C23.9999%207.40018%2023.5041%208.75823%2022.5127%2010.2246C21.521%2011.6913%2020.0167%2013.2833%2018%2015C15.9833%2013.2833%2014.479%2011.6913%2013.4873%2010.2246C12.4959%208.75823%2012.0001%207.40018%2012%206.15039C12%204.26706%2012.6042%202.77044%2013.8125%201.66211C15.0208%200.553895%2016.4168%200%2018%200ZM18%204C16.8954%204%2016%204.89543%2016%206C16%207.10457%2016.8954%208%2018%208C19.1046%208%2020%207.10457%2020%206C20%204.89543%2019.1046%204%2018%204Z'%20fill='%236D7882'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5372,7 +5448,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .layer-btn .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_layer-btn);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M16%2018C16.55%2018%2017.0208%2017.8042%2017.4125%2017.4125C17.8042%2017.0208%2018%2016.55%2018%2016V4C18%203.45%2017.8042%202.97917%2017.4125%202.5875C17.0208%202.19583%2016.55%202%2016%202H4C3.45%202%202.97917%202.19583%202.5875%202.5875C2.19583%202.97917%202%203.45%202%204V16C2%2016.55%202.19583%2017.0208%202.5875%2017.4125C2.97917%2017.8042%203.45%2018%204%2018H16ZM20%2022C20.55%2022%2021.0208%2021.8042%2021.4125%2021.4125C21.8042%2021.0208%2022%2020.55%2022%2020V6H20V20H6V22H20ZM10%2010C10.2833%2010%2010.5208%209.90417%2010.7125%209.7125C10.9042%209.52083%2011%209.28333%2011%209C11%208.71667%2010.9042%208.47917%2010.7125%208.2875C10.5208%208.09583%2010.2833%208%2010%208C9.71667%208%209.47917%208.09583%209.2875%208.2875C9.09583%208.47917%209%208.71667%209%209C9%209.28333%209.09583%209.52083%209.2875%209.7125C9.47917%209.90417%209.71667%2010%2010%2010ZM10%2015C8.65%2013.85%207.64583%2012.7875%206.9875%2011.8125C6.32917%2010.8375%206%209.93333%206%209.1C6%207.85%206.40417%206.85417%207.2125%206.1125C8.02083%205.37083%208.95%205%2010%205C11.05%205%2011.9792%205.37083%2012.7875%206.1125C13.5958%206.85417%2014%207.85%2014%209.1C14%209.93333%2013.6708%2010.8375%2013.0125%2011.8125C12.3542%2012.7875%2011.35%2013.85%2010%2015Z'%20fill='%23256EF4'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5381,7 +5457,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .layer-btn2 .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_layer-btn2);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M11%2017H13L13.3%2015.5C13.5%2015.4167%2013.6875%2015.3292%2013.8625%2015.2375C14.0375%2015.1458%2014.2167%2015.0333%2014.4%2014.9L15.85%2015.35L16.85%2013.65L15.7%2012.65C15.7333%2012.4167%2015.75%2012.2%2015.75%2012C15.75%2011.8%2015.7333%2011.5833%2015.7%2011.35L16.85%2010.35L15.85%208.65L14.4%209.1C14.2167%208.96667%2014.0375%208.85417%2013.8625%208.7625C13.6875%208.67083%2013.5%208.58333%2013.3%208.5L13%207H11L10.7%208.5C10.5%208.58333%2010.3125%208.67083%2010.1375%208.7625C9.9625%208.85417%209.78333%208.96667%209.6%209.1L8.15%208.65L7.15%2010.35L8.3%2011.35C8.26667%2011.5833%208.25%2011.8%208.25%2012C8.25%2012.2%208.26667%2012.4167%208.3%2012.65L7.15%2013.65L8.15%2015.35L9.6%2014.9C9.78333%2015.0333%209.9625%2015.1458%2010.1375%2015.2375C10.3125%2015.3292%2010.5%2015.4167%2010.7%2015.5L11%2017ZM12%2014C11.45%2014%2010.9792%2013.8042%2010.5875%2013.4125C10.1958%2013.0208%2010%2012.55%2010%2012C10%2011.45%2010.1958%2010.9792%2010.5875%2010.5875C10.9792%2010.1958%2011.45%2010%2012%2010C12.55%2010%2013.0208%2010.1958%2013.4125%2010.5875C13.8042%2010.9792%2014%2011.45%2014%2012C14%2012.55%2013.8042%2013.0208%2013.4125%2013.4125C13.0208%2013.8042%2012.55%2014%2012%2014ZM5%2021C4.45%2021%203.97917%2020.8042%203.5875%2020.4125C3.19583%2020.0208%203%2019.55%203%2019V5C3%204.45%203.19583%203.97917%203.5875%203.5875C3.97917%203.19583%204.45%203%205%203H19C19.55%203%2020.0208%203.19583%2020.4125%203.5875C20.8042%203.97917%2021%204.45%2021%205V19C21%2019.55%2020.8042%2020.0208%2020.4125%2020.4125C20.0208%2020.8042%2019.55%2021%2019%2021H5Z'%20fill='%236D7882'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5397,7 +5473,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .measure-btn-group .measure-btn .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_measure);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.6504%2017C19.2501%2017.0001%2019.7122%2017.1669%2020.0371%2017.5C20.2354%2017.7033%2020.5567%2017.8436%2021%2017.9229V19C21%2019.55%2020.8038%2020.0204%2020.4121%2020.4121C20.0204%2020.8038%2019.55%2021%2019%2021H5C4.45%2021%203.97956%2020.8038%203.58789%2020.4121C3.19622%2020.0204%203%2019.55%203%2019V17.917C3.42079%2017.8368%203.73352%2017.699%203.9375%2017.5C4.27909%2017.1667%204.7498%2017.0001%205.34961%2017C5.94955%2017%206.41231%2017.1667%206.7373%2017.5C7.0623%2017.8333%207.71686%2018%208.7002%2018C9.68332%2018%2010.3206%2017.8332%2010.6123%2017.5C10.904%2017.1667%2011.3667%2017%2012%2017C12.5999%2017%2013.0705%2017.1668%2013.4121%2017.5C13.7537%2017.8333%2014.3998%2018%2015.3496%2018C16.3328%2018%2016.9787%2017.8332%2017.2871%2017.5C17.5954%2017.1667%2018.0504%2017%2018.6504%2017ZM19%203C19.55%203%2020.0204%203.19622%2020.4121%203.58789C20.8038%203.97956%2021%204.45%2021%205V15.79C20.8466%2015.7138%2020.7089%2015.618%2020.5879%2015.5C20.2463%2015.1667%2019.6002%2015%2018.6504%2015C17.6672%2015%2017.0213%2015.1668%2016.7129%2015.5C16.4046%2015.8333%2015.9331%2016%2015.2998%2016C14.7166%2016%2014.2581%2015.8333%2013.9248%2015.5C13.5914%2015.1667%2012.9499%2015%2012%2015C11.0167%2015%2010.3708%2015.1667%2010.0625%2015.5C9.75423%2015.8333%209.28353%2015.9999%208.65039%2016C8.05045%2016%207.58769%2015.8333%207.2627%2015.5C6.9377%2015.1667%206.29961%2015%205.34961%2015C4.3665%2015%203.7204%2015.1667%203.41211%2015.5C3.29727%2015.6241%203.1599%2015.7249%203%2015.8027V5C3%204.45%203.19622%203.97956%203.58789%203.58789C3.97956%203.19622%204.45%203%205%203H19ZM12.6748%2010.1748L10.6748%208.1748L6.25%2012.5996L7.65039%2014L10.6748%2011L12.6748%2013L17.75%207.90039L16.3496%206.5L12.6748%2010.1748Z'%20fill='%236D7882'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5453,7 +5529,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .measure-btn-group .measure-tools .measure-tool-btn[data-tool=line] .tool-icon {
   width: 1.6rem;
   height: 1.6rem;
-  mask-image: url(icon_line_measure);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.6%2016C12.9333%2016%2012.3667%2015.7667%2011.9%2015.3C11.4333%2014.8333%2011.2%2014.2667%2011.2%2013.6C11.2%2013.4133%2011.22%2013.2333%2011.26%2013.06C11.3%2012.8867%2011.36%2012.72%2011.44%2012.56L3.44%204.56C3.28%204.64%203.11333%204.7%202.94%204.74C2.76667%204.78%202.58667%204.8%202.4%204.8C1.73333%204.8%201.16667%204.56667%200.7%204.1C0.233333%203.63333%200%203.06667%200%202.4C0%201.73333%200.233333%201.16667%200.7%200.7C1.16667%200.233333%201.73333%200%202.4%200C3.06667%200%203.63333%200.233333%204.1%200.7C4.56667%201.16667%204.8%201.73333%204.8%202.4C4.8%202.58667%204.78%202.76667%204.74%202.94C4.7%203.11333%204.64%203.28%204.56%203.44L12.56%2011.44C12.72%2011.36%2012.8867%2011.3%2013.06%2011.26C13.2333%2011.22%2013.4133%2011.2%2013.6%2011.2C14.2667%2011.2%2014.8333%2011.4333%2015.3%2011.9C15.7667%2012.3667%2016%2012.9333%2016%2013.6C16%2014.2667%2015.7667%2014.8333%2015.3%2015.3C14.8333%2015.7667%2014.2667%2016%2013.6%2016Z'%20fill='%23256EF4'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5462,7 +5538,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .measure-btn-group .measure-tools .measure-tool-btn[data-tool=area] .tool-icon {
   width: 1.6rem;
   height: 1.6rem;
-  mask-image: url(icon_area_measure);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1.03024%2015V1H15.0166V15H1.03024ZM2.80629%2013.2222H13.2405V2.77778H2.80629V13.2222Z'%20fill='%231E2124'/%3e%3cpath%20d='M3.9961%202C3.9961%203.10457%203.10154%204%201.99805%204C0.894557%204%200%203.10457%200%202C0%200.89543%200.894557%200%201.99805%200C3.10154%200%203.9961%200.89543%203.9961%202Z'%20fill='%231E2124'/%3e%3cpath%20d='M16%202C16%203.10457%2015.1054%204%2014.002%204C12.8985%204%2012.0039%203.10457%2012.0039%202C12.0039%200.89543%2012.8985%200%2014.002%200C15.1054%200%2016%200.89543%2016%202Z'%20fill='%231E2124'/%3e%3cpath%20d='M3.9961%2014C3.9961%2015.1046%203.10154%2016%201.99805%2016C0.894557%2016%200%2015.1046%200%2014C0%2012.8954%200.894557%2012%201.99805%2012C3.10154%2012%203.9961%2012.8954%203.9961%2014Z'%20fill='%231E2124'/%3e%3cpath%20d='M16%2014C16%2015.1046%2015.1054%2016%2014.002%2016C12.8985%2016%2012.0039%2015.1046%2012.0039%2014C12.0039%2012.8954%2012.8985%2012%2014.002%2012C15.1054%2012%2016%2012.8954%2016%2014Z'%20fill='%231E2124'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5471,7 +5547,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .measure-btn-group .measure-tools .measure-tool-btn[data-tool=reset] .tool-icon {
   width: 1.6rem;
   height: 1.6rem;
-  mask-image: url(icon_reset_measure);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8%209.77778C7.51111%209.77778%207.09259%209.6037%206.74444%209.25556C6.3963%208.90741%206.22222%208.48889%206.22222%208C6.22222%207.51111%206.3963%207.09259%206.74444%206.74444C7.09259%206.3963%207.51111%206.22222%208%206.22222C8.48889%206.22222%208.90741%206.3963%209.25556%206.74444C9.6037%207.09259%209.77778%207.51111%209.77778%208C9.77778%208.48889%209.6037%208.90741%209.25556%209.25556C8.90741%209.6037%208.48889%209.77778%208%209.77778ZM8%2016C5.94074%2016%204.15556%2015.3222%202.64444%2013.9667C1.13333%2012.6111%200.266667%2010.9185%200.0444444%208.88889H1.86667C2.07407%2010.4296%202.75926%2011.7037%203.92222%2012.7111C5.08519%2013.7185%206.44444%2014.2222%208%2014.2222C9.73333%2014.2222%2011.2037%2013.6185%2012.4111%2012.4111C13.6185%2011.2037%2014.2222%209.73333%2014.2222%208C14.2222%206.26667%2013.6185%204.7963%2012.4111%203.58889C11.2037%202.38148%209.73333%201.77778%208%201.77778C6.97778%201.77778%206.02222%202.01481%205.13333%202.48889C4.24444%202.96296%203.4963%203.61481%202.88889%204.44444H5.33333V6.22222H0V0.888889H1.77778V2.97778C2.53333%202.02963%203.45556%201.2963%204.54444%200.777778C5.63333%200.259259%206.78519%200%208%200C9.11111%200%2010.1519%200.211111%2011.1222%200.633333C12.0926%201.05556%2012.937%201.62593%2013.6556%202.34444C14.3741%203.06296%2014.9444%203.90741%2015.3667%204.87778C15.7889%205.84815%2016%206.88889%2016%208C16%209.11111%2015.7889%2010.1519%2015.3667%2011.1222C14.9444%2012.0926%2014.3741%2012.937%2013.6556%2013.6556C12.937%2014.3741%2012.0926%2014.9444%2011.1222%2015.3667C10.1519%2015.7889%209.11111%2016%208%2016Z'%20fill='%231E2124'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5480,7 +5556,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .tool-buttons .legend-btn .tool-icon {
   width: 2.4rem;
   height: 2.4rem;
-  mask-image: url(icon_legend);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%202C14.1167%202%2015.9796%202.74128%2017.5879%204.22461C19.1962%205.70794%2020%207.7002%2020%2010.2002C19.9999%2011.8668%2019.3376%2013.6794%2018.0127%2015.6377C16.6877%2017.596%2014.6833%2019.7167%2012%2022C9.31669%2019.7167%207.3123%2017.596%205.9873%2015.6377C4.66236%2013.6794%204.00005%2011.8668%204%2010.2002C4%207.7002%204.80379%205.70794%206.41211%204.22461C8.02044%202.74128%209.88333%202%2012%202ZM11%2010V15H13V10H11ZM12%207C11.7167%207%2011.4788%207.09544%2011.2871%207.28711C11.0954%207.47878%2011%207.71667%2011%208C11%208.28333%2011.0954%208.52122%2011.2871%208.71289C11.4788%208.90456%2011.7167%209%2012%209C12.2833%209%2012.5212%208.90456%2012.7129%208.71289C12.9046%208.52122%2013%208.28333%2013%208C13%207.71667%2012.9046%207.47878%2012.7129%207.28711C12.5212%207.09544%2012.2833%207%2012%207Z'%20fill='%236D7882'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5534,6 +5610,16 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
     height: auto;
   }
 }
+.control-panel .zoom-control .zoom-range {
+  position: relative;
+}
+.control-panel .zoom-control .zoom-range .gage-background {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 57, 100, 0.7);
+  z-index: 1;
+}
 @media screen and (max-width: 1000px) {
   .control-panel .zoom-control .zoom-range {
     display: none;
@@ -5549,7 +5635,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .zoom-control .zoom-in .icon, .control-panel .zoom-control .zoom-in .tool-buttons .tool-btn .tool-icon, .control-panel .tool-buttons .tool-btn .zoom-control .zoom-in .tool-icon, .control-panel .zoom-control .zoom-btn .tool-buttons .tool-btn .zoom-in .tool-icon {
   width: 100%;
   height: 100%;
-  mask-image: url(icon_zoom-in);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.25%2016.75H9.5V15.25H15.25V9.5H16.75V15.25H22.5V16.75H16.75V22.5H15.25V16.75Z'%20fill='%231D1D1D'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5558,7 +5644,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .control-panel .zoom-control .zoom-out .icon, .control-panel .zoom-control .zoom-out .tool-buttons .tool-btn .tool-icon, .control-panel .tool-buttons .tool-btn .zoom-control .zoom-out .tool-icon, .control-panel .zoom-control .zoom-btn .tool-buttons .tool-btn .zoom-out .tool-icon {
   width: 100%;
   height: 100%;
-  mask-image: url(icon_zoom-out);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10.5%2016.75V15.25H21.5V16.75H10.5Z'%20fill='%231D1D1D'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -5573,7 +5659,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   width: 100%;
   height: 0.2rem;
   background: var(--primary, #256EF4);
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
 }
 .control-panel .zoom-level-value {
@@ -5602,6 +5688,63 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.map-type-opacity {
+  position: absolute;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  display: none;
+  flex-direction: column;
+  right: 6.8rem;
+  top: 1.2rem;
+  z-index: 2;
+}
+.map-type-opacity.show {
+  display: flex;
+}
+@media screen and (max-width: 1024px) {
+  .map-type-opacity {
+    top: 12rem;
+  }
+}
+.map-type-opacity .label {
+  color: var(--g-90, #1e2124);
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #cdd1d5;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+}
+.map-type-opacity .range-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.map-type-opacity .range-slider {
+  flex: 1;
+  height: auto;
+}
+.map-type-opacity .range-slider input[type=range] {
+  width: 100%;
+  height: 0.4rem;
+  background-color: #cdd1d5;
+  border-radius: 1.2rem;
+  vertical-align: middle;
+}
+.map-type-opacity .value {
+  color: var(--g-90, #1e2124);
+  font-size: 15px;
+  font-weight: 700;
+}
+.map-type-opacity .accent {
+  color: var(--primary, #256ef4);
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .option-panel {
@@ -5662,9 +5805,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 
 .option-panel-title {
   color: var(--secondary, #003964);
-  font-family: "Pretendard GOV";
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 1.7rem;
   height: 2.6rem;
   display: flex;
   align-items: center;
@@ -5697,6 +5838,9 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 
 .option-panel-content {
   padding: 1.6rem;
+}
+.option-panel-content .layer-item .layer-btn-ui {
+  width: calc(100% - 32px);
 }
 
 #optionLayerList .layer-list {
@@ -5771,9 +5915,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   background: var(--g-05, #f4f5f6);
   color: var(--g-40, #8a949e);
   text-align: center;
-  font-family: "Pretendard GOV";
-  font-size: 13px;
-  line-height: 150%; /* 19.5px */
+  font-size: 1.3rem;
   padding: 0.4rem;
 }
 .btn-utility i {
@@ -5817,10 +5959,8 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .layer-create-method .layer-create-btn .text {
   color: var(--g90, #1e2124);
   text-align: center;
-  font-family: "Pretendard GOV";
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 120%; /* 15.6px */
   padding-top: 0.4rem;
 }
 .layer-create-method .layer-create-btn i {
@@ -5882,9 +6022,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .nolayer p {
   color: var(--g-40, #8a949e);
   text-align: center;
-  font-family: "Pretendard GOV";
-  font-size: 13px;
-  line-height: 150%; /* 19.5px */
+  font-size: 1.3rem;
 }
 
 .flow-content {
@@ -5912,21 +6050,13 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 }
 .flow-item-title .number {
   color: var(--primary, #256ef4);
-  font-family: "Pretendard GOV";
-  font-size: 13px;
-  font-style: normal;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 150%; /* 19.5px */
-  letter-spacing: var(--typo-letter-spacing-0, 0);
 }
 .flow-item-title strong {
   color: var(--g90, #1e2124);
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 150%; /* 22.5px */
-  letter-spacing: var(--typo-letter-spacing-0, 0);
 }
 
 .fab-fix {
@@ -5959,11 +6089,8 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 }
 .gradient-item .gradient-label {
   color: var(--g-90, #1e2124);
-  font-family: "Pretendard GOV";
-  font-size: 13px;
-  font-style: normal;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 150%; /* 19.5px */
   width: 100%;
 }
 .gradient-item .gradient-bar {
@@ -5999,11 +6126,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .gradient-item .gradient-max {
   color: var(--g-60, #58616a);
   text-align: center;
-  font-family: "Pretendard GOV";
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 19.5px */
+  font-size: 1.3rem;
   min-width: 65px;
   text-align: center;
 }
@@ -6031,11 +6154,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .area-select-info .info-text {
   color: var(--g-90, #1e2124);
   text-align: center;
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 22.5px */
+  font-size: 1.5rem;
 }
 
 .area-select-btn {
@@ -6046,12 +6165,8 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   align-items: center;
   gap: 0.2rem;
   color: var(--p-60, var(--color-light-primary-60, #0b50d0));
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 150%; /* 22.5px */
-  letter-spacing: var(--typo-label-small-letter-spacing, 0);
   border-radius: 4px;
   border: 1px solid var(--primary, #256ef4);
   background: var(--p-05, #ecf2fe);
@@ -6081,11 +6196,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   color: var(--p-60, var(--color-light-primary-60, #0b50d0));
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 22.5px */
+  font-size: 1.5rem;
 }
 
 .distance-measure-element {
@@ -6114,20 +6225,13 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   color: var(--g-60, #58616a);
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
+  font-size: 1.5rem;
 }
 
 .distance-measure-value {
   color: var(--primary, #1764dc);
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
+  font-size: 1.5rem;
   font-weight: 900;
-  line-height: 150%; /* 22.5px */
 }
 
 .option-panel-zoom {
@@ -6147,7 +6251,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .option-panel-zoom.in i {
   width: 19px;
   height: 15px;
-  mask-image: url(zoomin);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='20'%20height='16'%20viewBox='0%200%2020%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12.25%2012.75H16.75V8.25H15.25V11.25H12.25V12.75ZM3.25%207.75H4.75V4.75H7.75V3.25H3.25V7.75ZM2.30775%2015.5C1.80258%2015.5%201.375%2015.325%201.025%2014.975C0.675%2014.625%200.5%2014.1974%200.5%2013.6923V2.30775C0.5%201.80258%200.675%201.375%201.025%201.025C1.375%200.675%201.80258%200.5%202.30775%200.5H17.6923C18.1974%200.5%2018.625%200.675%2018.975%201.025C19.325%201.375%2019.5%201.80258%2019.5%202.30775V13.6923C19.5%2014.1974%2019.325%2014.625%2018.975%2014.975C18.625%2015.325%2018.1974%2015.5%2017.6923%2015.5H2.30775ZM2.30775%2014H17.6923C17.7693%2014%2017.8398%2013.9679%2017.9038%2013.9038C17.9679%2013.8398%2018%2013.7692%2018%2013.6923V2.30775C18%202.23075%2017.9679%202.16025%2017.9038%202.09625C17.8398%202.03208%2017.7693%202%2017.6923%202H2.30775C2.23075%202%202.16025%202.03208%202.09625%202.09625C2.03208%202.16025%202%202.23075%202%202.30775V13.6923C2%2013.7692%202.03208%2013.8398%202.09625%2013.9038C2.16025%2013.9679%202.23075%2014%202.30775%2014Z'%20fill='%2358616A'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -6159,7 +6263,7 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .option-panel-zoom.out i {
   width: 19px;
   height: 15px;
-  mask-image: url(zoomout);
+  mask-image: url("data:image/svg+xml,%3csvg%20width='20'%20height='16'%20viewBox='0%200%2020%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3.25%207.75H7.75V3.25H6.25V6.25H3.25V7.75ZM12.25%2012.75H13.75V9.75H16.75V8.25H12.25V12.75ZM2.30775%2015.5C1.80258%2015.5%201.375%2015.325%201.025%2014.975C0.675%2014.625%200.5%2014.1974%200.5%2013.6923V2.30775C0.5%201.80258%200.675%201.375%201.025%201.025C1.375%200.675%201.80258%200.5%202.30775%200.5H17.6923C18.1974%200.5%2018.625%200.675%2018.975%201.025C19.325%201.375%2019.5%201.80258%2019.5%202.30775V13.6923C19.5%2014.1974%2019.325%2014.625%2018.975%2014.975C18.625%2015.325%2018.1974%2015.5%2017.6923%2015.5H2.30775ZM2.30775%2014H17.6923C17.7693%2014%2017.8398%2013.9679%2017.9038%2013.9038C17.9679%2013.8398%2018%2013.7692%2018%2013.6923V2.30775C18%202.23075%2017.9679%202.16025%2017.9038%202.09625C17.8398%202.03208%2017.7693%202%2017.6923%202H2.30775C2.23075%202%202.16025%202.03208%202.09625%202.09625C2.03208%202.16025%202%202.23075%202%202.30775V13.6923C2%2013.7692%202.03208%2013.8398%202.09625%2013.9038C2.16025%2013.9679%202.23075%2014%202.30775%2014Z'%20fill='%2358616A'/%3e%3c/svg%3e");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -6228,11 +6332,6 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .map-info-label {
   color: var(--g-60, #58616a);
   text-align: right;
-  font-family: "Pretendard GOV";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 22.5px */
 }
 
 .map-info-line {
@@ -6245,9 +6344,23 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 .map-info-value {
   color: var(--primary, #256ef4);
   text-align: right;
-  font-family: "Pretendard GOV";
-  font-size: 17px;
-  font-style: normal;
+  font-size: 1.7rem;
   font-weight: 900;
-  line-height: 150%; /* 25.5px */
+}
+
+.alert-user-element {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.alert-user-element > div {
+  display: flex;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 17px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  color: var(--p-60, var(--color-light-primary-60, #0b50d0));
 }

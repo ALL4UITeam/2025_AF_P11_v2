@@ -3,6 +3,30 @@ const portal = {};
 
 let appliedConditions = [];
 
+portal.initMobileMenu = function() {
+  const btnAllmenu = document.querySelector('#btnAllMenu');
+  const closeSitemapBtn = document.querySelector('.close-sitemap-btn');
+  
+  if (btnAllmenu) {
+    btnAllmenu.addEventListener('click', () => {
+      const mobileNav = document.querySelector('#mobile-nav');
+      if (mobileNav) {
+        mobileNav.classList.toggle('active');
+      }
+    });
+  }
+
+  if (closeSitemapBtn) {
+    closeSitemapBtn.addEventListener('click', () => {
+      const mobileNav = document.querySelector('#mobile-nav');
+      if (mobileNav) {
+        mobileNav.classList.remove('active');
+      }
+    });
+  }
+}
+
+
 portal.initPortalBoard = function() {
   const sortTypeBtns = document.querySelectorAll('.sort-type-btn');
   sortTypeBtns.forEach(btn => {
@@ -187,3 +211,10 @@ portal.handleResize = function() {
     label.style.display = isMobile ? 'inline' : 'none';
   });
 }
+
+// 초기화 함수 호출
+portal.initMobileMenu();
+portal.initPortalBoard();
+portal.initDetailSearch();
+portal.initSearch();
+portal.initMobileTable();

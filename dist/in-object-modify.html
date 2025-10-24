@@ -1,28 +1,25 @@
-<!-- @pageTitle 객체사전 > 객체 클래스 > 수정 -->
-<!-- @pageCreated 2025.10.16 -->
-<!-- @pageUpdated 2025.10.16 -->
-<!-- @pageNote 모달 추가 -->
 <!doctype html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
   <title>K-Ocean</title>
   <link rel="stylesheet" href="./resources/css/component/output.css">
   <link rel="stylesheet" href="./resources/css/common/common.css">
   <link rel="stylesheet" href="./assets/css/index.css">
   <script src="./resources/js/component/ui-script.js"></script>
-  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
-  <script src="./assets/js/portal.js"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
   <div id="krds-skip-link">
     <a href="#breadcrumb">본문 바로가기</a>
   </div>
-
+  
   <!-- masthead -->
   <div id="krds-masthead">
     <div class="toggle-wrap">
@@ -38,13 +35,13 @@
   <header id="header" class="header">
     <div class="header-container">
       <div class="header-l">
-        <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
+        <h1 class="logo"><a href="./main.html" title="홈 바로가기">K-OCEAN</a></h1>
       </div>
       <div class="header-r">
         <nav id="nav">
           <ul class="gnb-list" id="gnb">
             <li class="gnb-lv-1">
-              <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <a href="./map.html" class="gnb-lv-1-item before-none">해양지도 서비스</a>
               <div class="gnb-dropmenu gnb-dropmenu-1">
                 <div class="gnb-dropmenu-info">
                   <h3>해양지도 서비스</h3>
@@ -52,7 +49,7 @@
                 </div>
                 <ul>
                   <li class="gnb-lv-2">
-                    <a href="#" class="gnb-lv-2-item">
+                    <a href="./map.html" class="gnb-lv-2-item">
                       <div class="tit">해양정보</div>
                       <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
                       <div class="icon-arrow"></div>
@@ -182,6 +179,7 @@
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
           </ul>
           <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
           </ul>
         </div>
@@ -191,6 +189,10 @@
         <div class="gnb-submenu">
           <ul class="gnb-submenu-list">
             <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+            <li class="gnb-submenu-item"><a href="#">Open-API</a></li>
+            <li class="gnb-submenu-item"><a href="#">통계서비스</a></li>
+            <li class="gnb-submenu-item"><a href="#">Cook-Book</a></li>
+            <li class="gnb-submenu-item"><a href="#">공간정보 법령 및 규정</a></li>
           </ul>
         </div>
       </li>
@@ -206,157 +208,353 @@
         </div>
       </li>
     </ul>
-  </nav>  <main id="app" class="l-sub">
-    <div class="sub-banner object">
+    <button type="button" class="close-sitemap-btn" title="메뉴 닫기">닫기</button>
+  </nav>
+  
+  <main id="app" class="l-sub">
+    <div id="contents">
+      <div class="sub-banner">
+        <div class="container">
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+              </ol>
+            </div>
+          </nav>
+        </div>
+      </div>
       <div class="container">
-        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
-          <div>
-            <ol class="breadcrumb">
-              <li class="home"><a href="#" class="txt">홈</a></li>
-            </ol>
-          </div>
-        </nav>
+        <!-- @pageTitle 객체사전 > 객체 클래스 > 수정 -->
+<!-- @pageCreated 2025.10.16 -->
+<!-- @pageUpdated 2025.10.16 -->
+<!-- @pageNote 모달 추가 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+  <h1 class="page-title">객체사전</h1>
+
+  <div class="read-container">
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>객체 상세정보</h2>
+      </div>
+      <div class="read-section-body">
+        <div class="table__list-not-mobile2">
+          <table class="not-mobile">
+            <caption>객체 상세정보</caption>
+            <colgroup>
+              <col style="width: 20rem;">
+              <col style="width: auto;">
+              <col style="width: 20rem;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>대분류</th>
+                <td>
+                  <select class="krds-form-select medium" title="대분류" value="항로표지">
+                    <option value="">전체</option>
+                  </select>
+                </td>
+                <th>소분류</th>
+                <td>
+                  <select class="krds-form-select medium" title="소분류" value="부표 및 입표">
+                    <option value="">전체</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>객체명(한글)</th>
+                <td>
+                  <input type="text" class="krds-input" title="객체명(한글)" value="주간항로표지">
+                </td>
+                <th>객체명(영문)</th>
+                <td>
+                  <input type="text" class="krds-input" title="객체명(영문)" value="Daymark">
+                </td>
+              </tr>
+              <tr>
+                <th>약어</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="약어" value="DAYMAR">
+                </td>
+                <th>코드</th>
+                <td>
+                  <input type="text" class="krds-input medium" title="코드" value="Daymark">
+                </td>
+              </tr>
+              <tr>
+                <th>유형</th>
+                <td>
+                  <select class="krds-form-select medium" title="유형">
+                    <option value="">전체</option>
+                  </select>
+                </td>
+                <th>허용요소</th>
+                <td>
+                  <div class="krds-form-checks">
+                    <div class="krds-form-check">
+                      <input type="radio" id="point" name="point" value="point">
+                      <label for="point">점(point)</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" id="line" name="line" value="line">
+                      <label for="line">선(line)</label>
+                    </div>
+                    <div class="krds-form-check">
+                      <input type="radio" id="polygon" name="polygon" value="polygon">
+                      <label for="polygon">다각형(polygon)</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>한글정의</th>
+                <td colspan="3">태양빛 배경에 항로표지를 용이하게 인식하기 위한 역할을 하는 항로표지의 식별 특성.</td>
+              </tr>
+              <tr>
+                <th>영문정의</th>
+                <td colspan="3">The identifying characteristics of an aid to navigation which serve to facilitate its
+                  recognition against a daylight viewing background.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- //read-section -->
+    <section class="read-section">
+      <div class="read-section-header">
+        <h2>속성 정보</h2>
+        <button type="button" class="krds-btn small secondary open-modal" data-target="object-property-modal">수정</button>
+      </div>
+      <div class="read-section-body">
+        <div class="table__list-not-mobile">
+          <table>
+            <caption>속성 목록</caption>
+            <colgroup>
+              <col style="width: 21rem;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>속성명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a href="#" class="link">색상(colour)</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <div class="section-actions side">
+      <div class="l">
+        <a href="#" class="krds-btn tertiary">삭제 하기</a>
+      </div>
+      <div class="r">
+        <a href="#" class="krds-btn secondary">취소 하기</a>
+        <a href="#" class="krds-btn primary">저장 하기</a>
       </div>
     </div>
-    <div id="contents">
-      <div class="container">
-        <h1 class="page-title">객체사전</h1>
 
-        <div class="read-container">
-          <section class="read-section">
-            <div class="read-section-header">
-              <h2>객체 상세정보</h2>
-            </div>
-            <div class="read-section-body">
-              <div class="table__list-not-mobile2">
-                <table class="not-mobile">
-                  <caption>객체 상세정보</caption>
-                  <colgroup>
-                    <col style="width: 20rem;">
-                    <col style="width: auto;">
-                    <col style="width: 20rem;">
-                    <col style="width: auto;">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th>대분류</th>
-                      <td>
-                        <select class="krds-form-select medium" title="대분류" value="항로표지">
-                          <option value="">전체</option>
-                        </select>
-                      </td>
-                      <th>소분류</th>
-                      <td>
-                        <select class="krds-form-select medium" title="소분류" value="부표 및 입표">
-                          <option value="">전체</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>객체명(한글)</th>
-                      <td>
-                        <input type="text" class="krds-input" title="객체명(한글)" value="주간항로표지">
-                      </td>
-                      <th>객체명(영문)</th>
-                      <td>
-                        <input type="text" class="krds-input" title="객체명(영문)" value="Daymark">
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>약어</th>
-                      <td>
-                        <input type="text" class="krds-input medium" title="약어" value="DAYMAR">
-                      </td>
-                      <th>코드</th>
-                      <td>
-                        <input type="text" class="krds-input medium" title="코드" value="Daymark">
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>유형</th>
-                      <td>
-                        <select class="krds-form-select medium" title="유형">
-                          <option value="">전체</option>
-                        </select>
-                      </td>
-                      <th>허용요소</th>
-                      <td>
-                        <div class="krds-form-checks">
-                          <div class="krds-form-check">
-                            <input type="radio" id="point" name="point" value="point">
-                            <label for="point">점(point)</label>
-                          </div>
-                          <div class="krds-form-check">
-                            <input type="radio" id="line" name="line" value="line">
-                            <label for="line">선(line)</label>
-                          </div>
-                          <div class="krds-form-check">
-                            <input type="radio" id="polygon" name="polygon" value="polygon">
-                            <label for="polygon">다각형(polygon)</label>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>한글정의</th>
-                      <td colspan="3">태양빛 배경에 항로표지를 용이하게 인식하기 위한 역할을 하는 항로표지의 식별 특성.</td>
-                    </tr>
-                    <tr>
-                      <th>영문정의</th>
-                      <td colspan="3">The identifying characteristics of an aid to navigation which serve to facilitate
-                        its
-                        recognition against a daylight viewing background.</td>
-                    </tr>
-                  </tbody>
-                </table>
+  </div>
+  <!-- //read-container -->
+</section>
+
+<!-- modal -->
+<section id="object-property-modal" class="krds-modal fade shown in" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">
+          ㅇㅇㅇ 객체 클래스 속성 관리
+        </h2>
+      </div>
+			<!-- modal contents -->
+			<div class="modal-conts">
+				<div class="conts-area">
+					<!-- 객체 속성 -->
+					<div class="modal-section">
+						<div class="modal-section-body">
+              <div class="modal-section-header">
+                <h3>속성 마스터</h3>
               </div>
-            </div>
-          </section>
-          <!-- //read-section -->
-          <section class="read-section">
-            <div class="read-section-header">
-              <h2>속성 정보</h2>
-              <button type="button" class="krds-btn small secondary open-modal"
-                data-target="object-property-modal">수정</button>
-            </div>
-            <div class="read-section-body">
-              <div class="table__list-not-mobile">
+              <div class="modal-search">
+                <form>
+                  <div class="search-row">
+                    <div class="form-group">
+                      <label for="type">유형</label>
+                      <select name="type" id="type" title="유형 선택" class="krds-form-select">
+                        <option value="">전체</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="search-keyword">검색어</label>
+                      <div class="form-keyword">
+                        <select name="search-keyword" id="search-keyword" title="검색어 선택" class="krds-form-select">
+                          <option value="">전체</option>
+                        </select>
+                        <input type="text" class="krds-input" title="검색어" placeholder="검색어를 입력해주세요">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="table-y-wrapper table__list-not-mobile sm">
                 <table>
-                  <caption>속성 목록</caption>
+                  <caption>객체 속성 목록</caption>
                   <colgroup>
-                    <col style="width: 21rem;">
+                    <col style="width: 5rem;">
+                    <col style="width: 5rem;">
                     <col style="width: auto;">
                   </colgroup>
                   <thead>
                     <tr>
+                      <th>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="chk_1" id="chk_1">
+                          <label for="chk_1">
+                            <span class="visually-hidden">전체 선택</span>
+                          </label>
+                        </div>
+                      </th>
                       <th>번호</th>
-                      <th>속성명</th>
+                      <th>속성명(한글)</th>
+                      <th>속성명(영문)</th>
+                      <th>약어</th>
+                      <th>유형</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1</td>
                       <td>
-                        <a href="#" class="link">색상(colour)</a>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="" id="chk_2">
+                          <label for="chk_2">
+                            <span class="visually-hidden">선택</span>
+                          </label>
+                        </div>
                       </td>
+                      <td>1</td>
+                      <td>난부</td>
+                      <td>Beacon Shape</td>
+                      <td>BCNSHP</td>
+                      <td>(단순)열거</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="" id="chk_2">
+                          <label for="chk_2">
+                            <span class="visually-hidden">선택</span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>2</td>
+                      <td>조튜퍼형</td>
+                      <td>Category of Dock</td>
+                      <td>CATDOC</td>
+                      <td>(단순)열거</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <button type="button" class="krds-btn small tertiary">선택 추가</button>
+                <button type="button" class="krds-btn small primary">선택 해제</button>
+              </div>
+            </div>
+            <!-- //modal-body -->
+            <div class="modal-section-body">
+              <div class="modal-section-header">
+                <h3>객체 속성</h3>
+              </div>
+              <div class="table-y-wrapper table__list-not-mobile sm">
+                <table>
+                  <caption>객체 속성 목록</caption>
+                  <colgroup>
+                    <col style="width: 5rem;">
+                    <col style="width: 5rem;">
+                    <col style="width: auto;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="chk_1" id="chk_1">
+                          <label for="chk_1">
+                            <span class="visually-hidden">전체 선택</span>
+                          </label>
+                        </div>
+                      </th>
+                      <th>번호</th>
+                      <th>속성명(한글)</th>
+                      <th>속성명(영문)</th>
+                      <th>약어</th>
+                      <th>유형</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="" id="chk_2">
+                          <label for="chk_2">
+                            <span class="visually-hidden">선택</span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>1</td>
+                      <td>난부</td>
+                      <td>Beacon Shape</td>
+                      <td>BCNSHP</td>
+                      <td>(단순)열거</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="" id="chk_2">
+                          <label for="chk_2">
+                            <span class="visually-hidden">선택</span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>2</td>
+                      <td>조튜퍼형</td>
+                      <td>Category of Dock</td>
+                      <td>CATDOC</td>
+                      <td>(단순)열거</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-          </section>
-          <div class="section-actions side">
-            <div class="l">
-              <a href="#" class="krds-btn tertiary">삭제 하기</a>
-            </div>
-            <div class="r">
-              <a href="#" class="krds-btn secondary">취소 하기</a>
-              <a href="#" class="krds-btn primary">저장 하기</a>
-            </div>
-          </div>
+            <!-- //modal-body -->
 
-        </div>
-        <!-- //read-container -->
+					</div>
+				</div>
+			</div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium tertiary close-modal">취소</button>
+        <button type="button" class="krds-btn medium primary close-modal">저장</button>
+      </div>
+			<button type="button" class="krds-btn medium icon btn-close close-modal">
+				<span class="sr-only">닫기</span>
+				<i class="svg-icon ico-popup-close"></i>
+			</button>
+			<!-- //close button -->
+		</div>
+	</div>
+	<div class="modal-back in"></div>
+</section>
+<!-- //modal -->
       </div>
     </div>
   </main>
@@ -365,7 +563,7 @@
   <footer id="krds-footer">
     <div class="foot-quick">
       <div class="inner">
-        <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 및 소속기관 레이어">해양수산부 및 소속기관</button>
         <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
         <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
       </div>
@@ -400,195 +598,7 @@
     </div>
   </footer>
   <!-- //footer -->
-  
-
-  <!-- modal -->
-  <section id="object-property-modal" class="krds-modal fade shown in" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">
-            ㅇㅇㅇ 객체 클래스 속성 관리
-          </h2>
-        </div>
-        <!-- modal contents -->
-        <div class="modal-conts">
-          <div class="conts-area">
-            <!-- 객체 속성 -->
-            <div class="modal-section">
-              <div class="modal-section-body">
-                <div class="modal-section-header">
-                  <h3>속성 마스터</h3>
-                </div>
-                <div class="modal-search">
-                  <form>
-                    <div class="search-row">
-                      <div class="form-group">
-                        <label for="type">유형</label>
-                        <select name="type" id="type" title="유형 선택" class="krds-form-select">
-                          <option value="">전체</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="search-keyword">검색어</label>
-                        <div class="form-keyword">
-                          <select name="search-keyword" id="search-keyword" title="검색어 선택" class="krds-form-select">
-                            <option value="">전체</option>
-                          </select>
-                          <input type="text" class="krds-input" title="검색어" placeholder="검색어를 입력해주세요">
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="table-y-wrapper table__list-not-mobile sm">
-                  <table>
-                    <caption>객체 속성 목록</caption>
-                    <colgroup>
-                      <col style="width: 5rem;">
-                      <col style="width: 5rem;">
-                      <col style="width: auto;">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="chk_1" id="chk_1">
-                            <label for="chk_1">
-                              <span class="visually-hidden">전체 선택</span>
-                            </label>
-                          </div>
-                        </th>
-                        <th>번호</th>
-                        <th>속성명(한글)</th>
-                        <th>속성명(영문)</th>
-                        <th>약어</th>
-                        <th>유형</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="" id="chk_2">
-                            <label for="chk_2">
-                              <span class="visually-hidden">선택</span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>1</td>
-                        <td>난부</td>
-                        <td>Beacon Shape</td>
-                        <td>BCNSHP</td>
-                        <td>(단순)열거</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="" id="chk_2">
-                            <label for="chk_2">
-                              <span class="visually-hidden">선택</span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>2</td>
-                        <td>조튜퍼형</td>
-                        <td>Category of Dock</td>
-                        <td>CATDOC</td>
-                        <td>(단순)열거</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div>
-                  <button type="button" class="krds-btn small tertiary">선택 추가</button>
-                  <button type="button" class="krds-btn small primary">선택 해제</button>
-                </div>
-              </div>
-              <!-- //modal-body -->
-              <div class="modal-section-body">
-                <div class="modal-section-header">
-                  <h3>객체 속성</h3>
-                </div>
-                <div class="table-y-wrapper table__list-not-mobile sm">
-                  <table>
-                    <caption>객체 속성 목록</caption>
-                    <colgroup>
-                      <col style="width: 5rem;">
-                      <col style="width: 5rem;">
-                      <col style="width: auto;">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="chk_1" id="chk_1">
-                            <label for="chk_1">
-                              <span class="visually-hidden">전체 선택</span>
-                            </label>
-                          </div>
-                        </th>
-                        <th>번호</th>
-                        <th>속성명(한글)</th>
-                        <th>속성명(영문)</th>
-                        <th>약어</th>
-                        <th>유형</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="" id="chk_2">
-                            <label for="chk_2">
-                              <span class="visually-hidden">선택</span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>1</td>
-                        <td>난부</td>
-                        <td>Beacon Shape</td>
-                        <td>BCNSHP</td>
-                        <td>(단순)열거</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="krds-form-check">
-                            <input type="checkbox" name="" id="chk_2">
-                            <label for="chk_2">
-                              <span class="visually-hidden">선택</span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>2</td>
-                        <td>조튜퍼형</td>
-                        <td>Category of Dock</td>
-                        <td>CATDOC</td>
-                        <td>(단순)열거</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- //modal-body -->
-
-            </div>
-          </div>
-        </div>
-        <div class="modal-btn btn-wrap">
-          <button type="button" class="krds-btn medium tertiary close-modal">취소</button>
-          <button type="button" class="krds-btn medium primary close-modal">저장</button>
-        </div>
-        <button type="button" class="krds-btn medium icon btn-close close-modal">
-          <span class="sr-only">닫기</span>
-          <i class="svg-icon ico-popup-close"></i>
-        </button>
-        <!-- //close button -->
-      </div>
-    </div>
-    <div class="modal-back in"></div>
-  </section>
-  <!-- //modal -->
+  
+    <script src="./assets/js/portal.js"></script>
 </body>
-
 </html>

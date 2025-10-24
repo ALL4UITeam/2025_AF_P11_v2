@@ -80,7 +80,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 5px;
+      top: 12px;
       width: 4px;
       height: 4px;
       background-color: #CDD1D5;
@@ -90,7 +90,10 @@
       font-size: 1.2rem;
     }
     @media screen and (max-width: $tablet) {
-      font-size: 1.3rem;
+      &::before{
+        top: 8px;
+        width: 3px;
+      }
     }
   }
   &.black{
@@ -280,6 +283,9 @@
     padding: 2rem 4rem;
     display: flex;
     gap: 0 .8rem;
+    @media screen and (max-width: $tablet) {
+      padding: 1.5rem;
+    }
     .conditions-header{
         display: flex;
         align-items: center;
@@ -290,16 +296,23 @@
     }
     .conditions-label{
       font-size: 17px;
-      font-weight: 700; 
+      font-weight: 700;
+      @media screen and (max-width: $tablet) {
+        font-size: 1.3rem;
+      }
     }
     .condition-count{
       color: #256EF4;
+    }
+    .krds-tag-wrap.large .krds-btn-tag{
+      @media screen and (max-width: $tablet) {
+        font-size: 1.3rem;
+      }
     }
     #resetConditions{
       i{
         width: 16px;
         height: 16px;
-
       }
     }
 }

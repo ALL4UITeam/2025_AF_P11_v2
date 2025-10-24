@@ -36,8 +36,7 @@
 }
 
 .detail-panel-header {
-  background: url("@/assets/images/map/panel02_header-bg.png") no-repeat center
-    center;
+  background: url("@/assets/images/map/panel02_header-bg.png") no-repeat center center;
   position: relative;
   display: flex;
   align-items: center;
@@ -50,6 +49,7 @@
     left: 0;
     right: 0;
     z-index: 100;
+    background-color: #003964;
   }
   .detail-panel-back {
     position: absolute;

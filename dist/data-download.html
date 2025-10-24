@@ -1,28 +1,25 @@
-<!-- @pageTitle 데이터 다운로드 목록 -->
-<!-- @pageCreated 2025.10.13 -->
-<!-- @pageUpdated 2025.10.13 -->
-<!-- @pageNote 목록,카드형 -->
 <!doctype html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
   <title>K-Ocean</title>
   <link rel="stylesheet" href="./resources/css/component/output.css">
   <link rel="stylesheet" href="./resources/css/common/common.css">
   <link rel="stylesheet" href="./assets/css/index.css">
   <script src="./resources/js/component/ui-script.js"></script>
-  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
-  <script src="./assets/js/portal.js"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
   <div id="krds-skip-link">
     <a href="#breadcrumb">본문 바로가기</a>
   </div>
-
+  
   <!-- masthead -->
   <div id="krds-masthead">
     <div class="toggle-wrap">
@@ -38,13 +35,13 @@
   <header id="header" class="header">
     <div class="header-container">
       <div class="header-l">
-        <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
+        <h1 class="logo"><a href="./main.html" title="홈 바로가기">K-OCEAN</a></h1>
       </div>
       <div class="header-r">
         <nav id="nav">
           <ul class="gnb-list" id="gnb">
             <li class="gnb-lv-1">
-              <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <a href="./map.html" class="gnb-lv-1-item before-none">해양지도 서비스</a>
               <div class="gnb-dropmenu gnb-dropmenu-1">
                 <div class="gnb-dropmenu-info">
                   <h3>해양지도 서비스</h3>
@@ -52,7 +49,7 @@
                 </div>
                 <ul>
                   <li class="gnb-lv-2">
-                    <a href="#" class="gnb-lv-2-item">
+                    <a href="./map.html" class="gnb-lv-2-item">
                       <div class="tit">해양정보</div>
                       <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
                       <div class="icon-arrow"></div>
@@ -182,6 +179,7 @@
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
           </ul>
           <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
           </ul>
         </div>
@@ -191,6 +189,10 @@
         <div class="gnb-submenu">
           <ul class="gnb-submenu-list">
             <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+            <li class="gnb-submenu-item"><a href="#">Open-API</a></li>
+            <li class="gnb-submenu-item"><a href="#">통계서비스</a></li>
+            <li class="gnb-submenu-item"><a href="#">Cook-Book</a></li>
+            <li class="gnb-submenu-item"><a href="#">공간정보 법령 및 규정</a></li>
           </ul>
         </div>
       </li>
@@ -206,330 +208,340 @@
         </div>
       </li>
     </ul>
-  </nav>  <main id="app" class="l-sub">
-    <div class="sub-banner data-download">
+    <button type="button" class="close-sitemap-btn" title="메뉴 닫기">닫기</button>
+  </nav>
+  
+  <main id="app" class="l-sub">
+    <div id="contents">
+      <div class="sub-banner">
+        <div class="container">
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+              </ol>
+            </div>
+          </nav>
+        </div>
+      </div>
       <div class="container">
-        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
-          <div>
-            <ol class="breadcrumb">
-              <li class="home"><a href="#" class="txt">홈</a></li>
-            </ol>
+        <!-- @pageTitle 데이터 다운로드 목록 -->
+<!-- @pageCreated 2025.10.13 -->
+<!-- @pageUpdated 2025.10.13 -->
+<!-- @pageNote 목록,카드형 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="data-download">
+  
+    <h1 class="page-title">데이터 다운로드</h1>
+
+    <!-- 검색 영역 -->
+    <div class="search-section">
+      <div class="wraps">
+        <div class="search-bar">
+          <div class="search-input-group">
+            <input type="text" class="search-input" placeholder="검색어를 입력해주세요." title="검색어 입력">
+            <button type="button" class="search-btn" title="검색"></button>
           </div>
-        </nav>
+          <button type="button" class="detail-search-toggle" id="detailSearchToggle">
+            <i class="svg-icon icon-search-plus" aria-hidden="true"></i>
+            <span>상세검색</span>
+          </button>
+        </div>
       </div>
     </div>
-    <div id="contents">
-      <div class="container">
-        <h1 class="page-title">데이터 다운로드</h1>
+    <!-- 상세검색 필터 영역 (기본 숨김) -->
+    <div class="detail-search-filters" id="detailSearchFilters">
+      <div class="filter-grid">
+        <div class="filter-item">
+          <label class="filter-label">자료 관리 기관</label>
+          <select class="krds-form-select" title="자료 관리 기관 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label class="filter-label">구매 비용</label>
+          <select class="krds-form-select" title="구매 비용 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label class="filter-label">원천자료 생산주기</label>
+          <select class="krds-form-select" title="원천자료 생산주기 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label class="filter-label">공간 특성</label>
+          <select class="krds-form-select" title="공간 특성 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label class="filter-label">서비스 타입</label>
+          <select class="krds-form-select" title="서비스 타입 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label class="filter-label">제공 파일 포맷</label>
+          <select class="krds-form-select" title="제공 파일 포맷 선택">
+            <option value="">전체</option>
+          </select>
+        </div>
+      </div>
+      <div class="detail-search-spetator"></div>
+      <div class="applied-conditions">
+        <div class="conditions-header">
+          <span class="conditions-label">적용된 검색조건 <span class="condition-count">0</span></span>
+          <button type="button" class="krds-btn xlarge icon border" id="resetConditions">
+            <span class="sr-only">새로고침</span>
+            <i class="svg-icon ico-refresh"></i>
+          </button>
+        </div>
+        <div class="condition-tags krds-tag-wrap large" id="conditionTags">
+          <span class="krds-btn-tag">
+            유아
+            <button type="button" class="btn-delete">
+              <span class="sr-only">삭제</span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- // detail-search-filters -->
+    <!-- // search-section -->
+    <div class="search-list-top">
+      <ul class="sch-info" aria-live="polite">
+        <li>검색 결과 <span class="point">24</span>개</li>
+      </ul>
+      <ul class="sch-sort">
+        <li>
+          <strong class="sort-label"><label for="sort">정렬기준</label></strong>
+          <div class="sort-type">
+            <button type="button" class="sort-type-btn active" data-list-mode="card" title="현재 목록 형태">
+              <span class="visually-hidden">카드형태 보기</span>
+            </button>
+            <button type="button" class="sort-type-btn" data-list-mode="list" title="목록형태 보기">
+              <span class="visually-hidden">목록형태 보기</span>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-        <!-- 검색 영역 -->
-        <div class="search-section">
-          <div class="wraps">
-            <div class="search-bar">
-              <div class="search-input-group">
-                <input type="text" class="search-input" placeholder="검색어를 입력해주세요." title="검색어 입력">
-                <button type="button" class="search-btn" title="검색"></button>
+    <div class="board-list">
+      <div class="board-list__body table__list">
+        <table>
+          <caption>데이터 다운로드 목록</caption>
+          <thead>
+            <tr>
+              <th scope="col">자료 유형</th>
+              <th scope="col">분야</th>
+              <th scope="col">데이터명</th>
+              <th scope="col">내용</th>
+              <th scope="col">관리기관</th>
+              <th scope="col">서비스명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="card-tags">
+                  <span class="tag card-tags-shp">shp</span>
+                  <span class="tag card-tags-json">json</span>
+                  <span class="tag card-tags-kml">kml</span>
+                </div>
+              </td>
+              <td>해사&gt;항해위험물</td>
+              <td class="subejct"><a href="#" class="ellipsis">1레벨(전자해도-총도)</a></td>
+              <td><span class="ellipsis">국제수로기구 (IHO)의 표준규격(S-57)에 따라 제작된 디지털해도 축척≤ 1,500,000, 해당정보의 도곽정보를 제공</span></td>
+              <td>국립해양조사원</td>
+              <td>개방해</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul id="card">
+          <li class="card-item">
+            <div class="card-header">
+              <div class="card-stats">
+                <div class="stats-item">
+                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
+                  <span class="stats-number">1234</span>
+                </div>
+                <div class="stats-item">
+                  <i class="svg-icon icon-download" aria-hidden="true"></i>
+                  <span class="stats-number">56</span>
+                </div>
               </div>
-              <button type="button" class="detail-search-toggle" id="detailSearchToggle">
-                <i class="svg-icon icon-search-plus" aria-hidden="true"></i>
-                <span>상세검색</span>
-              </button>
+              <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
             </div>
-          </div>
-        </div>
-        <!-- 상세검색 필터 영역 (기본 숨김) -->
-        <div class="detail-search-filters" id="detailSearchFilters">
-          <div class="filter-grid">
-            <div class="filter-item">
-              <label class="filter-label">자료 관리 기관</label>
-              <select class="krds-form-select" title="자료 관리 기관 선택">
-                <option value="">전체</option>
-              </select>
+            <div class="card-tags">
+              <span class="tag card-tags-shp">shp</span>
+              <span class="tag card-tags-json">json</span>
+              <span class="tag card-tags-kml">kml</span>
             </div>
-            <div class="filter-item">
-              <label class="filter-label">구매 비용</label>
-              <select class="krds-form-select" title="구매 비용 선택">
-                <option value="">전체</option>
-              </select>
+            <div class="card-content">
+              <h3 class="card-title"><a href="#">해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터</a></h3>
+              <a href="#" class="card-description">한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공</a>
             </div>
-            <div class="filter-item">
-              <label class="filter-label">원천자료 생산주기</label>
-              <select class="krds-form-select" title="원천자료 생산주기 선택">
-                <option value="">전체</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label class="filter-label">공간 특성</label>
-              <select class="krds-form-select" title="공간 특성 선택">
-                <option value="">전체</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label class="filter-label">서비스 타입</label>
-              <select class="krds-form-select" title="서비스 타입 선택">
-                <option value="">전체</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <label class="filter-label">제공 파일 포맷</label>
-              <select class="krds-form-select" title="제공 파일 포맷 선택">
-                <option value="">전체</option>
-              </select>
-            </div>
-          </div>
-          <div class="detail-search-spetator"></div>
-          <div class="applied-conditions">
-            <div class="conditions-header">
-              <span class="conditions-label">적용된 검색조건 <span class="condition-count">0</span></span>
-              <button type="button" class="krds-btn xlarge icon border" id="resetConditions">
-                <span class="sr-only">새로고침</span>
-                <i class="svg-icon ico-refresh"></i>
-              </button>
-            </div>
-            <div class="condition-tags krds-tag-wrap large" id="conditionTags">
-              <span class="krds-btn-tag">
-                유아
-                <button type="button" class="btn-delete">
-                  <span class="sr-only">삭제</span>
-                </button>
-              </span>
-            </div>
-          </div>
-        </div>
-        <!-- // detail-search-filters -->
-        <!-- // search-section -->
-        <div class="search-list-top">
-          <ul class="sch-info" aria-live="polite">
-            <li>검색 결과 <span class="point">24</span>개</li>
-          </ul>
-          <ul class="sch-sort">
-            <li>
-              <strong class="sort-label"><label for="sort">정렬기준</label></strong>
-              <div class="sort-type">
-                <button type="button" class="sort-type-btn active" data-list-mode="card" title="현재 목록 형태">
-                  <span class="visually-hidden">카드형태 보기</span>
-                </button>
-                <button type="button" class="sort-type-btn" data-list-mode="list" title="목록형태 보기">
-                  <span class="visually-hidden">목록형태 보기</span>
-                </button>
+            <div class="card-footer">
+              <div class="hashtag-tags">
+                <span class="hashtag">#국토교통부</span>
+                <span class="hashtag">#해안선</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
               </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="board-list">
-          <div class="board-list__body table__list">
-            <table>
-              <caption>데이터 다운로드 목록</caption>
-              <thead>
-                <tr>
-                  <th scope="col">자료 유형</th>
-                  <th scope="col">분야</th>
-                  <th scope="col">데이터명</th>
-                  <th scope="col">내용</th>
-                  <th scope="col">관리기관</th>
-                  <th scope="col">서비스명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="card-tags">
-                      <span class="tag card-tags-shp">shp</span>
-                      <span class="tag card-tags-json">json</span>
-                      <span class="tag card-tags-kml">kml</span>
-                    </div>
-                  </td>
-                  <td>해사&gt;항해위험물</td>
-                  <td class="subejct"><a href="#" class="ellipsis">1레벨(전자해도-총도)</a></td>
-                  <td><span class="ellipsis">국제수로기구 (IHO)의 표준규격(S-57)에 따라 제작된 디지털해도 축척≤ 1,500,000, 해당정보의 도곽정보를 제공</span>
-                  </td>
-                  <td>국립해양조사원</td>
-                  <td>개방해</td>
-                </tr>
-              </tbody>
-            </table>
-            <ul id="card">
-              <li class="card-item">
-                <div class="card-header">
-                  <div class="card-stats">
-                    <div class="stats-item">
-                      <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                      <span class="stats-number">1234</span>
-                    </div>
-                    <div class="stats-item">
-                      <i class="svg-icon icon-download" aria-hidden="true"></i>
-                      <span class="stats-number">56</span>
-                    </div>
-                  </div>
-                  <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
-                </div>
-                <div class="card-tags">
-                  <span class="tag card-tags-shp">shp</span>
-                  <span class="tag card-tags-json">json</span>
-                  <span class="tag card-tags-kml">kml</span>
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터</h3>
-                  <span class="card-description">한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선
-                    벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공</span>
-                </div>
-                <div class="card-footer">
-                  <div class="hashtag-tags">
-                    <span class="hashtag">#국토교통부</span>
-                    <span class="hashtag">#해안선</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                  </div>
-                </div>
-              </li>
-
-              <li class="card-item">
-                <div class="card-header">
-                  <div class="card-stats">
-                    <div class="stats-item">
-                      <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                      <span class="stats-number">1234</span>
-                    </div>
-                    <div class="stats-item">
-                      <i class="svg-icon icon-download" aria-hidden="true"></i>
-                      <span class="stats-number">56</span>
-                    </div>
-                  </div>
-                  <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
-                </div>
-                <div class="card-tags">
-                  <span class="tag card-tags-shp">shp</span>
-                  <span class="tag card-tags-json">json</span>
-                  <span class="tag card-tags-kml">kml</span>
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">해안선 데이터</h3>
-                  <span class="card-description">한국 해안선 벡터 데이터 제공</span>
-                </div>
-
-                <div class="card-footer">
-                  <div class="hashtag-tags">
-                    <span class="hashtag">#국토교통부</span>
-                    <span class="hashtag">#해안선</span>
-                    <span class="hashtag">#벡터</span>
-                  </div>
-                </div>
-              </li>
-              <li class="card-item">
-                <div class="card-header">
-                  <div class="card-stats">
-                    <div class="stats-item">
-                      <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                      <span class="stats-number">1234</span>
-                    </div>
-                    <div class="stats-item">
-                      <i class="svg-icon icon-download" aria-hidden="true"></i>
-                      <span class="stats-number">56</span>
-                    </div>
-                  </div>
-                  <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
-                </div>
-                <div class="card-tags">
-                  <span class="tag card-tags-shp">shp</span>
-                  <span class="tag card-tags-json">json</span>
-                  <span class="tag card-tags-kml">kml</span>
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터</h3>
-                  <span class="card-description">한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선
-                    벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공</span>
-                </div>
-                <div class="card-footer">
-                  <div class="hashtag-tags">
-                    <span class="hashtag">#국토교통부</span>
-                    <span class="hashtag">#해안선</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                    <span class="hashtag">#벡터</span>
-                  </div>
-                </div>
-              </li>
-
-              <li class="card-item">
-                <div class="card-header">
-                  <div class="card-stats">
-                    <div class="stats-item">
-                      <i class="svg-icon icon-eye" aria-hidden="true"></i>
-                      <span class="stats-number">1234</span>
-                    </div>
-                    <div class="stats-item">
-                      <i class="svg-icon icon-download" aria-hidden="true"></i>
-                      <span class="stats-number">56</span>
-                    </div>
-                  </div>
-                  <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
-                </div>
-                <div class="card-tags">
-                  <span class="tag card-tags-shp">shp</span>
-                  <span class="tag card-tags-json">json</span>
-                  <span class="tag card-tags-kml">kml</span>
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">해안선 데이터</h3>
-                  <span class="card-description">한국 해안선 벡터 데이터 제공</span>
-                </div>
-
-                <div class="card-footer">
-                  <div class="hashtag-tags">
-                    <span class="hashtag">#국토교통부</span>
-                    <span class="hashtag">#해안선</span>
-                    <span class="hashtag">#벡터</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="board-list__footer">
-            <!-- pagination -->
-            <div class="krds-pagination">
-                <span class="page-navi prev disabled" href="#">이전</span>
-                <div class="page-links">
-                    <a class="page-link" href="#">1</a>
-                    <a class="page-link" href="#">2</a>
-                    <a class="page-link" href="#">3</a>
-                    <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>4</a>
-                    <a class="page-link" href="#">5</a>
-                    <a class="page-link" href="#">6</a>
-                    <a class="page-link" href="#">7</a>
-                    <a class="page-link" href="#">8</a>
-                    <span class="page-link link-dot"></span>
-                    <a class="page-link" href="#">99</a>
-                </div>
-                <a class="page-navi next" href="#">다음</a>
             </div>
-            <!-- //pagination -->          </div>
-          <!-- //board-list__footer -->
-        </div>
+          </li>
 
-        <p>샘플</p>
-        <div class="card-tags">
-          <span class="tag card-tags-txt">TXT</span>
-          <span class="tag card-tags-xls">XLS</span>
-          <span class="tag card-tags-csv">CSV</span>
-          <span class="tag card-tags-xml">XML</span>
-          <span class="tag card-tags-json">JSON</span>
-          <span class="tag card-tags-pdf">PDF</span>
-          <span class="tag card-tags-ppt">PPT</span>
-          <span class="tag card-tags-jpg">JPG</span>
-          <span class="tag card-tags-shp">SHP</span>
-          <span class="tag card-tags-img">IMG</span>
-          <span class="tag card-tags-mp4">MP4</span>
-          <span class="tag card-tags-data">DATA</span>
-          <span class="tag card-tags-dxf">dxf</span>
-          <span class="tag card-tags-tfw">tfw</span>
-          <span class="tag card-tags-tif">tif</span>
-          <span class="tag card-tags-xyz">xyz</span>
-          <span class="tag card-tags-kml">KML</span>
-        </div>
+          <li class="card-item">
+            <div class="card-header">
+              <div class="card-stats">
+                <div class="stats-item">
+                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
+                  <span class="stats-number">1234</span>
+                </div>
+                <div class="stats-item">
+                  <i class="svg-icon icon-download" aria-hidden="true"></i>
+                  <span class="stats-number">56</span>
+                </div>
+              </div>
+              <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
+            </div>
+            <div class="card-tags">
+              <span class="tag card-tags-shp">shp</span>
+              <span class="tag card-tags-json">json</span>
+              <span class="tag card-tags-kml">kml</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">해안선 데이터</h3>
+              <span class="card-description">한국 해안선 벡터 데이터 제공</span>
+            </div>
+            
+            <div class="card-footer">
+              <div class="hashtag-tags">
+                <span class="hashtag">#국토교통부</span>
+                <span class="hashtag">#해안선</span>
+                <span class="hashtag">#벡터</span>
+              </div>
+            </div>
+          </li>
+          <li class="card-item">
+            <div class="card-header">
+              <div class="card-stats">
+                <div class="stats-item">
+                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
+                  <span class="stats-number">1234</span>
+                </div>
+                <div class="stats-item">
+                  <i class="svg-icon icon-download" aria-hidden="true"></i>
+                  <span class="stats-number">56</span>
+                </div>
+              </div>
+              <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
+            </div>
+            <div class="card-tags">
+              <span class="tag card-tags-shp">shp</span>
+              <span class="tag card-tags-json">json</span>
+              <span class="tag card-tags-kml">kml</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터해안선 데이터</h3>
+              <span class="card-description">한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공한국 해안선 벡터 데이터 제공</span>
+            </div>
+            <div class="card-footer">
+              <div class="hashtag-tags">
+                <span class="hashtag">#국토교통부</span>
+                <span class="hashtag">#해안선</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
+                <span class="hashtag">#벡터</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="card-item">
+            <div class="card-header">
+              <div class="card-stats">
+                <div class="stats-item">
+                  <i class="svg-icon icon-eye" aria-hidden="true"></i>
+                  <span class="stats-number">1234</span>
+                </div>
+                <div class="stats-item">
+                  <i class="svg-icon icon-download" aria-hidden="true"></i>
+                  <span class="stats-number">56</span>
+                </div>
+              </div>
+              <span class="detail-view-btn">상세보기<i class="svg-icon"></i></span>
+            </div>
+            <div class="card-tags">
+              <span class="tag card-tags-shp">shp</span>
+              <span class="tag card-tags-json">json</span>
+              <span class="tag card-tags-kml">kml</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">해안선 데이터</h3>
+              <span class="card-description">한국 해안선 벡터 데이터 제공</span>
+            </div>
+            
+            <div class="card-footer">
+              <div class="hashtag-tags">
+                <span class="hashtag">#국토교통부</span>
+                <span class="hashtag">#해안선</span>
+                <span class="hashtag">#벡터</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="board-list__footer">
+				<!-- pagination -->
+				<div class="krds-pagination">
+				    <span class="page-navi prev disabled" href="#">이전</span>
+				    <div class="page-links">
+				        <a class="page-link" href="#">1</a>
+				        <a class="page-link" href="#">2</a>
+				        <a class="page-link" href="#">3</a>
+				        <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>4</a>
+				        <a class="page-link" href="#">5</a>
+				        <a class="page-link" href="#">6</a>
+				        <a class="page-link" href="#">7</a>
+				        <a class="page-link" href="#">8</a>
+				        <span class="page-link link-dot"></span>
+				        <a class="page-link" href="#">99</a>
+				    </div>
+				    <a class="page-navi next" href="#">다음</a>
+				</div>
+				<!-- //pagination -->			</div>
+			<!-- //board-list__footer -->
+    </div>
+
+    <p>샘플</p>
+    <div class="card-tags">
+      <span class="tag card-tags-txt">TXT</span>
+      <span class="tag card-tags-xls">XLS</span>
+      <span class="tag card-tags-csv">CSV</span>
+      <span class="tag card-tags-xml">XML</span>
+      <span class="tag card-tags-json">JSON</span>
+      <span class="tag card-tags-pdf">PDF</span>
+      <span class="tag card-tags-ppt">PPT</span>
+      <span class="tag card-tags-jpg">JPG</span>
+      <span class="tag card-tags-shp">SHP</span>
+      <span class="tag card-tags-img">IMG</span>
+      <span class="tag card-tags-mp4">MP4</span>
+      <span class="tag card-tags-data">DATA</span>
+      <span class="tag card-tags-dxf">dxf</span>
+      <span class="tag card-tags-tfw">tfw</span>
+      <span class="tag card-tags-tif">tif</span>
+      <span class="tag card-tags-xyz">xyz</span>
+      <span class="tag card-tags-kml">KML</span>
+    </div>
+</section>
+
+
       </div>
     </div>
   </main>
@@ -538,7 +550,7 @@
   <footer id="krds-footer">
     <div class="foot-quick">
       <div class="inner">
-        <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 및 소속기관 레이어">해양수산부 및 소속기관</button>
         <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
         <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
       </div>
@@ -573,14 +585,7 @@
     </div>
   </footer>
   <!-- //footer -->
-  
-
-  <script>
-    portal.initPortalBoard();
-    portal.initDetailSearch();
-    portal.initSearch();
-    portal.initMobileTable();
-  </script>
+  
+    <script src="./assets/js/portal.js"></script>
 </body>
-
 </html>

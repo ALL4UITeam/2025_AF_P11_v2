@@ -429,13 +429,13 @@
   display: inline-flex;
   padding-left: 2.4rem;
   background: url("@/assets/images/map/link.svg") no-repeat left center;
-
+  @media screen and (max-width: 768px) {
+    background-size: auto 100%;
+  }
   span {
     text-decoration: underline;
     color: var(--primary, #256ef4);
-
     font-size: 1.5rem;
-
     line-height: normal;
     text-decoration-line: underline;
     text-decoration-style: solid;
@@ -443,11 +443,15 @@
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+    @media screen and (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 }
 
 .link-coordinate {
   background: url("@/assets/images/map/location.svg") no-repeat left 0;
+  background-size: auto 100%;
 }
 
 .map-modal {

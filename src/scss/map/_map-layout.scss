@@ -58,6 +58,10 @@
 .open-depth-1{
   .layer-panel{
     display: flex;
+    @media (min-width: 1001px) {
+      background: linear-gradient(180deg, #256ef4 0%, #003964 100%);
+      border-radius: 0 20px 20px 0;
+    }
     @media (max-width: 1000px) {
       height: auto;
     }
@@ -93,6 +97,9 @@ body:not(:has(.menu-item-1.current)){
   .fav-layers{display: none;}
   @media(max-width: 1000px){
     .control-panel{
+      top: 1.5rem;
+    }
+    .map-type-opacity{
       top: 1.5rem;
     }
   }

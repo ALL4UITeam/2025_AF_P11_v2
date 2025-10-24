@@ -1,28 +1,25 @@
-<!-- @pageTitle 공지사항 목록 -->
-<!-- @pageCreated 2025.10.11 -->
-<!-- @pageUpdated 2025.10.14 -->
-<!-- @pageNote 테이블 클래스명 추가 -->
 <!doctype html>
 <html lang="ko">
-
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>K-Ocean</title>
-	<link rel="stylesheet" href="./resources/css/component/output.css">
-	<link rel="stylesheet" href="./resources/css/common/common.css">
-	<link rel="stylesheet" href="./assets/css/index.css">
-	<script src="./resources/js/component/ui-script.js"></script>
-	<script src="./lib/jquery/jquery-3.7.1.min.js"></script>  <script src="./assets/js/modulepreload-polyfill.js"></script>
-  <script src="./assets/js/portal.js"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
+  <title>K-Ocean</title>
+  <link rel="stylesheet" href="./resources/css/component/output.css">
+  <link rel="stylesheet" href="./resources/css/common/common.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./resources/js/component/ui-script.js"></script>
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
-	<div id="krds-skip-link">
-		<a href="#breadcrumb">본문 바로가기</a>
-	</div>
-
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  
   <!-- masthead -->
   <div id="krds-masthead">
     <div class="toggle-wrap">
@@ -38,13 +35,13 @@
   <header id="header" class="header">
     <div class="header-container">
       <div class="header-l">
-        <h1 class="logo"><a href="/main.html" title="홈 바로가기">K-OCEAN</a></h1>
+        <h1 class="logo"><a href="./main.html" title="홈 바로가기">K-OCEAN</a></h1>
       </div>
       <div class="header-r">
         <nav id="nav">
           <ul class="gnb-list" id="gnb">
             <li class="gnb-lv-1">
-              <a href="#" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <a href="./map.html" class="gnb-lv-1-item before-none">해양지도 서비스</a>
               <div class="gnb-dropmenu gnb-dropmenu-1">
                 <div class="gnb-dropmenu-info">
                   <h3>해양지도 서비스</h3>
@@ -52,7 +49,7 @@
                 </div>
                 <ul>
                   <li class="gnb-lv-2">
-                    <a href="#" class="gnb-lv-2-item">
+                    <a href="./map.html" class="gnb-lv-2-item">
                       <div class="tit">해양정보</div>
                       <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
                       <div class="icon-arrow"></div>
@@ -182,6 +179,7 @@
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
           </ul>
           <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
             <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
           </ul>
         </div>
@@ -191,6 +189,10 @@
         <div class="gnb-submenu">
           <ul class="gnb-submenu-list">
             <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+            <li class="gnb-submenu-item"><a href="#">Open-API</a></li>
+            <li class="gnb-submenu-item"><a href="#">통계서비스</a></li>
+            <li class="gnb-submenu-item"><a href="#">Cook-Book</a></li>
+            <li class="gnb-submenu-item"><a href="#">공간정보 법령 및 규정</a></li>
           </ul>
         </div>
       </li>
@@ -206,177 +208,185 @@
         </div>
       </li>
     </ul>
-  </nav>  <main id="app" class="l-sub">
-    <div class="sub-banner notice">
-      <div class="container">
-        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
-          <div>
-            <ol class="breadcrumb">
-              <li class="home"><a href="#" class="txt">홈</a></li>
-            </ol>
-          </div>
-        </nav>
-      </div>
-    </div>
+    <button type="button" class="close-sitemap-btn" title="메뉴 닫기">닫기</button>
+  </nav>
+  
+  <main id="app" class="l-sub">
     <div id="contents">
+      <div class="sub-banner">
+        <div class="container">
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+              </ol>
+            </div>
+          </nav>
+        </div>
+      </div>
       <div class="container">
-				<h1 class="page-title">공지사항</h1>
+        <!-- @pageTitle 공지사항 목록 -->
+<!-- @pageCreated 2025.10.11 -->
+<!-- @pageUpdated 2025.10.14 -->
+<!-- @pageNote 테이블 클래스명 추가 -->
+<!-- @layout layouts/sub.html -->
 
-				<div class="search-form">
-					<div class="search-row">
-						<select class="krds-form-select" title="검색 조건">
-							<option value="">전체</option>
-							<option value="">제목</option>
-							<option value="">내용</option>
-						</select>
-						<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
-						<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
-					</div>
-				</div>
+<section data-layout="sublayout" data-page="notice">
+	<div class="container">
+		<h1 class="page-title">공지사항</h1>
 
-				<div class="search-list-top">
-					<ul class="sch-info" aria-live="polite">
-						<li>검색 결과 <span class="point">24</span>개</li>
-					</ul>
-					<ul class="sch-sort">
-						<li>
-							<strong class="sort-label"><label for="sort">정렬기준</label></strong>
-							<div class="w-sort-btn">
-								<button type="button" class="active">관련도순</button>
-								<button type="button">최신순</button>
-							</div>
-							<div class="m-sort-btn">
-								<select class="krds-form-select-sort" id="sort">
-									<option>관련도순</option>
-									<option>최신순</option>
-									<option>인기순</option>
-								</select>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="board-list">
-
-					<div class="board-list__body table__list">
-						<table>
-							<colgroup>
-								<col style="width: auto;">
-								<col style="width: 15%;">
-								<col style="width: 15%;">
-								<col style="width: 15%;">
-							</colgroup>
-							<thead>
-								<tr>
-									<th scope="col">제목</th>
-									<th scope="col">파일</th>
-									<th scope="col">등록일</th>
-									<th scope="col">조회수</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내</a>
-									</td>
-									<td>
-										<span aria-label="첨부 파일 있음" class="board-list__file-icon">
-											<i class="ico-file" aria-hidden="true"></i>
-										</span>
-									</td>
-									<td>2025년 6월 21일</td>
-									<td>2483</td>
-								</tr>
-								<tr>
-									<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내2024년
-											해사안전 우수사업자
-											지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자
-											지정 운영
-											안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영
-											안내2024년
-											해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년
-											해사안전
-											우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내</a></td>
-									<td>
-										<!-- 파일 없을시나 항목 없을시 무조건 없다는 표시가 들어가야합니다. -->
-										<span aria-label="첨부 파일 없음" class="board-list__file-icon">-</span>
-									</td>
-									<td>2025년 6월 21일</td>
-									<td>2483</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!-- //board-list__body -->
-
-					<div class="board-list__footer">
-						<!-- pagination -->
-						<div class="krds-pagination">
-						    <span class="page-navi prev disabled" href="#">이전</span>
-						    <div class="page-links">
-						        <a class="page-link" href="#">1</a>
-						        <a class="page-link" href="#">2</a>
-						        <a class="page-link" href="#">3</a>
-						        <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>4</a>
-						        <a class="page-link" href="#">5</a>
-						        <a class="page-link" href="#">6</a>
-						        <a class="page-link" href="#">7</a>
-						        <a class="page-link" href="#">8</a>
-						        <span class="page-link link-dot"></span>
-						        <a class="page-link" href="#">99</a>
-						    </div>
-						    <a class="page-navi next" href="#">다음</a>
-						</div>
-						<!-- //pagination -->					</div>
-					<!-- //board-list__footer -->
-				</div>
-				<!-- //board-list -->
+		<div class="search-form">
+			<div class="search-row">
+				<select class="krds-form-select" title="검색 조건">
+					<option value="">전체</option>
+					<option value="">제목</option>
+					<option value="">내용</option>
+				</select>
+				<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+				<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
 			</div>
 		</div>
-	</main>
 
-	<!-- footer -->
-	<footer id="krds-footer">
-	  <div class="foot-quick">
-	    <div class="inner">
-	      <button type="button" class="link" title="헤헤양수산부 및 소속기관 레이어">헤헤양수산부 및 소속기관</button>
-	      <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
-	      <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
-	    </div>
-	  </div>
-	  <div class="inner">
-	    <div class="f-logo">
-	      <span class="sr-only">국립해양조사원</span>
-	    </div>
-	    <div class="f-cnt">
-	      <div class="f-info">
-	        <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
-	        <ul class="info-cs">
-	          <li>
-	            <span><strong class="strong">대표전화</strong>051-400-4400</span>
-	            <span><strong class="strong">팩스번호</strong>051-400-4191</span>
-	            <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
-	          </li>
-	        </ul>
-	      </div>
-	
-	    </div>
-	
-	    <div class="f-btm">
-	      <div class="f-btm-text">
-	        <div class="f-menu">
-	          <a href="#" class="point">개인정보처리방침</a>
-	          <a href="#">저작권 정책</a>
-	        </div>
-	        <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-	<!-- //footer -->
-	
-
-	<script>
-		portal.initMobileTable();
-	</script>
+		<div class="search-list-top">
+			<ul class="sch-info" aria-live="polite">
+				<li>검색 결과 <span class="point">24</span>개</li>
+			</ul>
+			<ul class="sch-sort">
+				<li>
+					<strong class="sort-label"><label for="sort">정렬기준</label></strong>
+					<div class="w-sort-btn">
+						<button type="button" class="active">관련도순</button>
+						<button type="button">최신순</button>
+					</div>
+					<div class="m-sort-btn">
+						<select class="krds-form-select-sort" id="sort">
+							<option>관련도순</option>
+							<option>최신순</option>
+							<option>인기순</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="board-list">
+
+			<div class="board-list__body table__list">
+				<table>
+					<colgroup>
+						<col style="width: auto;">
+						<col style="width: 15%;">
+						<col style="width: 15%;">
+						<col style="width: 15%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">제목</th>
+							<th scope="col">파일</th>
+							<th scope="col">등록일</th>
+							<th scope="col">조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내</a></td>
+							<td>
+								<span aria-label="첨부 파일 있음" class="board-list__file-icon">
+									<i class="ico-file" aria-hidden="true"></i>
+								</span>
+							</td>
+							<td>2025년 6월 21일</td>
+							<td>2483</td>
+						</tr>
+						<tr>
+							<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자
+									지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영
+									안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년
+									해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전
+									우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내</a></td>
+							<td>
+								<!-- 파일 없을시나 항목 없을시 무조건 없다는 표시가 들어가야합니다. -->
+								<span aria-label="첨부 파일 없음" class="board-list__file-icon">-</span>
+							</td>
+							<td>2025년 6월 21일</td>
+							<td>2483</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //board-list__body -->
+
+			<div class="board-list__footer">
+				<!-- pagination -->
+				<div class="krds-pagination">
+				    <span class="page-navi prev disabled" href="#">이전</span>
+				    <div class="page-links">
+				        <a class="page-link" href="#">1</a>
+				        <a class="page-link" href="#">2</a>
+				        <a class="page-link" href="#">3</a>
+				        <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>4</a>
+				        <a class="page-link" href="#">5</a>
+				        <a class="page-link" href="#">6</a>
+				        <a class="page-link" href="#">7</a>
+				        <a class="page-link" href="#">8</a>
+				        <span class="page-link link-dot"></span>
+				        <a class="page-link" href="#">99</a>
+				    </div>
+				    <a class="page-navi next" href="#">다음</a>
+				</div>
+				<!-- //pagination -->			</div>
+			<!-- //board-list__footer -->
+		</div>
+		<!-- //board-list -->
+	</div>
+</section>
+
+<script>
+	portal.initMobileTable();
+</script>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="krds-footer">
+    <div class="foot-quick">
+      <div class="inner">
+        <button type="button" class="link" title="해양수산부 및 소속기관 레이어">해양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
+        <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="f-logo">
+        <span class="sr-only">국립해양조사원</span>
+      </div>
+      <div class="f-cnt">
+        <div class="f-info">
+          <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
+          <ul class="info-cs">
+            <li>
+              <span><strong class="strong">대표전화</strong>051-400-4400</span>
+              <span><strong class="strong">팩스번호</strong>051-400-4191</span>
+              <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="f-btm">
+        <div class="f-btm-text">
+          <div class="f-menu">
+            <a href="#" class="point">개인정보처리방침</a>
+            <a href="#">저작권 정책</a>
+          </div>
+          <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- //footer -->
+  
+    <script src="./assets/js/portal.js"></script>
 </body>
-
 </html>

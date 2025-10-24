@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'WandoCleanSea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaR.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'WandoCleanSea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaB.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
