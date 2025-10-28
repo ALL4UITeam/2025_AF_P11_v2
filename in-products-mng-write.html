@@ -225,113 +225,105 @@
         </div>
       </div>
       <div class="container">
-        <!-- @pageTitle 공지사항 상세 -->
-<!-- @pageCreated 2025.10.27 -->
-<!-- @pageUpdated 2025.10.27 -->
-<!-- @pageNote 첨부파일 아이콘 변경 -->
+        <!-- @pageTitle 객체사전_분류체계 -->
+<!-- @pageCreated 2025.10.11 -->
+<!-- @pageUpdated 2025.10.16 -->
+<!-- @pageNote 파일명 변경 -->
 <!-- @layout layouts/sub.html -->
-<section data-layout="sublayout" data-page="notice">
-	<div class="container">
-		<h1 class="page-title">공간정보 법령 및 규정</h1>
+<section data-layout="sublayout" data-page="object">
+  <div class="container">
+    <h1 class="page-title">객체사전</h1>
 
-		<div class="notice-detail">
-			<div class="notice-detail__header">
-				<div class="notice-detail__category">공간정보 법령 및 규정</div>
-				<h1 class="notice-detail__title">K-OCEAN 정보 시스템 개편 안내</h1>
-				<div class="notice-detail__meta">
-					<div class="notice-detail__info">
-						<span class="notice-detail__date">2025.01.15</span>
-						<span class="notice-detail__views">조회수 1,234</span>
-					</div>
-				</div>
-			</div>
-			<div class="notice-detail__content">
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-				<br>
+    <!-- tab list -->
+    <nav class="tab-nav" role="tablist">
+      <button type="button" class="tab-nav-item active" aria-selected="true">생산물 관리</button>
+      <button type="button" class="tab-nav-item" aria-selected="flase">생산물 파일</button>
+    </nav>
+    <!-- //tab list -->
 
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-				<br>
 
-				<p>해사안전 주체가 자발적으로 안전관리 수준을 높여갈 수 있도록 해상화물운송사업자를 대상으로 2024년 해사안전 우수사업자를 지정하기 위해
-					붙임과 같이 안내문 및 신청서를 공지하오니 참고하시기 바랍니다.</p>
-			</div>
+    <div class="products-mng-container">
+      <div class="responsive-table">
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">생산물  구분</th>
+              <td>
+                <select name="scale" id="scale" class="krds-form-select small" title="구분">
+                  <option value="">선택</option>
+                  <option value="1:5000">1:5000</option>
+                  <option value="1:25000">1:25000</option>
+                </select>
+              </td>
+              <th scope="row">도엽</th>
+              <td>
+                <input type="text" name="doeop" id="doeop" class="krds-input small" title="도엽" placeholder="도엽을 입력해주세요">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">공개 유형</th>
+              <td colspan="3">
+                <select name="public-type" id="public-type" class="krds-form-select small" title="공개 유형">
+                  <option value="">선택</option>
+                  <option value="관리용">관리용</option>
+                  <option value="공개">공개</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" >파일 업로드</th>
+              <td colspan="3">
+                <!-- file upload -->
+                <div class="krds-file-upload line" style="padding: 0;margin: 0;border: none;">
+                  <!-- 파일 업로드 영역 -->
+                  <div class="file-upload">
+                    <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                    <div class="file-upload-btn-wrap">
+                      <input type="file" name="myFile" id="fileu-upload" hidden>
+                      <label for="fileu-upload">
+                        <button type="button" class="krds-btn medium"><i class="svg-icon ico-upload"></i>파일선택</button>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- //파일 업로드 영역 -->
+                  <!-- 파일 리스트 영역 -->
+                  <div class="file-list">
+                    <div class="total"><span class="current">3개</span> / 10개</div>
+                    <ul class="upload-list">
+                      <li>
+                        <div class="file-info">
+                          <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                          <div class="btn-wrap">
+                            <button type="button" class="krds-btn medium text">삭제 <i
+                                class="svg-icon ico-delete-fill"></i></button>
+                          </div>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                    <div class="upload-delete-btn">
+                      <button type="button" class="krds-btn xsmall tertiary">전체 파일 삭제<i
+                          class="svg-icon ico-angle right"></i></button>
+                    </div>
+                  </div>
+                  <!-- //파일 리스트 영역 -->
+                </div>
+                <!-- //file upload -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-actions end">
+        <div class="r">
+          <button type="button" class="krds-btn medium primary">저장</button>
+          <button type="button" class="krds-btn medium tertiary">취소</button>
+        </div>
+      </div>
+    </div>
 
-			<div class="notice-detail__attachments">
-				<h3 class="notice-detail__attachments-title">첨부파일</h3>
-				<ul class="notice-detail__attachments-list">
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-pdf"></i>
-							<span class="attachment-name">시스템_개편안내서.pdf</span>
-							<span class="attachment-size">(2.5MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-jpg"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-png"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-gif"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-docx"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="attachment-item">
-							<i class="icon icon-csv"></i>
-							<span class="attachment-name">시스템_변경사항_체크리스트.xlsx</span>
-							<span class="attachment-size">(1.2MB)</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="notice-detail__navigation">
-				<div class="notice-detail__nav-item notice-detail__nav-prev">
-					<a href="#" class="nav-link">
-						<span class="nav-label"><i class="svg-icon ico-angle left"></i>이전글</span>
-						<span class="nav-title">현황 통계 업데이트 안내</span>
-					</a>
-				</div>
-				<div class="notice-detail__nav-item notice-detail__nav-next">
-					<a href="#" class="nav-link">
-						<span class="nav-label">다음글<i class="svg-icon ico-angle right"></i></span>
-						<span class="nav-title">정책 변경사항</span>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="section-actions">
-			<div class="l">
-				<a href="#" class="krds-btn tertiary">목록으로 가기</a>
-			</div>
-		</div>
-
-	</div>
+  </div>
 </section>
-<script>
-	portal.initMobileTable();
-</script>
       </div>
     </div>
   </main>
