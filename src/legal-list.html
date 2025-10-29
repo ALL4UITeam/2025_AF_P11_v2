@@ -1,0 +1,98 @@
+<!-- @pageTitle 공간정보 법령 및 규정 -->
+<!-- @pageCreated 2025.10.27 -->
+<!-- @pageUpdated 2025.10.27 -->
+<!-- @pageNote 화면 추가 -->
+<!-- @layout layouts/sub.html -->
+
+<section data-layout="sublayout" data-page="notice">
+	<div class="container">
+		<h1 class="page-title">공간정보 법령 및 규정</h1>
+
+		<div class="search-top-box">
+			<div class="search-form">
+				<div class="search-row">
+					<div class="search-row-item">
+						<label for="search-condition">분류</label>
+						<select class="krds-form-select" title="분류" id="search-condition">
+							<option value="">전체</option>
+							<option value="">제목</option>
+							<option value="">내용</option>
+						</select>
+					</div>
+				</div>
+				<div class="search-row">
+					<select class="krds-form-select" title="검색 조건">
+						<option value="">전체</option>
+						<option value="">제목</option>
+						<option value="">내용</option>
+					</select>
+					<input type="text" placeholder="제목을 입력해주세요" class="krds-input">
+					<button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="search-list-top">
+			<ul class="sch-info" aria-live="polite">
+				<li>검색 결과 <span class="point">24</span>개</li>
+			</ul>
+			<ul class="sch-sort">
+				<li>
+					<strong class="sort-label"><label for="sort">정렬기준</label></strong>
+					<div class="w-sort-btn">
+						<button type="button" class="active">관련도순</button>
+						<button type="button">최신순</button>
+					</div>
+					<div class="m-sort-btn">
+						<select class="krds-form-select-sort" id="sort">
+							<option>관련도순</option>
+							<option>최신순</option>
+							<option>인기순</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="board-list">
+
+			<div class="board-list__body table__list">
+				<table>
+					<colgroup>
+						<col style="width: 15%;">
+						<col style="width: auto;">
+						<col style="width: 15%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">분류</th>
+							<th scope="col">법령/법률</th>
+							<th scope="col">개정날짜</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>검역법</td>
+							<td class="text-left"><a href="#" class="ellipsis">2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자
+									지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영
+									안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년
+									해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내2024년 해사안전
+									우수사업자 지정 운영 안내2024년 해사안전 우수사업자 지정 운영 안내</a></td>
+							<td>2025년 6월 21일</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //board-list__body -->
+
+			<div class="board-list__footer">
+				{{> Pagination}}
+			</div>
+			<!-- //board-list__footer -->
+		</div>
+		<!-- //board-list -->
+	</div>
+</section>
+
+<script>
+	portal.initMobileTable();
+</script>

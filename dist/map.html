@@ -29,7 +29,7 @@
           <button class="map-nav-header-btn">
             열림
           </button>
-        </div>
+        </div> 
       </header>
       <div class="map-gnb">
         <ul>
@@ -1065,8 +1065,10 @@
               </div>
               <div class="filter-slider mb-16">
                 <div class="filter-label">투명도</div>
-                <div class="transparency-slider">
-                  <div class="slider-handle"></div>
+                <div class="transparency-slider" data-layer-id="layer2">
+                  <div>
+                    <div class="slider-handle"></div>
+                  </div>
                 </div>
               </div>
               <div class="filter-row">
@@ -1306,13 +1308,9 @@
           <div class="tool-buttons">
       
             <div class="group-btn">
-              <button class="tool-btn map-type-btn1">
+              <button class="tool-btn map-type-btn1" data-option="optionMapType">
                 <span class="tool-icon"></span>
-                <span class="tool-text">일반지도</span>
-              </button>
-              <button class="tool-btn map-type-btn2">
-                <span class="tool-icon"></span>
-                <span class="tool-text">영상지도</span>
+                <span class="tool-text">배경지도</span>
               </button>
             </div>
             <button class="tool-btn layer-btn" data-option="optionLayerList">
@@ -1388,15 +1386,36 @@
       </div>
       <!-- // map-area -->
 
-      <!-- 2025.10.20 추가 -->
-      <div class="map-type-opacity">
-        <strong class="label">약최저저조면(국문DL)</strong>
-        <div class="range-control">
-          <div class="range-slider">
-            <input type="range" min="0" max="100" value="100">
+      <div class="option-panel" id="optionMapType">
+        <div class="option-panel-wrapper">
+          <div class="option-panel-header">
+            <h4 class="option-panel-title">배경지도</h4>
+            <button type="button" class="option-panel-close">
+              <i><span class="visually-hidden">닫기</span></i>
+            </button>
           </div>
-          <span class="value"><em class="accent">100</em>%</span>
+          <div class="option-panel-content">
+            <div class="map-type-list">  
+              <label class="map-type-item"><input type="radio" name="map-type" value="1">
+                <div class="image"><img src="./assets/images/img_light.png" alt="일반지도"></div>
+                <span>일반지도</span>
+              </label>
+              <label class="map-type-item"><input type="radio" name="map-type" value="2">
+                <div class="image"><img src="./assets/images/img_dark.png" alt="영상지도"></div>
+                <span>영상지도</span>
+              </label>
+            </div>
+            <div class="map-type-opacity">
+              <strong class="label">투명도</strong>
+              <div class="transparency-slider" data-layer-id="layer1">
+                <div>
+                  <div class="slider-handle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      
       </div>
       
       <!-- 레이어 목록 -->
@@ -1831,7 +1850,15 @@
       </div>
     </div>
   </div>
-  
+  <script>
+    // map.js가 로드된 후 실행
+    initTransparencySliders('.transparency-slider', (slider, value) => {
+      const layerId = slider.dataset.layerId;
+
+      // 함수 호출
+      console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+    });
+  </script>
   <script src="./assets/js/portal.js"></script>
 </body>
 </html>

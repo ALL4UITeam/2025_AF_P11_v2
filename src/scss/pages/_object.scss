@@ -2,6 +2,9 @@
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
 
+.products-mng-container{
+  margin-top: 4.8rem;
+}
 .object-container {
   margin-top: 4.8rem;
   .content-wrapper {
@@ -12,10 +15,10 @@
 
     .tree-section {
       border: 1px solid #e0e0e0;
+      overflow-y: auto;
+      max-height: 500px;
       .tree-container {
-        height: 100%;
         padding: 1rem;
-        overflow-y: auto;
         background: white;
         .tree-item {
           display: flex;

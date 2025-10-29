@@ -971,19 +971,19 @@ $files: (
 // 갤러리 카드 스타일
 #gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0,1fr));
   gap: 2.4rem;
   padding: 0;
   margin: 0;
   list-style: none;
 
   @media (max-width: $desktop) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 2rem;
   }
 
   @media (max-width: $tablet) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, minmax(0,1fr));
     gap: 1.6rem;
   }
 
@@ -997,7 +997,9 @@ $files: (
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   &:hover {
     .gallery-image {
-      transform: scale(1.05);
+      img{
+        transform: scale(1.05);
+      }
     }
   }
   &:hover::after {
@@ -1014,14 +1016,9 @@ $files: (
 .gallery-image {
   position: relative;
   width: 100%;
-  height: 20rem;
+  
   overflow: hidden;
-  transition: transform 4s ease;
   border-radius: 1.2rem 1.2rem 0 0;
-  @media (max-width: $tablet) {
-    height: 18rem;
-  }
-
   img {
     width: 100%;
     height: 100%;

@@ -26,7 +26,7 @@
           <button class="map-nav-header-btn">
             열림
           </button>
-        </div>
+        </div> 
       </header>
       <div class="map-gnb">
         <ul>
@@ -183,6 +183,14 @@
     </div>
   </div>
   <script type="module" src="./js/page/map.js"></script>
-  
+  <script>
+    // map.js가 로드된 후 실행
+    initTransparencySliders('.transparency-slider', (slider, value) => {
+      const layerId = slider.dataset.layerId;
+
+      // 함수 호출
+      console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+    });
+  </script>
 </body>
 </html>

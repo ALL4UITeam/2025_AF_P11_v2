@@ -21,13 +21,8 @@ function initGroupButtons(selector = '.group-btn', callback) {
         
         if (!isActive) {
           this.classList.add('active');
-          if (this.classList.contains('map-type-btn1')) {
-            document.querySelector('.map-type-opacity').classList.add('show');
-          } else {
-            document.querySelector('.map-type-opacity').classList.remove('show');
-          }
         } else {
-          document.querySelector('.map-type-opacity').classList.remove('show');
+          this.classList.remove('active');
         }
         
         if (callback) callback(this, isActive);
@@ -152,8 +147,6 @@ function initToolButtons(selector = '[data-option]', callback) {
 
       // 맵 타입 버튼을 제외한 모든 버튼 비활성화
       document.querySelectorAll('[data-option]').forEach(btn => {
-        if (btn.classList.contains('map-type-btn1') || btn.classList.contains('map-type-btn2')) return;
-        
         const id = btn.dataset.option;
         const p = document.querySelector(`#${id}`);
         btn.classList.remove('active');
@@ -180,8 +173,7 @@ function initToolButtons(selector = '[data-option]', callback) {
   document.addEventListener('click', e => {
     if (!e.target.closest('[data-option]') && !e.target.closest('.option-panel')) {
       document.querySelectorAll('[data-option]').forEach(btn => {
-        if (btn.classList.contains('map-type-btn1') || btn.classList.contains('map-type-btn2')) return;
-        
+                
         const id = btn.dataset.option;
         const panel = document.querySelector(`#${id}`);
         btn.classList.remove('active');
@@ -841,6 +833,82 @@ function initTimeseriesRangeValue() {
 }
 
 // ============================================
+// 투명도 슬라이더
+// ============================================
+// ============================================
+// 투명도 슬라이더 (모바일 지원)
+// ============================================
+function initTransparencySliders(selector = '.transparency-slider', callback) {
+  const sliders = document.querySelectorAll(selector);
+  
+  sliders.forEach(slider => {
+    const handle = slider.querySelector('.slider-handle');
+    if (!handle) return;
+    
+    let isDragging = false;
+    let currentValue = 50; // 초기값 50%
+    
+    // 초기 위치 설정
+    handle.style.left = `${currentValue}%`;
+    
+    const updateValue = (clientX) => {
+      const rect = slider.getBoundingClientRect();
+      let newValue = ((clientX - rect.left) / rect.width) * 100;
+      newValue = Math.max(0, Math.min(100, newValue));
+      
+      currentValue = newValue;
+      handle.style.left = `${currentValue}%`;
+      
+      // 콜백 실행
+      if (callback) callback(slider, currentValue);
+    };
+    
+    // 👇 마우스 이벤트
+    handle.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      isDragging = true;
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateValue(e.clientX);
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+    
+    // 👇 터치 이벤트 (모바일)
+    handle.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      isDragging = true;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const touch = e.touches[0];
+      updateValue(touch.clientX);
+    });
+    
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+    
+    // 슬라이더 바 클릭/터치
+    slider.addEventListener('click', (e) => {
+      if (e.target === handle) return;
+      updateValue(e.clientX);
+    });
+    
+    slider.addEventListener('touchstart', (e) => {
+      if (e.target === handle) return;
+      const touch = e.touches[0];
+      updateValue(touch.clientX);
+    });
+  });
+}
+
+// ============================================
 // 초기화 실행
 // ============================================
 initLayerToggle();
@@ -866,6 +934,7 @@ initZoomRangeValue();
 initFavLayersToggle();
 initToggleItem();
 initTimeseriesRangeValue();
+initTransparencySliders();
 // ============================================
 // 지도 클릭 이벤트
 // ============================================

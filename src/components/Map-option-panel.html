@@ -1,12 +1,33 @@
-<!-- 2025.10.20 추가 -->
-<div class="map-type-opacity">
-  <strong class="label">약최저저조면(국문DL)</strong>
-  <div class="range-control">
-    <div class="range-slider">
-      <input type="range" min="0" max="100" value="100">
+<div class="option-panel" id="optionMapType">
+  <div class="option-panel-wrapper">
+    <div class="option-panel-header">
+      <h4 class="option-panel-title">배경지도</h4>
+      <button type="button" class="option-panel-close">
+        <i><span class="visually-hidden">닫기</span></i>
+      </button>
     </div>
-    <span class="value"><em class="accent">100</em>%</span>
+    <div class="option-panel-content">
+      <div class="map-type-list">  
+        <label class="map-type-item"><input type="radio" name="map-type" value="1">
+          <div class="image"><img src="assets/images/map/img_light.png" alt="일반지도"></div>
+          <span>일반지도</span>
+        </label>
+        <label class="map-type-item"><input type="radio" name="map-type" value="2">
+          <div class="image"><img src="assets/images/map/img_dark.png" alt="영상지도"></div>
+          <span>영상지도</span>
+        </label>
+      </div>
+      <div class="map-type-opacity">
+        <strong class="label">투명도</strong>
+        <div class="transparency-slider" data-layer-id="layer1">
+          <div>
+            <div class="slider-handle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
 
 <!-- 레이어 목록 -->
