@@ -33,6 +33,7 @@ function initMenuButtons(menuSelector = ".menu-list button") {
       const allPanels = document.querySelectorAll("[data-panel-menu]");
       allPanels.forEach((panel) => panel.classList.remove("show"));
       main.classList.remove("open-depth-1");
+      main.classList.remove("open-depth-2");
       if (isCurrent) {
         main.classList.remove("open-depth-1");
       } else {
@@ -476,9 +477,17 @@ function initToggleItem() {
 }
 function initTimeseriesRangeValue() {
   document.querySelectorAll('input[type="range"]').forEach((range) => {
-    range.style.setProperty("--value", range.value);
+    const max = parseFloat(range.getAttribute("max")) || 100;
+    const min = parseFloat(range.getAttribute("min")) || 0;
+    const calculatePercent = (val) => {
+      return (val - min) / (max - min) * 100;
+    };
+    const initialPercent = calculatePercent(parseFloat(range.value) || min);
+    range.style.setProperty("--value", initialPercent);
     range.addEventListener("input", (e) => {
-      e.target.style.setProperty("--value", e.target.value);
+      const currentValue = parseFloat(e.target.value);
+      const percent = calculatePercent(currentValue);
+      e.target.style.setProperty("--value", percent);
     });
   });
 }
