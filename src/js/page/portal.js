@@ -212,9 +212,106 @@ portal.handleResize = function() {
   });
 }
 
+portal.initTabNav = function() {
+  const tabNavContainers = document.querySelectorAll('.tab-nav-container');
+  
+  tabNavContainers.forEach(container => {
+    const toggle = container.querySelector('.toggle');
+    const tabNav = container.querySelector('.tab-nav');
+    const tabItems = container.querySelectorAll('.tab-nav-item');
+    
+    // 모바일 토글 버튼
+    if (toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+      });
+    }
+    
+    // 탭 아이템 클릭 이벤트
+    tabItems.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // 모든 탭에서 active 제거
+        tabItems.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-current', 'false');
+        });
+        
+        // 클릭한 탭에 active 추가
+        this.classList.add('active');
+        this.setAttribute('aria-current', 'page');
+        
+        // 모바일에서 탭 선택 시 토글 닫기 및 텍스트 업데이트
+        if (window.innerWidth <= 767 && toggle) {
+          toggle.classList.remove('active');
+          const toggleText = toggle.querySelector('.toggle-text');
+          if (toggleText) {
+            toggleText.textContent = this.textContent.trim();
+          }
+        }
+      });
+    });
+  });
+  
+  // 외부 클릭 시 모바일 메뉴 닫기
+  document.addEventListener('click', function(e) {
+    tabNavContainers.forEach(container => {
+      const toggle = container.querySelector('.toggle');
+      if (toggle && window.innerWidth <= 767) {
+        if (!container.contains(e.target)) {
+          toggle.classList.remove('active');
+        }
+      }
+    });
+  });
+}
+
+portal.initCategoryTabs = function() {
+  const categoryToggle = document.querySelector('.category-toggle');
+  const categoryTabs = document.querySelectorAll('.category-tab');
+  
+  // 모바일 토글 버튼
+  if (categoryToggle) {
+    categoryToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
+  }
+  
+  // 카테고리 탭 클릭 이벤트
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // 모든 탭에서 active 제거
+      categoryTabs.forEach(t => t.classList.remove('active'));
+      // 클릭한 탭에 active 추가
+      this.classList.add('active');
+      
+      // 모바일에서 탭 선택 시 토글 닫기 및 텍스트 업데이트
+      if (window.innerWidth <= 767 && categoryToggle) {
+        categoryToggle.classList.remove('active');
+        const toggleText = categoryToggle.querySelector('.toggle-text');
+        if (toggleText) {
+          toggleText.textContent = this.textContent.trim();
+        }
+      }
+    });
+  });
+  
+  // 외부 클릭 시 모바일 메뉴 닫기
+  document.addEventListener('click', function(e) {
+    if (categoryToggle && window.innerWidth <= 767) {
+      const container = categoryToggle.closest('.category-tabs-container');
+      if (container && !container.contains(e.target)) {
+        categoryToggle.classList.remove('active');
+      }
+    }
+  });
+}
+
 // 초기화 함수 호출
 portal.initMobileMenu();
 portal.initPortalBoard();
 portal.initDetailSearch();
 portal.initSearch();
 portal.initMobileTable();
+portal.initTabNav();
+portal.initCategoryTabs();

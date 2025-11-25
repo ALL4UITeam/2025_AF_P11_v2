@@ -451,7 +451,7 @@
 
 .link-coordinate {
   background: url("@/assets/images/map/location.svg") no-repeat left 0;
-  background-size: auto 100%;
+  //background-size: auto 100%;
 }
 
 .map-modal {
@@ -537,6 +537,46 @@
   .map-modal-footer-right{
     display: flex;
     gap: 1rem;
+  }
+}
+
+#notice-modal{
+  .modal-header{
+    text-align: center;
+    background: none;
+    justify-content: flex-end;
+    .modal-close{      
+      background-color: #256ef4;
+    }
+  }
+  .notice-modal-content{
+    svg{
+      display: inline-block;
+      @media screen and (max-width: 1000px) {
+        width: 40px;
+      }
+    }
+    text-align: center;
+    
+    .notice-modal-title{
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      @media screen and (max-width: 1000px) {
+        font-size: 1.4rem;
+      }
+    }
+    .notice-modal-content{
+      font-size: 1.4rem;
+      @media screen and (max-width: 1000px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .highlight{
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--primary, #256ef4);
   }
 }
 

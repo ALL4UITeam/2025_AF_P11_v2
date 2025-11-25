@@ -57,6 +57,7 @@ function initMenuButtons(menuSelector = '.menu-list button') {
       
       // main에서 open-depth-1 제거
       main.classList.remove('open-depth-1');
+      main.classList.remove('open-depth-2');
 
       if (isCurrent) {
         // 이미 열려있는 메뉴를 다시 클릭하면 닫기
@@ -822,12 +823,23 @@ function initToggleItem() {
 
 function initTimeseriesRangeValue() {
   document.querySelectorAll('input[type="range"]').forEach(range => {
-    // 초기값 반영
-    range.style.setProperty('--value', range.value);
+    const max = parseFloat(range.getAttribute('max')) || 100;
+    const min = parseFloat(range.getAttribute('min')) || 0;
+    
+    // 비율 계산 함수 (0~100% 기준)
+    const calculatePercent = (val) => {
+      return ((val - min) / (max - min)) * 100;
+    };
+    
+    // 초기값 반영 (비율로 계산)
+    const initialPercent = calculatePercent(parseFloat(range.value) || min);
+    range.style.setProperty('--value', initialPercent);
   
-    // 값 변경 시 갱신
+    // 값 변경 시 갱신 (비율로 계산)
     range.addEventListener('input', e => {
-      e.target.style.setProperty('--value', e.target.value);
+      const currentValue = parseFloat(e.target.value);
+      const percent = calculatePercent(currentValue);
+      e.target.style.setProperty('--value', percent);
     });
   });
 }

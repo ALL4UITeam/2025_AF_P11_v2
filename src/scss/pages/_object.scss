@@ -2,11 +2,29 @@
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
 
+a.link{
+  text-decoration: underline;
+  color: #256EF4;
+}
+
+.publication-container{
+  margin-top: 4.8rem;
+  @media (max-width: $tablet) {
+    margin-top: 2.4rem;
+  }
+}
+
 .products-mng-container{
   margin-top: 4.8rem;
+  @media (max-width: $tablet) {
+    margin-top: 2.4rem;
+  }
 }
 .object-container {
   margin-top: 4.8rem;
+  @media (max-width: $tablet) {
+    margin-top: 2.4rem;
+  }
   .content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -227,7 +227,7 @@
     <!-- // 항로 분석 끝 -->
 
     <!-- 고해도 시계열 -->
-    <div class="detail-panel-content" style="display: none;">
+    <div class="detail-panel-content">
       <!-- 헤더 -->
       <div class="timeseries-header">
         <h4 class="timeseries-title">고해도 시계열</h4>
@@ -251,8 +251,34 @@
           </label>
         </div>
       </div>
-
+      
       <div class="timeseries-list">
+        <div class="timeseries-item">
+          <div class="item-label">
+            <strong><em class="accent">a</em>거문도항(199703)</strong>
+            <div class="switch-btn">
+              <label class="switch-toggle">
+                <input type="checkbox">
+                <i></i>
+              </label>
+            </div>
+          </div>
+          <div class="item-controls">
+            <span class="transparency-label">투명도</span>
+            <div class="range-in-label">
+              <input type="range" min="0" max="5" value="0" class="custom-range">
+              <div class="range-label-list">
+                <span>1920</span>
+                <span>1920</span>
+                <span>1920</span>
+                <span>1920</span>
+                <span>1920</span>
+              </div>
+            </div>
+            <!-- // range-label add slider template -->
+          </div>
+        </div>
+
         <div class="timeseries-item">
           <div class="item-label">
             <strong><em class="accent">a</em>거문도항(199703)</strong>
@@ -271,7 +297,7 @@
 
         <div class="timeseries-item">
           <div class="item-label">
-            <strong><em>b</em>거문도항(199703)</strong>
+            <strong><em class="accent">b</em>거문도항(199703)</strong>
             <div class="switch-btn">
               <label class="switch-toggle">
                 <input type="checkbox">
