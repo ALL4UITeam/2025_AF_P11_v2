@@ -1,0 +1,218 @@
+<!-- @pageTitle 해양정보 간행물/간행물정보관리 -->
+<!-- @pageCreated 2025.11.12 -->
+<!-- @pageUpdated 2025.11.12-->
+<!-- @pageNote 11월 6일차 요청사항 적용 -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+  <div class="container">
+    <h1 class="page-title">해양정보 간행물</h1>
+    <!-- tab -->
+
+    <!-- tab list -->
+
+    <div class="tab-nav-container">
+      <button type="button" class="toggle" title="현재 탭 위치">
+        <span class="toggle-text">해양정보 간행물 정보 관리</span>
+        <i class="svg-icon ico-angle"></i>
+      </button>
+      <nav class="tab-nav">
+        <button type="button" class="tab-nav-item active" aria-current="page">해양정보 간행물 정보 관리</button>
+        <button type="button" class="tab-nav-item" aria-current="false">해양정보 간행물 파일 관리</button>
+      </nav>
+    </div>
+    <!-- //tab list -->
+
+    <div class="category-tabs-container">
+      <button type="button" class="category-toggle" title="현재 카테고리">
+        <span class="toggle-text">해양 기본도</span>
+        <i class="svg-icon ico-angle"></i>
+      </button>
+      <nav class="category-tabs">
+        <button type="button" class="category-tab" data-category="ocean">해양정보</button>
+        <button type="button" class="category-tab" data-category="basic">해양 기본도</button>
+        <button type="button" class="category-tab active" data-category="terrain">해저 지형</button>
+        <button type="button" class="category-tab" data-category="survey">측량 원도</button>
+      </nav>
+    </div>
+
+
+    <div class="publication-container">
+      <div class="search-top-box">
+        <div class="search-form">
+          
+          <div class="search-row">
+            <input type="text" placeholder="도엽번호를 입력해주세요" class="krds-input">
+            <button type="button" class="krds-btn medium"><i class="icon ico-search" aria-hidden="true"></i>검색</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-list-top">
+        <ul class="sch-info" aria-live="polite">
+          <li>검색 결과 <span class="point">24</span>개</li>
+        </ul>
+        <ul class="sch-sort">
+          <li>
+            <strong class="sort-label"><label for="sort">정렬기준</label></strong>
+            <div class="w-sort-btn">
+              <button type="button" class="active">관련도순</button>
+              <button type="button">최신순</button>
+            </div>
+            <div class="m-sort-btn">
+              <select class="krds-form-select-sort" id="sort">
+                <option>관련도순</option>
+                <option>최신순</option>
+                <option>인기순</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="board-list">
+        <div class="board-list__body table__list">
+          <table>
+            <colgroup>
+              <col style="width: 8%;">
+              <col style="width: auto;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+              <col style="width: 10%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">파일명</th>
+                <th scope="col">생산일자</th>
+                <th scope="col">형식</th>
+                <th scope="col">좌표계</th>
+                <th scope="col">미리보기</th>
+                <th scope="col">다운로드</th>
+                <th scope="col">식별정보</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="number">1</td>
+                <td>MBM_2024_342703020</td>
+                <td>2025-08-15</td>
+                <td>gpkg</td>
+                <td>EPSG:5186</td>
+                <td><button class="krds-btn secondary small open-modal" data-target="publication-preview-modal"><i class="svg-icon icon-preview"></i>미리보기</button></td>
+                <td><button class="krds-btn tertiary small"><i class="svg-icon icon-download"></i>다운로드</button></td>
+                <td>
+                  <a href="#" class="krds-btn primary small open-modal" data-target="publication-modify-modal">수정</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <!-- //board-list__body -->
+
+        <div class="board-list__footer">
+          {{> Pagination}}
+        </div>
+        <!-- //board-list__footer -->
+      </div>
+      <!-- //board-list -->
+    </div>
+</section>
+
+<!-- modal -->
+<section id="publication-preview-modal" class="krds-modal fade in" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <!-- modal contents -->
+      <div class="modal-conts">
+        <div class="conts-area">
+          <img src="https://placehold.co/600x400" alt="">
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary close-modal">닫기</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+      <!-- //close button -->
+    </div>
+  </div>
+  <div class="modal-back in"></div>
+</section>
+<!-- //modal -->
+
+<!-- modal -->
+<section id="publication-modify-modal" class="krds-modal fade shown in" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">식별정보</h2>
+      </div>
+      <!-- modal contents -->
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="responsive-table">
+          <table>
+            <colgroup>
+              <col style="width: 25%;">
+              <col style="width: 75%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">파일명</th>
+                <td><input type="text" class="krds-input small" value="MBM_2024_342703020"></td>
+              </tr>
+              <tr>
+                <th scope="row">생산일자</th>
+                <td><input type="text" class="krds-input small" value="2024-11-26"></td>
+              </tr>
+              <tr>
+                <th scope="row">주제분류코드</th>
+                <td><input type="text" class="krds-input small" value="ocean"></td>
+              </tr>
+              <tr>
+                <th scope="row">좌표계</th>
+                <td><input type="text" class="krds-input small" value="EPSG:5186"></td>
+              </tr>
+              <tr>
+                <th scope="row">좌상경도</th>
+                <td><input type="text" class="krds-input small" value="127.725"></td>
+              </tr>
+              <tr>
+                <th scope="row">좌상위도</th>
+                <td><input type="text" class="krds-input small" value="34.975"></td>
+              </tr>
+              <tr>
+                <th scope="row">우하경도</th>
+                <td><input type="text" class="krds-input small" value="127.75"></td>
+              </tr>
+              <tr>
+                <th scope="row">우하위도</th>
+                <td><input type="text" class="krds-input small" value="34.95"></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary close-modal">수정</button>
+        <button type="button" class="krds-btn medium tertiary close-modal">닫기</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+      <!-- //close button -->
+    </div>
+  </div>
+  <div class="modal-back in"></div>
+</section>
+<!-- //modal -->

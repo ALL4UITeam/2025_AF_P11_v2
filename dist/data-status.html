@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
+  <title>K-Ocean</title>
+  <link rel="stylesheet" href="./resources/css/component/output.css">
+  <link rel="stylesheet" href="./resources/css/common/common.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./resources/js/component/ui-script.js"></script>
+  <script src="./lib/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div id="krds-skip-link">
+    <a href="#breadcrumb">본문 바로가기</a>
+  </div>
+  
+  <!-- masthead -->
+  <div id="krds-masthead">
+    <div class="toggle-wrap">
+      <div class="toggle-head">
+        <div class="inner">
+          <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //masthead -->
+  
+  <header id="header" class="header">
+    <div class="header-container">
+      <div class="header-l">
+        <h1 class="logo"><a href="./main.html" title="홈 바로가기">K-OCEAN</a></h1>
+      </div>
+      <div class="header-r">
+        <nav id="nav">
+          <ul class="gnb-list" id="gnb">
+            <li class="gnb-lv-1">
+              <a href="./map.html" class="gnb-lv-1-item before-none">해양지도 서비스</a>
+              <div class="gnb-dropmenu gnb-dropmenu-1">
+                <div class="gnb-dropmenu-info">
+                  <h3>해양지도 서비스</h3>
+                  <p>해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="./map.html" class="gnb-lv-2-item">
+                      <div class="tit">해양정보</div>
+                      <div class="desc">해양 공간의 다양한 정보를 통합된 하나의 지도와 데이터로 제공합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">플랫폼 소개</a>
+              <div class="gnb-dropmenu gnb-dropmenu-2">
+                <div class="gnb-dropmenu-info">
+                  <h3>플랫폼 소개</h3>
+                  <p>K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">K-OCEAN 플랫폼 소개</div>
+                      <div class="desc">K-OCEAN 플랫폼의 목적과 유용한 활용 정보를 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">K-OCEAN 로드맵</div>
+                      <div class="desc">K-OCEAN 플랫폼의 장기적인 발전방향과 비전을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">서비스 활용</a>
+              <div class="gnb-dropmenu gnb-dropmenu-3">
+                <div class="gnb-dropmenu-info">
+                  <h3>서비스 활용</h3>
+                  <p>해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">데이터 다운로드</div>
+                      <div class="desc">해양지명, 해상, 수산 정보등 다양한 데이터를 확인하고 활용할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">Open-API</div>
+                      <div class="desc">기본 지도, 영상 지도 등 해양 데이터 기반의 지도를 활용할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">통계서비스</div>
+                      <div class="desc">사용자들이 주용 이용하는 레이어에 대한 통계 자료와 상세 정보를 제공합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">Cook-Book</div>
+                      <div class="desc">K-OCEAN 플랫폼의 다양한 기능들을 소개하고, 활용할 수 있는 방안을 제시합니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">공간정보 법령 및 규정</div>
+                      <div class="desc">전자해도 기반의 공간정보에 대한 법령 및 규정을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-lv-1">
+              <a href="#" class="gnb-lv-1-item">커뮤니티</a>
+              <div class="gnb-dropmenu gnb-dropmenu-4">
+                <div class="gnb-dropmenu-info">
+                  <h3>커뮤니티</h3>
+                  <p>K-Ocena 플랫폼을 쉽고 편리하게 이용할 수 있도록 다양한 정보를 제공합니다.</p>
+                </div>
+                <ul>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">공지사항</div>
+                      <div class="desc">주요행사, 업데이트 정보 등 공지사항을 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                  <li class="gnb-lv-2">
+                    <a href="#" class="gnb-lv-2-item">
+                      <div class="tit">자주하는 질문</div>
+                      <div class="desc">자주 묻는 질문에 대한 질의/답변을 한곳에서 확인할 수 있습니다.</div>
+                      <div class="icon-arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" class="btn-allmenu" id="btnAllMenu">전체메뉴</button>
+      </div>
+    </div>
+  </header>
+  
+  
+  <nav id="mobile-nav">
+    <ul class="gnb">
+      <li class="gnb-lv1">
+        <a href="#">해양지도 서비스</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">해양정보</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">플랫폼 소개</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
+          </ul>
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 플랫폼 소개</a></li>
+            <li class="gnb-submenu-item"><a href="#">K-OCEAN 로드맵</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">서비스 활용</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">데이터 다운로드</a></li>
+            <li class="gnb-submenu-item"><a href="#">Open-API</a></li>
+            <li class="gnb-submenu-item"><a href="#">통계서비스</a></li>
+            <li class="gnb-submenu-item"><a href="#">Cook-Book</a></li>
+            <li class="gnb-submenu-item"><a href="#">공간정보 법령 및 규정</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="gnb-lv1">
+        <a href="#">커뮤니티</a>
+        <div class="gnb-submenu">
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">공지사항</a></li>
+          </ul>
+          <ul class="gnb-submenu-list">
+            <li class="gnb-submenu-item"><a href="#">자주하는 질문</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <button type="button" class="close-sitemap-btn" title="메뉴 닫기">닫기</button>
+  </nav>
+  
+  <main id="app" class="l-sub">
+    <div id="contents">
+      <div class="sub-banner">
+        <div class="container">
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+              </ol>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="container">
+        <!-- @pageTitle 데이터 수집 현황 -->
+<!-- @pageCreated 2025.11.17 -->
+<!-- @pageUpdated 2025.11.18-->
+<!-- @pageNote -->
+<!-- @layout layouts/sub.html -->
+<section data-layout="sublayout" data-page="object">
+  <div class="container">
+    <h1 class="page-title">데이터 수집 현황</h1>
+
+    <div class="data-status-container">
+      <!-- 통계 카드 영역 -->
+      <div class="data-status-summary-section">
+        <div class="section-data-header">
+          <h2 class="section-title">데이터 현황 요약</h2>
+        </div>
+        <div class="data-status-summary">
+          <div class="summary-card summary-card-original">
+            <div class="card-inner">
+              <div class="summary-label-wrapper">
+                <span class="summary-label">원본</span>
+                <span class="summary-unit">(건)</span>
+              </div>
+              <div class="summary-value">21,815</div>
+            </div>
+          </div>
+          <div class="summary-card summary-card-collected">
+            <div class="card-inner">
+              <div class="summary-label-wrapper">
+                <span class="summary-label">수집</span>
+                <span class="summary-unit">(건)</span>
+              </div>
+              <div class="summary-value">18,880</div>
+            </div>
+          </div>
+          <div class="summary-card summary-card-stored">
+            <div class="card-inner">
+              <div class="summary-label-wrapper">
+                <span class="summary-label">저장</span>
+                <span class="summary-unit">(건)</span>
+              </div>
+              <div class="summary-value">17,605</div>
+            </div>
+          </div>
+          <div class="summary-card summary-card-error open-modal" data-target="error-preview-modal">
+            <div class="card-inner">
+              <div class="summary-label-wrapper">
+                <span class="summary-label">오류</span>
+                <span class="summary-unit">(건)</span>
+              </div>
+              <div class="summary-value">7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 연도별 수집 현황 -->
+      <div class="data-status-chart-section">
+        <div class="section-data-header">
+          <h2 class="section-title">연도별 수집 현황</h2>
+        </div>
+        <div class="yearly-chart-list">
+          <div class="yearly-chart-item">
+            <div class="chart-header">
+              <h3 class="chart-year">2025년</h3>
+              <div class="chart-percentage">수집 64% 저장 58%</div>
+            </div>
+            <div class="chart-progress-bar"></div>
+            <div class="chart-stats">
+              <div><strong>원본</strong> 3,440건</div>
+              <div><strong>수집</strong> 2,210건</div>
+              <div><strong>저장</strong> 1,982건</div>
+            </div>
+          </div>
+          <div class="yearly-chart-item">
+            <div class="chart-header">
+              <h3 class="chart-year">2025년</h3>
+              <div class="chart-percentage">수집 64% 저장 58%</div>
+            </div>
+            <div class="chart-progress-bar"></div>
+            <div class="chart-stats">
+              <div><strong>원본</strong> 3,440건</div>
+              <div><strong>수집</strong> 2,210건</div>
+              <div><strong>저장</strong> 1,982건</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 최근 저장 성과물 -->
+      <div class="data-status-section">
+        <div class="section-data-header">
+          <h2 class="section-title">최근 저장 성과물</h2>
+        </div>
+        <div class="board-list">
+          <div class="table__list-not-mobile sm">
+            <table>
+              <colgroup>
+                <col style="width: 8%;">
+                <col style="width: 15%;">
+                <col style="width: 25%;">
+                <col style="width: 10%;">
+                <col style="width: 12%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.1</th>
+                  <th scope="col">도엽 번호</th>
+                  <th scope="col">도엽 한글명</th>
+                  <th scope="col">축적</th>
+                  <th scope="col">구축년도</th>
+                  <th scope="col">상태</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="number">5</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td>5000</td>
+                  <td>2024</td>
+                  <td>저장완료</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">4</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td>5000</td>
+                  <td>2024</td>
+                  <td>저장완료</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">3</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td>5000</td>
+                  <td>2024</td>
+                  <td>저장완료</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">2</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td>5000</td>
+                  <td>2024</td>
+                  <td>저장완료</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">1</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td>5000</td>
+                  <td>2024</td>
+                  <td>저장완료</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 작업 처리 로그 -->
+      <div class="data-status-section">
+        <div class="section-data-header">
+          <h2 class="section-title">작업 처리 로그</h2>
+          <div class="status-legend">
+            <span class="legend-item legend-waiting">대기</span>
+            <span class="legend-item legend-complete">완료</span>
+            <span class="legend-item legend-error">오류</span>
+            <span class="legend-item legend-progress">진행중</span>
+          </div>
+        </div>
+        <div class="board-list">
+          <div class="table__list-not-mobile sm">
+            <table>
+              <colgroup>
+                <col style="width: 8%;">
+                <col style="width: 15%;">
+                <col style="width: 25%;">
+                <col style="width: 12%;">
+                <col style="width: 12%;">
+                <col style="width: 12%;">
+                <col style="width: 16%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.1</th>
+                  <th scope="col">도엽 번호</th>
+                  <th scope="col">도엽명</th>
+                  <th scope="col">수집</th>
+                  <th scope="col">파일저장</th>
+                  <th scope="col">GML 생성</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="number">5</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-progress">진행중</span></td>
+                  <td><span class="status-badge status-waiting">대기</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">4</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-error">오류</span></td>
+                  <td><span class="status-badge status-waiting">대기</span></td>
+                  <td>오류 발생. 관리자 확인필요</td>
+                </tr>
+                <tr>
+                  <td class="number">3</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">2</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="number">1</td>
+                  <td>H342807008XXXX</td>
+                  <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td><span class="status-badge status-complete">완료</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- modal -->
+<section id="error-preview-modal" class="krds-modal fade in" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">오류 조회</h2>
+      </div>
+      <!-- modal contents -->
+      <div class="modal-conts">
+        <div class="conts-area">
+          <div class="modal-section">
+            <div class="modal-section-body">
+              <div class="modal-search">
+                <form>
+                  <div class="search-row">
+                    <div class="form-group">
+                      <input type="date" class="krds-input" title="도엽번호" placeholder="도엽번호를 입력하세요.">
+                      <span>~</span>
+                      <input type="date" class="krds-input" title="도엽번호" placeholder="도엽번호를 입력하세요.">
+                    </div>
+                    <div class="form-group">
+                      <div class="form-keyword">
+                        <select name="search-keyword" id="search-keyword" title="오류유형 선택" class="krds-form-select">
+                          <option value="">오류유형</option>
+                        </select>
+                        <select name="search-keyword" id="search-keyword" title="도엽번호 선택" class="krds-form-select">
+                          <option value="">도엽번호</option>
+                        </select>
+                        <input type="text" class="krds-input" title="검색어" placeholder="도엽번호를 입력하세요.">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- //modal-search -->
+              <div class="table-y-wrapper table__list-not-mobile sm">
+                <table>
+                  <caption>오류 목록</caption>
+                  <colgroup>
+                    <col style="width: 10%;">
+                    <col style="width: 20%;">
+                    <col style="width: ato;">
+                    <col style="width: 10%;">
+                    <col style="width: 12%;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>속성명(한글)</th>
+                      <th>속성명(영문)</th>
+                      <th>약어</th>
+                      <th>유형</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>H342807008XXXX</td>
+                      <td class="text-left">XX도 어초어장관리 사업 인공어초 시설지(일반수로측량)</td>
+                      <td>저장오류</td>
+                      <td>중복키 발생</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //table-y-wrapper -->
+              
+              <div class="error-code-view">
+<pre>
+  <code>
+    {
+      "errorCode": "1001",
+      "errorMessage": "중복키 발생",
+      "errorDescription": "중복키 발생",
+      "errorSolution": "중복키 발생",
+      "errorSolution": "중복키 발생",
+    }
+  </code>
+</pre>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-btn btn-wrap">
+        <button type="button" class="krds-btn medium primary close-modal">닫기</button>
+      </div>
+      <button type="button" class="krds-btn medium icon btn-close close-modal">
+        <span class="sr-only">닫기</span>
+        <i class="svg-icon ico-popup-close"></i>
+      </button>
+      <!-- //close button -->
+    </div>
+  </div>
+  <div class="modal-back in"></div>
+</section>
+<!-- //modal -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="krds-footer">
+    <div class="foot-quick">
+      <div class="inner">
+        <button type="button" class="link" title="해양수산부 및 소속기관 레이어">해양수산부 및 소속기관</button>
+        <button type="button" class="link" title="해양수산부 산하기관 레이어">해양수산부 산하기관</button>
+        <button type="button" class="link" title="관련사이트 레이어">관련사이트</button>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="f-logo">
+        <span class="sr-only">국립해양조사원</span>
+      </div>
+      <div class="f-cnt">
+        <div class="f-info">
+          <p class="info-addr">(49111) 부산광역시 영도구 해양로 351 (동삼동 1162) </p>
+          <ul class="info-cs">
+            <li>
+              <span><strong class="strong">대표전화</strong>051-400-4400</span>
+              <span><strong class="strong">팩스번호</strong>051-400-4191</span>
+              <span><strong class="strong">보이는 ARS</strong>1588-9822</span>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="f-btm">
+        <div class="f-btm-text">
+          <div class="f-menu">
+            <a href="#" class="point">개인정보처리방침</a>
+            <a href="#">저작권 정책</a>
+          </div>
+          <p class="f-copy">© COPYRIGHT(C) 2020 BY KOREA HYDROGRAPHIC AND OCEANOGRAPHIC AGENCY. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- //footer -->
+  
+    <script src="./assets/js/portal.js"></script>
+</body>
+</html>
