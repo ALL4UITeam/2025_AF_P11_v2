@@ -222,43 +222,58 @@
 
 .detail-content-list {
   display: flex;
-  gap: 0.4rem;
+  gap: 1.2rem;
   flex-direction: column;
   @media (max-width: 1000px) {
     gap: 0.4rem;
   }
+  /* 가로형으로 변경. */
   .list-item {
     display: flex;
-    gap: 0 1.3rem;
+    flex-direction: column;
+    gap: .5rem;
+    +.list-item{
+      padding-top: 1rem;
+      border-top: 1px solid #cdd1d5;
+    }
     .subject {
       flex-shrink: 0;
-      width: 10rem;
-      color: var(--g-50, #6d7882);
-
+      color: #333;
       font-size: 1.3rem;
       position: relative;
+      padding-left: 1rem;
       @media (max-width: 1000px) {
         font-size: 1.3rem;
         width: 8rem;
       }
+      // &::after {
+      //   content: "";
+      //   display: block;
+      //   width: 1px;
+      //   position: absolute;
+      //   right: 0;
+      //   top: 0.2rem;
+      //   bottom: 0.2rem;
+      //   background-color: #cdd1d5;
+      // }
       &::after {
         content: "";
         display: block;
-        width: 1px;
+        width: 3px;
+        height: 3px;
         position: absolute;
-        right: 0;
-        top: 0.2rem;
-        bottom: 0.2rem;
-        background-color: #cdd1d5;
+        top: 0.7rem;
+        left: 0;
+        background-color: #333;
+        border-radius: 50%;
       }
     }
     .desc {
       flex: 1;
       color: var(--g-90, #1e2124);
-
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       @media (max-width: 1000px) {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -701,6 +716,31 @@
       &::before {
         transform: translateX(20px);
       }
+    }
+  }
+}
+.range-in-label{
+  width: 100%;
+}
+.range-label-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  span{
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    line-height: 1;
+    display: block;
+    padding-top: 10px;
+    &::after{
+      content: "";
+      height: 5px;
+      width: 1px;
+      background-color: #c4c8cb;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
     }
   }
 }

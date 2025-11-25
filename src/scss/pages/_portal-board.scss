@@ -951,6 +951,17 @@ $files: (
   &.end{
     justify-content: flex-end;
   }
+  > div{
+    display: flex;
+    align-items: center;
+    gap: 0 1.6rem;
+    @media (max-width: $tablet) {
+      gap: 0 1.2rem;
+    }
+    @media (max-width: $tablet) {
+      gap: 0 1rem;
+    }
+  }
 }
 
 .cookbook-download{
@@ -1279,5 +1290,153 @@ $files: (
       line-height: 1.5;
     }
     
+  }
+}
+
+// 카테고리 탭
+.category-tabs-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.4rem;
+  
+  .category-toggle {
+    display: none;
+    
+    @media (max-width: 767px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 1px solid #B1B8BE;
+      border-radius: 0.6rem;
+      background: linear-gradient(90deg, #256EF4 0%, #003964 100%);
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      .toggle-text {
+        flex: 1;
+        text-align: left;
+      }
+      
+      .svg-icon {
+        width: 2rem;
+        height: 2rem;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+      }
+      
+      &.active {
+        border-radius: 0.6rem 0.6rem 0 0;
+        border-bottom: 0;
+        
+        .svg-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  
+  .category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 0;
+    
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      background-color: #fff;
+      border: 1px solid #B1B8BE;
+      border-top: 0;
+      border-radius: 0 0 0.6rem 0.6rem;
+      padding: 0.8rem 0;
+      display: none;
+      max-height: 40rem;
+      overflow-y: auto;
+      z-index: 10;
+      
+      .category-tab.active {
+        background-color: #EEF2F7;
+        color: #0B50D0;
+        font-weight: 600;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      display: flex !important;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    &:has(.category-toggle.active) {
+      .category-tabs {
+        display: flex;
+      }
+    }
+  }
+  
+  .category-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid #CDD1D5;
+    border-radius: 2rem;
+    background-color: #F5F6F8;
+    color: #464C53;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    @media (max-width: 1023px) {
+      padding: 0.7rem 1.4rem;
+      font-size: 1.4rem;
+    }
+    
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 1rem 1.6rem;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+      text-align: left;
+      justify-content: flex-start;
+      font-size: 1.4rem;
+      
+      &:hover {
+        background-color: #F5F6F8;
+      }
+    }
+    
+    &:hover {
+      @media (min-width: 768px) {
+        background-color: #EEF2F7;
+        border-color: #256EF4;
+        color: #256EF4;
+      }
+    }
+    
+    &.active {
+      background-color: #fff;
+      border-color: #256EF4;
+      color: #256EF4;
+      font-weight: 600;
+      
+      @media (max-width: 767px) {
+        background-color: #EEF2F7;
+        border: none;
+      }
+    }
   }
 }

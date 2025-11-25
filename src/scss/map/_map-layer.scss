@@ -78,6 +78,86 @@
   }
 }
 
+
+.search-section .tabs{
+  position: relative;
+  display: flex;
+  border-radius: 100px;
+  background:  #ECF2FE;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.04) inset;
+  margin-bottom: 1.5rem;
+  padding: .4rem;
+  border-radius: 100px;
+  
+
+  .icon-tab-layer {
+    mask-image: url("@/assets/images/map/icon-tab-layer.svg");
+    width: 24px;
+    height: 24px;
+    background-color: #86AFF9;
+  }
+  .icon-tab-poi {
+    mask-image: url("@/assets/images/map/icon-tab-poi.svg");
+    width: 24px;
+    height: 24px;
+    background-color: #86AFF9;
+  }
+
+  .tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #86AFF9;
+    height: 4rem;
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    gap:0 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &.current{
+      color: #fff;
+      .icon{
+        background-color: #fff;
+      }
+    }
+  }
+  &:has(.tab:nth-child(2).current){
+    &::after{
+      left: calc(50% - 4px);
+    }
+  }
+  &::after{
+    content: "";
+    display: block;
+    width: 50%;
+    background-color: #256EF4;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 100px;
+    z-index: 1;
+  }
+  @media (max-width: 1000px) {
+    padding: .4rem;
+    margin-bottom: 1.2rem;
+    .tab{
+      height: 3.4rem;
+      font-size: 1.4rem;
+      .icon{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &::after{
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+    }
+  }
+}
+
 .search-section {
   padding: 1.6rem;
   padding-bottom: 0;
@@ -256,12 +336,11 @@
   background-image: url("@/assets/images/map/icon_layer.svg");
 }
 
-@for $i from 1 through 9 {
+@for $i from 1 through 12 {
   .icon-layer-#{$i} {
     background-image: url("@/assets/images/map/icon_layer-#{$i}.svg");
   }
 }
-
 .item-count {
   color: var(--g-90, #1e2124);
   font-size: 1.7rem;
@@ -275,7 +354,6 @@
     font-weight: 700;
   }
 }
-
 .layer-list {
   flex: 1;
   padding: 1.6rem;
@@ -489,6 +567,11 @@
     display: flex;
   }
 }
+
+.layer-item-tree.level-2{
+  padding-left: 1.2rem;
+}
+
 /* 패널 메뉴 제어 */
 [data-panel-menu] {
   display: none; // 기본적으로 숨김

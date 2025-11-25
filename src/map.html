@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -16,7 +15,7 @@
   <script src="./lib/swiper/swiper-bundle.min.js"></script>
 </head>
 
-<body class="open-depth-1">
+<body class="open-depth-1 open-depth-2">
 
   <div class="wrap">
     <nav id="map-nav">
@@ -27,7 +26,7 @@
           <button class="map-nav-header-btn">
             열림
           </button>
-        </div>
+        </div> 
       </header>
       <div class="map-gnb">
         <ul>
@@ -108,7 +107,7 @@
         </div>
       </div>
 
-
+    
       <!-- 라벨 생성 툴 -->
       <div class="label-create-element" style="left:30%;top:20%;">
         <div>
@@ -153,7 +152,7 @@
       <!-- // map-info-popup -->
 
       <!-- 테스트용 모달 버튼 -->
-      <!-- <button class="test-modal-btn" data-modal="example-modal">
+      <!-- <button class="test-modal-btn" data-modal="property-modal" style="position: absolute; top: 10px; right: 10px;">
         모달 테스트
       </button> -->
 
@@ -181,30 +180,8 @@
           </div>
         </div>
       </div>
-      <div class="map-modal" id="alert-modal" style="left:420px;top: 180px;">
-        <div class="modal-container">
-          <header class="modal-header">
-            <h2 class="modal-title">해수욕장 안전지수</h2>
-            <button class="modal-close">
-              <span class="visually-hidden">닫기</span>
-            </button>
-          </header>
-          <div class="map-modal-content">
-            <p>해수욕장 이용객의 안전도를
-              지수로 표현한 것입니다.
-              지형적 위험성과 사고 발생 요인을 반영하여 산출된 값이며, 0~99점 사이에서 숫자가 클수록 위험함을 나타냅니다.</p>
-          </div>
-          <div class="map-modal-footer">
-            <div>
-              <button class="btn btn-outline">이전</button>
-            </div>
-            <div>
-              <button class="btn btn-secondary">수정</button>
-              <button class="btn btn-primary">등록</button>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <!-- 25.11.12 속성정보 팝업 추가 -->
       <div class="map-modal" id="property-modal" style="left:50%;top: 50%; transform: translate(-50%, -50%);">
         <div class="modal-container">
           <header class="modal-header">
@@ -243,37 +220,36 @@
         </div>
       </div>
 
-    </div>
-  </div>
+      <div class="map-modal" id="notice-modal" style="left:50%;top: 50%;display: flex; transform: translate(-50%, -50%);">
+        <div class="modal-container">
+          <header class="modal-header">
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content notice-modal-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="80" viewBox="0 0 24 24" fill="none" stroke="#C1272D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c-3.866 0-7 3.134-7 7v5H5a2 2 0 0 0-2 2v3h18v-3a2 2 0 0 0-2-2h0v-5c0-3.866-3.134-7-7-7z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12" y2="17.01"/>
+              <line x1="4" y1="4" x2="5.5" y2="5.5"/>
+              <line x1="20" y1="4" x2="18.5" y2="5.5"/>
+              <line x1="2" y1="12" x2="4" y2="12"/>
+              <line x1="20" y1="12" x2="22" y2="12"/>
+            </svg>            
 
-  <div class="map-modal" id="notice-modal" style="left:50%;top: 50%;display: flex; transform: translate(-50%, -50%);">
-    <div class="modal-container">
-      <header class="modal-header">
-        <button class="modal-close">
-          <span class="visually-hidden">닫기</span>
-        </button>
-      </header>
-      <div class="map-modal-content notice-modal-content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="80" viewBox="0 0 24 24" fill="none" stroke="#C1272D"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2c-3.866 0-7 3.134-7 7v5H5a2 2 0 0 0-2 2v3h18v-3a2 2 0 0 0-2-2h0v-5c0-3.866-3.134-7-7-7z"></path>
-          <line x1="12" y1="9" x2="12" y2="13"></line>
-          <line x1="12" y1="17" x2="12" y2="17.01"></line>
-          <line x1="4" y1="4" x2="5.5" y2="5.5"></line>
-          <line x1="20" y1="4" x2="18.5" y2="5.5"></line>
-          <line x1="2" y1="12" x2="4" y2="12"></line>
-          <line x1="20" y1="12" x2="22" y2="12"></line>
-        </svg>
-
-        <div class="notice-modal-title">공개제한 자료 주의사항</div>
-        <div class="notice-modal-content">
-          <p>해당 자료는 대민 대상 <b class="highlight">공개 자료</b>가 아닙니다.</p>
-          <p>대민 대상 공개 자료는 <b class="highlight">해당 자료</b>를 참조해주세요.</p>
+            <div class="notice-modal-title">공개제한 자료 주의사항</div>
+            <div class="notice-modal-content">
+              <p>해당 자료는 대민 대상 <b class="highlight">공개 자료</b>가 아닙니다.</p>
+              <p>대민 대상 공개 자료는 <b class="highlight">해당 자료</b>를 참조해주세요.</p>
+            </div>
+          </div>
+          <div class="map-modal-footer">
+            <button class="btn btn-primary">확인</button>
+          </div>
         </div>
       </div>
-      <div class="map-modal-footer">
-        <button class="btn btn-primary">확인</button>
-      </div>
+
     </div>
   </div>
   <script type="module" src="./js/page/map.js"></script>
@@ -286,7 +262,5 @@
       console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
     });
   </script>
-
 </body>
-
 </html>

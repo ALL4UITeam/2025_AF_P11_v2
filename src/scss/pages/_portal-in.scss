@@ -377,3 +377,274 @@
   position: absolute;
   left: -999em;
 }
+
+.data-status-container{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.section-data-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+// 데이터 수집 현황 - 통계 카드 섹션
+.data-status-summary-section {
+  .data-status-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+    .summary-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+      .card-inner {
+        padding: 3rem 2.4rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .summary-label-wrapper {
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .summary-label {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #6b7280;
+        letter-spacing: -0.01em;
+      }
+
+      .summary-unit {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #9ca3af;
+        margin-left: 0.3rem;
+      }
+
+      .summary-value {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin-top: 1.2rem;
+      }
+
+      &.summary-card-original {
+        &::before {
+          background: linear-gradient(90deg, #0f62fe 0%, #0043ce 100%);
+        }
+
+        &:hover {
+          border-color: #0f62fe;
+          box-shadow: 0 12px 24px rgba(15, 98, 254, 0.2);
+        }
+        
+        .summary-value {
+          color: #0f62fe;
+        }
+      }
+
+      &.summary-card-collected {
+        &::before {
+          background: linear-gradient(90deg, #0043ce 0%, #002d9c 100%);
+        }
+
+        &:hover {
+          border-color: #0043ce;
+          box-shadow: 0 12px 24px rgba(0, 67, 206, 0.2);
+        }
+        
+        .summary-value {
+          color: #0043ce;
+        }
+      }
+
+      &.summary-card-stored {
+        &::before {
+          background: linear-gradient(90deg, #198038 0%, #0e6027 100%);
+        }
+
+        &:hover {
+          border-color: #198038;
+          box-shadow: 0 12px 24px rgba(25, 128, 56, 0.2);
+        }
+        
+        .summary-value {
+          color: #198038;
+        }
+      }
+
+      &.summary-card-error {
+        &::before {
+          background: linear-gradient(90deg, #da1e28 0%, #a2191f 100%);
+        }
+
+        &:hover {
+          border-color: #da1e28;
+          box-shadow: 0 12px 24px rgba(218, 30, 40, 0.2);
+        }
+        
+        .summary-value {
+          color: #da1e28;
+        }
+      }
+    }
+  }
+}
+
+// 데이터 수집 현황 - 차트 영역
+.data-status-chart-section {
+  .yearly-chart-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  .yearly-chart-item {
+    background: #ffffff;
+    border: 1px solid #dde1e6;
+    border-radius: 4px;
+    padding: 2.4rem;
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .chart-year {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #1d1d1d;
+        margin: 0;
+      }
+
+      .chart-percentage {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #525252;
+      }
+    }
+
+    .chart-progress-bar {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+
+    .chart-stats {
+      font-size: 1.1rem;
+      color: #525252;
+      text-align: ㅣㄷㄽ;
+      strong {
+        color: #1d1d1d;
+        font-weight: 600;
+      }
+      div{
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// 데이터 수집 현황 - 섹션 공통
+.data-status-section {
+  .section-data-header {
+    .status-legend {
+      display: flex;
+      gap: 1rem;
+
+      .legend-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        border-radius: 2px;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        &.legend-waiting {
+          background: #e0e0e0;
+          color: #525252;
+        }
+
+        &.legend-complete {
+          background: #198038;
+          color: #ffffff;
+        }
+
+        &.legend-error {
+          background: #da1e28;
+          color: #ffffff;
+        }
+
+        &.legend-progress {
+          background: #f1c21b;
+          color: #1d1d1d;
+        }
+      }
+    }
+  }
+}
+
+// 상태 뱃지
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  &.status-waiting {
+    background: #e0e0e0;
+    color: #525252;
+  }
+
+  &.status-complete {
+    background: #198038;
+    color: #ffffff;
+  }
+
+  &.status-error {
+    background: #da1e28;
+    color: #ffffff;
+  }
+
+  &.status-progress {
+    background: #f1c21b;
+    color: #1d1d1d;
+  }
+}
+
+.error-code-view{
+  pre{
+    padding: 0;
+    margin: 0;
+  }
+}
