@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="K-Ocean">
+  <meta name="keywords" content="K-Ocean">
+  <title>K-OCEAN</title>
+  <link rel="stylesheet" href="./lib/ol/ol.css">
+  <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+  <script src="./lib/ol/ol.js"></script>
+  <script src="./lib/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+  <div class="wrap">
+    <nav id="map-nav">
+      <header class="map-nav-header">
+        <h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+        <div class="map-nav-h-utils">
+          <a href="#" class="mobile-en">EN</a>
+          <button class="map-nav-header-btn">
+            열림
+          </button>
+        </div> 
+      </header>
+      <div class="map-gnb">
+        <ul>
+          <li>
+            <a href="#">해양지도 서비스</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">해양지도 서비스</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">플랫폼 소개</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+                <li><a href="#">K-OCEAN 로드맵</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">서비스활용</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">데이터 다운로드</a></li>
+                <li><a href="#">Open-API</a></li>
+                <li><a href="#">통계서비스</a></li>
+                <li><a href="#">Cook-Book</a></li>
+                <li><a href="#">공간정보 법령 및 규정</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">커뮤니티</a>
+            <div class="map-gnb-submenu">
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주하는 질문</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main">
+      <div class="aside">
+        <h1 class="map-logo"><a href="#">K-OCEAN</a></h1>
+          <ul class="menu-list">
+            <li class="menu-item-1" title="선택 됨"><button data-panel="ocean-info"><i></i><span>해양정보</span></button></li>
+            <li class="menu-item-4"><button data-panel="info-analysis"><i></i><span>정보검색</span></button></li>
+            <li class="menu-item-2"><button data-panel="analysis"><i></i><span>분석</span></button></li>
+            <li class="menu-item-3"><button data-panel="disaster-safety"><i></i><span>재난안전</span></button></li>
+            <li class="menu-item-5 current"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
+            <li class="menu-item-6"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
+          </ul>
+
+        <aside class="aside-utils">
+          <div><a href="#" class="en" target="_balnk">EN</a></div>
+          <div>
+            <button type="button" title="전체 메뉴 열림" id="btnMenuOpen">
+              <i></i>
+            </button>
+          </div>
+        </aside>
+      </div>
+      <!-- // aside -->
+
+      <div class="layer-panel">
+        <div class="layer-panel-wrapper">
+          <div class="layer-panel-vi">
+            <!-- 제목추가 -->
+            <h2 class="layer-panel-title">항행통보</h2>
+            <button type="button" class="layer-mobile-control">
+              <i></i>
+            </button>
+          </div>
+          <div class="show" data-panel-menu="navigation-notice">
+            <div class="panel-section-inner lt">
+              <div class="panel-section-header">
+                <div class="l">
+                  <button class="back-btn">
+                    <span class="visually-hidden">뒤로가기</span>
+                  </button>
+                  <h2 class="panel-section-title">침선 장애물 구분</h2>
+                </div>
+              </div>
+              <div class="panel-section-content">
+                <div class="search-bar">
+                  <select class="category-select">
+                    <option>면허번호</option>
+                  </select>
+                  <span class="line"></span>
+                  <input type="text" placeholder="도엽번호를 입력하세요." class="search-input">
+                  <button class="search-btn">
+                    <span class="visually-hidden">검색</span>
+                  </button>
+                </div>
+                <div class="spatial-search-result">
+                  <div class="total-count" aria-live="polite">
+                    검색결과 총 <b class="point">2,918</b>건
+                  </div>
+        
+                  <ul class="spatial-result-list">
+                    <li>
+                      <button class="spatial-result-item active">
+                        <span>1</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>2</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>3</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>3</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>4</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>5</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>6</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>7</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>8</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>9</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>10</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>11</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>12</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>13</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>14</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>15</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="spatial-result-item">
+                        <span>16</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="traffic-buttons">
+              <button>
+                <i class="icon-traffic-btn1"></i>
+                <span class="text">전체 수정 목록</span>
+              </button>
+              <span class="line"></span>
+              <button>
+                <i class="icon-traffic-btn2"></i>
+                <span class="text">등록</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // layer-panel -->
+
+
+      <div class="map-area">
+        <div id="map"></div>
+      </div>
+      <!-- // map-area -->
+
+      <!-- 상세정보 팝업 -->
+      <div class="map-modal" id="property-modal"
+        style="left:50%;top: 50%; transform: translate(-50%, -50%); display: block;">
+        <div class="modal-container width-auto">
+          <header class="modal-header">
+            <h2 class="modal-title">상세정보</h2>
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content">
+            <div class="map-modal-twin">
+              <div>
+                <fieldset>
+                  <legend>항행통보 원본 상세정보</legend>
+                  <div class="table__list sm">
+                    <table>
+                      <caption>고정표지 원본 상세정보</caption>
+                      <tbody>
+                        <tr>
+                          <th colspan="4" scope="row">기본 정보 (원본)</th>
+                        </tr>
+                        <tr>
+                          <th scope="row">어장정보</th>
+                          <td colspan="3">1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">관리기관</th>
+                          <td colspan="3">1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">면허(어업)종류</th>
+                          <td>1</td>
+                          <th scope="row">면허번호</th>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">어업방법</th>
+                          <td>-</td>
+                          <th scope="row">양식종류(품종)</th>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">어업형태</th>
+                          <td>-</td>
+                          <th scope="row">어장면적(ha)</th>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <th colspan="4" scope="row">위치 정보</th>
+                        </tr>
+                        <tr>
+                          <td colspan="4" scope="row">위치정보</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </fieldset>
+                <div class="mt-20 btn-right">
+                  <button type="button" class="btn btn-secondary">수정</button>
+                </div>
+              </div>
+              <div>
+                <fieldset>
+                  <legend>항행통보 원본 상세정보</legend>
+                  <div class="responsive-table table__list sm">
+                    <table>
+                      <caption>고정표지 원본 상세정보</caption>
+                      <tbody>
+                        <tr>
+                          <th colspan="4" scope="row">기본 정보 (수정)</th>
+                        </tr>
+                        <tr>
+                          <th scope="row">어장정보</th>
+                          <td colspan="3"><input type="text" class="form-input sm"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">관리기관</th>
+                          <td colspan="3"><input type="text" class="form-input sm"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">면허(어업)종류</th>
+                          <td>
+                            <select name="" id="" class="form-select sm">
+                              <option value="">1</option>
+                            </select>
+                          </td>
+                          <th scope="row">면허번호</th>
+                          <td>
+                            <select name="" id="" class="form-select sm">
+                              <option value="">1</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">어업방법</th>
+                          <td><input type="text" class="form-input sm"></td>
+                          <th scope="row">양식종류(품종)</th>
+                          <td><input type="text" class="form-input sm"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">어업형태</th>
+                          <td><input type="text" class="form-input sm"></td>
+                          <th scope="row">어장면적(ha)</th>
+                          <td><input type="text" class="form-input sm"></td>
+                        </tr>
+                        <tr>
+                          <th colspan="4" scope="row">위치 정보</th>
+                        </tr>
+                        <tr>
+                          <td colspan="4" scope="row"><textarea name="" class="form-input" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                          <th colspan="4" scope="row">첨부파일</th>
+                        </tr>
+                        <tr>
+                          <td colspan="4" scope="row">
+                            <div class="file-upload">
+                              <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                              <div class="file-upload-btn-wrap">
+                                <input type="file" name="myFile" id="fileu-upload" hidden="">
+                                <label for="fileu-upload">
+                                  <button type="button" class="krds-btn medium area-select-btn"><i class="svg-icon ico-upload"></i>파일선택</button>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                      
+                    </table>
+                  </div>
+                </fieldset>
+                <div class="mt-20 btn-right">
+                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-primary">저장</button>
+                  <button type="button" class="btn btn-gray">취소</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <script type="module" src="./js/page/map.js"></script>
+  <script>
+    // map.js가 로드된 후 실행
+    initTransparencySliders('.transparency-slider', (slider, value) => {
+      const layerId = slider.dataset.layerId;
+
+      // 함수 호출
+      console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+    });
+  </script>
+</body>
+</html>
+

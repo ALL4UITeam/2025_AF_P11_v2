@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="description" content="K-Ocean">
+	<meta name="keywords" content="K-Ocean">
+	<title>K-OCEAN</title>
+	<link rel="stylesheet" href="./lib/ol/ol.css">
+	<link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+	<script src="./lib/ol/ol.js"></script>
+	<script src="./lib/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+	<div class="wrap">
+		<nav id="map-nav">
+			<header class="map-nav-header">
+				<h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+				<div class="map-nav-h-utils">
+					<a href="#" class="mobile-en">EN</a>
+					<button class="map-nav-header-btn">
+						열림
+					</button>
+				</div>
+			</header>
+			<div class="map-gnb">
+				<ul>
+					<li>
+						<a href="#">해양지도 서비스</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">해양지도 서비스</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">플랫폼 소개</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+								<li><a href="#">K-OCEAN 로드맵</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스활용</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">데이터 다운로드</a></li>
+								<li><a href="#">Open-API</a></li>
+								<li><a href="#">통계서비스</a></li>
+								<li><a href="#">Cook-Book</a></li>
+								<li><a href="#">공간정보 법령 및 규정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">자주하는 질문</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="aside">
+				<h1 class="map-logo"><a href="#">K-OCEAN</a></h1>
+				<ul class="menu-list">
+					<li class="menu-item-1" title="선택 됨"><button data-panel="ocean-info"><i></i><span>해양정보</span></button></li>
+					<li class="menu-item-4"><button data-panel="info-analysis"><i></i><span>정보검색</span></button></li>
+					<li class="menu-item-2"><button data-panel="analysis"><i></i><span>분석</span></button></li>
+					<li class="menu-item-3"><button data-panel="disaster-safety"><i></i><span>재난안전</span></button></li>
+					<li class="menu-item-5 current"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
+					<li class="menu-item-6"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
+				</ul>
+
+				<aside class="aside-utils">
+					<div><a href="#" class="en" target="_balnk">EN</a></div>
+					<div>
+						<button type="button" title="전체 메뉴 열림" id="btnMenuOpen">
+							<i></i>
+						</button>
+					</div>
+				</aside>
+			</div>
+			<!-- // aside -->
+
+			<div class="layer-panel">
+				<div class="layer-panel-wrapper">
+					<div class="layer-panel-vi">
+						<!-- 제목추가 -->
+						<h2 class="layer-panel-title">분석</h2>
+						<button type="button" class="layer-mobile-control">
+							<i></i>
+						</button>
+					</div>
+					<!-- 재난안전 -->
+					<div class="disaster-section show" data-panel-menu="disaster-safety">
+						<div class="panel-section-inner">
+							<div class="panel-section-header">
+								<div class="l">
+									<button class="back-btn">
+										<span class="visually-hidden">뒤로가기</span>
+									</button>
+									<h2 class="panel-section-title">안전지수</h2>
+								</div>
+							</div>
+
+							<div class="panel-section-content">
+								<div class="search-field">
+									<h3 class="search-field-title">
+										<span class="text"><span class="num">01</span>해양 공간의 이용 유형을 선택하세요.</span>
+									</h3>
+									<div class="gap-8">
+										<button class="alert-btn modal-open-btn" data-modal="alert-modal">
+											<span>해수욕장 안전지수</span>
+											<i></i>
+										</button>
+									</div>
+									<div class="checkbox-group">
+										<button class="action-toggle active"><span>해수욕장</span></button>
+										<button class="action-toggle"><span>연안해역</span></button>
+										<button class="action-toggle"><span>진입수로(항)</span></button>
+										<button class="action-toggle"><span>갯벌체체험장</span></button>
+									</div>
+								</div>
+
+								<div class="search-field">
+									<h3 class="search-field-title">
+										<span class="text"><span class="num">02</span>해역을 선택하세요.</span>
+									</h3>
+									<div class="collapse-group">
+										<div class="collapse-item">
+											<button class="collapse-toggle" aria-expanded="false" aria-controls="layer-panel-4">
+												<i></i>
+												<span>레이어명</span>
+												<em class="count">2,918</em>
+											</button>
+											<div class="layer-item-panel" id="layer-panel-4">
+												<button class="layer-btn-ui" type="button" data-toggle="item">
+													<span class="layer-name">관성솔밭 해수욕장</span>
+												</button>
+												<button class="layer-btn-ui" type="button" data-toggle="item">
+													<span class="layer-name">관성솔밭 해수욕장</span>
+												</button>
+											</div>
+										</div>
+										<div class="collapse-item">
+											<button class="collapse-toggle">
+												<span>레이어명</span>
+												<em class="count">0</em>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 재난안전 -->
+				</div>
+			</div>
+			<!-- // layer-panel -->
+
+			<div class="detail-panel">
+				<div class="detail-panel-wrapper">
+					<div class="detail-panel-header">
+						<button class="detail-panel-back">
+							<span class="visually-hidden">뒤로가기</span>
+						</button>
+						<div class="detail-panel-header-title">
+							<h3 class="title">해양지명</h3>
+							<div class="utils">
+								<button class="util-btn util-btn-meta">메타정보 보기 <i></i></buttonㅁ>
+									<button class="util-btn util-btn-download">메타정보 다운로드 <i></i></buttonㅁ>
+							</div>
+						</div>
+						<button class="detail-panel-close">
+							<span class="visually-hidden">닫기</span>
+						</button>
+					</div>
+					<!-- 공간검색결과 -->
+					<div class="detail-panel-content">
+						<div class="chart-grid">
+							<section class="chart-item">
+								<h4>인명사고</h4>
+								<div class="chart-area">
+									차트영역
+								</div>
+							</section>
+							<div class="division"></div>
+							<section class="chart-item">
+								<h4 class="flex">해양 안전지도 <button class="Link-ico"></button></h4>
+								<div class="chart-area">
+									차트영역
+								</div>
+							</section>
+							<div class="division"></div>
+
+			
+						</div>
+					</div>
+					<!-- // 공간검색결과 -->
+				</div>
+			</div>
+
+
+			<div class="map-area">
+				<div id="map"></div>
+			</div>
+			<!-- // map-area -->
+
+			<div class="map-modal" id="property-modal" style="left:50%;top: 50%; transform: translate(-50%, -50%); display: block;">        <div class="modal-container">
+          <header class="modal-header">
+            <h2 class="modal-title">해양안전지도</h2>
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content">
+						<div style="height: 300px;background: #f1f5fa;">
+							지도
+						</div>
+						<div class="detail-map-control">
+							<button class="zoom-btn zoom-in" title="확대">
+								<i class="icon"></i>
+							</button>
+								<button class="zoom-btn zoom-out" title="축소">
+								<i class="icon"></i>
+							</button>
+						</div>
+          </div>
+        </div>
+      </div>
+
+		</div>
+		<script type="module" src="./js/page/map.js"></script>
+		<script>
+			// map.js가 로드된 후 실행
+			initTransparencySliders('.transparency-slider', (slider, value) => {
+				const layerId = slider.dataset.layerId;
+
+				// 함수 호출
+				console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+			});
+		</script>
+</body>
+
+</html>

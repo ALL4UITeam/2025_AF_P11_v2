@@ -171,6 +171,9 @@
   }
 }
 
+.search-bar-wrap{
+  margin: 0 1.6rem;
+}
 .search-bar {
   display: flex;
   height: 56px;
@@ -182,6 +185,11 @@
   border: 3px solid var(--gr-1, #256ef4);
   background: #fff;
   @media (max-width: 1000px) {
+    position:fixed;
+    top: 7rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    margin: 0;
     height: 4rem;
     padding: 0 1.2rem;
   }
@@ -923,6 +931,14 @@
   overflow-y: auto;
   flex: 1;
 }
+.panel-section-inner{
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 1rem;
+  &.lt{
+    max-height:calc(100% - 7rem);
+  }
+}
 .panel-section-header {
   display: flex;
   min-height: 48px;
@@ -983,6 +999,7 @@
   flex-direction: column;
   gap: 1.6rem;
   padding: 0 1.6rem;
+
 }
 .search-field-title {
   display: flex;

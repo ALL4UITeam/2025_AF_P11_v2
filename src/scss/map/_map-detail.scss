@@ -977,6 +977,11 @@
       font-size: 1.7rem;
       font-weight: 700;
       padding-bottom: 1.2rem;
+      &.flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
     .chart-area {
       border-radius: 1.2rem;
@@ -1092,6 +1097,37 @@
           border-radius: 50%;
         }
       }
+    }
+  }
+}
+
+.detail-map-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+  margin-top: 2rem;
+  .zoom-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: #f1f5fa;
+    border-radius: 0.6rem;
+    .icon {
+      @extend .icon;
+    }
+  }
+
+  .zoom-in {
+    .icon {
+      @include icon-set("@/assets/images/map/icon_zoom-in.svg", 100%, 100%, #000);
+    }
+  }
+
+  .zoom-out {
+    @media screen and (max-width: 1000px) {}
+
+    .icon {
+      @include icon-set("@/assets/images/map/icon_zoom-out.svg", 100%, 100%, #000);
     }
   }
 }

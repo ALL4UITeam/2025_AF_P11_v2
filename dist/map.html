@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
   <script src="./lib/ol/ol.js"></script>
   <script src="./lib/swiper/swiper-bundle.min.js"></script>
-  <script src="./assets/js/map.js"></script>
-  
+  <script src="./assets/js/modulepreload-polyfill.js"></script>
+  <script src="./assets/js/map2.js"></script>
   <link rel="stylesheet" href="./assets/css/map.css">
 </head>
 
-<body class="open-depth-1">
+<body class="open-depth-1 open-depth-2">
 
   <div class="wrap">
     <nav id="map-nav">
@@ -108,6 +108,19 @@
           <!-- 해양정보 -->
           <div class="marine-info-section show" data-panel-menu="ocean-info">
             <div class="search-section">
+              <div class="tabs">
+                <button class="current tab" title="선택 됨">
+                  <i class="icon icon-tab-layer"></i>
+                  <span class="text">레이어</span>
+                </button>
+                <button class="tab">
+                  <i class="icon icon-tab-poi"></i>
+                  <span class="text">POI</span>
+                </button>
+              </div>
+              
+            </div>
+            <div class="search-bar-wrap">
               <div class="search-bar">
                 <select class="category-select">
                   <option>갯벌 체험</option>
@@ -122,6 +135,9 @@
             <div class="category-tabs">
               <button class="tab"><i class="icon icon-all"></i>전체</button>
               <button class="tab "><i class="icon icon-layer-1"></i>지형/지명</button>
+              <button class="tab "><i class="icon icon-layer-10"></i>해양지명</button>
+              <button class="tab "><i class="icon icon-layer-11"></i>항만구역</button>
+              <button class="tab "><i class="icon icon-layer-12"></i>갯벌체험</button>
               <button class="tab"><i class="icon icon-layer-2"></i>항해지원</button>
               <button class="tab"><i class="icon icon-layer-3"></i>기반시설</button>
               <button class="tab none-tab"><i class="icon icon-layer-4"></i>항만/경계</button>
@@ -693,7 +709,7 @@
           <!-- // 분석 -->
       
           <!-- 밀도 분석 -->
-          <div class="density-section" style="display: none;">
+          <div class="density-section" data-panel-menu="analysis" style="display: none;">
             <div class="panel-section-header">
               <div class="l">
                 <button class="back-btn">
@@ -886,6 +902,33 @@
             </div>
           </div>
           <!-- // 항행통보 -->
+      
+          <!-- 해양기본도 -->
+          <div class="disaster-section" data-panel-menu="basic-map">
+            <div class="search-section">
+              <div class="tabs">
+                <button class="current tab" title="선택 됨">
+                  <i class="icon icon-tab-layer"></i>
+                  <span class="text">레이어</span>
+                </button>
+                <button class="tab">
+                  <i class="icon icon-tab-poi"></i>
+                  <span class="text">POI</span>
+                </button>
+              </div>
+            </div>
+            <div class="search-bar-wrap">
+              <div class="search-bar">
+                <input type="text" placeholder="도엽번호를 입력하세요." class="search-input">
+                <button class="search-btn">
+                  <span class="visually-hidden">검색</span>
+                </button>
+              </div>
+            </div>
+      
+            
+          </div>
+          <!-- // 해양기본도 -->
         </div>
       </div>
       
@@ -1123,7 +1166,7 @@
           <!-- // 항로 분석 끝 -->
       
           <!-- 고해도 시계열 -->
-          <div class="detail-panel-content" style="display: none;">
+          <div class="detail-panel-content">
             <!-- 헤더 -->
             <div class="timeseries-header">
               <h4 class="timeseries-title">고해도 시계열</h4>
@@ -1147,8 +1190,34 @@
                 </label>
               </div>
             </div>
-      
+            
             <div class="timeseries-list">
+              <div class="timeseries-item">
+                <div class="item-label">
+                  <strong><em class="accent">a</em>거문도항(199703)</strong>
+                  <div class="switch-btn">
+                    <label class="switch-toggle">
+                      <input type="checkbox">
+                      <i></i>
+                    </label>
+                  </div>
+                </div>
+                <div class="item-controls">
+                  <span class="transparency-label">투명도</span>
+                  <div class="range-in-label">
+                    <input type="range" min="0" max="5" value="0" class="custom-range">
+                    <div class="range-label-list">
+                      <span>1920</span>
+                      <span>1920</span>
+                      <span>1920</span>
+                      <span>1920</span>
+                      <span>1920</span>
+                    </div>
+                  </div>
+                  <!-- // range-label add slider template -->
+                </div>
+              </div>
+      
               <div class="timeseries-item">
                 <div class="item-label">
                   <strong><em class="accent">a</em>거문도항(199703)</strong>
@@ -1167,7 +1236,7 @@
       
               <div class="timeseries-item">
                 <div class="item-label">
-                  <strong><em>b</em>거문도항(199703)</strong>
+                  <strong><em class="accent">b</em>거문도항(199703)</strong>
                   <div class="switch-btn">
                     <label class="switch-toggle">
                       <input type="checkbox">
@@ -1748,20 +1817,28 @@
             </button>
           </div>
           <div class="wd-modal-content">
-            <div class="legend-gradient-bars">
-              <div class="gradient-item">
-                <div class="gradient-label">사고/위험</div>
-                <div class="gradient-bar danger-gradient">
-                  <span></span><span></span><span></span><span></span>
+            <div class="wd-modal-tabs">
+              <button type="button" class="active">연안새해취약지수</button>
+              <button type="button">연안새해취약지수</button>
+              <button type="button">연안새해취약지수</button>
+              <button type="button">연안새해취약지수</button>
+            </div>
+            <div class="wd-modal-tabs-cont">
+              <div class="legend-gradient-bars">
+                <div class="gradient-item">
+                  <div class="gradient-label">사고/위험</div>
+                  <div class="gradient-bar danger-gradient">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="gradient-max">MAX:244</div>
                 </div>
-                <div class="gradient-max">MAX:244</div>
-              </div>
-              <div class="gradient-item">
-                <div class="gradient-label">예방시설</div>
-                <div class="gradient-bar safety-gradient">
-                  <span></span><span></span><span></span><span></span>
+                <div class="gradient-item">
+                  <div class="gradient-label">예방시설</div>
+                  <div class="gradient-bar safety-gradient">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="gradient-max">MAX:3</div>
                 </div>
-                <div class="gradient-max">MAX:3</div>
               </div>
             </div>
           </div>
@@ -1820,7 +1897,7 @@
       <!-- // map-info-popup -->
 
       <!-- 테스트용 모달 버튼 -->
-      <!-- <button class="test-modal-btn" data-modal="example-modal">
+      <!-- <button class="test-modal-btn" data-modal="property-modal" style="position: absolute; top: 10px; right: 10px;">
         모달 테스트
       </button> -->
 
@@ -1848,7 +1925,75 @@
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- 25.11.12 속성정보 팝업 추가 -->
+      <div class="map-modal" id="property-modal" style="left:50%;top: 50%; transform: translate(-50%, -50%);">
+        <div class="modal-container">
+          <header class="modal-header">
+            <h2 class="modal-title">속성정보 팝업</h2>
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content">
+            <div class="detail-content-item">
+              <ul class="detail-content-list">
+                <li class="list-item">
+                  <strong class="subject">목적</strong>
+                  <div class="desc">해양안전사고 예방에 활용</div>
+                </li>
+                <li class="list-item">
+                  <strong class="subject">주제분류1</strong>
+                  <div class="desc">안전</div>
+                </li>
+                <li class="list-item">
+                  <strong class="subject">자료 생산주기</strong>
+                  <div class="desc">
+                    <div><a href="#" target="_blank" title="새창 열림" class="link-btn"><span>개방해 바로가기</span></a></div>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <strong class="subject">위치좌표</strong>
+                  <div class="desc">
+                    <div><a href="#" target="_blank" title="새창 열림" class="link-coordinate"><span>67-49-52.45S
+                          173-39-47.41E</span></a></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="map-modal" id="notice-modal" style="left:50%;top: 50%;display: flex; transform: translate(-50%, -50%);">
+        <div class="modal-container">
+          <header class="modal-header">
+            <button class="modal-close">
+              <span class="visually-hidden">닫기</span>
+            </button>
+          </header>
+          <div class="map-modal-content notice-modal-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="80" viewBox="0 0 24 24" fill="none" stroke="#C1272D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c-3.866 0-7 3.134-7 7v5H5a2 2 0 0 0-2 2v3h18v-3a2 2 0 0 0-2-2h0v-5c0-3.866-3.134-7-7-7z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12" y2="17.01"/>
+              <line x1="4" y1="4" x2="5.5" y2="5.5"/>
+              <line x1="20" y1="4" x2="18.5" y2="5.5"/>
+              <line x1="2" y1="12" x2="4" y2="12"/>
+              <line x1="20" y1="12" x2="22" y2="12"/>
+            </svg>            
+
+            <div class="notice-modal-title">공개제한 자료 주의사항</div>
+            <div class="notice-modal-content">
+              <p>해당 자료는 대민 대상 <b class="highlight">공개 자료</b>가 아닙니다.</p>
+              <p>대민 대상 공개 자료는 <b class="highlight">해당 자료</b>를 참조해주세요.</p>
+            </div>
+          </div>
+          <div class="map-modal-footer">
+            <button class="btn btn-primary">확인</button>
+          </div>
+        </div>
+      </div> -->
   </div>
   <script>
     // map.js가 로드된 후 실행
@@ -1862,3 +2007,4 @@
   <script src="./assets/js/portal.js"></script>
 </body>
 </html>
+

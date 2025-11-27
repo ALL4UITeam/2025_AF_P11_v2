@@ -1,0 +1,144 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+fieldset{
+    border: none;    
+}
+legend, caption {
+    height: 1px;
+    overflow: hidden;
+    font-size: 0em;
+    line-height: 0em;
+    text-indent: -9999px;
+    width: 0;
+    margin: -1px 0 0 0;
+    position: relative;
+    top: -1px;
+}
+.table__list {
+  border-top: 2px solid #1d1d1d;
+  &.sm{
+    table{
+      thead{
+        th{
+          padding: 1.2rem 0;
+          font-size: 1.3rem;
+          @media screen and (max-width: $tablet) {
+            font-size: 1.1rem;
+            padding: .7rem 0.5rem;
+            padding-left: 0;
+          }
+        }
+      }
+      tbody{
+        td{
+          padding: 1.2rem 1rem;
+          font-size: 1.3rem;
+          @media screen and (max-width: $tablet) {
+            font-size: 1.1rem;
+            padding: .6rem 0.5rem;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    @media (max-width: $tablet) {
+      colgroup {
+        display: none;
+      }
+    }
+    thead {
+      tr {
+        th {
+          padding: 1.6rem 0;
+          background-color: #f8f8f8;
+          font-size: 1.3rem;
+        }
+      }
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+    tbody {
+      tr {
+        border-top: 1px solid #c6c6c6;
+        &:last-child {
+          border-bottom: 1px solid #c6c6c6;
+        }
+        th{
+            padding: 1rem 0;
+            background-color: #f8f8f8;
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+        td {
+          padding: 1.6rem 1rem;
+          font-size: 15px;
+          color: var(--g60, #58616a);
+          text-align: center;
+          &.text-left {
+            text-align: left;
+          }
+          &.subejct {
+            color: #1e2124;
+          }
+          .ellipsis {
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 100%;
+          }
+        }
+        @media (max-width: $tablet) {
+          display: block;
+          padding: 1rem 0;
+          .number{
+            display: none !important;
+          }
+          td {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            text-align: left;
+            padding: 0.5rem 0.5rem;
+            font-size: 1.3rem;
+            word-break: break-all; /* 핵심 */
+            overflow-wrap: anywhere; /* 최신 브라우저용 보강 */
+            white-space: normal; /* nowrap 방지 */
+        
+            &.number {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 모바일 라벨 스타일
+  .mobile-label {
+    display: none;
+    font-weight: 600;
+    color: #333;
+    margin-right: 0.5rem;
+
+    @media (max-width: 768px) {
+      display: inline;
+    }
+  }
+}
+
+
+
+.table-y-wrapper{
+  max-height: 30rem;
+  overflow-y: auto;
+}

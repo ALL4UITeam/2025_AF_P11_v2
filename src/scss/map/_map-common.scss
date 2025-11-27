@@ -80,6 +80,10 @@
     width: 92px;
   }
 }
+.btn-right{
+
+  text-align: right;
+}
 
 .input-group {
   display: flex;
@@ -198,7 +202,9 @@
   height: 4rem;
   padding: 0 1.6rem;
   transition: border-color 0.3s ease;
-
+  &.sm{
+    height: 3rem;
+  }
   &:focus {
     outline: none;
     border-color: var(--primary, #256ef4);
@@ -275,7 +281,7 @@
   border-radius: 0.6rem;
   border: 1px dashed var(--g-20, #cdd1d5);
   background: var(--g-05, #f4f5f6);
-
+  width: 100%;
   .upload-text {
     color: var(--g-60, #58616a);
     text-align: center;
@@ -373,8 +379,8 @@
   border-radius: 20px;
   border: 1px solid var(--g-20, #cdd1d5);
   background: #fff;
-  display: none;
-  width: 30rem;
+  display: block;
+  width: 40rem;
   flex-direction: column;
   &.active {
     display: flex;
@@ -388,7 +394,7 @@
   }
   .wd-modal-header {
     display: flex;
-    width: 30rem;
+    width: 100%;
     padding: 8px 16px 0 16px;
     justify-content: space-between;
     align-items: center;
@@ -406,6 +412,7 @@
   }
   .wd-modal-content {
     padding: 1.6rem;
+    display: flex;
   }
   .wd-modal-close {
     display: flex;
@@ -419,8 +426,56 @@
     aspect-ratio: 1/1;
     i {
       @extend .icon;
-      @include icon-set("close-black", 1rem, 1rem, #1e2124);
+      @include icon-set("@/assets/images/map/close-black.svg", 1rem, 1rem, #1e2124);
     }
+  }
+
+    /* 왼쪽 탭 영역 */
+  .wd-modal-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    
+  }
+
+  .wd-modal-tabs button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: left;
+    color: #666;
+    border-radius: 0.6rem;
+    border: 1px solid var(--g-20, #cdd1d5);
+    background: #fff;
+    cursor: pointer;
+    & + button{
+      margin-top: .5rem;
+    }
+  }
+
+  .wd-modal-tabs button.active {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    border: 1px solid var(--primary, #256ef4);
+    background: var(--p-05, #ecf2fe);
+  }
+
+  /* 오른쪽 콘텐츠 영역 */
+  .wd-modal-tabs-cont {
+    flex: 1;
+    background: #fff;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+
+  /* 탭 콘텐츠 */
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
   }
 }
 
@@ -470,6 +525,12 @@
     border-radius: 1.2rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    &.width-auto{
+      width: auto;
+      @media screen and (max-width: 1000px) {
+        width: 90vw;
+      }
+    }
   }
 
   .modal-header {
@@ -495,6 +556,7 @@
     background-color: #fff;
     border-radius: 0 0 1.2rem 1.2rem;
     overflow-y: auto;
+    max-height: 80vh;
   }
 
   .modal-close {
@@ -588,3 +650,30 @@
   }
 }
 
+.map-modal-twin{
+  display: flex;
+  gap:2rem;
+  width: 100rem;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.flex-coordi-input{
+  display: flex;
+  gap:20px;
+  align-items: center;
+  *{
+    flex:1;
+  }
+  span{
+    text-align: center;
+  }
+}
+
+.Link-ico{
+  width: 15px;
+  height: 15px;
+  background: url(/assets/images/map/link.svg) no-repeat center;
+}

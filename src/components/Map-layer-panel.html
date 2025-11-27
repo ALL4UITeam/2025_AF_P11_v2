@@ -21,6 +21,8 @@
           </button>
         </div>
         
+      </div>
+      <div class="search-bar-wrap">
         <div class="search-bar">
           <select class="category-select">
             <option>갯벌 체험</option>
@@ -609,7 +611,7 @@
     <!-- // 분석 -->
 
     <!-- 밀도 분석 -->
-    <div class="density-section" style="display: none;">
+    <div class="density-section" data-panel-menu="analysis" style="display: none;">
       <div class="panel-section-header">
         <div class="l">
           <button class="back-btn">
@@ -802,6 +804,33 @@
       </div>
     </div>
     <!-- // 항행통보 -->
+
+    <!-- 해양기본도 -->
+    <div class="disaster-section" data-panel-menu="basic-map">
+      <div class="search-section">
+        <div class="tabs">
+          <button class="current tab" title="선택 됨">
+            <i class="icon icon-tab-layer"></i>
+            <span class="text">레이어</span>
+          </button>
+          <button class="tab">
+            <i class="icon icon-tab-poi"></i>
+            <span class="text">POI</span>
+          </button>
+        </div>
+      </div>
+      <div class="search-bar-wrap">
+        <div class="search-bar">
+          <input type="text" placeholder="도엽번호를 입력하세요." class="search-input">
+          <button class="search-btn">
+            <span class="visually-hidden">검색</span>
+          </button>
+        </div>
+      </div>
+
+      
+    </div>
+    <!-- // 해양기본도 -->
   </div>
 </div>
 
