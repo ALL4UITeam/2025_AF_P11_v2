@@ -287,10 +287,33 @@
   @media (max-width: 1000px) {
     font-size: 1.3rem;
   }
+  &.flex{
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+  }
   b {
     color: var(--primary, #256ef4);
 
     font-weight: 700;
+  }
+  .scale-change-btn{
+    display: flex;
+    align-items: center;
+    gap:
+    .5rem;
+    background: #f4f5f6;
+    font-size: 13px; 
+    border-radius: 99px;
+    padding: 3px 8px;
+    border: 1px solid #dedede;
+    i{
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-image: url("@/assets/images/map/icon-change-btn.svg");
+      background-size: contain;
+    }
   }
 }
 

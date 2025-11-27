@@ -575,3 +575,20 @@ if (detailPanelClose) {
     initDetailPanelClose();
   });
 }
+interact(".modal-header").draggable({
+  listeners: {
+    move(event) {
+      const header = event.target.closest(".modal-header");
+      if (!header) return;
+      const modal = header.closest(".map-modal");
+      if (!modal) return;
+      let x = parseFloat(modal.getAttribute("data-x")) || 0;
+      let y = parseFloat(modal.getAttribute("data-y")) || 0;
+      x += event.dx;
+      y += event.dy;
+      modal.style.transform = `translate(${x}px, ${y}px)`;
+      modal.setAttribute("data-x", x);
+      modal.setAttribute("data-y", y);
+    }
+  }
+});

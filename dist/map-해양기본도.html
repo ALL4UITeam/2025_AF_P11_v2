@@ -84,8 +84,8 @@
 					<li class="menu-item-4"><button data-panel="info-analysis"><i></i><span>정보검색</span></button></li>
 					<li class="menu-item-2"><button data-panel="analysis"><i></i><span>분석</span></button></li>
 					<li class="menu-item-3"><button data-panel="disaster-safety"><i></i><span>재난안전</span></button></li>
-					<li class="menu-item-5 current"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
-					<li class="menu-item-6"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
+					<li class="menu-item-5"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
+					<li class="menu-item-6 current"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
 				</ul>
 
 				<aside class="aside-utils">
@@ -109,68 +109,102 @@
 						</button>
 					</div>
 					<!-- 재난안전 -->
-					<div class="disaster-section show" data-panel-menu="disaster-safety">
-						<div class="panel-section-inner">
-							<div class="panel-section-header">
-								<div class="l">
-									<button class="back-btn">
-										<span class="visually-hidden">뒤로가기</span>
-									</button>
-									<h2 class="panel-section-title">안전지수</h2>
-								</div>
+					<div class="disaster-section show" data-panel-menu="basic-map">
+						<div class="search-section">
+							<div class="tabs">
+								<button class="current tab" title="선택 됨">
+									<i class="icon icon-tab-floor"></i>
+									<span class="text">해저지형</span>
+								</button>
+								<button class="tab">
+									<i class="icon icon-tab-basic"></i>
+									<span class="text">해양기본도</span>
+								</button>
 							</div>
-
-							<div class="panel-section-content">
-								<div class="search-field">
-									<h3 class="search-field-title">
-										<span class="text"><span class="num">01</span>해양 공간의 이용 유형을 선택하세요.</span>
-									</h3>
-									<div class="gap-8">
-										<button class="alert-btn modal-open-btn" data-modal="alert-modal">
-											<span>해수욕장 안전지수</span>
-											<i></i>
-										</button>
-									</div>
-									<div class="checkbox-group">
-										<button class="action-toggle active"><span>해수욕장</span></button>
-										<button class="action-toggle"><span>연안해역</span></button>
-										<button class="action-toggle"><span>진입수로(항)</span></button>
-										<button class="action-toggle"><span>갯벌체체험장</span></button>
-									</div>
+						</div>
+						<div class="search-bar-wrap">
+							<div class="search-bar">
+								<input type="text" placeholder="도엽번호를 입력하세요." class="search-input">
+								<button class="search-btn">
+									<span class="visually-hidden">검색</span>
+								</button>
+							</div>
+						</div>
+						<div class="layer-list">
+							<div class="spatial-search-result">
+								<div class="total-count flex" aria-live="polite">
+									<div>검색결과 총 <b class="point">2,918</b>건</div>
+									<button type="button" class="scale-change-btn"><i></i>1:5000</button>
 								</div>
-
-								<div class="search-field">
-									<h3 class="search-field-title">
-										<span class="text"><span class="num">02</span>해역을 선택하세요.</span>
-									</h3>
-									<div class="collapse-group">
-										<div class="collapse-item">
-											<button class="collapse-toggle" aria-expanded="false" aria-controls="layer-panel-4">
-												<i></i>
-												<span>레이어명</span>
-												<em class="count">2,918</em>
-											</button>
-											<div class="layer-item-panel" id="layer-panel-4">
-												<button class="layer-btn-ui" type="button" data-toggle="item">
-													<span class="layer-name">관성솔밭 해수욕장</span>
-												</button>
-												<button class="layer-btn-ui" type="button" data-toggle="item">
-													<span class="layer-name">관성솔밭 해수욕장</span>
-												</button>
+								<ul class="spatial-result-list flex-row">
+									<li>
+										<div class="spatial-result-item active">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
 											</div>
+											<button class="Link-ico"></button>
 										</div>
-										<div class="collapse-item">
-											<button class="collapse-toggle">
-												<span>레이어명</span>
-												<em class="count">0</em>
-											</button>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
 										</div>
-									</div>
-								</div>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
+										</div>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
+										</div>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
+										</div>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
+										</div>
+									</li>
+									<li>
+										<div class="spatial-result-item ">
+											<div class="spatial-result-ti">
+												<input type="checkbox" class="form-checkbox">
+												<label>오갈산 등대</label>
+											</div>
+											<button class="Link-ico"></button>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
-					<!-- // 재난안전 -->
+					<!-- // 해양기본도 -->
 				</div>
 			</div>
 			<!-- // layer-panel -->
@@ -182,7 +216,7 @@
 							<span class="visually-hidden">뒤로가기</span>
 						</button>
 						<div class="detail-panel-header-title">
-							<h3 class="title">해양지명</h3>
+							<h3 class="title">1:5000_레이어 목록</h3>
 							<div class="utils">
 								<button class="util-btn util-btn-meta">메타정보 보기 <i></i></buttonㅁ>
 									<button class="util-btn util-btn-download">메타정보 다운로드 <i></i></buttonㅁ>
@@ -194,24 +228,31 @@
 					</div>
 					<!-- 공간검색결과 -->
 					<div class="detail-panel-content">
-						<div class="chart-grid">
-							<section class="chart-item">
-								<h4>인명사고</h4>
-								<div class="chart-area">
-									차트영역
-								</div>
-							</section>
-							<div class="division"></div>
-							<section class="chart-item">
-								<h4 class="flex">해양 안전지도 <button class="Link-ico"></button></h4>
-								<div class="chart-area">
-									차트영역
-								</div>
-							</section>
-							<div class="division"></div>
-
-			
-						</div>
+						<div class="search-field">
+                <div class="collapse-group">
+                  <div class="collapse-item">
+                    <button class="collapse-toggle active" aria-expanded="true" aria-controls="layer-panel-4">
+                      <i></i>
+                      <span>레이어명</span>
+                      <em class="count">2,918</em>
+                    </button>
+                    <div class="layer-item-panel active" id="layer-panel-4">
+                      <button class="layer-btn-ui" type="button" data-toggle="item">
+                        <span class="layer-name">관성솔밭 해수욕장</span>
+                      </button>
+                      <button class="layer-btn-ui" type="button" data-toggle="item">
+                        <span class="layer-name">관성솔밭 해수욕장</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse-item">
+                    <button class="collapse-toggle active" aria-expanded="true">
+                      <span>레이어명</span>
+                      <em class="count">0</em>
+                    </button>
+                  </div>
+                </div>
+              </div>
 					</div>
 					<!-- // 공간검색결과 -->
 				</div>
@@ -222,29 +263,6 @@
 				<div id="map"></div>
 			</div>
 			<!-- // map-area -->
-
-			<div class="map-modal" id="property-modal" style="left:50%;top: 50%; transform: translate(-50%, -50%); display: block;">        <div class="modal-container">
-          <header class="modal-header">
-            <h2 class="modal-title">해양안전지도</h2>
-            <button class="modal-close">
-              <span class="visually-hidden">닫기</span>
-            </button>
-          </header>
-          <div class="map-modal-content">
-						<div style="height: 300px;background: #f1f5fa;">
-							지도
-						</div>
-						<div class="detail-map-control">
-							<button class="zoom-btn zoom-in" title="확대">
-								<i class="icon"></i>
-							</button>
-								<button class="zoom-btn zoom-out" title="축소">
-								<i class="icon"></i>
-							</button>
-						</div>
-          </div>
-        </div>
-      </div>
 
 		</div>
 		<script>
