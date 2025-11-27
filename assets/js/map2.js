@@ -1,4 +1,3 @@
-import "./modulepreload-polyfill.js";
 let mapInstance = null;
 function initGroupButtons(selector = ".group-btn", callback) {
   const groupButtons = document.querySelectorAll(selector);
