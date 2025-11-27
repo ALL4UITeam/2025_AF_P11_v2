@@ -991,3 +991,20 @@ interact('.modal-header').draggable({
     }
   }
 });
+
+// 아코디언
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const isActive = item.classList.contains('active');
+
+    // 하나만 열리게 하려면 주석 해제
+    //document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+
+    if (isActive) {
+      item.classList.remove('active');
+    } else {
+      item.classList.add('active');
+    }
+  });
+});

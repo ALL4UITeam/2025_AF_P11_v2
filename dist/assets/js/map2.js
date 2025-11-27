@@ -592,3 +592,14 @@ interact(".modal-header").draggable({
     }
   }
 });
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    const isActive = item.classList.contains("active");
+    if (isActive) {
+      item.classList.remove("active");
+    } else {
+      item.classList.add("active");
+    }
+  });
+});

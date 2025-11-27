@@ -2495,6 +2495,237 @@ em {
   background: #fff;
 }
 
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.accordion .accordion-item + .accordion-item {
+  border-top: 1px solid #e2e8f0;
+}
+
+.accordion-header {
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.accordion-header:hover {
+  background: #f1f5f9;
+}
+
+.accordion-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: "";
+  position: absolute;
+  background-color: #64748b;
+  transition: 0.2s ease;
+}
+
+.accordion-icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.accordion-icon::after {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.accordion-item.active .accordion-icon::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #f8fafc;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+.accordion-body p {
+  margin: 12px 0 16px;
+}
+
+/* 열리는 애니메이션 */
+.accordion-item.active .accordion-body {
+  max-height: 200px;
+  padding: 12px 16px 16px;
+}
+
+.stats-container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Arial";
+}
+.stats-container h2 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.stats-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.stats-container table th, .stats-container table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.stats-container table th {
+  background: #f2f7fc;
+  font-weight: bold;
+}
+
+/* ---------- section title ---------- */
+.stats-section + .stats-section {
+  margin-top: 40px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.02em;
+}
+.section-title__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #000;
+}
+
+.table-box {
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+.table-box--detail {
+  border-top: 0;
+}
+.table-box .tbl {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+.table-box .tbl__row--head th {
+  background: #fafafa;
+  font-weight: 500;
+}
+.table-box .tbl__cell {
+  padding: 9px 8px;
+  border: 1px solid #e3e6ec;
+  text-align: center;
+  line-height: 1.5;
+}
+.table-box .tbl__cell--head {
+  font-weight: 500;
+}
+.table-box .tbl__cell--data {
+  background: #fff;
+}
+.table-box .tbl__cell--total {
+  font-weight: 600;
+}
+.table-box .tbl__cell--total-bg {
+  background: #ebf4fa;
+}
+.table-box .tbl__cell--empty {
+  background: #fff;
+  border-left-color: #e3e6ec;
+  border-right-color: #e3e6ec;
+}
+
+.tbl--year .tbl__row--head th {
+  white-space: nowrap;
+}
+.tbl--year .tbl__cell {
+  padding-inline: 10px;
+}
+.tbl--year .tbl__row:nth-child(1) .tbl__cell:first-child,
+.tbl--year .tbl__row:nth-child(2) .tbl__cell:first-child {
+  width: 18%;
+}
+
+.tbl--daynight thead th {
+  font-size: 13px;
+}
+.tbl--daynight .tbl__cell--total-bg {
+  font-weight: 600;
+}
+.tbl--daynight tbody td {
+  height: 40px;
+}
+
+.stats-tab {
+  display: flex;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  border: 1px solid #e3e6ec;
+  border-bottom: 0;
+  margin-top: 16px;
+}
+.stats-tab__item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  background: #f5f7fb;
+  color: #888;
+}
+.stats-tab__item + .stats-tab__item {
+  border-left: 1px solid #e3e6ec;
+}
+.stats-tab__item--active {
+  background: #137dc1;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tbl--detail .tbl__cell {
+  padding: 9px 6px;
+}
+.tbl--detail .tbl__row--head th {
+  background: #fafafa;
+}
+
+.source {
+  margin-top: 28px;
+  font-size: 12px;
+  text-align: right;
+  color: #888;
+}
+
 body {
   overflow: hidden;
 }
