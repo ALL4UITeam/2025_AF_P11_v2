@@ -743,6 +743,13 @@ function initZoomRangeValue() {
   const zoomValue = document.querySelector('.zoom-range-value');
   const zoomLevelValue = document.querySelector('.zoom-level-value');
   const gageBackground = document.querySelector('.gage-background');
+  const zoomUI = document.getElementById("zoomUI");
+
+  // 필수 DOM 요소 null 체크
+  if (!zoomValue || !gageBackground || !zoomLevelValue || !zoomUI) {
+    console.warn("Zoom UI elements not found");
+    return;
+  }
 
   const minZoom = 1;
   const maxZoom = 14;
@@ -757,6 +764,9 @@ function initZoomRangeValue() {
   };
 
   updateZoomUI();
+
+  zoomUI.style.display = "block";
+  
 
   // 확대/축소 버튼
   zoomInBtn.addEventListener('click', () => {
