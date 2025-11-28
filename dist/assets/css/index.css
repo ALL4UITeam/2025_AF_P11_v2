@@ -8078,3 +8078,316 @@ a.link {
   border-radius: 0 0 40px 40px;
   background: #fff;
 }
+
+.law-view {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* ===== view 공용 섹션 ===== */
+.law-view__section + .law-view__section {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed #ccd2dd;
+}
+
+.law-view__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.law-view__row--multiline {
+  align-items: flex-start;
+}
+
+.law-view__label {
+  flex: 0 0 120px;
+  color: #333;
+  font-weight: 600;
+}
+
+.law-view__value {
+  flex: 1 1 auto;
+  word-break: keep-all;
+}
+
+/* ===== view 쪽에서 쓰던 블록/메타 ===== */
+.law-block__heading {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #777;
+}
+
+.law-meta {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #777;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.law-meta__item {
+  position: relative;
+}
+.law-meta__value {
+  margin-left: 4px;
+  color: #222;
+  font-weight: 500;
+}
+
+.law-link {
+  margin-left: 4px;
+  font-size: 13px;
+  color: #0056b3;
+  text-decoration: none;
+}
+.law-link:hover {
+  text-decoration: underline;
+}
+
+.law-view__sub-title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.source-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.source-list__item + .source-list__item {
+  margin-top: 2px;
+}
+.source-list__bullet {
+  width: 14px;
+  text-align: center;
+}
+.source-list__text {
+  flex: 1;
+}
+.source-list__date {
+  margin-left: 8px;
+}
+
+/* ===== 폼 페이지용 : 상단 타이틀 ===== */
+.law-edit__header {
+  margin-bottom: 8px;
+}
+
+.law-edit__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.law-edit__title .law-edit__icon {
+  font-size: 16px;
+}
+.law-edit__title .law-edit__arrow {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/* ===== 법률정보 섹션 헤더 ===== */
+.law-edit__section--law {
+  margin-top: 24px;
+}
+
+.law-edit__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.law-edit__section-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===== 카드 리스트 / 카드 컨테이너 ===== */
+.law-form-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.law-form-card {
+  position: relative;
+  border: 1px solid #c0c9d6;
+  border-radius: 8px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.law-form-card + .law-form-card {
+  margin-top: 2rem;
+}
+.law-form-card__close {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #9aa4b3;
+  background-color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.law-form-card__body {
+  padding-top: 6px;
+}
+.law-form-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* ===== 각 행(라벨 + 입력) ===== */
+.law-form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.law-form-row.flex-end {
+  justify-content: flex-end;
+}
+.law-form-row--textarea {
+  align-items: flex-start;
+}
+.law-form-row--inline {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.law-form-row__label {
+  flex: 0 0 110px;
+  margin-right: 4px;
+  font-weight: 600;
+  color: #333;
+}
+.law-form-row__label--inline {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+.law-form-row__label--status {
+  margin-left: 18px;
+}
+
+.law-form-row__field {
+  flex: 1 1 auto;
+}
+.law-form-row__field--date {
+  max-width: 160px;
+}
+
+.law-form-row__status {
+  font-weight: 600;
+  color: #006988;
+  font-size: 13px;
+}
+
+/* ===== 인풋 공통 ===== */
+.law-input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #c0c9d6;
+  font-size: 13px;
+  line-height: 1.4;
+  outline: none;
+  background-color: #ffffff;
+}
+.law-input:focus {
+  border-color: #0b50d0;
+  box-shadow: 0 0 0 2px rgba(0, 105, 136, 0.15);
+}
+.law-input--select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #555 50%), linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+.law-input--textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* ===== 카드 리스트 하단 + / - 버튼 ===== */
+.law-edit__control {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.icon-btn--remove {
+  background-color: #dedede;
+  color: #444;
+}
+.icon-btn--remove:hover {
+  background-color: #f0f2f5;
+}
+.icon-btn--add:hover {
+  color: #fff;
+  background-color: #0b50d0;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 640px) {
+  .law-view {
+    padding: 20px 16px 28px;
+  }
+  .law-view__row {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .law-view__label {
+    flex: none;
+  }
+  .law-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .law-form-row.flex-end {
+    flex-direction: row;
+  }
+  .law-form-row__label {
+    flex: none;
+    margin-bottom: 4px;
+  }
+  .law-form-row__label--inline,
+  .law-form-row__label--status {
+    margin-left: 0;
+  }
+  .law-form-row__field--date {
+    max-width: none;
+  }
+  .law-edit__control {
+    justify-content: flex-start;
+  }
+}
