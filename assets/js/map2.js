@@ -415,11 +415,6 @@ function initZoomRangeValue() {
   const zoomValue = document.querySelector(".zoom-range-value");
   const zoomLevelValue = document.querySelector(".zoom-level-value");
   const gageBackground = document.querySelector(".gage-background");
-  const zoomUI = document.getElementById("zoomUI");
-  if (!zoomValue || !gageBackground || !zoomLevelValue || !zoomUI) {
-    console.warn("Zoom UI elements not found");
-    return;
-  }
   const minZoom = 1;
   const maxZoom = 14;
   let zoomLevel = 7;
@@ -431,7 +426,6 @@ function initZoomRangeValue() {
     zoomLevelValue.textContent = `LV${zoomLevel}`;
   };
   updateZoomUI();
-  zoomUI.style.display = "block";
   zoomInBtn.addEventListener("click", () => {
     if (zoomLevel < maxZoom) {
       zoomLevel++;
