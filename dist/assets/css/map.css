@@ -4663,6 +4663,14 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
   margin-bottom: 0.8rem;
 }
 
+.panel-margin {
+  margin: 0 1.6rem;
+}
+
+.mb-10 {
+  margin-bottom: 1rem !important;
+}
+
 .detail-panel {
   display: none;
   position: absolute;

@@ -80,12 +80,15 @@
 			<div class="aside">
 				<h1 class="map-logo"><a href="#">K-OCEAN</a></h1>
 				<ul class="menu-list">
-					<li class="menu-item-1" title="선택 됨"><button data-panel="ocean-info"><i></i><span>해양정보</span></button></li>
+					<li class="menu-item-1" title="선택 됨"><button
+							data-panel="ocean-info"><i></i><span>해양정보</span></button></li>
 					<li class="menu-item-4"><button data-panel="info-analysis"><i></i><span>정보검색</span></button></li>
 					<li class="menu-item-2"><button data-panel="analysis"><i></i><span>분석</span></button></li>
 					<li class="menu-item-3"><button data-panel="disaster-safety"><i></i><span>재난안전</span></button></li>
-					<li class="menu-item-5"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button></li>
-					<li class="menu-item-6 current"><button data-panel="basic-map"><i></i><span>해양기본도</span></button></li>
+					<li class="menu-item-5"><button data-panel="navigation-notice"><i></i><span>항행통보</span></button>
+					</li>
+					<li class="menu-item-6 current"><button data-panel="basic-map"><i></i><span>해양기본도</span></button>
+					</li>
 				</ul>
 
 				<aside class="aside-utils">
@@ -122,7 +125,20 @@
 								</button>
 							</div>
 						</div>
-						<div class="search-bar-wrap">
+						<div class="panel-margin mb-10">
+							<select name="" id="" class="form-select" title="">
+								<option value="">1:5000</option>
+								<option value="">1:25000</option>
+							</select>
+						</div>
+						<div class="panel-margin mb-10">
+							<select name="" id="" class="form-select" title="">
+								<option value="">2024년</option>
+								<option value="">2025년</option>
+							</select>
+						</div>
+
+						<div class="search-bar-wrap mb-10">
 							<div class="search-bar">
 								<input type="text" placeholder="도엽번호를 입력하세요." class="search-input">
 								<button class="search-btn">
@@ -130,11 +146,17 @@
 								</button>
 							</div>
 						</div>
+						<div class="panel-margin">
+							<a class="alert-btn">
+								<span>해양기본도 속성정의서 다운로드</span>
+								<i></i>
+							</a>
+						</div>
+
 						<div class="layer-list">
 							<div class="spatial-search-result">
-								<div class="total-count flex" aria-live="polite">
+								<div class="total-count" aria-live="polite">
 									<div>검색결과 총 <b class="point">2,918</b>건</div>
-									<button type="button" class="scale-change-btn"><i></i>1:5000</button>
 								</div>
 								<ul class="spatial-result-list flex-row">
 									<li>
@@ -229,30 +251,35 @@
 					<!-- 공간검색결과 -->
 					<div class="detail-panel-content">
 						<div class="search-field">
-                <div class="collapse-group">
-                  <div class="collapse-item">
-                    <button class="collapse-toggle active" aria-expanded="true" aria-controls="layer-panel-4">
-                      <i></i>
-                      <span>레이어명</span>
-                      <em class="count">2,918</em>
-                    </button>
-                    <div class="layer-item-panel active" id="layer-panel-4">
-                      <button class="layer-btn-ui" type="button" data-toggle="item">
-                        <span class="layer-name">관성솔밭 해수욕장</span>
-                      </button>
-                      <button class="layer-btn-ui" type="button" data-toggle="item">
-                        <span class="layer-name">관성솔밭 해수욕장</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="collapse-item">
-                    <button class="collapse-toggle active" aria-expanded="true">
-                      <span>레이어명</span>
-                      <em class="count">0</em>
-                    </button>
-                  </div>
-                </div>
-              </div>
+							<div class="collapse-group">
+								<div class="collapse-item">
+									<button class="collapse-toggle active" aria-expanded="true"
+										aria-controls="layer-panel-4">
+										<i></i>
+										<input type="checkbox" class="form-checkbox">
+										<span>레이어명</span>
+										<em class="count">2,918</em>
+									</button>
+									<div class="layer-item-panel active" id="layer-panel-4">
+										<button class="layer-btn-ui" type="button" data-toggle="item">
+											<input type="checkbox" class="form-checkbox">
+											<span class="layer-name">관성솔밭 해수욕장</span>
+										</button>
+										<button class="layer-btn-ui" type="button" data-toggle="item">
+											<input type="checkbox" class="form-checkbox">
+											<span class="layer-name">관성솔밭 해수욕장</span>
+										</button>
+									</div>
+								</div>
+								<div class="collapse-item">
+									<button class="collapse-toggle active" aria-expanded="true">
+										<input type="checkbox" class="form-checkbox">
+										<span>레이어명</span>
+										<em class="count">0</em>
+									</button>
+								</div>
+							</div>
+						</div>
 					</div>
 					<!-- // 공간검색결과 -->
 				</div>

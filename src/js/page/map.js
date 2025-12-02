@@ -440,6 +440,13 @@ function initLayerToggle() {
 
 function initCollapseToggle(selector = '.collapse-toggle', callback) {
   const toggleButtons = document.querySelectorAll(selector);
+
+  toggleButtons.forEach(button => {
+    const input = button.querySelector('input');
+    if (input) {
+      input.addEventListener('click', e => e.stopPropagation());
+    }
+  });
   
   toggleButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -460,6 +467,7 @@ function initCollapseToggle(selector = '.collapse-toggle', callback) {
       if (callback) callback(this, isExpanded);
     });
   });
+  
 }
 
 function initDetailPanelClose() {
