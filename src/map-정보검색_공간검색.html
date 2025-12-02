@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="description" content="K-Ocean">
+	<meta name="keywords" content="K-Ocean">
+	<title>K-OCEAN</title>
+	<link rel="stylesheet" href="./lib/ol/ol.css">
+	<link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+	<script src="./lib/ol/ol.js"></script>
+	<script src="./lib/swiper/swiper-bundle.min.js"></script>
+	<script src="./lib/interact/interact.min.js"></script>
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+	<div class="wrap">
+		<nav id="map-nav">
+			<header class="map-nav-header">
+				<h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+				<div class="map-nav-h-utils">
+					<a href="#" class="mobile-en">EN</a>
+					<button class="map-nav-header-btn">
+						열림
+					</button>
+				</div>
+			</header>
+			<div class="map-gnb">
+				<ul>
+					<li>
+						<a href="#">해양지도 서비스</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">해양지도 서비스</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">플랫폼 소개</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+								<li><a href="#">K-OCEAN 로드맵</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스활용</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">데이터 다운로드</a></li>
+								<li><a href="#">Open-API</a></li>
+								<li><a href="#">통계서비스</a></li>
+								<li><a href="#">Cook-Book</a></li>
+								<li><a href="#">공간정보 법령 및 규정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">자주하는 질문</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			{{> Map-aside }}
+			<!-- // aside -->
+
+			<div class="layer-panel">
+				<div class="layer-panel-wrapper">
+					<div class="layer-panel-vi">
+						<!-- 제목추가 -->
+						<h2 class="layer-panel-title">해양정보</h2>
+						<button type="button" class="layer-mobile-control">
+							<i></i>
+						</button>
+					</div>
+					<!-- 정보검색 결과 -->
+					<div class="spatial-search-section" style="/* display: none; */">
+            <div class="panel-section-header">
+              <div class="l">
+                <button class="back-btn">
+                  <span class="visually-hidden">뒤로가기</span>
+                </button>
+                <h2 class="panel-section-title">공간 검색</h2>
+              </div>
+              <button class="detail-search-toggle">상세검색</button>
+            </div>
+      
+            <div class="panel-section-content">
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">01</span>조사해역을 선택하세요.</span>
+                  <span class="text-info">* 복수 선택 가능</span>
+                </h3>
+                <div class="checkbox-group">
+                  <label class="action-toggle">
+                    <input type="checkbox" checked="">
+                    <i></i><span>위험물</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox" checked="">
+                    <i></i>
+                    <span>인명사고</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox">
+                    <i></i>
+                    <span>선박사고</span>
+                  </label>
+                  <label class="action-toggle">
+                    <input type="checkbox">
+                    <i></i>
+                    <span>어장정보</span>
+                  </label>
+                </div>
+              </div>
+      
+              <div class="search-field">
+                <h3 class="search-field-title">
+                  <span class="text"><span class="num">02</span>검색영역을 선택하세요.</span>
+                </h3>
+                <div class="shape-buttons">
+                  <button class="shape-btn action-toggle active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                      <circle cx="8.66602" cy="8" r="8" fill="#CDD1D5"></circle>
+                    </svg>
+                    <span class="visually-hidden">원형</span>
+                  </button>
+                  <button class="shape-btn action-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                      <rect x="0.332031" y="0" width="16" height="16" rx="2" fill="#CDD1D5"></rect>
+                    </svg>
+                    <span class="visually-hidden">사각형</span>
+                  </button>
+                  <button class="shape-btn action-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                      <path d="M10.332 0L20.332 10L10.332 20L0.332031 10L10.332 0Z" fill="#CDD1D5"></path>
+                    </svg>
+                    <span class="visually-hidden">다각형</span>
+                  </button>
+                </div>
+              </div>
+      
+              <div class="btn-actions">
+                <button class="btn-outline btn">초기화</button>
+                <button class="btn-primary btn">검색</button>
+              </div>
+      
+              <div class="spatial-search-result">
+                <div class="division"></div>
+      
+                <div class="total-count" aria-live="polite">
+                  검색결과 총 <b class="point">2,918</b>건
+                </div>
+      
+                <ul class="spatial-result-list">
+                  <li>
+                    <button class="spatial-result-item active">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="spatial-result-item">
+                      <span>어초</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+      
+            </div>
+            
+            <div class="panel-detail-search">
+              <div class="detail-search-content">
+                <header>
+                  <strong>상세검색</strong>  
+                  <button class="close-btn" title="닫기"><i aria-hidden="true"></i></button>
+                </header>
+                <section>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">01</span>조사해역을 선택하세요.</span>
+                      <span class="text-info">* 복수 선택 가능</span>
+                    </h3>
+                    <div class="checkbox-group">
+                      <label class="action-toggle">
+                        <input type="checkbox" checked="">
+                        <i></i><span>위험물</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox" checked="">
+                        <i></i>
+                        <span>인명사고</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                        <span>선박사고</span>
+                      </label>
+                      <label class="action-toggle">
+                        <input type="checkbox">
+                        <i></i>
+                        <span>어장정보</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">02</span>검색영역을 선택하세요.</span>
+                    </h3>
+                    <div class="shape-buttons">
+                      <button class="shape-btn action-toggle active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <circle cx="8.66602" cy="8" r="8" fill="#CDD1D5"></circle>
+                        </svg>
+                        <span class="visually-hidden">원형</span>
+                      </button>
+                      <button class="shape-btn action-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <rect x="0.332031" y="0" width="16" height="16" rx="2" fill="#CDD1D5"></rect>
+                        </svg>
+                        <span class="visually-hidden">사각형</span>
+                      </button>
+                      <button class="shape-btn action-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                          <path d="M10.332 0L20.332 10L10.332 20L0.332031 10L10.332 0Z" fill="#CDD1D5"></path>
+                        </svg>
+                        <span class="visually-hidden">다각형</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="search-field">
+                    <h3 class="search-field-title">
+                      <span class="text"><span class="num">03</span>명칭을 검색하세요.</span>
+                      <span class="text-info">* 선택사항</span>
+                    </h3>
+                    <form class="input-group-search">
+                      <select name="" id="" title="기관명 선택">
+                        <option value="">기관명</option>
+                      </select>
+                      <span class="line"></span>
+                      <input type="text" placeholder="검색어를 입력하세요" title="검색어 입력">
+                    </form>
+                  </div>
+                  <div class="btn-actions">
+                    <button class="btn-outline btn">초기화</button>
+                    <button class="btn-primary btn">검색</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+					<!-- // 정보정보 검색 결과 -->
+				</div>
+				<!-- // layer-panel -->
+			</div>
+
+
+			<div class="map-area">
+				<div id="map"></div>
+			</div>
+			<!-- // map-area -->
+
+			<div class="detail-panel">
+				<div class="detail-panel-wrapper">
+					<div class="detail-panel-header">
+						<button class="detail-panel-back">
+							<span class="visually-hidden">뒤로가기</span>
+						</button>
+						<div class="detail-panel-header-title">
+							<h3 class="title">AIS 항로분석</h3>
+
+						</div>
+						<button class="detail-panel-close">
+							<span class="visually-hidden">닫기</span>
+						</button>
+					</div>
+
+					<div class="detail-panel-content">
+            <div class="chart-grid">
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+              <div class="division"></div>
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+              <div class="division"></div>
+              <section class="chart-item">
+                <h4>위험물</h4>
+                <div class="chart-area">
+                  차트영역
+                </div>
+              </section>
+      
+            </div>
+          </div>
+					<!-- // detail-panel -->
+				</div>
+			</div>
+
+			<script type="module" src="./js/page/map.js"></script>
+			<script>
+				// map.js가 로드된 후 실행
+				initTransparencySliders('.transparency-slider', (slider, value) => {
+					const layerId = slider.dataset.layerId;
+
+					// 함수 호출
+					console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+				});
+			</script>
+</body>
+
+</html>
