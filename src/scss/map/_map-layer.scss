@@ -738,8 +738,11 @@
 }
 
 .marine-info-result {
-  margin: 0 -1.6rem;
-  padding: 1.6rem 3.2rem;
+  padding: 1.6rem;
+  flex: 1;overflow-y: auto;
+  &.show{
+    display: block;
+  }
 }
 .category-tabs-slider {
   gap: 0.8rem;

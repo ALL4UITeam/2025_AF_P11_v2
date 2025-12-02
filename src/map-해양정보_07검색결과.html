@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="description" content="K-Ocean">
+	<meta name="keywords" content="K-Ocean">
+	<title>K-OCEAN</title>
+	<link rel="stylesheet" href="./lib/ol/ol.css">
+	<link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+	<script src="./lib/ol/ol.js"></script>
+	<script src="./lib/swiper/swiper-bundle.min.js"></script>
+	<script src="./lib/interact/interact.min.js"></script>
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+	<div class="wrap">
+		<nav id="map-nav">
+			<header class="map-nav-header">
+				<h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+				<div class="map-nav-h-utils">
+					<a href="#" class="mobile-en">EN</a>
+					<button class="map-nav-header-btn">
+						열림
+					</button>
+				</div>
+			</header>
+			<div class="map-gnb">
+				<ul>
+					<li>
+						<a href="#">해양지도 서비스</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">해양지도 서비스</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">플랫폼 소개</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+								<li><a href="#">K-OCEAN 로드맵</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스활용</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">데이터 다운로드</a></li>
+								<li><a href="#">Open-API</a></li>
+								<li><a href="#">통계서비스</a></li>
+								<li><a href="#">Cook-Book</a></li>
+								<li><a href="#">공간정보 법령 및 규정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">자주하는 질문</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			{{> Map-aside }}
+			<!-- // aside -->
+
+			{{> Map-layer-panel }}
+			<!-- // layer-panel -->
+
+			<div class="detail-panel">
+				<div class="detail-panel-wrapper">
+					<div class="detail-panel-header">
+						<button class="detail-panel-back">
+							<span class="visually-hidden">뒤로가기</span>
+						</button>
+						<div class="detail-panel-header-title">
+							<h3 class="title">AIS 항로분석</h3>
+							
+						</div>
+						<button class="detail-panel-close">
+							<span class="visually-hidden">닫기</span>
+						</button>
+					</div>
+
+					<div class="detail-panel-content">
+						<!-- 안내 정보 박스 -->
+						<div class="info-notice-box">
+							<p class="notice-text">기준 월과 시간대를 선택하면 AIS 통항 밀도와 상세정보를 확인할 수 있습니다.</p>
+							<div class="data-period-box">
+								<i class="data-icon"></i>
+								<div class="period-info">
+									<div class="period-text">자료년도 23년1 ~ 23년 12월</div>
+									<div class="time-period">주간(06 ~ 18시) 야간(18~06시)</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 필터 섹션 -->
+						<div class="filter-section mt-8 mb-8">
+							<div class="filter-row mb-8">
+								<select class="form-select" title="월 선택">
+									<option>9월</option>
+								</select>
+							</div>
+							<div class="filter-row mb-16">
+								<select class="form-select" title="시간대 선택">
+									<option>전체(주간, 야간)</option>
+								</select>
+							</div>
+							<div class="filter-slider mb-16">
+								<div class="filter-label">투명도</div>
+								<div class="transparency-slider" data-layer-id="layer2">
+									<div>
+										<div class="slider-handle" style="left: 50%;"></div>
+									</div>
+								</div>
+							</div>
+							<div class="filter-row">
+								<input type="checkbox" class="filter-checkbox">
+								<label class="filter-label">체크박스</label>
+							</div>
+						</div>
+
+						<div class="division"></div>
+
+						<!-- 다운로드 버튼 섹션 -->
+						<div class="download-section mt-8">
+							<button class="download-btn">
+								<i class="download-icon"></i>
+								<span>AIS 항로 분석 다운로드</span>
+							</button>
+							<button class="download-btn">
+								<i class="download-icon"></i>
+								<span>주요통항로 라인 다운로드</span>
+							</button>
+						</div>
+
+						<!-- 선박 운항 분포 요약 -->
+						<div class="summary-box">
+							<div class="summary-header">
+								<h4 class="summary-title">선박 운항 분포</h4>
+								<span class="summary-unit">단위:척</span>
+							</div>
+							<div class="summary-list">
+								<div class="summary-item">
+									<span class="summary-label">전체(주간, 야간)</span>
+									<span class="summary-line"></span>
+									<span class="summary-value">1,877,596</span>
+								</div>
+								<div class="summary-item">
+									<span class="summary-label">주간</span>
+									<span class="summary-line"></span>
+									<span class="summary-value">1,248,272</span>
+								</div>
+								<div class="summary-item">
+									<span class="summary-label">야간</span>
+									<span class="summary-line"></span>
+									<span class="summary-value">629,324</span>
+								</div>
+							</div>
+							<div class="summary-footer">
+								<div class="summary-date">기준년월 : 202309</div>
+								<div class="summary-provider">제공 : 해양수산부 해양안전종합정보시스템 (GICOMS)</div>
+							</div>
+						</div>
+					</div>
+					<!-- // detail-panel -->
+				</div>
+			</div>
+
+			<div class="map-area">
+				<div id="map"></div>
+			</div>
+			<!-- // map-area -->
+
+
+
+			<script type="module" src="./js/page/map.js"></script>
+			<script>
+				// map.js가 로드된 후 실행
+				initTransparencySliders('.transparency-slider', (slider, value) => {
+					const layerId = slider.dataset.layerId;
+
+					// 함수 호출
+					console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+				});
+			</script>
+</body>
+
+</html>

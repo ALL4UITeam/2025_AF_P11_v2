@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="description" content="K-Ocean">
+	<meta name="keywords" content="K-Ocean">
+	<title>K-OCEAN</title>
+	<link rel="stylesheet" href="./lib/ol/ol.css">
+	<link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+	<script src="./lib/ol/ol.js"></script>
+	<script src="./lib/swiper/swiper-bundle.min.js"></script>
+	<script src="./lib/interact/interact.min.js"></script>
+</head>
+
+<body class="open-depth-1 open-depth-2">
+
+	<div class="wrap">
+		<nav id="map-nav">
+			<header class="map-nav-header">
+				<h1 class="map-nav-logo"><a href="#">K-OCEAN</a></h1>
+				<div class="map-nav-h-utils">
+					<a href="#" class="mobile-en">EN</a>
+					<button class="map-nav-header-btn">
+						열림
+					</button>
+				</div>
+			</header>
+			<div class="map-gnb">
+				<ul>
+					<li>
+						<a href="#">해양지도 서비스</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">해양지도 서비스</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">플랫폼 소개</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">K-OCEAN 플랫폼 소개</a></li>
+								<li><a href="#">K-OCEAN 로드맵</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스활용</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">데이터 다운로드</a></li>
+								<li><a href="#">Open-API</a></li>
+								<li><a href="#">통계서비스</a></li>
+								<li><a href="#">Cook-Book</a></li>
+								<li><a href="#">공간정보 법령 및 규정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="map-gnb-submenu">
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">자주하는 질문</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			{{> Map-aside }}
+			<!-- // aside -->
+
+			{{> Map-layer-panel }}
+			<!-- // layer-panel -->
+
+			<div class="detail-panel">
+				<div class="detail-panel-wrapper">
+					<div class="detail-panel-header">
+						<button class="detail-panel-back">
+							<span class="visually-hidden">뒤로가기</span>
+						</button>
+						<div class="detail-panel-header-title">
+							<h3 class="title">해양지명</h3>
+							<div class="utils">
+								<button class="util-btn util-btn-meta">메타정보 보기 <i></i></buttonㅁ>
+									<button class="util-btn util-btn-download">메타정보 다운로드 <i></i></buttonㅁ>
+							</div>
+						</div>
+						<button class="detail-panel-close">
+							<span class="visually-hidden">닫기</span>
+						</button>
+					</div>
+			
+					<!-- 기본형  -->
+					<div class="detail-panel-content">
+						<div class="total-count">총 <b>2,918</b>건</div>
+						<div class="depth-layer-list">
+							<div class="depth-layer-item">
+								<button type="button" class="depth-layer-btn">
+									<span>지형/지명</span>
+									<i class="icon-layer"></i>
+								</button>
+							</div>
+							<div class="depth-layer-item">
+								<button type="button" class="depth-layer-btn">
+									<span>지형/지명</span>
+									<i class="icon-layer"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- // 기본형 끝 -->
+			<!-- // detail-panel -->
+				</div>
+			</div>
+
+			<div class="map-area">
+				<div id="map"></div>
+			</div>
+			<!-- // map-area -->
+
+
+
+			<script type="module" src="./js/page/map.js"></script>
+			<script>
+				// map.js가 로드된 후 실행
+				initTransparencySliders('.transparency-slider', (slider, value) => {
+					const layerId = slider.dataset.layerId;
+
+					// 함수 호출
+					console.log(`${layerId} 투명도: ${value.toFixed(1)}%`);
+				});
+			</script>
+</body>
+
+</html>
