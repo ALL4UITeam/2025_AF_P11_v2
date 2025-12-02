@@ -1386,3 +1386,13 @@
 .mb-10{
   margin-bottom: 1rem !important;
 }
+.icon-meta {
+  display: flex;
+  /* width: 2.4rem; */
+  height: 2.4rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  aspect-ratio: 1 / 1;
+  background: url(/assets/images/map/icon_layer.svg) no-repeat center center;
+}
