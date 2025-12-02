@@ -4013,8 +4013,12 @@ body:not(:has(.menu-item-1.current)) .fav-layers {
 }
 
 .marine-info-result {
-  margin: 0 -1.6rem;
-  padding: 1.6rem 3.2rem;
+  padding: 1.6rem;
+  flex: 1;
+  overflow-y: auto;
+}
+.marine-info-result.show {
+  display: block;
 }
 
 .category-tabs-slider {
