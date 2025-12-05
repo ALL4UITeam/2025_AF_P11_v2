@@ -115,6 +115,18 @@
     height: 24px;
     background-color: #86AFF9;
   }
+  .icon-tab-density{
+    mask-image: url("@/assets/images/map/icon-tab-density.svg");
+    width: 24px;
+    height: 24px;
+    background-color: #86AFF9;
+  }
+  .icon-tab-custom{
+    mask-image: url("@/assets/images/map/icon-tab-custom.svg");
+    width: 24px;
+    height: 24px;
+    background-color: #86AFF9;
+  }
 
   .tab{
     display: flex;
@@ -1059,7 +1071,7 @@
   cursor: pointer;
   display: flex;
   height: 4rem;
-  padding: 0 16px;
+  padding: 0 8px;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -1396,3 +1408,45 @@
   aspect-ratio: 1 / 1;
   background: url(/assets/images/map/icon_layer.svg) no-repeat center center;
 }
+
+.tab-dep-wrapper {
+  background: rgba(236, 242, 254, 1);
+  padding-top: 4px;
+  border-bottom: 1px solid #CDD1D5;
+  margin-bottom: 20px;
+  .tab-dep-inner{
+    display: flex;
+    align-items: center;
+    
+  }
+  .tabs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius:4px 4px 0 0;
+    flex:1;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border-color: #8a949e;
+    &.active {
+      border: 1px solid;
+      background: #ffffff;
+      border-color: #CDD1D5;
+      color: #1b57e9;
+      font-weight: 600;
+      border-bottom: none;
+      .icon-dot {
+        width: 12px;
+        height: 12px;
+        background-image: url("@/assets/images/map/tabs_checked.svg");
+        display: inline-block;
+        background-size: contain;
+      }
+    }
+  }
+}
+
