@@ -1,0 +1,21 @@
+<svg width="368" height="240" viewBox="0 0 368 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_299_428)">
+<rect width="368" height="240" rx="32" fill="url(#paint0_linear_299_428)"/>
+<circle cx="184" cy="120" r="99.5" stroke="white" stroke-opacity="0.15"/>
+<circle cx="184" cy="120" r="69.5" stroke="white" stroke-opacity="0.2"/>
+<circle cx="184" cy="120" r="134.5" stroke="white" stroke-opacity="0.1"/>
+<circle cx="184" cy="120" r="179.5" stroke="white" stroke-opacity="0.1"/>
+<path d="M368 240H272C289.397 240 303.551 226.117 303.989 208.826L304.011 207.174C304.442 190.157 318.157 176.442 335.174 176.011L336.826 175.989C354.117 175.551 368 161.397 368 144V240Z" fill="white"/>
+<rect x="316" y="188" width="52" height="52" rx="26" fill="#052561"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M351.429 204.574C351.634 204.779 351.747 205.059 351.741 205.349L351.553 214.966C351.541 215.555 351.055 216.023 350.466 216.011C349.877 216 349.408 215.513 349.42 214.924L349.557 207.955L334.082 223.429C333.666 223.846 332.99 223.846 332.574 223.429C332.157 223.013 332.157 222.337 332.574 221.921L348.048 206.446L341.079 206.583C340.49 206.595 340.003 206.126 339.992 205.537C339.98 204.948 340.448 204.462 341.037 204.45L350.654 204.262C350.944 204.256 351.224 204.369 351.429 204.574Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_299_428" x1="0" y1="0" x2="368" y2="240" gradientUnits="userSpaceOnUse">
+<stop offset="0.5" stop-color="#052561"/>
+<stop offset="1" stop-color="#083891"/>
+</linearGradient>
+<clipPath id="clip0_299_428">
+<rect width="368" height="240" rx="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

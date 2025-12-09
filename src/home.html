@@ -6,7 +6,10 @@
 <section id="main" class="hero">
   <div class="hero-visual">
     <div class="hero-visual-bg">
-      <img src="./assets/images/portal/hero-visual-bg.png" alt="">
+      <img class="hero-poster" src="./assets/images/portal/hero-visual-bg.png" alt="">
+      <video class="hero-video" muted playsinline preload="auto" loop>
+      <source src="./resources/video/AdobeStock_1383030201_compressed.mp4" type="video/mp4">
+  </video>
     </div>
     <div class="hero-container">
       <div class="hero-visual--text">
@@ -263,5 +266,14 @@
     if (categoryBtns.length > 0) {
       categoryBtns[0].click();
     }
+
+    const video = document.querySelector('.hero-video');
+    const poster = document.querySelector('.hero-poster');
+
+    video.addEventListener('canplaythrough', () => {
+      video.play();                 // ✅ 로드 완료 → 자동재생
+      video.style.opacity = '1';    // ✅ 비디오 표시
+      poster.style.opacity = '0';   // ✅ 이미지 서서히 제거
+    });
   });
 </script>
