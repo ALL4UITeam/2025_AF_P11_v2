@@ -25,8 +25,6 @@ $mode-setting: light;
 
 	@include flex-layout($jc: center);
 	margin-bottom: var(--krds-breadcrumb--margin-bottom);
-	padding-top: var(--krds-pc-gap-layout-header-breadcrumb);
-	padding-bottom: var(--krds-pc-gap-layout-breadcrumb-h2);
 	.breadcrumb {
 		@include flex-layout($ai: center);
 		gap: var(--krds-gap-2);

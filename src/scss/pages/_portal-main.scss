@@ -396,14 +396,14 @@
   width: 368px;
   display: flex;
   flex-direction: column;
-  gap:4rem;
+  gap:2rem;
   .Link-item{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem;
+    padding: 3rem;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -429,42 +429,44 @@
   }
   .map-Link{
     flex:1;
-    background-image: url('@/assets/images/portal/map-Link-bg.svg');
+    background-image: url('@/assets/images/portal/map-Link-bg.png');
   }
   .viewer-Link{
     flex:1;
-    background-image: url('@/assets/images/portal/viewer-Link-bg.svg');
+    background-image: url('@/assets/images/portal/map-Link-bg.png');
+  }
+  .gis-Link{
+    flex:1;
+    background-image: url('@/assets/images/portal/viewer-Link-bg.png');
   }
   @media (max-width: 1024px) {
-    gap:2rem;
+    gap:1rem;
     flex-direction: row;
     width: 100%;
     .Link-item {
-      padding: 2.5rem;
-      aspect-ratio: 16 / 10; /* 카드 비율 고정 */
-      h3{
-        font-size: 2.2rem;
-      }
-      p{
-        font-size: 1.5rem;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    
-    .Link-item{
+      padding: 2rem;
+      aspect-ratio: 20 / 10;
       h3{
         font-size: 1.8rem;
       }
       p{
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
-      i{
+    }
+  }
+  @media (max-width: 768px) {
+    .Link-item{
+      padding: 2rem 1rem;
+      h3{
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+      p{
+        display: none;
       }
     }
   }
   @media (max-width: 480px) {
-    flex-direction: column;
   }
 }
 
